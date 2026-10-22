@@ -1,0 +1,22 @@
+[
+ {
+  "h": "Дроби и проценты",
+  "html": "<p>$\\dfrac ab\\pm\\dfrac cd=\\dfrac{ad\\pm cb}{bd}$, $\\dfrac ab\\cdot\\dfrac cd=\\dfrac{ac}{bd}$, $\\dfrac ab:\\dfrac cd=\\dfrac{ad}{bc}$.</p><p>Увеличить на $p\\%$ — умножить на $1+\\dfrac p{100}$; уменьшить — на $1-\\dfrac p{100}$.</p><p>Изменение в процентах: $\\dfrac{B-A}{A}\\cdot100\\%$.</p>"
+ },
+ {
+  "h": "Степени",
+  "html": "<p>$a^m\\cdot a^n=a^{m+n}$, $\\dfrac{a^m}{a^n}=a^{m-n}$, $(a^m)^n=a^{mn}$, $(ab)^n=a^nb^n$.</p><p>$a^{-n}=\\dfrac1{a^n}$, $a^0=1$ при $a\\ne0$.</p>"
+ },
+ {
+  "h": "Корни",
+  "html": "<p>$\\sqrt a\\cdot\\sqrt b=\\sqrt{ab}$, $\\dfrac{\\sqrt a}{\\sqrt b}=\\sqrt{\\dfrac ab}$, $(\\sqrt a)^2=a$, $\\sqrt{a^2}=|a|$.</p>"
+ },
+ {
+  "h": "Формулы сокращённого умножения",
+  "html": "<p>$(a\\pm b)^2=a^2\\pm2ab+b^2$, $a^2-b^2=(a-b)(a+b)$.</p><p>$a^3\\pm b^3=(a\\pm b)(a^2\\mp ab+b^2)$, $(a\\pm b)^3=a^3\\pm3a^2b+3ab^2\\pm b^3$.</p>"
+ },
+ {
+  "h": "Модуль",
+  "html": "<p>$|a|=a$ при $a\\ge0$, $|a|=-a$ при $a<0$. $|x|=c$ ($c>0$) даёт $x=\\pm c$.</p>"
+ }
+]

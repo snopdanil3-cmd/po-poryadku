@@ -1,0 +1,191 @@
+{
+ "intro": "Первый урок для части 2. Учимся записывать доказательство и затем считать. Сайт проверяет только число из пункта «б», доказательство оцени по списку в конце урока.",
+ "theory": [
+  {
+   "h": "Что требует задание части 2 по планиметрии",
+   "html": "<p>Задание состоит из двух частей: <b>а)</b> доказать утверждение, <b>б)</b> найти величину. Пункт «б» обычно опирается на «а». Проверяет эксперт, он смотрит и на доказательство, и на ответ.</p><p>Записывай доказательство цепочкой: <b>утверждение, потому что (теорема, свойство, данное)</b>. Начинай с чертежа и обозначений, затем идут шаги. Любое равенство, которое нужно, надо вывести, а не «увидеть».</p><p class=\"warn-box\">Чертёж не доказательство. Фразы «из рисунка видно» и «очевидно» не засчитываются. Если вы не доказали параллельность или равенство углов, считать нельзя.</p>"
+  },
+  {
+   "h": "Признаки равенства и подобия треугольников",
+   "html": "<ul><li><b>Равенство:</b> по двум сторонам и углу между ними; по стороне и двум прилежащим углам; по трём сторонам.</li><li><b>Подобие:</b> по двум углам; по двум пропорциональным сторонам и углу между ними; по трём пропорциональным сторонам.</li></ul><p>Из подобия с коэффициентом $k$: стороны относятся как $k$, периметры как $k$, <b>площади как $k^2$</b>.</p>"
+  },
+  {
+   "h": "Откуда берутся равные углы",
+   "html": "<ul><li>Общий угол двух треугольников.</li><li>Вертикальные углы.</li><li>При параллельных прямых и секущей: накрест лежащие и соответственные углы равны.</li><li>Вписанные углы, опирающиеся на одну дугу, равны.</li><li>Углы при основании равнобедренного треугольника.</li></ul><p>Часто нужные подобные пары: в трапеции $AOD$ и $COB$; при $MN\\parallel BC$ в треугольнике $AMN$ и $ABC$; в прямоугольном треугольнике с высотой все три треугольника.</p>"
+  },
+  {
+   "h": "Как пользоваться пунктом «а» в пункте «б»",
+   "html": "<p>После доказательства подобия запишите отношение сходственных сторон и подставьте числа. Следите, какие стороны сходственные: они лежат против равных углов.</p><p class=\"warn-box\">Частая ошибка: перепутать порядок вершин в записи подобия. Запись $\\triangle AMN\\sim\\triangle ABC$ означает $A\\to A$, $M\\to B$, $N\\to C$, поэтому $\\dfrac{MN}{BC}=\\dfrac{AM}{AB}$.</p>"
+  }
+ ],
+ "examples": [
+  {
+   "q": "Точки $M$ и $N$ лежат на сторонах $AB$ и $AC$ треугольника $ABC$, причём $MN\\parallel BC$. а) Докажите, что треугольники $AMN$ и $ABC$ подобны. б) Найдите $BC$, если $AM=6$, $MB=4$, $MN=9$.",
+   "steps": [
+    "а) Угол $A$ общий. Так как $MN\\parallel BC$, то $\\angle AMN=\\angle ABC$ как соответственные при параллельных прямых и секущей $AB$.",
+    "Два угла равны, значит треугольники подобны по первому признаку, коэффициент подобия $k=\\dfrac{AM}{AB}$.",
+    "б) $AB=AM+MB=10$, $k=\\dfrac{6}{10}=0{,}6$.",
+    "$\\dfrac{MN}{BC}=k$, откуда $BC=\\dfrac{9}{0{,}6}=15$."
+   ],
+   "a": 15,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 226.4\" width=\"270\" height=\"226.4\" role=\"img\" aria-label=\"Треугольник ABC, отрезок MN параллелен стороне BC, AM=6, MB=4, MN=9\"><line class=\"fl\" x1=\"26\" y1=\"200.4\" x2=\"244\" y2=\"200.4\"/><line class=\"fl\" x1=\"244\" y1=\"200.4\" x2=\"91.4\" y2=\"26\"/><line class=\"fl\" x1=\"91.4\" y1=\"26\" x2=\"26\" y2=\"200.4\"/><line class=\"fl\" x1=\"156.8\" y1=\"200.4\" x2=\"65.2\" y2=\"95.8\"/><text class=\"ft fn\" x=\"91.4\" y=\"188.4\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><text class=\"ft fn\" x=\"200.4\" y=\"188.4\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><text class=\"ft fn\" x=\"102\" y=\"156\" text-anchor=\"middle\" dominant-baseline=\"central\">9</text><circle class=\"fp\" cx=\"26\" cy=\"200.4\" r=\"2.6\"/><text class=\"ft\" x=\"14.9\" y=\"207.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"200.4\" r=\"2.6\"/><text class=\"ft\" x=\"255.9\" y=\"205.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"91.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"88.7\" y=\"13.3\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"156.8\" cy=\"200.4\" r=\"2.6\"/><text class=\"ft\" x=\"164.4\" y=\"211\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"65.2\" cy=\"95.8\" r=\"2.6\"/><text class=\"ft\" x=\"55.8\" y=\"86.8\" text-anchor=\"middle\" dominant-baseline=\"central\">N</text></svg></figure>"
+  },
+  {
+   "q": "Высоты $AA_1$ и $BB_1$ остроугольного треугольника $ABC$ пересекаются в точке $H$. а) Докажите, что треугольники $A_1B_1C$ и $ABC$ подобны. б) Найдите $A_1B_1$, если $AB=10$, $\\cos\\angle C=0{,}6$.",
+   "steps": [
+    "а) В прямоугольных треугольниках $AA_1C$ и $BB_1C$ угол $C$ общий, поэтому $CA_1=AC\\cos C$ и $CB_1=BC\\cos C$.",
+    "Значит $\\dfrac{CA_1}{CA}=\\dfrac{CB_1}{CB}=\\cos C$, а угол $C$ у треугольников $A_1B_1C$ и $ABC$ общий.",
+    "Две стороны пропорциональны и угол между ними общий: подобие по второму признаку, $k=\\cos C$.",
+    "б) $A_1B_1=AB\\cdot k=10\\cdot0{,}6=6$."
+   ],
+   "a": 6,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Остроугольный треугольник ABC с высотами AA1 и BB1\"><line class=\"fl\" x1=\"176.9\" y1=\"26\" x2=\"230.3\" y2=\"209\"/><line class=\"fl\" x1=\"230.3\" y1=\"209\" x2=\"39.7\" y2=\"209\"/><line class=\"fl\" x1=\"39.7\" y1=\"209\" x2=\"176.9\" y2=\"26\"/><line class=\"fl\" x1=\"176.9\" y1=\"26\" x2=\"176.9\" y2=\"209\"/><line class=\"fl\" x1=\"230.3\" y1=\"209\" x2=\"108.3\" y2=\"117.5\"/><path class=\"fa\" d=\"M176.9 199 L166.9 199 L166.9 209\"/><path class=\"fa\" d=\"M116.3 123.5 L110.3 131.5 L102.3 125.5\"/><circle class=\"fp\" cx=\"176.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"179.9\" y=\"13.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"230.3\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"241.2\" y=\"216.1\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"39.7\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"28.1\" y=\"214.9\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"176.9\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"183.3\" y=\"220.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A₁</text><circle class=\"fp\" cx=\"108.3\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"98.9\" y=\"108.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B₁</text></svg></figure>"
+  },
+  {
+   "q": "Диагонали трапеции $ABCD$ с основаниями $BC$ и $AD$ пересекаются в точке $O$. а) Докажите, что $\\dfrac{AO}{OC}=\\dfrac{AD}{BC}$. б) Найдите $AO$, если $BC=4$, $AD=10$, $AC=14$.",
+   "steps": [
+    "а) $\\angle OAD=\\angle OCB$ и $\\angle ODA=\\angle OBC$ как накрест лежащие при $BC\\parallel AD$.",
+    "Треугольники $AOD$ и $COB$ подобны по двум углам, отношение сходственных сторон: $\\dfrac{AO}{OC}=\\dfrac{AD}{BC}$.",
+    "б) $\\dfrac{AO}{OC}=\\dfrac{10}{4}$, значит $AO:AC=10:14$.",
+    "$AO=14\\cdot\\dfrac{10}{14}=10$."
+   ],
+   "a": 10,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 139.2\" width=\"270\" height=\"139.2\" role=\"img\" aria-label=\"Трапеция ABCD с основаниями BC=4 и AD=10, диагонали пересекаются в точке O\"><line class=\"fl\" x1=\"26\" y1=\"113.2\" x2=\"69.6\" y2=\"26\"/><line class=\"fl\" x1=\"69.6\" y1=\"26\" x2=\"156.8\" y2=\"26\"/><line class=\"fl\" x1=\"156.8\" y1=\"26\" x2=\"244\" y2=\"113.2\"/><line class=\"fl\" x1=\"244\" y1=\"113.2\" x2=\"26\" y2=\"113.2\"/><line class=\"fl\" x1=\"26\" y1=\"113.2\" x2=\"156.8\" y2=\"26\"/><line class=\"fl\" x1=\"69.6\" y1=\"26\" x2=\"244\" y2=\"113.2\"/><text class=\"ft fn\" x=\"113.2\" y=\"14\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><text class=\"ft fn\" x=\"135\" y=\"101.2\" text-anchor=\"middle\" dominant-baseline=\"central\">10</text><circle class=\"fp\" cx=\"26\" cy=\"113.2\" r=\"2.6\"/><text class=\"ft\" x=\"14.3\" y=\"118.9\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"69.6\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"59.2\" y=\"18.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"156.8\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"165.2\" y=\"16.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"244\" cy=\"113.2\" r=\"2.6\"/><text class=\"ft\" x=\"256.1\" y=\"117.9\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"119.4\" cy=\"50.9\" r=\"2.6\"/><text class=\"ft\" x=\"119.4\" y=\"38.9\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
+  }
+ ],
+ "tasks": [
+  {
+   "id": "b05-p1-1",
+   "q": "Точки $M$ и $N$ лежат на сторонах $AB$ и $AC$ треугольника $ABC$, $MN\\parallel BC$. а) Докажите, что $\\triangle AMN\\sim\\triangle ABC$. б) Найдите $MN$, если $AM=4$, $AB=12$, $BC=15$.",
+   "a": 5,
+   "hint": "Найдите коэффициент подобия $\\dfrac{AM}{AB}$ и умножьте его на $BC$.",
+   "sol": [
+    "а) Угол $A$ общий, $\\angle AMN=\\angle ABC$ как соответственные при $MN\\parallel BC$. Подобие по двум углам.",
+    "б) $k=\\dfrac4{12}=\\dfrac13$, $MN=\\dfrac{15}3=5$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 215.5\" width=\"270\" height=\"215.5\" role=\"img\" aria-label=\"Треугольник ABC, MN параллельна BC\"><line class=\"fl\" x1=\"26\" y1=\"189.5\" x2=\"244\" y2=\"189.5\"/><line class=\"fl\" x1=\"244\" y1=\"189.5\" x2=\"98.7\" y2=\"26\"/><line class=\"fl\" x1=\"98.7\" y1=\"26\" x2=\"26\" y2=\"189.5\"/><line class=\"fl\" x1=\"98.7\" y1=\"189.5\" x2=\"50.2\" y2=\"135\"/><text class=\"ft fn\" x=\"62.3\" y=\"177.5\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><text class=\"ft fn\" x=\"135\" y=\"201.5\" text-anchor=\"middle\" dominant-baseline=\"central\">12</text><circle class=\"fp\" cx=\"26\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"14.7\" y=\"195.9\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"256.4\" y=\"193.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"98.7\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"98.1\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"98.7\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"97.2\" y=\"202.4\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"50.2\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"37.5\" y=\"132.4\" text-anchor=\"middle\" dominant-baseline=\"central\">N</text></svg></figure>"
+  },
+  {
+   "id": "b05-p1-2",
+   "q": "Диагонали трапеции $ABCD$ ($BC\\parallel AD$) пересекаются в точке $O$. а) Докажите, что $\\triangle AOD\\sim\\triangle COB$. б) Найдите $OD$, если $BC=4$, $AD=12$, $BD=20$.",
+   "a": 15,
+   "hint": "Из подобия $\\dfrac{BO}{OD}=\\dfrac{BC}{AD}$. Выразите $OD$ через $BD$.",
+   "sol": [
+    "а) $\\angle OAD=\\angle OCB$, $\\angle ODA=\\angle OBC$ как накрест лежащие при $BC\\parallel AD$. Подобие по двум углам.",
+    "б) $\\dfrac{BO}{OD}=\\dfrac4{12}=\\dfrac13$, значит $OD=\\dfrac34\\,BD=15$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 142.8\" width=\"270\" height=\"142.8\" role=\"img\" aria-label=\"Трапеция с диагоналями, пересекающимися в точке O\"><line class=\"fl\" x1=\"26\" y1=\"116.8\" x2=\"80.5\" y2=\"26\"/><line class=\"fl\" x1=\"80.5\" y1=\"26\" x2=\"153.2\" y2=\"26\"/><line class=\"fl\" x1=\"153.2\" y1=\"26\" x2=\"244\" y2=\"116.8\"/><line class=\"fl\" x1=\"244\" y1=\"116.8\" x2=\"26\" y2=\"116.8\"/><line class=\"fl\" x1=\"26\" y1=\"116.8\" x2=\"153.2\" y2=\"26\"/><line class=\"fl\" x1=\"80.5\" y1=\"26\" x2=\"244\" y2=\"116.8\"/><text class=\"ft fn\" x=\"116.8\" y=\"14\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><text class=\"ft fn\" x=\"135\" y=\"104.8\" text-anchor=\"middle\" dominant-baseline=\"central\">12</text><circle class=\"fp\" cx=\"26\" cy=\"116.8\" r=\"2.6\"/><text class=\"ft\" x=\"14.4\" y=\"122.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"80.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"70.9\" y=\"17.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"153.2\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"160.5\" y=\"15.3\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"244\" cy=\"116.8\" r=\"2.6\"/><text class=\"ft\" x=\"256\" y=\"121.9\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"121.4\" cy=\"48.7\" r=\"2.6\"/><text class=\"ft\" x=\"121.4\" y=\"36.7\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
+  },
+  {
+   "id": "b05-p1-3",
+   "q": "Высоты $AA_1$ и $BB_1$ остроугольного треугольника $ABC$ пересекаются в точке $H$. а) Докажите, что $\\triangle CA_1B_1\\sim\\triangle CAB$. б) Найдите $A_1B_1$, если $AB=13$, $\\cos\\angle C=0{,}8$.",
+   "a": 10.4,
+   "hint": "Коэффициент подобия равен $\\cos C$.",
+   "sol": [
+    "а) $CA_1=AC\\cos C$, $CB_1=BC\\cos C$, угол $C$ общий: подобие по двум сторонам и углу между ними.",
+    "б) $A_1B_1=AB\\cos C=13\\cdot0{,}8=10{,}4$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 189.3\" width=\"270\" height=\"189.3\" role=\"img\" aria-label=\"Остроугольный треугольник с двумя высотами\"><line class=\"fl\" x1=\"209.1\" y1=\"26\" x2=\"244\" y2=\"163.3\"/><line class=\"fl\" x1=\"244\" y1=\"163.3\" x2=\"26\" y2=\"163.3\"/><line class=\"fl\" x1=\"26\" y1=\"163.3\" x2=\"209.1\" y2=\"26\"/><line class=\"fl\" x1=\"209.1\" y1=\"26\" x2=\"209.1\" y2=\"163.3\"/><line class=\"fl\" x1=\"244\" y1=\"163.3\" x2=\"165.5\" y2=\"58.7\"/><path class=\"fa\" d=\"M209.1 153.3 L199.1 153.3 L199.1 163.3\"/><path class=\"fa\" d=\"M171.5 66.7 L163.5 72.7 L157.5 64.7\"/><circle class=\"fp\" cx=\"209.1\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"214.3\" y=\"14.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"163.3\" r=\"2.6\"/><text class=\"ft\" x=\"254.8\" y=\"170.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"26\" cy=\"163.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"167.5\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"209.1\" cy=\"163.3\" r=\"2.6\"/><text class=\"ft\" x=\"217.2\" y=\"173.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A₁</text><circle class=\"fp\" cx=\"165.5\" cy=\"58.7\" r=\"2.6\"/><text class=\"ft\" x=\"164.3\" y=\"45.8\" text-anchor=\"middle\" dominant-baseline=\"central\">B₁</text></svg></figure>"
+  },
+  {
+   "id": "b05-p1-4",
+   "q": "На сторонах $AB$ и $AC$ треугольника $ABC$ отмечены точки $M$ и $N$ так, что $MN\\parallel BC$ и $AM:AB=2:5$. а) Докажите, что площади треугольников $AMN$ и $ABC$ относятся как $4:25$. б) Найдите площадь $ABC$, если площадь $AMN$ равна $8$.",
+   "a": 50,
+   "hint": "Площади подобных фигур относятся как квадрат коэффициента подобия.",
+   "sol": [
+    "а) $\\triangle AMN\\sim\\triangle ABC$ с коэффициентом $k=\\dfrac25$, площади относятся как $k^2=\\dfrac4{25}$.",
+    "б) $S_{ABC}=8\\cdot\\dfrac{25}4=50$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 182.8\" width=\"270\" height=\"182.8\" role=\"img\" aria-label=\"Треугольник ABC, MN параллельна BC, AM:AB=2:5\"><line class=\"fl\" x1=\"26\" y1=\"156.8\" x2=\"244\" y2=\"156.8\"/><line class=\"fl\" x1=\"244\" y1=\"156.8\" x2=\"91.4\" y2=\"26\"/><line class=\"fl\" x1=\"91.4\" y1=\"26\" x2=\"26\" y2=\"156.8\"/><line class=\"fl\" x1=\"113.2\" y1=\"156.8\" x2=\"52.2\" y2=\"104.5\"/><circle class=\"fp\" cx=\"26\" cy=\"156.8\" r=\"2.6\"/><text class=\"ft\" x=\"14.2\" y=\"162.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"156.8\" r=\"2.6\"/><text class=\"ft\" x=\"256.6\" y=\"160.1\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"91.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"89.5\" y=\"13.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"113.2\" cy=\"156.8\" r=\"2.6\"/><text class=\"ft\" x=\"115.9\" y=\"169.5\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"52.2\" cy=\"104.5\" r=\"2.6\"/><text class=\"ft\" x=\"39.7\" y=\"100.8\" text-anchor=\"middle\" dominant-baseline=\"central\">N</text></svg></figure>"
+  },
+  {
+   "id": "b05-p1-5",
+   "q": "Из точки $P$ вне окружности проведены две секущие: $PAB$ и $PCD$ ($A$ и $C$ ближе к $P$). а) Докажите, что $\\triangle PAD\\sim\\triangle PCB$. б) Найдите $PD$, если $PA=3$, $PB=13$, $PC=3{,}9$.",
+   "a": 10,
+   "hint": "Из подобия $\\dfrac{PA}{PC}=\\dfrac{PD}{PB}$, то есть $PA\\cdot PB=PC\\cdot PD$.",
+   "sol": [
+    "а) Вписанные углы $DAB$ и $DCB$ опираются на одну дугу $DB$, значит они равны, и смежные с ними углы тоже: $\\angle PAD=\\angle PCB$. Угол $P$ общий. Подобие по двум углам.",
+    "б) $\\dfrac{PA}{PC}=\\dfrac{PD}{PB}$, $PD=\\dfrac{PA\\cdot PB}{PC}=\\dfrac{39}{3{,}9}=10$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 219.7\" width=\"270\" height=\"219.7\" role=\"img\" aria-label=\"Две секущие из точки P к окружности\"><circle class=\"fl\" cx=\"160.2\" cy=\"109.8\" r=\"83.8\"/><line class=\"fl\" x1=\"26\" y1=\"109.8\" x2=\"244\" y2=\"109.8\"/><line class=\"fl\" x1=\"26\" y1=\"109.8\" x2=\"171.7\" y2=\"26.8\"/><line class=\"fl\" x1=\"76.3\" y1=\"109.8\" x2=\"171.7\" y2=\"26.8\"/><line class=\"fl\" x1=\"82.8\" y1=\"77.5\" x2=\"244\" y2=\"109.8\"/><circle class=\"fp\" cx=\"26\" cy=\"109.8\" r=\"2.6\"/><text class=\"ft\" x=\"13.4\" y=\"112.9\" text-anchor=\"middle\" dominant-baseline=\"central\">P</text><circle class=\"fp\" cx=\"76.3\" cy=\"109.8\" r=\"2.6\"/><text class=\"ft\" x=\"64.8\" y=\"115.9\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"109.8\" r=\"2.6\"/><text class=\"ft\" x=\"256.8\" y=\"112.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"82.8\" cy=\"77.5\" r=\"2.6\"/><text class=\"ft\" x=\"70.2\" y=\"74.3\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"171.7\" cy=\"26.8\" r=\"2.6\"/><text class=\"ft\" x=\"180.2\" y=\"16.9\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  }
+ ],
+ "hard": [
+  {
+   "id": "b05-p1-h1",
+   "q": "В параллелограмме $ABCD$ точка $M$ лежит на $AD$, причём $AM:MD=1:2$. Отрезок $BM$ пересекает диагональ $AC$ в точке $K$. а) Докажите, что $AK:KC=1:3$. б) Найдите $AC$, если $AK=2{,}5$.",
+   "a": 10,
+   "hint": "Треугольники $AKM$ и $CKB$ подобны. Чему равно $\\dfrac{AM}{CB}$?",
+   "sol": [
+    "а) $AD\\parallel BC$, поэтому $\\angle KAM=\\angle KCB$ и $\\angle KMA=\\angle KBC$ (накрест лежащие). Подобие $\\triangle AKM\\sim\\triangle CKB$.",
+    "$\\dfrac{AK}{KC}=\\dfrac{AM}{CB}=\\dfrac{AM}{AD}=\\dfrac13$.",
+    "б) $AC=AK+KC=4\\,AK=10$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Параллелограмм ABCD, отрезок BM пересекает диагональ AC в точке K\"><line class=\"fl\" x1=\"53.7\" y1=\"209\" x2=\"175.7\" y2=\"168.3\"/><line class=\"fl\" x1=\"175.7\" y1=\"168.3\" x2=\"216.3\" y2=\"26\"/><line class=\"fl\" x1=\"216.3\" y1=\"26\" x2=\"94.3\" y2=\"66.7\"/><line class=\"fl\" x1=\"94.3\" y1=\"66.7\" x2=\"53.7\" y2=\"209\"/><line class=\"fl\" x1=\"53.7\" y1=\"209\" x2=\"216.3\" y2=\"26\"/><line class=\"fl\" x1=\"175.7\" y1=\"168.3\" x2=\"67.2\" y2=\"161.6\"/><circle class=\"fp\" cx=\"53.7\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"45.4\" y=\"219\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"175.7\" cy=\"168.3\" r=\"2.6\"/><text class=\"ft\" x=\"186.8\" y=\"175.1\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"216.3\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"225.2\" y=\"16.5\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"94.3\" cy=\"66.7\" r=\"2.6\"/><text class=\"ft\" x=\"90.1\" y=\"54.4\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"67.2\" cy=\"161.6\" r=\"2.6\"/><text class=\"ft\" x=\"56\" y=\"168.1\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"94.3\" cy=\"163.2\" r=\"2.6\"/><text class=\"ft\" x=\"86.6\" y=\"173.7\" text-anchor=\"middle\" dominant-baseline=\"central\">K</text></svg></figure>"
+  },
+  {
+   "id": "b05-p1-h2",
+   "q": "В треугольнике $ABC$ проведена биссектриса $AD$. а) Докажите, что $\\dfrac{BD}{DC}=\\dfrac{AB}{AC}$. б) Найдите $BD$, если $AB=6$, $AC=9$, $BC=10$.",
+   "a": 4,
+   "hint": "Через $C$ проведите прямую, параллельную $AD$, до пересечения с продолжением $BA$.",
+   "sol": [
+    "а) Пусть прямая через $C$, параллельная $AD$, пересекает продолжение $BA$ в точке $E$. Тогда $\\angle AEC=\\angle BAD=\\angle DAC=\\angle ACE$, поэтому $AE=AC$.",
+    "По теореме о пропорциональных отрезках $\\dfrac{BD}{DC}=\\dfrac{BA}{AE}=\\dfrac{AB}{AC}$.",
+    "б) $BD:DC=6:9$, значит $BD=10\\cdot\\dfrac6{15}=4$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник ABC с биссектрисой AD\"><line class=\"fl\" x1=\"73.2\" y1=\"209\" x2=\"196.8\" y2=\"209\"/><line class=\"fl\" x1=\"196.8\" y1=\"209\" x2=\"102.4\" y2=\"26\"/><line class=\"fl\" x1=\"102.4\" y1=\"26\" x2=\"73.2\" y2=\"209\"/><line class=\"fl\" x1=\"73.2\" y1=\"209\" x2=\"159\" y2=\"135.8\"/><circle class=\"fp\" cx=\"73.2\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"64.4\" y=\"218.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"196.8\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"206\" y=\"218.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"102.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"99.2\" y=\"13.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"159\" cy=\"135.8\" r=\"2.6\"/><text class=\"ft\" x=\"171.3\" y=\"131.5\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "id": "b05-p1-h3",
+   "q": "Точка $D$ лежит на стороне $AC$ треугольника $ABC$, причём $\\angle ABD=\\angle ACB$. а) Докажите, что $AB^2=AD\\cdot AC$. б) Найдите $AC$, если $AB=6$, $AD=4$.",
+   "a": 9,
+   "hint": "Докажите подобие треугольников $ABD$ и $ACB$.",
+   "sol": [
+    "а) У треугольников $ABD$ и $ACB$ общий угол $A$ и $\\angle ABD=\\angle ACB$. Подобие по двум углам: $\\dfrac{AB}{AC}=\\dfrac{AD}{AB}$.",
+    "Отсюда $AB^2=AD\\cdot AC$.",
+    "б) $AC=\\dfrac{36}4=9$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 177.9\" width=\"270\" height=\"177.9\" role=\"img\" aria-label=\"Треугольник ABC, D на стороне AC, углы ABD и ACB равны\"><line class=\"fl\" x1=\"26\" y1=\"151.9\" x2=\"98.7\" y2=\"26\"/><line class=\"fl\" x1=\"98.7\" y1=\"26\" x2=\"244\" y2=\"151.9\"/><line class=\"fl\" x1=\"244\" y1=\"151.9\" x2=\"26\" y2=\"151.9\"/><line class=\"fl\" x1=\"98.7\" y1=\"26\" x2=\"122.9\" y2=\"151.9\"/><path class=\"fa\" d=\"M89.7 41.6 A18 18 0 0 0 102.1 43.7\"/><path class=\"fa\" d=\"M230.4 140.1 A18 18 0 0 0 226 151.9\"/><circle class=\"fp\" cx=\"26\" cy=\"151.9\" r=\"2.6\"/><text class=\"ft\" x=\"13.6\" y=\"155.9\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"98.7\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"95.4\" y=\"13.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"151.9\" r=\"2.6\"/><text class=\"ft\" x=\"256.6\" y=\"155.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"122.9\" cy=\"151.9\" r=\"2.6\"/><text class=\"ft\" x=\"122.9\" y=\"164.9\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "id": "b05-p1-h4",
+   "q": "Диагонали трапеции $ABCD$ с основаниями $BC$ и $AD$ пересекаются в точке $O$. а) Докажите, что площади треугольников $ABO$ и $CDO$ равны. б) Найдите площадь $CDO$, если площади треугольников $BOC$ и $AOD$ равны $4$ и $9$.",
+   "a": 6,
+   "hint": "У треугольников $ABD$ и $ACD$ общее основание и равные высоты. Затем вспомните, как относятся площади $BOC$ и $AOD$.",
+   "sol": [
+    "а) $S_{ABD}=S_{ACD}$ (общее основание $AD$, высоты равны высоте трапеции). Вычтем общую часть $S_{AOD}$: $S_{ABO}=S_{CDO}$.",
+    "б) $\\triangle BOC\\sim\\triangle DOA$, коэффициент $k$, и $k^2=\\dfrac49$, $k=\\dfrac23$, $\\dfrac{BO}{OD}=\\dfrac23$.",
+    "Треугольники $AOB$ и $AOD$ имеют общую высоту из $A$, поэтому $\\dfrac{S_{AOB}}{S_{AOD}}=\\dfrac{BO}{OD}=\\dfrac23$, откуда $S_{AOB}=6$. Тогда $S_{CDO}=6$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 233.7\" width=\"270\" height=\"233.7\" role=\"img\" aria-label=\"Трапеция с диагоналями, площади двух треугольников 4 и 9\"><line class=\"fl\" x1=\"26\" y1=\"207.7\" x2=\"62.3\" y2=\"26\"/><line class=\"fl\" x1=\"62.3\" y1=\"26\" x2=\"207.7\" y2=\"26\"/><line class=\"fl\" x1=\"207.7\" y1=\"26\" x2=\"244\" y2=\"207.7\"/><line class=\"fl\" x1=\"244\" y1=\"207.7\" x2=\"26\" y2=\"207.7\"/><line class=\"fl\" x1=\"26\" y1=\"207.7\" x2=\"207.7\" y2=\"26\"/><line class=\"fl\" x1=\"62.3\" y1=\"26\" x2=\"244\" y2=\"207.7\"/><text class=\"ft fn\" x=\"135\" y=\"62.3\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><text class=\"ft fn\" x=\"135\" y=\"175\" text-anchor=\"middle\" dominant-baseline=\"central\">9</text><circle class=\"fp\" cx=\"26\" cy=\"207.7\" r=\"2.6\"/><text class=\"ft\" x=\"16.2\" y=\"216.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"62.3\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"54\" y=\"16\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"207.7\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"216\" y=\"16\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"244\" cy=\"207.7\" r=\"2.6\"/><text class=\"ft\" x=\"253.8\" y=\"216.2\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"98.7\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"110.7\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>",
+   "top": true
+  },
+  {
+   "id": "b05-p1-h5",
+   "q": "Диагонали равнобедренной трапеции $ABCD$ перпендикулярны. а) Докажите, что высота трапеции равна полусумме оснований. б) Найдите площадь трапеции, если $BC=6$, $AD=14$.",
+   "a": 100,
+   "hint": "Пусть диагонали пересекаются в $O$. Какие углы $45^\\circ$ получаются при основаниях?",
+   "sol": [
+    "а) Диагонали равны и перпендикулярны, поэтому $\\triangle AOD$ прямоугольный равнобедренный. Высота из $O$ к $AD$ равна $\\dfrac{AD}2$, аналогично высота из $O$ к $BC$ равна $\\dfrac{BC}2$. Они лежат на одной прямой, высота трапеции $h=\\dfrac{AD+BC}2$.",
+    "б) $h=\\dfrac{14+6}2=10$, площадь $\\dfrac{AD+BC}2\\cdot h=10\\cdot10=100$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 207.7\" width=\"270\" height=\"207.7\" role=\"img\" aria-label=\"Равнобедренная трапеция с перпендикулярными диагоналями\"><line class=\"fl\" x1=\"26\" y1=\"181.7\" x2=\"88.3\" y2=\"26\"/><line class=\"fl\" x1=\"88.3\" y1=\"26\" x2=\"181.7\" y2=\"26\"/><line class=\"fl\" x1=\"181.7\" y1=\"26\" x2=\"244\" y2=\"181.7\"/><line class=\"fl\" x1=\"244\" y1=\"181.7\" x2=\"26\" y2=\"181.7\"/><line class=\"fl\" x1=\"26\" y1=\"181.7\" x2=\"181.7\" y2=\"26\"/><line class=\"fl\" x1=\"88.3\" y1=\"26\" x2=\"244\" y2=\"181.7\"/><path class=\"fa\" d=\"M127.9 79.8 L120.9 72.7 L127.9 65.6\"/><circle class=\"fp\" cx=\"26\" cy=\"181.7\" r=\"2.6\"/><text class=\"ft\" x=\"15.7\" y=\"189.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"88.3\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"81.2\" y=\"15.1\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"181.7\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"188.8\" y=\"15.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"244\" cy=\"181.7\" r=\"2.6\"/><text class=\"ft\" x=\"254.3\" y=\"189.7\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"72.7\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"60.7\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>",
+   "top": true
+  }
+ ],
+ "rubric": {
+  "h": "Оцени своё решение по критериям ЕГЭ",
+  "lead": "На экзамене задание части 2 проверяет эксперт, а не компьютер. Сайт проверил только число в пункте «б». Остальное сверь со своей записью и поставь отметки.",
+  "items": [
+   "В пункте «а» каждый шаг доказательства назван и обоснован: указано, какая теорема или свойство применяется",
+   "В доказательстве нет «видно из чертежа»: равенства и параллельность выведены, а не прочитаны с рисунка",
+   "В пункте «б» использовано то, что доказано в пункте «а»",
+   "Вычисления доведены до числа, ответ записан в нужной форме",
+   "Ответ совпал с ответом сайта. Если нет, найди строку, где решение разошлось с разбором"
+  ]
+ },
+ "id": "l06",
+ "title": "Задание 18. Доказательство и расчёт: подобие и равенство треугольников",
+ "plus": true,
+ "minutes": 90
+}

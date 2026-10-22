@@ -1,0 +1,230 @@
+{
+ "id": "l02",
+ "title": "Скалярное произведение, угол и перпендикулярность",
+ "minutes": 90,
+ "intro": "Скалярное произведение даёт косинус угла и условие перпендикулярности. Эти приёмы нужны в заданиях № 2 и позже в стереометрии, где расстояния и углы считают методом координат.",
+ "theory": [
+  {
+   "h": "Скалярное произведение",
+   "html": "<p>Скалярное произведение двух векторов это <b>число</b>:</p>$$\\vec a\\cdot\\vec b=|\\vec a|\\,|\\vec b|\\cos\\varphi,$$<p>где $\\varphi$ угол между векторами при общем начале. В координатах это проще:</p>$$\\vec a\\cdot\\vec b=x_1x_2+y_1y_2.$$<p>В пространстве добавляется $+z_1z_2$.</p><figure class=\"fig\"><svg viewBox=\"0 0 270 226.4\" width=\"270\" height=\"226.4\" role=\"img\" aria-label=\"Два вектора a и b с общим началом и угол φ между ними\"><line class=\"fv\" x1=\"26\" y1=\"200.4\" x2=\"237.5\" y2=\"200.4\"/><polygon class=\"fvh\" points=\"244,200.4 236,204 236,196.8\"/><text class=\"ft fv2\" x=\"135\" y=\"213.4\" text-anchor=\"middle\" dominant-baseline=\"central\">a</text><path class=\"fa\" d=\"M128.4 203.4 L141.6 203.4 M138.6 200.9 L141.6 203.4 L138.6 205.9\" /><line class=\"fv\" x1=\"26\" y1=\"200.4\" x2=\"152.9\" y2=\"31.2\"/><polygon class=\"fvh\" points=\"156.8,26 154.9,34.6 149.1,30.2\"/><text class=\"ft fv2\" x=\"101.8\" y=\"121\" text-anchor=\"middle\" dominant-baseline=\"central\">b</text><path class=\"fa\" d=\"M95.2 111 L108.4 111 M105.4 108.5 L108.4 111 L105.4 113.5\" /><path class=\"fa\" d=\"M52 200.4 A26 26 0 0 0 41.6 179.6\"/><text class=\"ft fn\" x=\"60\" y=\"183.4\" text-anchor=\"middle\" dominant-baseline=\"central\">φ</text></svg></figure><p class=\"warn-box\">Скалярное произведение не вектор, а число. Складывать его с вектором нельзя.</p>"
+  },
+  {
+   "h": "Угол между векторами",
+   "html": "<p>Из определения получаем косинус угла:</p>$$\\cos\\varphi=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a|\\,|\\vec b|}.$$<ul><li>Если $\\vec a\\cdot\\vec b>0$, угол острый.</li><li>Если $\\vec a\\cdot\\vec b<0$, угол тупой.</li><li>Если $\\vec a\\cdot\\vec b=0$, угол прямой.</li></ul><p>Запомните значения: $\\cos60^\\circ=\\dfrac12$, $\\cos45^\\circ=\\dfrac{\\sqrt2}2$, $\\cos120^\\circ=-\\dfrac12$, $\\cos135^\\circ=-\\dfrac{\\sqrt2}2$.</p>"
+  },
+  {
+   "h": "Перпендикулярность и параллельность",
+   "html": "<ul><li>$\\vec a\\perp\\vec b\\iff\\vec a\\cdot\\vec b=0$. Нулевой вектор перпендикулярен любому.</li><li>$\\vec a\\parallel\\vec b\\iff x_1y_2=x_2y_1$ (координаты пропорциональны).</li></ul><p>Если в условии есть неизвестный параметр $k$, запишите нужное условие и решите получившееся уравнение.</p><p class=\"warn-box\">Угол между векторами считается при общем начале. Если у $\\overrightarrow{AB}$ и $\\overrightarrow{BC}$ начала разные, угол между ними равен $180^\\circ$ минус угол $B$ треугольника. Либо возьмите $\\overrightarrow{BA}$ вместо $\\overrightarrow{AB}$, либо смените знак у скалярного произведения.</p>"
+  },
+  {
+   "h": "Полезные приёмы",
+   "html": "<ul><li>$\\vec a\\cdot\\vec a=|\\vec a|^2$.</li><li>$|\\vec a+\\vec b|^2=|\\vec a|^2+2\\,\\vec a\\cdot\\vec b+|\\vec b|^2$, а для разности знак у среднего слагаемого минус.</li><li>В квадрате, прямоугольнике, ромбе удобно ввести координаты: одну вершину в начало, стороны вдоль осей.</li><li>В ромбе диагонали перпендикулярны. В квадрате угол между стороной и диагональю $45^\\circ$.</li><li>В пространстве длина вектора $\\sqrt{x^2+y^2+z^2}$, расстояние между точками считается так же по разностям координат.</li></ul>"
+  }
+ ],
+ "examples": [
+  {
+   "q": "Найдите скалярное произведение векторов $\\vec a(3;-2)$ и $\\vec b(5;4)$.",
+   "steps": [
+    "В координатах: $\\vec a\\cdot\\vec b=x_1x_2+y_1y_2$.",
+    "$\\vec a\\cdot\\vec b=3\\cdot5+(-2)\\cdot4=15-8=7$."
+   ],
+   "a": 7,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Векторы a(3;-2) и b(5;4) с общим началом в начале координат\"><line class=\"fgr\" x1=\"43.5\" y1=\"209\" x2=\"43.5\" y2=\"26\"/><line class=\"fgr\" x1=\"63.8\" y1=\"209\" x2=\"63.8\" y2=\"26\"/><line class=\"fgr\" x1=\"84.2\" y1=\"209\" x2=\"84.2\" y2=\"26\"/><line class=\"fgr\" x1=\"104.5\" y1=\"209\" x2=\"104.5\" y2=\"26\"/><line class=\"fgr\" x1=\"124.8\" y1=\"209\" x2=\"124.8\" y2=\"26\"/><line class=\"fgr\" x1=\"145.2\" y1=\"209\" x2=\"145.2\" y2=\"26\"/><line class=\"fgr\" x1=\"165.5\" y1=\"209\" x2=\"165.5\" y2=\"26\"/><line class=\"fgr\" x1=\"185.8\" y1=\"209\" x2=\"185.8\" y2=\"26\"/><line class=\"fgr\" x1=\"206.2\" y1=\"209\" x2=\"206.2\" y2=\"26\"/><line class=\"fgr\" x1=\"226.5\" y1=\"209\" x2=\"226.5\" y2=\"26\"/><line class=\"fgr\" x1=\"43.5\" y1=\"209\" x2=\"226.5\" y2=\"209\"/><line class=\"fgr\" x1=\"43.5\" y1=\"188.7\" x2=\"226.5\" y2=\"188.7\"/><line class=\"fgr\" x1=\"43.5\" y1=\"168.3\" x2=\"226.5\" y2=\"168.3\"/><line class=\"fgr\" x1=\"43.5\" y1=\"148\" x2=\"226.5\" y2=\"148\"/><line class=\"fgr\" x1=\"43.5\" y1=\"127.7\" x2=\"226.5\" y2=\"127.7\"/><line class=\"fgr\" x1=\"43.5\" y1=\"107.3\" x2=\"226.5\" y2=\"107.3\"/><line class=\"fgr\" x1=\"43.5\" y1=\"87\" x2=\"226.5\" y2=\"87\"/><line class=\"fgr\" x1=\"43.5\" y1=\"66.7\" x2=\"226.5\" y2=\"66.7\"/><line class=\"fgr\" x1=\"43.5\" y1=\"46.3\" x2=\"226.5\" y2=\"46.3\"/><line class=\"fgr\" x1=\"43.5\" y1=\"26\" x2=\"226.5\" y2=\"26\"/><line class=\"fax\" x1=\"43.5\" y1=\"127.7\" x2=\"226.5\" y2=\"127.7\"/><text class=\"ft fn fs\" x=\"222.5\" y=\"118.7\">x</text><text class=\"ft fn fs\" x=\"43.5\" y=\"138.7\" text-anchor=\"middle\">-2</text><text class=\"ft fn fs\" x=\"124.8\" y=\"138.7\" text-anchor=\"middle\">2</text><text class=\"ft fn fs\" x=\"165.5\" y=\"138.7\" text-anchor=\"middle\">4</text><text class=\"ft fn fs\" x=\"206.2\" y=\"138.7\" text-anchor=\"middle\">6</text><line class=\"fax\" x1=\"84.2\" y1=\"209\" x2=\"84.2\" y2=\"26\"/><text class=\"ft fn fs\" x=\"90.2\" y=\"30\">y</text><text class=\"ft fn fs\" x=\"80.2\" y=\"209\" text-anchor=\"end\" dominant-baseline=\"central\">-4</text><text class=\"ft fn fs\" x=\"80.2\" y=\"168.3\" text-anchor=\"end\" dominant-baseline=\"central\">-2</text><text class=\"ft fn fs\" x=\"80.2\" y=\"87\" text-anchor=\"end\" dominant-baseline=\"central\">2</text><text class=\"ft fn fs\" x=\"80.2\" y=\"46.3\" text-anchor=\"end\" dominant-baseline=\"central\">4</text><line class=\"fv\" x1=\"84.2\" y1=\"127.7\" x2=\"139.8\" y2=\"164.7\"/><polygon class=\"fvh\" points=\"145.2,168.3 136.5,166.9 140.5,160.9\"/><text class=\"ft fv2\" x=\"107.5\" y=\"158.8\" text-anchor=\"middle\" dominant-baseline=\"central\">a</text><path class=\"fa\" d=\"M100.9 148.8 L114.1 148.8 M111.1 146.3 L114.1 148.8 L111.1 151.3\" /><line class=\"fv\" x1=\"84.2\" y1=\"127.7\" x2=\"180.8\" y2=\"50.4\"/><polygon class=\"fvh\" points=\"185.8,46.3 181.8,54.1 177.3,48.5\"/><text class=\"ft fv2\" x=\"143.1\" y=\"97.2\" text-anchor=\"middle\" dominant-baseline=\"central\">b</text><path class=\"fa\" d=\"M136.5 87.2 L149.7 87.2 M146.7 84.7 L149.7 87.2 L146.7 89.7\" /></svg></figure>"
+  },
+  {
+   "q": "Найдите косинус угла между векторами $\\vec a(3;4)$ и $\\vec b(4;3)$.",
+   "steps": [
+    "Скалярное произведение: $\\vec a\\cdot\\vec b=3\\cdot4+4\\cdot3=24$.",
+    "Длины: $|\\vec a|=\\sqrt{9+16}=5$, $|\\vec b|=\\sqrt{16+9}=5$.",
+    "$\\cos\\varphi=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a|\\,|\\vec b|}=\\dfrac{24}{25}=0{,}96$."
+   ],
+   "a": 0.96,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Два вектора a(3;4) и b(4;3) с общим началом и угол между ними\"><line class=\"fgr\" x1=\"43.5\" y1=\"209\" x2=\"43.5\" y2=\"26\"/><line class=\"fgr\" x1=\"69.6\" y1=\"209\" x2=\"69.6\" y2=\"26\"/><line class=\"fgr\" x1=\"95.8\" y1=\"209\" x2=\"95.8\" y2=\"26\"/><line class=\"fgr\" x1=\"121.9\" y1=\"209\" x2=\"121.9\" y2=\"26\"/><line class=\"fgr\" x1=\"148.1\" y1=\"209\" x2=\"148.1\" y2=\"26\"/><line class=\"fgr\" x1=\"174.2\" y1=\"209\" x2=\"174.2\" y2=\"26\"/><line class=\"fgr\" x1=\"200.4\" y1=\"209\" x2=\"200.4\" y2=\"26\"/><line class=\"fgr\" x1=\"226.5\" y1=\"209\" x2=\"226.5\" y2=\"26\"/><line class=\"fgr\" x1=\"43.5\" y1=\"209\" x2=\"226.5\" y2=\"209\"/><line class=\"fgr\" x1=\"43.5\" y1=\"182.9\" x2=\"226.5\" y2=\"182.9\"/><line class=\"fgr\" x1=\"43.5\" y1=\"156.7\" x2=\"226.5\" y2=\"156.7\"/><line class=\"fgr\" x1=\"43.5\" y1=\"130.6\" x2=\"226.5\" y2=\"130.6\"/><line class=\"fgr\" x1=\"43.5\" y1=\"104.4\" x2=\"226.5\" y2=\"104.4\"/><line class=\"fgr\" x1=\"43.5\" y1=\"78.3\" x2=\"226.5\" y2=\"78.3\"/><line class=\"fgr\" x1=\"43.5\" y1=\"52.1\" x2=\"226.5\" y2=\"52.1\"/><line class=\"fgr\" x1=\"43.5\" y1=\"26\" x2=\"226.5\" y2=\"26\"/><line class=\"fax\" x1=\"43.5\" y1=\"182.9\" x2=\"226.5\" y2=\"182.9\"/><text class=\"ft fn fs\" x=\"222.5\" y=\"173.9\">x</text><text class=\"ft fn fs\" x=\"43.5\" y=\"193.9\" text-anchor=\"middle\">-1</text><text class=\"ft fn fs\" x=\"95.8\" y=\"193.9\" text-anchor=\"middle\">1</text><text class=\"ft fn fs\" x=\"121.9\" y=\"193.9\" text-anchor=\"middle\">2</text><text class=\"ft fn fs\" x=\"148.1\" y=\"193.9\" text-anchor=\"middle\">3</text><text class=\"ft fn fs\" x=\"174.2\" y=\"193.9\" text-anchor=\"middle\">4</text><text class=\"ft fn fs\" x=\"200.4\" y=\"193.9\" text-anchor=\"middle\">5</text><text class=\"ft fn fs\" x=\"226.5\" y=\"193.9\" text-anchor=\"middle\">6</text><line class=\"fax\" x1=\"69.6\" y1=\"209\" x2=\"69.6\" y2=\"26\"/><text class=\"ft fn fs\" x=\"75.6\" y=\"30\">y</text><text class=\"ft fn fs\" x=\"65.6\" y=\"209\" text-anchor=\"end\" dominant-baseline=\"central\">-1</text><text class=\"ft fn fs\" x=\"65.6\" y=\"156.7\" text-anchor=\"end\" dominant-baseline=\"central\">1</text><text class=\"ft fn fs\" x=\"65.6\" y=\"130.6\" text-anchor=\"end\" dominant-baseline=\"central\">2</text><text class=\"ft fn fs\" x=\"65.6\" y=\"104.4\" text-anchor=\"end\" dominant-baseline=\"central\">3</text><text class=\"ft fn fs\" x=\"65.6\" y=\"78.3\" text-anchor=\"end\" dominant-baseline=\"central\">4</text><text class=\"ft fn fs\" x=\"65.6\" y=\"52.1\" text-anchor=\"end\" dominant-baseline=\"central\">5</text><text class=\"ft fn fs\" x=\"65.6\" y=\"26\" text-anchor=\"end\" dominant-baseline=\"central\">6</text><line class=\"fv\" x1=\"69.6\" y1=\"182.9\" x2=\"144.2\" y2=\"83.5\"/><polygon class=\"fvh\" points=\"148.1,78.3 146.2,86.8 140.4,82.5\"/><text class=\"ft fv2\" x=\"119.3\" y=\"138.4\" text-anchor=\"middle\" dominant-baseline=\"central\">a</text><path class=\"fa\" d=\"M112.7 128.4 L125.9 128.4 M122.9 125.9 L125.9 128.4 L122.9 130.9\" /><line class=\"fv\" x1=\"69.6\" y1=\"182.9\" x2=\"169\" y2=\"108.3\"/><polygon class=\"fvh\" points=\"174.2,104.4 170,112.1 165.7,106.3\"/><text class=\"ft fv2\" x=\"129.7\" y=\"154\" text-anchor=\"middle\" dominant-baseline=\"central\">b</text><path class=\"fa\" d=\"M123.1 144 L136.3 144 M133.3 141.5 L136.3 144 L133.3 146.5\" /><path class=\"fa\" d=\"M90.4 167.3 A26 26 0 0 0 85.2 162.1\"/><text class=\"ft fn\" x=\"96.5\" y=\"156\" text-anchor=\"middle\" dominant-baseline=\"central\">φ</text></svg></figure>"
+  },
+  {
+   "q": "При каком значении $k$ векторы $\\vec a(k;3)$ и $\\vec b(2;-4)$ перпендикулярны?",
+   "steps": [
+    "Векторы перпендикулярны, когда их скалярное произведение равно нулю.",
+    "$\\vec a\\cdot\\vec b=2k-12=0$.",
+    "$k=6$."
+   ],
+   "a": 6,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Перпендикулярные векторы a(6;3) и b(2;-4)\"><line class=\"fgr\" x1=\"43.5\" y1=\"209\" x2=\"43.5\" y2=\"26\"/><line class=\"fgr\" x1=\"61.8\" y1=\"209\" x2=\"61.8\" y2=\"26\"/><line class=\"fgr\" x1=\"80.1\" y1=\"209\" x2=\"80.1\" y2=\"26\"/><line class=\"fgr\" x1=\"98.4\" y1=\"209\" x2=\"98.4\" y2=\"26\"/><line class=\"fgr\" x1=\"116.7\" y1=\"209\" x2=\"116.7\" y2=\"26\"/><line class=\"fgr\" x1=\"135\" y1=\"209\" x2=\"135\" y2=\"26\"/><line class=\"fgr\" x1=\"153.3\" y1=\"209\" x2=\"153.3\" y2=\"26\"/><line class=\"fgr\" x1=\"171.6\" y1=\"209\" x2=\"171.6\" y2=\"26\"/><line class=\"fgr\" x1=\"189.9\" y1=\"209\" x2=\"189.9\" y2=\"26\"/><line class=\"fgr\" x1=\"208.2\" y1=\"209\" x2=\"208.2\" y2=\"26\"/><line class=\"fgr\" x1=\"226.5\" y1=\"209\" x2=\"226.5\" y2=\"26\"/><line class=\"fgr\" x1=\"43.5\" y1=\"209\" x2=\"226.5\" y2=\"209\"/><line class=\"fgr\" x1=\"43.5\" y1=\"190.7\" x2=\"226.5\" y2=\"190.7\"/><line class=\"fgr\" x1=\"43.5\" y1=\"172.4\" x2=\"226.5\" y2=\"172.4\"/><line class=\"fgr\" x1=\"43.5\" y1=\"154.1\" x2=\"226.5\" y2=\"154.1\"/><line class=\"fgr\" x1=\"43.5\" y1=\"135.8\" x2=\"226.5\" y2=\"135.8\"/><line class=\"fgr\" x1=\"43.5\" y1=\"117.5\" x2=\"226.5\" y2=\"117.5\"/><line class=\"fgr\" x1=\"43.5\" y1=\"99.2\" x2=\"226.5\" y2=\"99.2\"/><line class=\"fgr\" x1=\"43.5\" y1=\"80.9\" x2=\"226.5\" y2=\"80.9\"/><line class=\"fgr\" x1=\"43.5\" y1=\"62.6\" x2=\"226.5\" y2=\"62.6\"/><line class=\"fgr\" x1=\"43.5\" y1=\"44.3\" x2=\"226.5\" y2=\"44.3\"/><line class=\"fgr\" x1=\"43.5\" y1=\"26\" x2=\"226.5\" y2=\"26\"/><line class=\"fax\" x1=\"43.5\" y1=\"117.5\" x2=\"226.5\" y2=\"117.5\"/><text class=\"ft fn fs\" x=\"222.5\" y=\"108.5\">x</text><text class=\"ft fn fs\" x=\"43.5\" y=\"128.5\" text-anchor=\"middle\">-2</text><text class=\"ft fn fs\" x=\"116.7\" y=\"128.5\" text-anchor=\"middle\">2</text><text class=\"ft fn fs\" x=\"153.3\" y=\"128.5\" text-anchor=\"middle\">4</text><text class=\"ft fn fs\" x=\"189.9\" y=\"128.5\" text-anchor=\"middle\">6</text><text class=\"ft fn fs\" x=\"226.5\" y=\"128.5\" text-anchor=\"middle\">8</text><line class=\"fax\" x1=\"80.1\" y1=\"209\" x2=\"80.1\" y2=\"26\"/><text class=\"ft fn fs\" x=\"86.1\" y=\"30\">y</text><text class=\"ft fn fs\" x=\"76.1\" y=\"190.7\" text-anchor=\"end\" dominant-baseline=\"central\">-4</text><text class=\"ft fn fs\" x=\"76.1\" y=\"154.1\" text-anchor=\"end\" dominant-baseline=\"central\">-2</text><text class=\"ft fn fs\" x=\"76.1\" y=\"80.9\" text-anchor=\"end\" dominant-baseline=\"central\">2</text><text class=\"ft fn fs\" x=\"76.1\" y=\"44.3\" text-anchor=\"end\" dominant-baseline=\"central\">4</text><line class=\"fv\" x1=\"80.1\" y1=\"117.5\" x2=\"184.1\" y2=\"65.5\"/><polygon class=\"fvh\" points=\"189.9,62.6 184.4,69.4 181.1,63\"/><text class=\"ft fv2\" x=\"140.8\" y=\"101.7\" text-anchor=\"middle\" dominant-baseline=\"central\">a</text><path class=\"fa\" d=\"M134.2 91.7 L147.4 91.7 M144.4 89.2 L147.4 91.7 L144.4 94.2\" /><line class=\"fv\" x1=\"80.1\" y1=\"117.5\" x2=\"113.8\" y2=\"184.9\"/><polygon class=\"fvh\" points=\"116.7,190.7 109.9,185.2 116.3,181.9\"/><text class=\"ft fv2\" x=\"110\" y=\"148.3\" text-anchor=\"middle\" dominant-baseline=\"central\">b</text><path class=\"fa\" d=\"M103.4 138.3 L116.6 138.3 M113.6 135.8 L116.6 138.3 L113.6 140.8\" /><path class=\"fa\" d=\"M89 113 L93.5 122 L84.6 126.4\"/></svg></figure>"
+  }
+ ],
+ "tasks": [
+  {
+   "id": "b06-l2-1",
+   "q": "Найдите скалярное произведение векторов $\\vec a(-2;5)$ и $\\vec b(3;4)$.",
+   "a": 14,
+   "hint": "Перемножьте абсциссы, перемножьте ординаты и сложите результаты.",
+   "sol": [
+    "$\\vec a\\cdot\\vec b=(-2)\\cdot3+5\\cdot4=-6+20=14$."
+   ]
+  },
+  {
+   "id": "b06-l2-2",
+   "q": "Найдите косинус угла между векторами $\\vec a(0;5)$ и $\\vec b(4;3)$.",
+   "a": 0.6,
+   "hint": "$\\cos\\varphi=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a|\\,|\\vec b|}$. Найдите отдельно произведение и обе длины.",
+   "sol": [
+    "$\\vec a\\cdot\\vec b=0\\cdot4+5\\cdot3=15$.",
+    "$|\\vec a|=5$, $|\\vec b|=\\sqrt{16+9}=5$.",
+    "$\\cos\\varphi=\\dfrac{15}{25}=0{,}6$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Векторы a(0;5) и b(4;3) с общим началом\"><line class=\"fgr\" x1=\"43.5\" y1=\"209\" x2=\"43.5\" y2=\"26\"/><line class=\"fgr\" x1=\"69.6\" y1=\"209\" x2=\"69.6\" y2=\"26\"/><line class=\"fgr\" x1=\"95.8\" y1=\"209\" x2=\"95.8\" y2=\"26\"/><line class=\"fgr\" x1=\"121.9\" y1=\"209\" x2=\"121.9\" y2=\"26\"/><line class=\"fgr\" x1=\"148.1\" y1=\"209\" x2=\"148.1\" y2=\"26\"/><line class=\"fgr\" x1=\"174.2\" y1=\"209\" x2=\"174.2\" y2=\"26\"/><line class=\"fgr\" x1=\"200.4\" y1=\"209\" x2=\"200.4\" y2=\"26\"/><line class=\"fgr\" x1=\"226.5\" y1=\"209\" x2=\"226.5\" y2=\"26\"/><line class=\"fgr\" x1=\"43.5\" y1=\"209\" x2=\"226.5\" y2=\"209\"/><line class=\"fgr\" x1=\"43.5\" y1=\"182.9\" x2=\"226.5\" y2=\"182.9\"/><line class=\"fgr\" x1=\"43.5\" y1=\"156.7\" x2=\"226.5\" y2=\"156.7\"/><line class=\"fgr\" x1=\"43.5\" y1=\"130.6\" x2=\"226.5\" y2=\"130.6\"/><line class=\"fgr\" x1=\"43.5\" y1=\"104.4\" x2=\"226.5\" y2=\"104.4\"/><line class=\"fgr\" x1=\"43.5\" y1=\"78.3\" x2=\"226.5\" y2=\"78.3\"/><line class=\"fgr\" x1=\"43.5\" y1=\"52.1\" x2=\"226.5\" y2=\"52.1\"/><line class=\"fgr\" x1=\"43.5\" y1=\"26\" x2=\"226.5\" y2=\"26\"/><line class=\"fax\" x1=\"43.5\" y1=\"182.9\" x2=\"226.5\" y2=\"182.9\"/><text class=\"ft fn fs\" x=\"222.5\" y=\"173.9\">x</text><text class=\"ft fn fs\" x=\"43.5\" y=\"193.9\" text-anchor=\"middle\">-1</text><text class=\"ft fn fs\" x=\"95.8\" y=\"193.9\" text-anchor=\"middle\">1</text><text class=\"ft fn fs\" x=\"121.9\" y=\"193.9\" text-anchor=\"middle\">2</text><text class=\"ft fn fs\" x=\"148.1\" y=\"193.9\" text-anchor=\"middle\">3</text><text class=\"ft fn fs\" x=\"174.2\" y=\"193.9\" text-anchor=\"middle\">4</text><text class=\"ft fn fs\" x=\"200.4\" y=\"193.9\" text-anchor=\"middle\">5</text><text class=\"ft fn fs\" x=\"226.5\" y=\"193.9\" text-anchor=\"middle\">6</text><line class=\"fax\" x1=\"69.6\" y1=\"209\" x2=\"69.6\" y2=\"26\"/><text class=\"ft fn fs\" x=\"75.6\" y=\"30\">y</text><text class=\"ft fn fs\" x=\"65.6\" y=\"209\" text-anchor=\"end\" dominant-baseline=\"central\">-1</text><text class=\"ft fn fs\" x=\"65.6\" y=\"156.7\" text-anchor=\"end\" dominant-baseline=\"central\">1</text><text class=\"ft fn fs\" x=\"65.6\" y=\"130.6\" text-anchor=\"end\" dominant-baseline=\"central\">2</text><text class=\"ft fn fs\" x=\"65.6\" y=\"104.4\" text-anchor=\"end\" dominant-baseline=\"central\">3</text><text class=\"ft fn fs\" x=\"65.6\" y=\"78.3\" text-anchor=\"end\" dominant-baseline=\"central\">4</text><text class=\"ft fn fs\" x=\"65.6\" y=\"52.1\" text-anchor=\"end\" dominant-baseline=\"central\">5</text><text class=\"ft fn fs\" x=\"65.6\" y=\"26\" text-anchor=\"end\" dominant-baseline=\"central\">6</text><line class=\"fv\" x1=\"69.6\" y1=\"182.9\" x2=\"69.6\" y2=\"58.6\"/><polygon class=\"fvh\" points=\"69.6,52.1 73.2,60.1 66,60.1\"/><text class=\"ft fv2\" x=\"82.6\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">a</text><path class=\"fa\" d=\"M76 107.5 L89.2 107.5 M86.2 105 L89.2 107.5 L86.2 110\" /><line class=\"fv\" x1=\"69.6\" y1=\"182.9\" x2=\"169\" y2=\"108.3\"/><polygon class=\"fvh\" points=\"174.2,104.4 170,112.1 165.7,106.3\"/><text class=\"ft fv2\" x=\"129.7\" y=\"154\" text-anchor=\"middle\" dominant-baseline=\"central\">b</text><path class=\"fa\" d=\"M123.1 144 L136.3 144 M133.3 141.5 L136.3 144 L133.3 146.5\" /></svg></figure>"
+  },
+  {
+   "id": "b06-l2-3",
+   "q": "При каком значении $k$ векторы $\\vec a(k;4)$ и $\\vec b(-6;3)$ перпендикулярны?",
+   "a": 2,
+   "hint": "Условие перпендикулярности: $\\vec a\\cdot\\vec b=0$.",
+   "sol": [
+    "$\\vec a\\cdot\\vec b=-6k+12=0$.",
+    "$k=2$."
+   ]
+  },
+  {
+   "id": "b06-l2-4",
+   "q": "Найдите угол между векторами $\\vec a(1;1)$ и $\\vec b(0;5)$ (в градусах).",
+   "a": 45,
+   "hint": "Найдите косинус угла, затем вспомните, при каком угле он равен $\\dfrac{\\sqrt2}2$.",
+   "sol": [
+    "$\\vec a\\cdot\\vec b=0+5=5$, $|\\vec a|=\\sqrt2$, $|\\vec b|=5$.",
+    "$\\cos\\varphi=\\dfrac{5}{5\\sqrt2}=\\dfrac{\\sqrt2}2$.",
+    "$\\varphi=45^\\circ$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Векторы a(1;1) и b(0;5) с общим началом\"><line class=\"fgr\" x1=\"69.6\" y1=\"209\" x2=\"69.6\" y2=\"26\"/><line class=\"fgr\" x1=\"95.8\" y1=\"209\" x2=\"95.8\" y2=\"26\"/><line class=\"fgr\" x1=\"121.9\" y1=\"209\" x2=\"121.9\" y2=\"26\"/><line class=\"fgr\" x1=\"148.1\" y1=\"209\" x2=\"148.1\" y2=\"26\"/><line class=\"fgr\" x1=\"174.2\" y1=\"209\" x2=\"174.2\" y2=\"26\"/><line class=\"fgr\" x1=\"200.4\" y1=\"209\" x2=\"200.4\" y2=\"26\"/><line class=\"fgr\" x1=\"69.6\" y1=\"209\" x2=\"200.4\" y2=\"209\"/><line class=\"fgr\" x1=\"69.6\" y1=\"182.9\" x2=\"200.4\" y2=\"182.9\"/><line class=\"fgr\" x1=\"69.6\" y1=\"156.7\" x2=\"200.4\" y2=\"156.7\"/><line class=\"fgr\" x1=\"69.6\" y1=\"130.6\" x2=\"200.4\" y2=\"130.6\"/><line class=\"fgr\" x1=\"69.6\" y1=\"104.4\" x2=\"200.4\" y2=\"104.4\"/><line class=\"fgr\" x1=\"69.6\" y1=\"78.3\" x2=\"200.4\" y2=\"78.3\"/><line class=\"fgr\" x1=\"69.6\" y1=\"52.1\" x2=\"200.4\" y2=\"52.1\"/><line class=\"fgr\" x1=\"69.6\" y1=\"26\" x2=\"200.4\" y2=\"26\"/><line class=\"fax\" x1=\"69.6\" y1=\"182.9\" x2=\"200.4\" y2=\"182.9\"/><text class=\"ft fn fs\" x=\"196.4\" y=\"173.9\">x</text><text class=\"ft fn fs\" x=\"69.6\" y=\"193.9\" text-anchor=\"middle\">-1</text><text class=\"ft fn fs\" x=\"121.9\" y=\"193.9\" text-anchor=\"middle\">1</text><text class=\"ft fn fs\" x=\"148.1\" y=\"193.9\" text-anchor=\"middle\">2</text><text class=\"ft fn fs\" x=\"174.2\" y=\"193.9\" text-anchor=\"middle\">3</text><text class=\"ft fn fs\" x=\"200.4\" y=\"193.9\" text-anchor=\"middle\">4</text><line class=\"fax\" x1=\"95.8\" y1=\"209\" x2=\"95.8\" y2=\"26\"/><text class=\"ft fn fs\" x=\"101.8\" y=\"30\">y</text><text class=\"ft fn fs\" x=\"91.8\" y=\"209\" text-anchor=\"end\" dominant-baseline=\"central\">-1</text><text class=\"ft fn fs\" x=\"91.8\" y=\"156.7\" text-anchor=\"end\" dominant-baseline=\"central\">1</text><text class=\"ft fn fs\" x=\"91.8\" y=\"130.6\" text-anchor=\"end\" dominant-baseline=\"central\">2</text><text class=\"ft fn fs\" x=\"91.8\" y=\"104.4\" text-anchor=\"end\" dominant-baseline=\"central\">3</text><text class=\"ft fn fs\" x=\"91.8\" y=\"78.3\" text-anchor=\"end\" dominant-baseline=\"central\">4</text><text class=\"ft fn fs\" x=\"91.8\" y=\"52.1\" text-anchor=\"end\" dominant-baseline=\"central\">5</text><text class=\"ft fn fs\" x=\"91.8\" y=\"26\" text-anchor=\"end\" dominant-baseline=\"central\">6</text><line class=\"fv\" x1=\"95.8\" y1=\"182.9\" x2=\"143.5\" y2=\"135.2\"/><polygon class=\"fvh\" points=\"148.1,130.6 145,138.8 139.9,133.7\"/><text class=\"ft fv2\" x=\"131.1\" y=\"165.9\" text-anchor=\"middle\" dominant-baseline=\"central\">a</text><path class=\"fa\" d=\"M124.5 155.9 L137.7 155.9 M134.7 153.4 L137.7 155.9 L134.7 158.4\" /><line class=\"fv\" x1=\"95.8\" y1=\"182.9\" x2=\"95.8\" y2=\"58.6\"/><polygon class=\"fvh\" points=\"95.8,52.1 99.4,60.1 92.2,60.1\"/><text class=\"ft fv2\" x=\"108.8\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">b</text><path class=\"fa\" d=\"M102.2 107.5 L115.4 107.5 M112.4 105 L115.4 107.5 L112.4 110\" /></svg></figure>"
+  },
+  {
+   "id": "b06-l2-5",
+   "q": "Сторона квадрата $ABCD$ равна $6$. Найдите скалярное произведение $\\overrightarrow{AB}\\cdot\\overrightarrow{AC}$.",
+   "a": 36,
+   "hint": "Диагональ квадрата со стороной $6$ равна $6\\sqrt2$ и образует со стороной угол $45^\\circ$. Либо введите координаты.",
+   "sol": [
+    "Введём координаты: $A(0;0)$, $B(6;0)$, $C(6;6)$.",
+    "$\\overrightarrow{AB}=(6;0)$, $\\overrightarrow{AC}=(6;6)$.",
+    "$\\overrightarrow{AB}\\cdot\\overrightarrow{AC}=36+0=36$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Квадрат ABCD со стороной 6 и векторы AB и AC\"><line class=\"fl\" x1=\"43.5\" y1=\"209\" x2=\"226.5\" y2=\"209\"/><line class=\"fl\" x1=\"226.5\" y1=\"209\" x2=\"226.5\" y2=\"26\"/><line class=\"fl\" x1=\"226.5\" y1=\"26\" x2=\"43.5\" y2=\"26\"/><line class=\"fl\" x1=\"43.5\" y1=\"26\" x2=\"43.5\" y2=\"209\"/><line class=\"fv\" x1=\"43.5\" y1=\"209\" x2=\"220\" y2=\"209\"/><polygon class=\"fvh\" points=\"226.5,209 218.5,212.6 218.5,205.4\"/><line class=\"fv\" x1=\"43.5\" y1=\"209\" x2=\"221.9\" y2=\"30.6\"/><polygon class=\"fvh\" points=\"226.5,26 223.4,34.2 218.3,29.1\"/><circle class=\"fp\" cx=\"43.5\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"34.3\" y=\"218.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"226.5\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"235.7\" y=\"218.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"226.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"235.7\" y=\"16.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"43.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"34.3\" y=\"16.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "id": "b06-l2-6",
+   "q": "Стороны прямоугольника $ABCD$ равны $AB=6$ и $AD=8$. Найдите скалярное произведение $\\overrightarrow{AC}\\cdot\\overrightarrow{BD}$.",
+   "a": 28,
+   "hint": "Введите координаты: $A(0;0)$, $B(6;0)$, $D(0;8)$. Найдите координаты обеих диагоналей.",
+   "sol": [
+    "$C(6;8)$, $\\overrightarrow{AC}=(6;8)$, $\\overrightarrow{BD}=(-6;8)$.",
+    "$\\overrightarrow{AC}\\cdot\\overrightarrow{BD}=-36+64=28$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольник ABCD со сторонами 6 и 8 и диагоналями AC и BD\"><line class=\"fl\" x1=\"66.4\" y1=\"209\" x2=\"203.6\" y2=\"209\"/><line class=\"fl\" x1=\"203.6\" y1=\"209\" x2=\"203.6\" y2=\"26\"/><line class=\"fl\" x1=\"203.6\" y1=\"26\" x2=\"66.4\" y2=\"26\"/><line class=\"fl\" x1=\"66.4\" y1=\"26\" x2=\"66.4\" y2=\"209\"/><line class=\"fl fd\" x1=\"66.4\" y1=\"209\" x2=\"203.6\" y2=\"26\"/><line class=\"fl fd\" x1=\"203.6\" y1=\"209\" x2=\"66.4\" y2=\"26\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><text class=\"ft fn\" x=\"54.4\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">8</text><circle class=\"fp\" cx=\"66.4\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"58.6\" y=\"219.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"203.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"211.4\" y=\"219.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"203.6\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"211.4\" y=\"15.6\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"66.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"58.6\" y=\"15.6\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  }
+ ],
+ "hard": [
+  {
+   "id": "b06-l2-h1",
+   "q": "Длины векторов $|\\vec a|=3$ и $|\\vec b|=4$, угол между ними равен $60^\\circ$. Найдите $\\vec a\\cdot\\vec b$.",
+   "a": 6,
+   "hint": "Используйте определение $\\vec a\\cdot\\vec b=|\\vec a|\\,|\\vec b|\\cos\\varphi$.",
+   "sol": [
+    "$\\cos60^\\circ=\\dfrac12$.",
+    "$\\vec a\\cdot\\vec b=3\\cdot4\\cdot\\dfrac12=6$."
+   ]
+  },
+  {
+   "id": "b06-l2-h2",
+   "q": "Длины векторов $|\\vec a|=2$ и $|\\vec b|=3$, угол между ними равен $120^\\circ$. Найдите $|\\vec a+\\vec b|^2$.",
+   "a": 7,
+   "hint": "$|\\vec a+\\vec b|^2=|\\vec a|^2+2\\,\\vec a\\cdot\\vec b+|\\vec b|^2$.",
+   "sol": [
+    "$\\vec a\\cdot\\vec b=2\\cdot3\\cdot\\cos120^\\circ=-3$.",
+    "$|\\vec a+\\vec b|^2=4+2\\cdot(-3)+9=7$."
+   ]
+  },
+  {
+   "id": "b06-l2-h3",
+   "q": "Даны векторы $\\vec a(1;2)$ и $\\vec b(4;-3)$. При каком $k$ вектор $\\vec a+k\\vec b$ перпендикулярен вектору $\\vec b$?",
+   "a": 0.08,
+   "hint": "Составьте уравнение $(\\vec a+k\\vec b)\\cdot\\vec b=0$ и раскройте скобки.",
+   "sol": [
+    "$\\vec a\\cdot\\vec b=4-6=-2$, $\\vec b\\cdot\\vec b=16+9=25$.",
+    "$(\\vec a+k\\vec b)\\cdot\\vec b=-2+25k=0$.",
+    "$k=\\dfrac2{25}=0{,}08$."
+   ]
+  },
+  {
+   "id": "b06-l2-h4",
+   "q": "Треугольник $ABC$ равносторонний со стороной $4$. Найдите скалярное произведение $\\overrightarrow{AB}\\cdot\\overrightarrow{BC}$.",
+   "a": -8,
+   "hint": "Угол между векторами отсчитывается при общем начале. У $\\overrightarrow{AB}$ и $\\overrightarrow{BC}$ начала разные: перенесите $\\overrightarrow{AB}$ или смените знак.",
+   "sol": [
+    "$\\overrightarrow{AB}\\cdot\\overrightarrow{BC}=-\\overrightarrow{BA}\\cdot\\overrightarrow{BC}$.",
+    "Угол между $\\overrightarrow{BA}$ и $\\overrightarrow{BC}$ равен $60^\\circ$, поэтому $\\overrightarrow{BA}\\cdot\\overrightarrow{BC}=4\\cdot4\\cdot\\dfrac12=8$.",
+    "Ответ: $-8$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Равносторонний треугольник ABC со стороной 4 и векторы AB и BC\"><line class=\"fl\" x1=\"29.3\" y1=\"209\" x2=\"240.7\" y2=\"209\"/><line class=\"fl\" x1=\"240.7\" y1=\"209\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"29.3\" y2=\"209\"/><line class=\"fv\" x1=\"29.3\" y1=\"209\" x2=\"234.2\" y2=\"209\"/><polygon class=\"fvh\" points=\"240.7,209 232.7,212.6 232.7,205.4\"/><line class=\"fv\" x1=\"240.7\" y1=\"209\" x2=\"138.2\" y2=\"31.6\"/><polygon class=\"fvh\" points=\"135,26 142.1,31.1 135.9,34.7\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><circle class=\"fp\" cx=\"29.3\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"18.1\" y=\"215.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"240.7\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"251.9\" y=\"215.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>"
+  },
+  {
+   "id": "b06-l2-h5",
+   "q": "Сторона ромба $ABCD$ равна $5$, угол $A$ равен $60^\\circ$. Найдите скалярное произведение $\\overrightarrow{AB}\\cdot\\overrightarrow{AD}$.",
+   "a": 12.5,
+   "hint": "Угол между векторами с общим началом $A$ это угол ромба при вершине $A$.",
+   "sol": [
+    "Угол между $\\overrightarrow{AB}$ и $\\overrightarrow{AD}$ равен углу $A$, то есть $60^\\circ$.",
+    "$\\overrightarrow{AB}\\cdot\\overrightarrow{AD}=5\\cdot5\\cdot\\dfrac12=12{,}5$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 177.9\" width=\"270\" height=\"177.9\" role=\"img\" aria-label=\"Ромб ABCD со стороной 5 и углом A, равным 60 градусам\"><line class=\"fl\" x1=\"26\" y1=\"151.9\" x2=\"171.3\" y2=\"151.9\"/><line class=\"fl\" x1=\"171.3\" y1=\"151.9\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"98.7\" y2=\"26\"/><line class=\"fl\" x1=\"98.7\" y1=\"26\" x2=\"26\" y2=\"151.9\"/><line class=\"fv\" x1=\"26\" y1=\"151.9\" x2=\"164.8\" y2=\"151.9\"/><polygon class=\"fvh\" points=\"171.3,151.9 163.3,155.5 163.3,148.3\"/><line class=\"fv\" x1=\"26\" y1=\"151.9\" x2=\"95.4\" y2=\"31.6\"/><polygon class=\"fvh\" points=\"98.7,26 97.8,34.7 91.5,31.1\"/><path class=\"fa\" d=\"M52 151.9 A26 26 0 0 0 39 129.3\"/><text class=\"ft fn\" x=\"58.9\" y=\"132.9\" text-anchor=\"middle\" dominant-baseline=\"central\">60°</text><text class=\"ft fn\" x=\"98.7\" y=\"163.9\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><circle class=\"fp\" cx=\"26\" cy=\"151.9\" r=\"2.6\"/><text class=\"ft\" x=\"14.7\" y=\"158.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"171.3\" cy=\"151.9\" r=\"2.6\"/><text class=\"ft\" x=\"177.8\" y=\"163.1\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"255.3\" y=\"19.5\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"98.7\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"92.2\" y=\"14.7\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "id": "b06-l2-h6",
+   "q": "В пространстве задан вектор $\\vec a(2;3;6)$. Найдите его длину.",
+   "a": 7,
+   "hint": "В пространстве под корнем стоит сумма квадратов трёх координат.",
+   "sol": [
+    "$|\\vec a|=\\sqrt{4+9+36}=\\sqrt{49}=7$."
+   ]
+  },
+  {
+   "id": "b06-l2-h7",
+   "q": "Найдите скалярное произведение векторов $\\vec a(1;2;3)$ и $\\vec b(4;-1;2)$.",
+   "a": 8,
+   "hint": "В пространстве добавляется произведение третьих координат.",
+   "sol": [
+    "$\\vec a\\cdot\\vec b=1\\cdot4+2\\cdot(-1)+3\\cdot2=4-2+6=8$."
+   ]
+  },
+  {
+   "id": "b06-l2-h8",
+   "q": "Найдите косинус угла между векторами $\\vec a(7;24)$ и $\\vec b(3;4)$.",
+   "a": 0.936,
+   "hint": "Длины: $|\\vec a|=25$, $|\\vec b|=5$.",
+   "sol": [
+    "$\\vec a\\cdot\\vec b=21+96=117$.",
+    "$|\\vec a|=\\sqrt{49+576}=25$, $|\\vec b|=5$.",
+    "$\\cos\\varphi=\\dfrac{117}{125}=0{,}936$."
+   ]
+  },
+  {
+   "id": "b06-l2-h9",
+   "q": "При каком положительном $k$ векторы $\\vec a(k;4)$ и $\\vec b(9;k)$ коллинеарны?",
+   "a": 6,
+   "hint": "У коллинеарных векторов $x_1y_2=x_2y_1$.",
+   "sol": [
+    "$k\\cdot k=4\\cdot9$, то есть $k^2=36$.",
+    "Положительный корень $k=6$."
+   ]
+  },
+  {
+   "id": "b06-l2-h10",
+   "q": "В треугольнике $ABC$ вершины $A(1;1)$, $B(5;1)$, $C(1;4)$. Найдите косинус угла $B$.",
+   "a": 0.8,
+   "hint": "Угол $B$ образован векторами $\\overrightarrow{BA}$ и $\\overrightarrow{BC}$: у них общее начало $B$.",
+   "sol": [
+    "$\\overrightarrow{BA}=(-4;0)$, $\\overrightarrow{BC}=(-4;3)$.",
+    "$\\overrightarrow{BA}\\cdot\\overrightarrow{BC}=16$, $|\\overrightarrow{BA}|=4$, $|\\overrightarrow{BC}|=5$.",
+    "$\\cos B=\\dfrac{16}{20}=0{,}8$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник ABC с вершинами A(1;1), B(5;1), C(1;4)\"><line class=\"fgr\" x1=\"30.4\" y1=\"209\" x2=\"30.4\" y2=\"26\"/><line class=\"fgr\" x1=\"56.6\" y1=\"209\" x2=\"56.6\" y2=\"26\"/><line class=\"fgr\" x1=\"82.7\" y1=\"209\" x2=\"82.7\" y2=\"26\"/><line class=\"fgr\" x1=\"108.9\" y1=\"209\" x2=\"108.9\" y2=\"26\"/><line class=\"fgr\" x1=\"135\" y1=\"209\" x2=\"135\" y2=\"26\"/><line class=\"fgr\" x1=\"161.1\" y1=\"209\" x2=\"161.1\" y2=\"26\"/><line class=\"fgr\" x1=\"187.3\" y1=\"209\" x2=\"187.3\" y2=\"26\"/><line class=\"fgr\" x1=\"213.4\" y1=\"209\" x2=\"213.4\" y2=\"26\"/><line class=\"fgr\" x1=\"239.6\" y1=\"209\" x2=\"239.6\" y2=\"26\"/><line class=\"fgr\" x1=\"30.4\" y1=\"209\" x2=\"239.6\" y2=\"209\"/><line class=\"fgr\" x1=\"30.4\" y1=\"182.9\" x2=\"239.6\" y2=\"182.9\"/><line class=\"fgr\" x1=\"30.4\" y1=\"156.7\" x2=\"239.6\" y2=\"156.7\"/><line class=\"fgr\" x1=\"30.4\" y1=\"130.6\" x2=\"239.6\" y2=\"130.6\"/><line class=\"fgr\" x1=\"30.4\" y1=\"104.4\" x2=\"239.6\" y2=\"104.4\"/><line class=\"fgr\" x1=\"30.4\" y1=\"78.3\" x2=\"239.6\" y2=\"78.3\"/><line class=\"fgr\" x1=\"30.4\" y1=\"52.1\" x2=\"239.6\" y2=\"52.1\"/><line class=\"fgr\" x1=\"30.4\" y1=\"26\" x2=\"239.6\" y2=\"26\"/><line class=\"fax\" x1=\"30.4\" y1=\"182.9\" x2=\"239.6\" y2=\"182.9\"/><text class=\"ft fn fs\" x=\"235.6\" y=\"173.9\">x</text><text class=\"ft fn fs\" x=\"30.4\" y=\"193.9\" text-anchor=\"middle\">-1</text><text class=\"ft fn fs\" x=\"82.7\" y=\"193.9\" text-anchor=\"middle\">1</text><text class=\"ft fn fs\" x=\"108.9\" y=\"193.9\" text-anchor=\"middle\">2</text><text class=\"ft fn fs\" x=\"135\" y=\"193.9\" text-anchor=\"middle\">3</text><text class=\"ft fn fs\" x=\"161.1\" y=\"193.9\" text-anchor=\"middle\">4</text><text class=\"ft fn fs\" x=\"187.3\" y=\"193.9\" text-anchor=\"middle\">5</text><text class=\"ft fn fs\" x=\"213.4\" y=\"193.9\" text-anchor=\"middle\">6</text><text class=\"ft fn fs\" x=\"239.6\" y=\"193.9\" text-anchor=\"middle\">7</text><line class=\"fax\" x1=\"56.6\" y1=\"209\" x2=\"56.6\" y2=\"26\"/><text class=\"ft fn fs\" x=\"62.6\" y=\"30\">y</text><text class=\"ft fn fs\" x=\"52.6\" y=\"209\" text-anchor=\"end\" dominant-baseline=\"central\">-1</text><text class=\"ft fn fs\" x=\"52.6\" y=\"156.7\" text-anchor=\"end\" dominant-baseline=\"central\">1</text><text class=\"ft fn fs\" x=\"52.6\" y=\"130.6\" text-anchor=\"end\" dominant-baseline=\"central\">2</text><text class=\"ft fn fs\" x=\"52.6\" y=\"104.4\" text-anchor=\"end\" dominant-baseline=\"central\">3</text><text class=\"ft fn fs\" x=\"52.6\" y=\"78.3\" text-anchor=\"end\" dominant-baseline=\"central\">4</text><text class=\"ft fn fs\" x=\"52.6\" y=\"52.1\" text-anchor=\"end\" dominant-baseline=\"central\">5</text><text class=\"ft fn fs\" x=\"52.6\" y=\"26\" text-anchor=\"end\" dominant-baseline=\"central\">6</text><line class=\"fl\" x1=\"82.7\" y1=\"156.7\" x2=\"187.3\" y2=\"156.7\"/><line class=\"fl\" x1=\"187.3\" y1=\"156.7\" x2=\"82.7\" y2=\"78.3\"/><line class=\"fl\" x1=\"82.7\" y1=\"78.3\" x2=\"82.7\" y2=\"156.7\"/><path class=\"fa\" d=\"M169.7 143.5 A22 22 0 0 0 165.3 156.7\"/><circle class=\"fp\" cx=\"82.7\" cy=\"156.7\" r=\"2.6\"/><text class=\"ft\" x=\"72.3\" y=\"164.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"187.3\" cy=\"156.7\" r=\"2.6\"/><text class=\"ft\" x=\"199.5\" y=\"161.3\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"82.7\" cy=\"78.3\" r=\"2.6\"/><text class=\"ft\" x=\"75.5\" y=\"67.5\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>"
+  }
+ ]
+}

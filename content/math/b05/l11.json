@@ -1,0 +1,187 @@
+{
+ "intro": "Описанные четырёхугольники и вписанная окружность треугольника. Равные касательные, суммы противоположных сторон, площадь $S=pr$ и частные случаи трапеции и прямоугольного треугольника.",
+ "theory": [
+  {
+   "h": "Равные касательные",
+   "html": "<p>Отрезки касательных, проведённых к окружности из одной точки, равны. Если окружность вписана в многоугольник, из каждой вершины идут два равных отрезка до точек касания. Всё про описанные фигуры строится на этом.</p>"
+  },
+  {
+   "h": "Описанный четырёхугольник",
+   "html": "<p>Если в четырёхугольник можно вписать окружность, то суммы противоположных сторон равны: $AB+CD=BC+AD$. Верно и обратное (признак).</p><p>Следствия: боковая сторона описанной равнобедренной трапеции равна полусумме оснований; высота описанной трапеции равна диаметру; в описанной прямоугольной трапеции $h=2r$.</p><p class=\"warn-box\">«Суммы противоположных сторон равны» верно для четырёхугольника с вписанной окружностью, а «суммы противоположных углов равны $180^\\circ$» для вписанного в окружность. Не путайте эти два свойства.</p>"
+  },
+  {
+   "h": "Радиус вписанной окружности",
+   "html": "<ul><li>Любой описанный многоугольник: $S=pr$ ($p$ полупериметр).</li><li>Прямоугольный треугольник: $r=\\dfrac{a+b-c}2$.</li><li>Треугольник: расстояние от вершины $A$ до точки касания равно $p-a$ (где $a=BC$).</li></ul>"
+  },
+  {
+   "h": "Центр вписанной окружности",
+   "html": "<p>Центр лежит на пересечении биссектрис. Угол $AIB=90^\\circ+\\dfrac12\\angle C$. Радиус, проведённый в точку касания, перпендикулярен стороне, поэтому он высота в треугольниках «центр плюс сторона».</p>"
+  }
+ ],
+ "examples": [
+  {
+   "q": "Около окружности описан четырёхугольник $ABCD$. а) Докажите, что $AB+CD=BC+AD$. б) Найдите $AD$, если $AB=7$, $BC=6$, $CD=9$.",
+   "steps": [
+    "а) Пусть окружность касается сторон в точках $K$, $L$, $M$, $N$ (на $AB$, $BC$, $CD$, $DA$). Отрезки касательных из одной точки равны: $AK=AN$, $BK=BL$, $CL=CM$, $DM=DN$.",
+    "$AB+CD=AK+KB+CM+MD=AN+BL+CL+DN=(AN+DN)+(BL+CL)=AD+BC$.",
+    "б) $AD=AB+CD-BC=7+9-6=10$."
+   ],
+   "a": 10,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Четырёхугольник ABCD, описанный около окружности\"><circle class=\"fl\" cx=\"130.1\" cy=\"101.4\" r=\"50.3\"/><line class=\"fl\" x1=\"195.7\" y1=\"101.4\" x2=\"132.7\" y2=\"26\"/><line class=\"fl\" x1=\"132.7\" y1=\"26\" x2=\"74.3\" y2=\"86.7\"/><line class=\"fl\" x1=\"74.3\" y1=\"86.7\" x2=\"105.7\" y2=\"209\"/><line class=\"fl\" x1=\"105.7\" y1=\"209\" x2=\"195.7\" y2=\"101.4\"/><circle class=\"fp\" cx=\"195.7\" cy=\"101.4\" r=\"2.6\"/><text class=\"ft\" x=\"208.7\" y=\"100.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"132.7\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"133.6\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"74.3\" cy=\"86.7\" r=\"2.6\"/><text class=\"ft\" x=\"62.1\" y=\"82.3\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"105.7\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"103\" y=\"221.7\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "q": "В прямоугольный треугольник с катетами $a$, $b$ и гипотенузой $c$ вписана окружность радиуса $r$. а) Докажите, что $r=\\dfrac{a+b-c}2$. б) Найдите $r$, если катеты равны $9$ и $40$.",
+   "steps": [
+    "а) Пусть вершина прямого угла $C$, точки касания на катетах $K$ и $L$. $OKCL$ квадрат со стороной $r$ ($\\angle C=\\angle K=\\angle L=90^\\circ$, $OK=OL=r$). Тогда отрезки касательных из вершин острых углов равны $a-r$ и $b-r$.",
+    "Гипотенуза $c=(a-r)+(b-r)$, откуда $r=\\dfrac{a+b-c}2$.",
+    "б) $c=\\sqrt{81+1600}=41$, $r=\\dfrac{9+40-41}2=4$."
+   ],
+   "a": 4,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный треугольник с вписанной окружностью, катеты 9 и 40\"><circle class=\"fl\" cx=\"132.7\" cy=\"190.7\" r=\"18.3\"/><line class=\"fl\" x1=\"155.6\" y1=\"209\" x2=\"114.4\" y2=\"26\"/><line class=\"fl\" x1=\"114.4\" y1=\"26\" x2=\"114.4\" y2=\"209\"/><line class=\"fl\" x1=\"114.4\" y1=\"209\" x2=\"155.6\" y2=\"209\"/><path class=\"fa\" d=\"M124.4 209 L124.4 199 L114.4 199\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">9</text><text class=\"ft fn\" x=\"102.4\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">40</text><circle class=\"fp\" cx=\"155.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"160.9\" y=\"220.9\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"114.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"113\" y=\"13.1\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"114.4\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"111.6\" y=\"221.7\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>"
+  },
+  {
+   "q": "В треугольник со сторонами $13$, $14$, $15$ вписана окружность. а) Докажите, что площадь треугольника равна $pr$, где $p$ полупериметр. б) Найдите радиус вписанной окружности, если площадь равна $84$.",
+   "steps": [
+    "а) Соединим центр окружности с вершинами. Получатся три треугольника с высотами $r$ (радиусы в точки касания перпендикулярны сторонам). Их площади $\\dfrac12ar$, $\\dfrac12br$, $\\dfrac12cr$.",
+    "Сумма: $S=\\dfrac{a+b+c}2\\cdot r=pr$.",
+    "б) $p=\\dfrac{13+14+15}2=21$, $r=\\dfrac{84}{21}=4$."
+   ],
+   "a": 4,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник со сторонами 13, 14, 15 и вписанная окружность\"><circle class=\"fl\" cx=\"142.1\" cy=\"152.4\" r=\"56.6\"/><line class=\"fl\" x1=\"43\" y1=\"209\" x2=\"227\" y2=\"209\"/><line class=\"fl\" x1=\"227\" y1=\"209\" x2=\"150.8\" y2=\"26\"/><line class=\"fl\" x1=\"150.8\" y1=\"26\" x2=\"43\" y2=\"209\"/><line class=\"fl fd\" x1=\"142.1\" y1=\"152.4\" x2=\"43\" y2=\"209\"/><line class=\"fl fd\" x1=\"142.1\" y1=\"152.4\" x2=\"227\" y2=\"209\"/><line class=\"fl fd\" x1=\"142.1\" y1=\"152.4\" x2=\"150.8\" y2=\"26\"/><circle class=\"fp\" cx=\"43\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"31.9\" y=\"215.9\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"227\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"237.7\" y=\"216.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"150.8\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"151.9\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>"
+  }
+ ],
+ "tasks": [
+  {
+   "id": "b05-p6-1",
+   "q": "В равнобедренную трапецию $ABCD$ с основаниями $BC=4$ и $AD=16$ вписана окружность. а) Докажите, что боковая сторона равна полусумме оснований. б) Найдите радиус окружности.",
+   "a": 4,
+   "hint": "Для описанной трапеции $AB+CD=BC+AD$. Затем высота трапеции равна диаметру.",
+   "sol": [
+    "а) В описанном четырёхугольнике $AB+CD=BC+AD$. Так как $AB=CD$, $AB=\\dfrac{BC+AD}2$.",
+    "б) $AB=\\dfrac{4+16}2=10$. Проекция боковой стороны на $AD$ равна $\\dfrac{16-4}2=6$, высота $\\sqrt{10^2-6^2}=8$. Высота равна диаметру, $r=4$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 161\" width=\"270\" height=\"161\" role=\"img\" aria-label=\"Равнобедренная трапеция с вписанной окружностью\"><circle class=\"fl\" cx=\"135\" cy=\"80.5\" r=\"54.5\"/><line class=\"fl\" x1=\"26\" y1=\"135\" x2=\"107.8\" y2=\"26\"/><line class=\"fl\" x1=\"107.8\" y1=\"26\" x2=\"162.2\" y2=\"26\"/><line class=\"fl\" x1=\"162.2\" y1=\"26\" x2=\"244\" y2=\"135\"/><line class=\"fl\" x1=\"244\" y1=\"135\" x2=\"26\" y2=\"135\"/><circle class=\"fp\" cx=\"26\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"14.4\" y=\"140.8\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"107.8\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"101.9\" y=\"14.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"162.2\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"168.1\" y=\"14.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"244\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"255.6\" y=\"140.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "id": "b05-p6-2",
+   "q": "Окружность, вписанная в треугольник $ABC$, касается стороны $AB$ в точке $K$. а) Докажите, что $AK=\\dfrac{AB+AC-BC}2$. б) Найдите $AK$, если $AB=13$, $BC=14$, $AC=15$.",
+   "a": 7,
+   "hint": "Отрезки касательных из одной вершины равны. Обозначьте $AK=x$, $BK=y$, $CM=z$.",
+   "sol": [
+    "а) Пусть окружность касается $BC$ и $AC$ в точках $L$ и $M$. $AK=AM=x$, $BK=BL=y$, $CL=CM=z$. Тогда $AB+AC-BC=(x+y)+(x+z)-(y+z)=2x$.",
+    "б) $AK=\\dfrac{13+15-14}2=7$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник ABC со вписанной окружностью и точками касания\"><circle class=\"fl\" cx=\"142.1\" cy=\"152.4\" r=\"56.6\"/><line class=\"fl\" x1=\"43\" y1=\"209\" x2=\"227\" y2=\"209\"/><line class=\"fl\" x1=\"227\" y1=\"209\" x2=\"150.8\" y2=\"26\"/><line class=\"fl\" x1=\"150.8\" y1=\"26\" x2=\"43\" y2=\"209\"/><circle class=\"fp\" cx=\"43\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"31.7\" y=\"215.6\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"227\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"237.8\" y=\"216.3\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"150.8\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"151.7\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"142.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"142.2\" y=\"222\" text-anchor=\"middle\" dominant-baseline=\"central\">K</text><circle class=\"fp\" cx=\"194.4\" cy=\"130.6\" r=\"2.6\"/><text class=\"ft\" x=\"206.5\" y=\"125.8\" text-anchor=\"middle\" dominant-baseline=\"central\">L</text><circle class=\"fp\" cx=\"93.3\" cy=\"123.6\" r=\"2.6\"/><text class=\"ft\" x=\"82\" y=\"117.2\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>"
+  },
+  {
+   "id": "b05-p6-3",
+   "q": "В прямоугольную трапецию $ABCD$ ($\\angle A=\\angle B=90^\\circ$, $BC\\parallel AD$) вписана окружность. а) Докажите, что $AB+CD=BC+AD$. б) Найдите площадь трапеции, если $BC=6$, $AD=12$.",
+   "a": 72,
+   "hint": "Пусть $AB=h$. Тогда $CD=18-h$. Запишите теорему Пифагора для $CD$ с катетами $h$ и $AD-BC$.",
+   "sol": [
+    "а) Свойство описанного четырёхугольника (суммы противоположных сторон равны): отрезки касательных из каждой вершины равны, складываем по кругу.",
+    "б) $AB=h$, $CD=BC+AD-AB=18-h$. $CD^2=h^2+(12-6)^2$: $(18-h)^2=h^2+36$, $324-36h=36$, $h=8$.",
+    "$S=\\dfrac{6+12}2\\cdot8=72$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Прямоугольная трапеция с вписанной окружностью\"><circle class=\"fl\" cx=\"98.7\" cy=\"98.7\" r=\"72.7\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"26\" y2=\"171.3\"/><path class=\"fa\" d=\"M26 161.3 L36 161.3 L36 171.3\"/><path class=\"fa\" d=\"M26 36 L36 36 L36 26\"/><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"16.3\" y=\"180\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"16.3\" y=\"17.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"139.6\" y=\"13.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"255.5\" y=\"177.5\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "id": "b05-p6-4",
+   "q": "В равнобедренном треугольнике $ABC$ ($AB=BC=10$) основание $AC=12$. а) Докажите, что центр вписанной окружности лежит на высоте $BH$. б) Найдите радиус вписанной окружности.",
+   "a": 3,
+   "hint": "В равнобедренном треугольнике биссектриса, медиана и высота из вершины совпадают. Радиус можно найти из $S=pr$.",
+   "sol": [
+    "а) Центр вписанной окружности лежит на биссектрисе угла $B$. В равнобедренном треугольнике биссектриса из вершины является высотой $BH$.",
+    "б) $BH=\\sqrt{10^2-6^2}=8$, $S=\\dfrac12\\cdot12\\cdot8=48$, $p=16$, $r=\\dfrac{48}{16}=3$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Равнобедренный треугольник с вписанной окружностью и высотой BH\"><circle class=\"fl\" cx=\"135\" cy=\"116.8\" r=\"54.5\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"26\" y2=\"171.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"171.3\"/><path class=\"fa\" d=\"M135 161.3 L145 161.3 L145 171.3\"/><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"256.3\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"135\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"184.3\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>"
+  },
+  {
+   "id": "b05-p6-5",
+   "q": "Окружность, вписанная в прямоугольный треугольник, делит точкой касания гипотенузу на отрезки $5$ и $12$. а) Докажите, что катеты равны $r+5$ и $r+12$ (где $r$ радиус). б) Найдите $r$.",
+   "a": 3,
+   "hint": "Составьте уравнение по теореме Пифагора с катетами $r+5$ и $r+12$ и гипотенузой $17$.",
+   "sol": [
+    "а) Центр, вершина прямого угла и две точки касания на катетах образуют квадрат со стороной $r$. Отрезок катета от вершины острого угла до точки касания равен отрезку гипотенузы, исходящему из той же вершины (касательные из одной точки). Значит катеты равны $r+5$ и $r+12$.",
+    "б) $(r+5)^2+(r+12)^2=17^2$, $2r^2+34r+169=289$, $r^2+17r-60=0$, $r=3$ (второй корень $-20$ не подходит)."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 168.3\" width=\"270\" height=\"168.3\" role=\"img\" aria-label=\"Прямоугольный треугольник с вписанной окружностью, гипотенуза разделена на отрезки 5 и 12\"><circle class=\"fl\" cx=\"69.6\" cy=\"98.7\" r=\"43.6\"/><line class=\"fl\" x1=\"26\" y1=\"142.3\" x2=\"244\" y2=\"142.3\"/><line class=\"fl\" x1=\"244\" y1=\"142.3\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"142.3\"/><path class=\"fa\" d=\"M36 142.3 L36 132.3 L26 132.3\"/><text class=\"ft fn\" x=\"52.2\" y=\"59.4\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><text class=\"ft fn\" x=\"164.1\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">12</text><circle class=\"fp\" cx=\"26\" cy=\"142.3\" r=\"2.6\"/><text class=\"ft\" x=\"15.4\" y=\"149.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"142.3\" r=\"2.6\"/><text class=\"ft\" x=\"256.3\" y=\"146.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"16.6\" y=\"17.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"90.1\" cy=\"60.2\" r=\"2.6\"/><text class=\"ft\" x=\"87.6\" y=\"47.4\" text-anchor=\"middle\" dominant-baseline=\"central\">K</text></svg></figure>"
+  }
+ ],
+ "hard": [
+  {
+   "id": "b05-p6-h1",
+   "q": "В трапецию $ABCD$ ($BC\\parallel AD$) вписана окружность с центром $O$, она касается боковой стороны $CD$ в точке $M$. а) Докажите, что $\\angle COD=90^\\circ$. б) Найдите радиус окружности, если $CM=4$, $MD=9$.",
+   "a": 6,
+   "hint": "$OC$ и $OD$ биссектрисы углов трапеции при боковой стороне. Чему равна сумма этих углов? Затем высота $OM$ прямоугольного треугольника $COD$.",
+   "sol": [
+    "а) Центр вписанной окружности лежит на биссектрисах углов $C$ и $D$. Так как $BC\\parallel AD$, $\\angle C+\\angle D=180^\\circ$ (односторонние), поэтому $\\angle OCD+\\angle ODC=90^\\circ$ и $\\angle COD=90^\\circ$.",
+    "б) $OM\\perp CD$ (радиус в точку касания), $OM$ высота прямоугольного треугольника $COD$: $OM^2=CM\\cdot MD=36$, $r=6$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 226.4\" width=\"270\" height=\"226.4\" role=\"img\" aria-label=\"Трапеция со вписанной окружностью, радиус OM к боковой стороне CD\"><circle class=\"fl\" cx=\"113.2\" cy=\"113.2\" r=\"87.2\"/><line class=\"fl\" x1=\"26\" y1=\"200.4\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"171.3\" y2=\"26\"/><line class=\"fl\" x1=\"171.3\" y1=\"26\" x2=\"244\" y2=\"200.4\"/><line class=\"fl\" x1=\"244\" y1=\"200.4\" x2=\"26\" y2=\"200.4\"/><line class=\"fl fd\" x1=\"113.2\" y1=\"113.2\" x2=\"171.3\" y2=\"26\"/><line class=\"fl fd\" x1=\"113.2\" y1=\"113.2\" x2=\"244\" y2=\"200.4\"/><line class=\"fl fd\" x1=\"113.2\" y1=\"113.2\" x2=\"193.7\" y2=\"79.7\"/><path class=\"fa\" d=\"M184.5 83.5 L180.6 74.3 L189.8 70.4\"/><circle class=\"fp\" cx=\"26\" cy=\"200.4\" r=\"2.6\"/><text class=\"ft\" x=\"16.3\" y=\"209.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.8\" y=\"17.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"171.3\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"177.3\" y=\"14.5\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"244\" cy=\"200.4\" r=\"2.6\"/><text class=\"ft\" x=\"254.1\" y=\"208.6\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"113.2\" cy=\"113.2\" r=\"2.6\"/><text class=\"ft\" x=\"100.9\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"193.7\" cy=\"79.7\" r=\"2.6\"/><text class=\"ft\" x=\"205.6\" y=\"74.5\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>"
+  },
+  {
+   "id": "b05-p6-h2",
+   "q": "Около окружности радиуса $6$ описана равнобедренная трапеция с боковой стороной $15$. а) Докажите, что площадь трапеции равна $2r\\cdot AB$. б) Найдите площадь.",
+   "a": 180,
+   "hint": "Средняя линия описанной равнобедренной трапеции равна боковой стороне. Высота равна диаметру.",
+   "sol": [
+    "а) Для описанной трапеции $AB+CD=BC+AD$, при $AB=CD$ средняя линия $\\dfrac{BC+AD}2=AB$. Высота равна диаметру $2r$. $S=\\dfrac{BC+AD}2\\cdot h=AB\\cdot2r$.",
+    "б) $S=15\\cdot12=180$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 161\" width=\"270\" height=\"161\" role=\"img\" aria-label=\"Равнобедренная описанная трапеция\"><circle class=\"fl\" cx=\"135\" cy=\"80.5\" r=\"54.5\"/><line class=\"fl\" x1=\"26\" y1=\"135\" x2=\"107.8\" y2=\"26\"/><line class=\"fl\" x1=\"107.8\" y1=\"26\" x2=\"162.2\" y2=\"26\"/><line class=\"fl\" x1=\"162.2\" y1=\"26\" x2=\"244\" y2=\"135\"/><line class=\"fl\" x1=\"244\" y1=\"135\" x2=\"26\" y2=\"135\"/><text class=\"ft fn\" x=\"57.3\" y=\"73.3\" text-anchor=\"middle\" dominant-baseline=\"central\">15</text><circle class=\"fp\" cx=\"26\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"14.4\" y=\"140.8\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"107.8\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"101.9\" y=\"14.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"162.2\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"168.1\" y=\"14.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"244\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"255.6\" y=\"140.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "id": "b05-p6-h3",
+   "q": "$I$ центр окружности, вписанной в треугольник $ABC$. а) Докажите, что $\\angle AIB=90^\\circ+\\dfrac12\\angle C$. б) Найдите угол $AIB$ (в градусах), если $\\angle C=40^\\circ$.",
+   "a": 110,
+   "hint": "$AI$ и $BI$ биссектрисы. Выразите сумму углов $IAB$ и $IBA$ через $\\angle A+\\angle B$.",
+   "sol": [
+    "а) $\\angle IAB=\\dfrac12\\angle A$, $\\angle IBA=\\dfrac12\\angle B$. В треугольнике $AIB$: $\\angle AIB=180^\\circ-\\dfrac{\\angle A+\\angle B}2=180^\\circ-\\dfrac{180^\\circ-\\angle C}2=90^\\circ+\\dfrac12\\angle C$.",
+    "б) $\\angle AIB=90^\\circ+20^\\circ=110^\\circ$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник ABC, центр вписанной окружности I и биссектрисы AI и BI\"><circle class=\"fl\" cx=\"135\" cy=\"162.4\" r=\"46.6\"/><line class=\"fl\" x1=\"68.4\" y1=\"209\" x2=\"201.6\" y2=\"209\"/><line class=\"fl\" x1=\"201.6\" y1=\"209\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"68.4\" y2=\"209\"/><line class=\"fl\" x1=\"68.4\" y1=\"209\" x2=\"135\" y2=\"162.4\"/><line class=\"fl\" x1=\"201.6\" y1=\"209\" x2=\"135\" y2=\"162.4\"/><circle class=\"fp\" cx=\"68.4\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"58.5\" y=\"217.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"201.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"211.5\" y=\"217.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"135\" cy=\"162.4\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">I</text></svg></figure>"
+  },
+  {
+   "id": "b05-p6-h4",
+   "q": "Окружность касается стороны $BC$ треугольника $ABC$ и продолжений сторон $AB$ и $AC$ за точки $B$ и $C$. а) Докажите, что длина касательной из $A$ к этой окружности равна полупериметру треугольника. б) Найдите её, если $AB=13$, $BC=14$, $AC=15$.",
+   "a": 21,
+   "hint": "Обозначьте точки касания на продолжениях $K$ и $L$ и на $BC$ точку $M$. Выразите $AK+AL$ через периметр.",
+   "sol": [
+    "а) Пусть окружность касается продолжений $AB$ и $AC$ в $K$ и $L$ и стороны $BC$ в $M$. $AK=AL$ (касательные из $A$), $BK=BM$, $CL=CM$.",
+    "$AK+AL=(AB+BK)+(AC+CL)=AB+AC+BM+CM=AB+AC+BC=2p$. Значит $AK=p$.",
+    "б) $p=\\dfrac{13+14+15}2=21$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 210.5\" width=\"270\" height=\"210.5\" role=\"img\" aria-label=\"Вневписанная окружность треугольника ABC и точки касания\"><circle class=\"fl\" cx=\"164.7\" cy=\"105.3\" r=\"79.3\"/><line class=\"fl\" x1=\"26\" y1=\"184.5\" x2=\"111.9\" y2=\"184.5\"/><line class=\"fl\" x1=\"111.9\" y1=\"184.5\" x2=\"76.3\" y2=\"99.2\"/><line class=\"fl\" x1=\"76.3\" y1=\"99.2\" x2=\"26\" y2=\"184.5\"/><line class=\"fl fd\" x1=\"111.9\" y1=\"184.5\" x2=\"164.7\" y2=\"184.5\"/><line class=\"fl fd\" x1=\"76.3\" y1=\"99.2\" x2=\"96.4\" y2=\"65\"/><circle class=\"fp\" cx=\"26\" cy=\"184.5\" r=\"2.6\"/><text class=\"ft\" x=\"14.9\" y=\"191.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"111.9\" cy=\"184.5\" r=\"2.6\"/><text class=\"ft\" x=\"116.8\" y=\"196.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"76.3\" cy=\"99.2\" r=\"2.6\"/><text class=\"ft\" x=\"71.3\" y=\"87.2\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"164.7\" cy=\"184.5\" r=\"2.6\"/><text class=\"ft\" x=\"175.9\" y=\"191.2\" text-anchor=\"middle\" dominant-baseline=\"central\">K</text><circle class=\"fp\" cx=\"96.4\" cy=\"65\" r=\"2.6\"/><text class=\"ft\" x=\"96.8\" y=\"52\" text-anchor=\"middle\" dominant-baseline=\"central\">L</text><circle class=\"fp\" cx=\"91.6\" cy=\"135.8\" r=\"2.6\"/><text class=\"ft\" x=\"86.2\" y=\"123.9\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>",
+   "top": true
+  },
+  {
+   "id": "b05-p6-h5",
+   "q": "Вписанная окружность треугольника $ABC$ касается $BC$ в точке $K$. $L$ точка окружности, диаметрально противоположная $K$, прямая $AL$ пересекает $BC$ в точке $M$. а) Докажите, что $BK=CM$. б) Найдите $CM$, если $AB=13$, $BC=14$, $AC=15$.",
+   "a": 6,
+   "hint": "Касательная в точке $L$ параллельна $BC$. Гомотетия с центром $A$ переводит вписанную окружность во вневписанную. Куда перейдёт $L$?",
+   "sol": [
+    "а) Касательная к вписанной окружности в точке $L$ параллельна $BC$ (перпендикулярна диаметру $KL$). Гомотетия с центром $A$ переводит вписанную окружность в окружность, касающуюся сторон угла $A$ и прямой $BC$: это вневписанная окружность. Касательная в $L$ переходит в $BC$, значит $L$ переходит в точку касания $M$ вневписанной окружности с $BC$, и $A$, $L$, $M$ лежат на одной прямой.",
+    "Касательные к вневписанной окружности из точки $A$ равны $p$ (см. предыдущую задачу), поэтому касательная из $B$ на продолжении $AB$ равна $p-AB$, и $BM=p-AB$. Тогда $CM=BC-BM=BC-p+AB=p-AC$ (так как $AB+BC=2p-AC$). Для вписанной окружности $BK=p-AC$ (задача 2). Значит $BK=CM$.",
+    "б) $p=21$, $CM=21-15=6$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Вписанная окружность, диаметр KL и прямая AL, пересекающая BC в точке M\"><circle class=\"fl\" cx=\"142.1\" cy=\"152.4\" r=\"56.6\"/><line class=\"fl\" x1=\"43\" y1=\"209\" x2=\"227\" y2=\"209\"/><line class=\"fl\" x1=\"227\" y1=\"209\" x2=\"150.8\" y2=\"26\"/><line class=\"fl\" x1=\"150.8\" y1=\"26\" x2=\"43\" y2=\"209\"/><line class=\"fl\" x1=\"43\" y1=\"209\" x2=\"183.5\" y2=\"104.4\"/><circle class=\"fp\" cx=\"43\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"32\" y=\"216\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"227\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"237\" y=\"217.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"150.8\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"151.1\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"194.4\" cy=\"130.6\" r=\"2.6\"/><text class=\"ft\" x=\"207\" y=\"127.4\" text-anchor=\"middle\" dominant-baseline=\"central\">K</text><circle class=\"fp\" cx=\"89.8\" cy=\"174.1\" r=\"2.6\"/><text class=\"ft\" x=\"78.4\" y=\"180.4\" text-anchor=\"middle\" dominant-baseline=\"central\">L</text><circle class=\"fp\" cx=\"183.5\" cy=\"104.4\" r=\"2.6\"/><text class=\"ft\" x=\"192.4\" y=\"94.9\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>",
+   "top": true
+  }
+ ],
+ "rubric": {
+  "h": "Оцени своё решение по критериям ЕГЭ",
+  "lead": "На экзамене задание части 2 проверяет эксперт, а не компьютер. Сайт проверил только число в пункте «б». Остальное сверь со своей записью и поставь отметки.",
+  "items": [
+   "В пункте «а» каждый шаг доказательства назван и обоснован: указано, какая теорема или свойство применяется",
+   "В доказательстве нет «видно из чертежа»: равенства и параллельность выведены, а не прочитаны с рисунка",
+   "В пункте «б» использовано то, что доказано в пункте «а»",
+   "Вычисления доведены до числа, ответ записан в нужной форме",
+   "Ответ совпал с ответом сайта. Если нет, найди строку, где решение разошлось с разбором"
+  ]
+ },
+ "id": "l11",
+ "title": "Описанные четырёхугольники и вписанные окружности",
+ "plus": true,
+ "minutes": 90
+}
