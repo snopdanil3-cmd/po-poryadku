@@ -1,0 +1,212 @@
+{
+ "id": "l02",
+ "title": "Тождества, двойной угол, формулы сложения",
+ "minutes": 90,
+ "intro": "Главные формулы тригонометрии и их применение: найти одну функцию по другой, свернуть выражение, вычислить значение без калькулятора.",
+ "theory": [
+  {
+   "h": "Основное тождество и его следствия",
+   "html": "<p>Для любого угла $\\sin^2\\alpha+\\cos^2\\alpha=1$. Отсюда, зная одну функцию, находят другую: $\\cos\\alpha=\\pm\\sqrt{1-\\sin^2\\alpha}$.</p><p class=\"warn-box\">Знак выбирайте по условию (четверть, в которой лежит угол): синус положителен в I и II четвертях, косинус в I и IV, тангенс в I и III.</p><p>Ещё три полезных тождества: $\\mathrm{tg}\\,\\alpha=\\dfrac{\\sin\\alpha}{\\cos\\alpha}$, $\\mathrm{tg}\\,\\alpha\\cdot\\mathrm{ctg}\\,\\alpha=1$, $1+\\mathrm{tg}^2\\alpha=\\dfrac1{\\cos^2\\alpha}$.</p>"
+  },
+  {
+   "h": "Формулы двойного угла",
+   "html": "<ul><li>$\\sin2\\alpha=2\\sin\\alpha\\cos\\alpha$;</li><li>$\\cos2\\alpha=\\cos^2\\alpha-\\sin^2\\alpha=2\\cos^2\\alpha-1=1-2\\sin^2\\alpha$.</li></ul><p>Читайте формулы и справа налево: выражение вида $2\\sin x\\cos x$ сворачивается в $\\sin2x$, а $\\cos^2x-\\sin^2x$ в $\\cos2x$. Например, $24\\sin15^\\circ\\cos15^\\circ=12\\sin30^\\circ=6$.</p><p>Из третьего вида следует $\\sin^2\\alpha=\\dfrac{1-\\cos2\\alpha}2$ и $\\cos^2\\alpha=\\dfrac{1+\\cos2\\alpha}2$.</p>"
+  },
+  {
+   "h": "Формулы сложения",
+   "html": "<ul><li>$\\sin(\\alpha\\pm\\beta)=\\sin\\alpha\\cos\\beta\\pm\\cos\\alpha\\sin\\beta$;</li><li>$\\cos(\\alpha\\pm\\beta)=\\cos\\alpha\\cos\\beta\\mp\\sin\\alpha\\sin\\beta$ (знак меняется на противоположный).</li></ul><p>Формулы тоже читают справа налево. Например, $\\cos105^\\circ\\cos15^\\circ-\\sin105^\\circ\\sin15^\\circ=\\cos(105^\\circ+15^\\circ)=\\cos120^\\circ=-\\dfrac12$.</p>"
+  },
+  {
+   "h": "Значение выражения при заданном $\\mathrm{tg}\\,\\alpha$",
+   "html": "<p>Если выражение однородное (все слагаемые одной степени по $\\sin\\alpha$ и $\\cos\\alpha$), разделите числитель и знаменатель на $\\cos^n\\alpha$ и подставьте $\\mathrm{tg}\\,\\alpha$. Например, $\\dfrac{\\sin\\alpha+\\cos\\alpha}{\\sin\\alpha-\\cos\\alpha}=\\dfrac{\\mathrm{tg}\\,\\alpha+1}{\\mathrm{tg}\\,\\alpha-1}$.</p><p>Для $\\sin\\alpha\\cos\\alpha$ запишите $\\dfrac{\\sin\\alpha\\cos\\alpha}{\\sin^2\\alpha+\\cos^2\\alpha}$ и разделите на $\\cos^2\\alpha$: получится $\\dfrac{\\mathrm{tg}\\,\\alpha}{1+\\mathrm{tg}^2\\alpha}$.</p>"
+  }
+ ],
+ "examples": [
+  {
+   "q": "Найдите $\\cos\\alpha$, если $\\sin\\alpha=0{,}6$ и $\\alpha$ лежит в первой четверти.",
+   "steps": [
+    "Основное тождество: $\\sin^2\\alpha+\\cos^2\\alpha=1$.",
+    "$\\cos^2\\alpha=1-0{,}36=0{,}64$, $\\cos\\alpha=\\pm0{,}8$.",
+    "В первой четверти косинус положителен: $\\cos\\alpha=0{,}8$."
+   ],
+   "a": 0.8
+  },
+  {
+   "q": "Найдите $\\sin2\\alpha$, если $\\sin\\alpha=0{,}6$ и $\\alpha$ лежит в первой четверти.",
+   "steps": [
+    "$\\cos\\alpha=0{,}8$ (как в предыдущем примере).",
+    "$\\sin2\\alpha=2\\sin\\alpha\\cos\\alpha=2\\cdot0{,}6\\cdot0{,}8=0{,}96$."
+   ],
+   "a": 0.96
+  },
+  {
+   "q": "Найдите значение выражения $24\\sin15^\\circ\\cos15^\\circ$.",
+   "steps": [
+    "$2\\sin\\alpha\\cos\\alpha=\\sin2\\alpha$, поэтому $24\\sin15^\\circ\\cos15^\\circ=12\\cdot(2\\sin15^\\circ\\cos15^\\circ)=12\\sin30^\\circ$.",
+    "$12\\cdot\\dfrac12=6$."
+   ],
+   "a": 6
+  }
+ ],
+ "tasks": [
+  {
+   "id": "b10-l2-1",
+   "q": "Найдите $\\sin\\alpha$, если $\\cos\\alpha=0{,}8$ и $\\alpha$ лежит в четвёртой четверти.",
+   "a": -0.6,
+   "hint": "$\\sin^2\\alpha=1-\\cos^2\\alpha$. Знак синуса в IV четверти отрицательный.",
+   "sol": [
+    "$\\sin^2\\alpha=1-0{,}64=0{,}36$, $\\sin\\alpha=\\pm0{,}6$.",
+    "В четвёртой четверти синус отрицателен: $\\sin\\alpha=-0{,}6$."
+   ]
+  },
+  {
+   "id": "b10-l2-2",
+   "q": "Найдите $\\mathrm{tg}\\,\\alpha$, если $\\cos\\alpha=-0{,}8$ и $\\alpha$ лежит во второй четверти.",
+   "a": -0.75,
+   "hint": "Сначала найдите $\\sin\\alpha$ (во второй четверти он положителен).",
+   "sol": [
+    "$\\sin\\alpha=\\sqrt{1-0{,}64}=0{,}6$.",
+    "$\\mathrm{tg}\\,\\alpha=\\dfrac{0{,}6}{-0{,}8}=-0{,}75$."
+   ]
+  },
+  {
+   "id": "b10-l2-3",
+   "q": "Найдите $\\sin2\\alpha$, если $\\sin\\alpha=-0{,}6$ и $\\alpha$ лежит в четвёртой четверти.",
+   "a": -0.96,
+   "hint": "Найдите $\\cos\\alpha$: в IV четверти он положителен.",
+   "sol": [
+    "$\\cos\\alpha=\\sqrt{1-0{,}36}=0{,}8$.",
+    "$\\sin2\\alpha=2\\cdot(-0{,}6)\\cdot0{,}8=-0{,}96$."
+   ]
+  },
+  {
+   "id": "b10-l2-4",
+   "q": "Найдите $\\cos2\\alpha$, если $\\sin\\alpha=0{,}2$.",
+   "a": 0.92,
+   "hint": "Удобна формула $\\cos2\\alpha=1-2\\sin^2\\alpha$.",
+   "sol": [
+    "$\\cos2\\alpha=1-2\\cdot0{,}2^2=1-0{,}08=0{,}92$."
+   ]
+  },
+  {
+   "id": "b10-l2-5",
+   "q": "Найдите значение выражения $24\\sin15^\\circ\\cos15^\\circ\\cdot\\cos30^\\circ\\cdot\\dfrac{2}{\\sqrt3}$.",
+   "a": 6,
+   "hint": "Сначала сверните $2\\sin15^\\circ\\cos15^\\circ$.",
+   "sol": [
+    "$24\\sin15^\\circ\\cos15^\\circ=12\\sin30^\\circ=6$.",
+    "$\\cos30^\\circ\\cdot\\dfrac2{\\sqrt3}=\\dfrac{\\sqrt3}2\\cdot\\dfrac2{\\sqrt3}=1$, произведение равно $6$."
+   ]
+  },
+  {
+   "id": "b10-l2-6",
+   "q": "Найдите значение выражения $\\cos^2\\dfrac\\pi6-\\sin^2\\dfrac\\pi6$.",
+   "a": 0.5,
+   "hint": "Это правая часть формулы косинуса двойного угла.",
+   "sol": [
+    "$\\cos^2\\alpha-\\sin^2\\alpha=\\cos2\\alpha$, $\\alpha=\\dfrac\\pi6$.",
+    "$\\cos\\dfrac\\pi3=\\dfrac12$."
+   ]
+  }
+ ],
+ "hard": [
+  {
+   "id": "b10-l2-h1",
+   "q": "Найдите $\\sin(\\alpha+\\beta)$, если $\\sin\\alpha=0{,}6$, $\\cos\\beta=0{,}96$, а углы $\\alpha$ и $\\beta$ острые.",
+   "a": 0.8,
+   "hint": "Найдите $\\cos\\alpha$ и $\\sin\\beta$ из основного тождества, затем используйте $\\sin(\\alpha+\\beta)=\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta$.",
+   "sol": [
+    "$\\cos\\alpha=0{,}8$, $\\sin\\beta=\\sqrt{1-0{,}9216}=0{,}28$.",
+    "$\\sin(\\alpha+\\beta)=0{,}6\\cdot0{,}96+0{,}8\\cdot0{,}28=0{,}576+0{,}224=0{,}8$."
+   ]
+  },
+  {
+   "id": "b10-l2-h2",
+   "q": "Найдите $\\cos(\\alpha-\\beta)$, если $\\sin\\alpha=0{,}6$, $\\cos\\beta=0{,}96$, а углы $\\alpha$ и $\\beta$ острые.",
+   "a": 0.936,
+   "hint": "$\\cos(\\alpha-\\beta)=\\cos\\alpha\\cos\\beta+\\sin\\alpha\\sin\\beta$.",
+   "sol": [
+    "$\\cos\\alpha=0{,}8$, $\\sin\\beta=0{,}28$.",
+    "$0{,}8\\cdot0{,}96+0{,}6\\cdot0{,}28=0{,}768+0{,}168=0{,}936$."
+   ]
+  },
+  {
+   "id": "b10-l2-h3",
+   "q": "Найдите значение выражения $\\dfrac{\\sin\\alpha+\\cos\\alpha}{\\sin\\alpha-\\cos\\alpha}$, если $\\mathrm{tg}\\,\\alpha=3$.",
+   "a": 2,
+   "hint": "Разделите числитель и знаменатель на $\\cos\\alpha\\ne0$.",
+   "sol": [
+    "$\\dfrac{\\mathrm{tg}\\,\\alpha+1}{\\mathrm{tg}\\,\\alpha-1}=\\dfrac{3+1}{3-1}=2$."
+   ]
+  },
+  {
+   "id": "b10-l2-h4",
+   "q": "Найдите $\\sin\\alpha\\cos\\alpha$, если $\\mathrm{tg}\\,\\alpha=2$.",
+   "a": 0.4,
+   "hint": "Используйте $\\sin\\alpha\\cos\\alpha=\\dfrac{\\mathrm{tg}\\,\\alpha}{1+\\mathrm{tg}^2\\alpha}$ (делим и умножаем на $\\cos^2\\alpha$).",
+   "sol": [
+    "$\\sin\\alpha\\cos\\alpha=\\dfrac{\\sin\\alpha\\cos\\alpha}{\\sin^2\\alpha+\\cos^2\\alpha}=\\dfrac{\\mathrm{tg}\\,\\alpha}{\\mathrm{tg}^2\\alpha+1}$.",
+    "$\\dfrac{2}{4+1}=0{,}4$."
+   ]
+  },
+  {
+   "id": "b10-l2-h5",
+   "q": "Найдите $\\sin2\\alpha$, если $\\sin\\alpha+\\cos\\alpha=0{,}8$.",
+   "a": -0.36,
+   "hint": "Возведите обе части в квадрат.",
+   "sol": [
+    "$(\\sin\\alpha+\\cos\\alpha)^2=1+2\\sin\\alpha\\cos\\alpha=1+\\sin2\\alpha$.",
+    "$0{,}64=1+\\sin2\\alpha$, $\\sin2\\alpha=-0{,}36$."
+   ]
+  },
+  {
+   "id": "b10-l2-h6",
+   "q": "Найдите $\\cos2x$, если $\\cos x=0{,}2$.",
+   "a": -0.92,
+   "hint": "Используйте $\\cos2x=2\\cos^2x-1$.",
+   "sol": [
+    "$\\cos2x=2\\cdot0{,}04-1=-0{,}92$."
+   ]
+  },
+  {
+   "id": "b10-l2-h7",
+   "q": "Найдите значение выражения $(\\sin75^\\circ+\\cos75^\\circ)^2$.",
+   "a": 1.5,
+   "hint": "Раскройте квадрат и найдите $2\\sin75^\\circ\\cos75^\\circ$.",
+   "sol": [
+    "$(\\sin75^\\circ+\\cos75^\\circ)^2=1+2\\sin75^\\circ\\cos75^\\circ=1+\\sin150^\\circ$.",
+    "$1+\\dfrac12=1{,}5$."
+   ]
+  },
+  {
+   "id": "b10-l2-h8",
+   "q": "Найдите значение выражения $\\cos105^\\circ\\cos15^\\circ-\\sin105^\\circ\\sin15^\\circ$.",
+   "a": -0.5,
+   "hint": "Это правая часть формулы $\\cos(\\alpha+\\beta)$.",
+   "sol": [
+    "$\\cos(105^\\circ+15^\\circ)=\\cos120^\\circ$.",
+    "$\\cos120^\\circ=-\\cos60^\\circ=-\\dfrac12=-0{,}5$."
+   ]
+  },
+  {
+   "id": "b10-l2-h9",
+   "q": "Найдите значение выражения $6\\,\\mathrm{tg}\\,\\alpha$, если $\\sin\\alpha=-0{,}8$ и $\\alpha$ лежит в третьей четверти.",
+   "a": 8,
+   "hint": "В третьей четверти и синус, и косинус отрицательны.",
+   "sol": [
+    "$\\cos\\alpha=-\\sqrt{1-0{,}64}=-0{,}6$.",
+    "$\\mathrm{tg}\\,\\alpha=\\dfrac{-0{,}8}{-0{,}6}=\\dfrac43$, $6\\cdot\\dfrac43=8$."
+   ]
+  },
+  {
+   "id": "b10-l2-h10",
+   "q": "Найдите $\\sin^2\\alpha$, если $\\cos2\\alpha=0{,}28$.",
+   "a": 0.36,
+   "hint": "$\\cos2\\alpha=1-2\\sin^2\\alpha$.",
+   "sol": [
+    "$0{,}28=1-2\\sin^2\\alpha$, $2\\sin^2\\alpha=0{,}72$.",
+    "$\\sin^2\\alpha=0{,}36$."
+   ]
+  }
+ ]
+}

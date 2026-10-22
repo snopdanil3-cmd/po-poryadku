@@ -1,0 +1,217 @@
+{
+ "id": "l03",
+ "title": "Координаты, расстояния и углы в пространстве",
+ "minutes": 90,
+ "intro": "Координатный метод: расстояния, середины, скалярное произведение, углы и расстояние до плоскости. Он решает почти любую задачу на углы и расстояния без сложных построений.",
+ "theory": [
+  {
+   "h": "Координаты и расстояния",
+   "html": "<p>Точка в пространстве задаётся тремя координатами $(x;\\,y;\\,z)$. Для точек $A(x_1;y_1;z_1)$ и $B(x_2;y_2;z_2)$:</p><ul><li>вектор $\\overrightarrow{AB}=(x_2-x_1;\\ y_2-y_1;\\ z_2-z_1)$;</li><li>расстояние $AB=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}$;</li><li>середина отрезка $\\left(\\dfrac{x_1+x_2}2;\\ \\dfrac{y_1+y_2}2;\\ \\dfrac{z_1+z_2}2\\right)$.</li></ul><p>Для прямоугольного параллелепипеда удобно ввести оси вдоль трёх рёбер из одной вершины: $A(0;0;0)$, $B(a;0;0)$, $D(0;b;0)$, $A_1(0;0;c)$.</p>"
+  },
+  {
+   "h": "Скалярное произведение и угол",
+   "html": "<p>Скалярное произведение $\\vec a\\cdot\\vec b=x_1x_2+y_1y_2+z_1z_2$, длина $|\\vec a|=\\sqrt{x_1^2+y_1^2+z_1^2}$.</p><p>Угол между векторами: $\\cos\\varphi=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a|\\,|\\vec b|}$. Угол между <b>прямыми</b> острый или прямой, поэтому в числителе берут модуль.</p><p class=\"warn-box\">Если косинус получился отрицательным, а нужен угол между прямыми, берите $|\\cos\\varphi|$.</p>"
+  },
+  {
+   "h": "Углы между прямой и плоскостью, между плоскостями",
+   "html": "<ul><li><b>Угол между прямой и плоскостью</b> угол между прямой и её проекцией на плоскость. Для диагонали $AC_1$ и основания проекция $AC$.</li><li><b>Угол между плоскостями</b> линейный угол: в обеих плоскостях проводим перпендикуляры к линии пересечения в одной точке, угол между ними искомый.</li><li>Для пирамиды: угол между боковой гранью и основанием $\\operatorname{tg}\\varphi=\\dfrac{h}{r}$, где $r$ расстояние от центра основания до стороны (для квадрата $r=\\dfrac a2$).</li></ul>"
+  },
+  {
+   "h": "Расстояние от точки до плоскости",
+   "html": "<p>Плоскость $ax+by+cz=D$, точка $M(x_0;y_0;z_0)$:</p><p>$$d=\\dfrac{|ax_0+by_0+cz_0-D|}{\\sqrt{a^2+b^2+c^2}}.$$</p><p>Если плоскость задана тремя точками, найдите нормаль векторным произведением и составьте уравнение. В задачах с готовым чертежом часто проще опустить перпендикуляр и найти его длину из прямоугольного треугольника.</p>"
+  }
+ ],
+ "examples": [
+  {
+   "q": "Найдите расстояние между точками $A(1;\\,2;\\,3)$ и $B(4;\\,6;\\,15)$.",
+   "steps": [
+    "Разности координат: $3$, $4$, $12$.",
+    "$AB=\\sqrt{3^2+4^2+12^2}=\\sqrt{169}=13$."
+   ],
+   "a": 13
+  },
+  {
+   "q": "В кубе $ABCDA_1B_1C_1D_1$ найдите угол между прямыми $AC$ и $AB_1$. Ответ дайте в градусах.",
+   "steps": [
+    "Ребро куба $1$: $A(0;0;0)$, $C(1;1;0)$, $B_1(1;0;1)$. Векторы $\\overrightarrow{AC}=(1;1;0)$, $\\overrightarrow{AB_1}=(1;0;1)$.",
+    "$\\cos\\varphi=\\dfrac{1\\cdot1+1\\cdot0+0\\cdot1}{\\sqrt2\\cdot\\sqrt2}=\\dfrac12$, $\\varphi=60^\\circ$."
+   ],
+   "a": 60,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Куб ABCDA1B1C1D1 с проведёнными отрезками AC и AB1\"><line class=\"fl\" x1=\"31.9\" y1=\"209\" x2=\"177.1\" y2=\"209\"/><line class=\"fl\" x1=\"177.1\" y1=\"209\" x2=\"238.1\" y2=\"171.2\"/><line class=\"fl\" x1=\"177.1\" y1=\"63.8\" x2=\"238.1\" y2=\"26\"/><line class=\"fl\" x1=\"31.9\" y1=\"63.8\" x2=\"177.1\" y2=\"63.8\"/><line class=\"fl\" x1=\"31.9\" y1=\"63.8\" x2=\"92.9\" y2=\"26\"/><line class=\"fl\" x1=\"92.9\" y1=\"26\" x2=\"238.1\" y2=\"26\"/><line class=\"fl\" x1=\"238.1\" y1=\"26\" x2=\"92.9\" y2=\"26\"/><line class=\"fl\" x1=\"31.9\" y1=\"209\" x2=\"31.9\" y2=\"63.8\"/><line class=\"fl\" x1=\"177.1\" y1=\"209\" x2=\"177.1\" y2=\"63.8\"/><line class=\"fl\" x1=\"238.1\" y1=\"171.2\" x2=\"238.1\" y2=\"26\"/><line class=\"fl\" x1=\"31.9\" y1=\"63.8\" x2=\"238.1\" y2=\"26\"/><line class=\"fl\" x1=\"31.9\" y1=\"209\" x2=\"177.1\" y2=\"63.8\"/><line class=\"fl fd\" x1=\"31.9\" y1=\"209\" x2=\"92.9\" y2=\"171.2\"/><line class=\"fl fd\" x1=\"238.1\" y1=\"171.2\" x2=\"92.9\" y2=\"171.2\"/><line class=\"fl fd\" x1=\"92.9\" y1=\"171.2\" x2=\"92.9\" y2=\"26\"/><circle class=\"fp\" cx=\"31.9\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"22.2\" y=\"217.6\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"177.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"182.6\" y=\"220.8\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"238.1\" cy=\"171.2\" r=\"2.6\"/><text class=\"ft\" x=\"249.6\" y=\"177.2\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"92.9\" cy=\"171.2\" r=\"2.6\"/><text class=\"ft\" x=\"84.9\" y=\"181.5\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"31.9\" cy=\"63.8\" r=\"2.6\"/><text class=\"ft\" x=\"20.4\" y=\"57.8\" text-anchor=\"middle\" dominant-baseline=\"central\">A₁</text><circle class=\"fp\" cx=\"177.1\" cy=\"63.8\" r=\"2.6\"/><text class=\"ft\" x=\"185.1\" y=\"53.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B₁</text><circle class=\"fp\" cx=\"238.1\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"247.8\" y=\"17.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C₁</text><circle class=\"fp\" cx=\"92.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"87.4\" y=\"14.2\" text-anchor=\"middle\" dominant-baseline=\"central\">D₁</text></svg></figure>"
+  },
+  {
+   "q": "Найдите расстояние от точки $M(2;\\,3;\\,2)$ до плоскости $2x+2y+z=6$.",
+   "steps": [
+    "Формула: $d=\\dfrac{|ax_0+by_0+cz_0-D|}{\\sqrt{a^2+b^2+c^2}}$ для плоскости $ax+by+cz=D$.",
+    "$d=\\dfrac{|2\\cdot2+2\\cdot3+1\\cdot2-6|}{\\sqrt{4+4+1}}=\\dfrac63=2$."
+   ],
+   "a": 2
+  }
+ ],
+ "tasks": [
+  {
+   "id": "b11-l3-1",
+   "q": "Найдите расстояние между точками $A(-1;\\,2;\\,0)$ и $B(2;\\,6;\\,12)$.",
+   "a": 13,
+   "hint": "Вычтите координаты и примените формулу расстояния.",
+   "sol": [
+    "Разности: $3$, $4$, $12$.",
+    "$AB=\\sqrt{9+16+144}=13$."
+   ]
+  },
+  {
+   "id": "b11-l3-2",
+   "q": "Точка $M$ середина отрезка $AB$, $A(2;\\,4;\\,6)$, $B(8;\\,-2;\\,0)$. Найдите сумму координат точки $M$.",
+   "a": 9,
+   "hint": "Каждая координата середины среднее арифметическое соответствующих координат концов.",
+   "sol": [
+    "$M\\left(\\dfrac{2+8}2;\\ \\dfrac{4-2}2;\\ \\dfrac{6+0}2\\right)=(5;\\,1;\\,3)$.",
+    "Сумма $5+1+3=9$."
+   ]
+  },
+  {
+   "id": "b11-l3-3",
+   "q": "Найдите угол между векторами $\\vec a=(2;\\,0;\\,0)$ и $\\vec b=(3;\\,3;\\,0)$. Ответ дайте в градусах.",
+   "a": 45,
+   "hint": "$\\cos\\varphi=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a|\\,|\\vec b|}$.",
+   "sol": [
+    "$\\vec a\\cdot\\vec b=6$, $|\\vec a|=2$, $|\\vec b|=3\\sqrt2$.",
+    "$\\cos\\varphi=\\dfrac{6}{6\\sqrt2}=\\dfrac{\\sqrt2}2$, $\\varphi=45^\\circ$."
+   ]
+  },
+  {
+   "id": "b11-l3-4",
+   "q": "В правильной четырёхугольной призме $ABCDA_1B_1C_1D_1$ сторона основания равна $1$, боковое ребро равно $\\sqrt2$. Найдите угол между диагональю $AC_1$ и плоскостью основания. Ответ дайте в градусах.",
+   "a": 45,
+   "hint": "Проекция $AC_1$ на плоскость основания диагональ $AC$.",
+   "sol": [
+    "$A(0;0;0)$, $C_1(1;1;\\sqrt2)$, проекция $C(1;1;0)$.",
+    "$AC=\\sqrt2$, $CC_1=\\sqrt2$, $\\operatorname{tg}\\varphi=\\dfrac{CC_1}{AC}=1$, $\\varphi=45^\\circ$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Призма ABCDA1B1C1D1 с диагональю AC1 и диагональю основания AC\"><line class=\"fl\" x1=\"57.4\" y1=\"209\" x2=\"166.7\" y2=\"209\"/><line class=\"fl\" x1=\"166.7\" y1=\"209\" x2=\"212.6\" y2=\"180.6\"/><line class=\"fl\" x1=\"166.7\" y1=\"54.4\" x2=\"212.6\" y2=\"26\"/><line class=\"fl\" x1=\"57.4\" y1=\"54.4\" x2=\"166.7\" y2=\"54.4\"/><line class=\"fl\" x1=\"57.4\" y1=\"54.4\" x2=\"103.3\" y2=\"26\"/><line class=\"fl\" x1=\"103.3\" y1=\"26\" x2=\"212.6\" y2=\"26\"/><line class=\"fl\" x1=\"212.6\" y1=\"26\" x2=\"103.3\" y2=\"26\"/><line class=\"fl\" x1=\"57.4\" y1=\"209\" x2=\"57.4\" y2=\"54.4\"/><line class=\"fl\" x1=\"166.7\" y1=\"209\" x2=\"166.7\" y2=\"54.4\"/><line class=\"fl\" x1=\"212.6\" y1=\"180.6\" x2=\"212.6\" y2=\"26\"/><line class=\"fl\" x1=\"57.4\" y1=\"209\" x2=\"212.6\" y2=\"26\"/><line class=\"fl\" x1=\"57.4\" y1=\"54.4\" x2=\"212.6\" y2=\"26\"/><line class=\"fl fd\" x1=\"57.4\" y1=\"209\" x2=\"103.3\" y2=\"180.6\"/><line class=\"fl fd\" x1=\"212.6\" y1=\"180.6\" x2=\"103.3\" y2=\"180.6\"/><line class=\"fl fd\" x1=\"103.3\" y1=\"180.6\" x2=\"103.3\" y2=\"26\"/><line class=\"fl fd\" x1=\"57.4\" y1=\"209\" x2=\"212.6\" y2=\"180.6\"/><text class=\"ft fn\" x=\"112\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">1</text><text class=\"ft fn\" x=\"224.6\" y=\"103.3\" text-anchor=\"middle\" dominant-baseline=\"central\">√2</text><circle class=\"fp\" cx=\"57.4\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"49\" y=\"218.9\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"166.7\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"171\" y=\"221.3\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"212.6\" cy=\"180.6\" r=\"2.6\"/><text class=\"ft\" x=\"222.7\" y=\"188.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"103.3\" cy=\"180.6\" r=\"2.6\"/><text class=\"ft\" x=\"97.5\" y=\"192.2\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"57.4\" cy=\"54.4\" r=\"2.6\"/><text class=\"ft\" x=\"47.3\" y=\"46.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A₁</text><circle class=\"fp\" cx=\"166.7\" cy=\"54.4\" r=\"2.6\"/><text class=\"ft\" x=\"172.5\" y=\"42.8\" text-anchor=\"middle\" dominant-baseline=\"central\">B₁</text><circle class=\"fp\" cx=\"212.6\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"221\" y=\"16.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C₁</text><circle class=\"fp\" cx=\"103.3\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"99\" y=\"13.7\" text-anchor=\"middle\" dominant-baseline=\"central\">D₁</text></svg></figure>"
+  },
+  {
+   "id": "b11-l3-5",
+   "q": "Найдите расстояние от точки $M(3;\\,1;\\,2)$ до плоскости $x+2y+2z=3$.",
+   "a": 2,
+   "hint": "$d=\\dfrac{|x_0+2y_0+2z_0-3|}{\\sqrt{1+4+4}}$.",
+   "sol": [
+    "Числитель: $|3+2+4-3|=6$.",
+    "$d=\\dfrac63=2$."
+   ]
+  },
+  {
+   "id": "b11-l3-6",
+   "q": "Найдите расстояние от начала координат до плоскости $x+2y+2z=9$.",
+   "a": 3,
+   "hint": "Подставьте $M(0;0;0)$ в формулу расстояния до плоскости.",
+   "sol": [
+    "$d=\\dfrac{|0+0+0-9|}{\\sqrt{1+4+4}}=\\dfrac93=3$.",
+    "Ответ $3$."
+   ]
+  }
+ ],
+ "hard": [
+  {
+   "id": "b11-l3-h1",
+   "q": "Найдите расстояние между точками $A(1;\\,1;\\,1)$ и $B(7;\\,4;\\,7)$.",
+   "a": 9,
+   "hint": "Разности координат $6$, $3$, $6$.",
+   "sol": [
+    "$AB=\\sqrt{36+9+36}=\\sqrt{81}=9$."
+   ]
+  },
+  {
+   "id": "b11-l3-h2",
+   "q": "Основание правильной четырёхугольной пирамиды квадрат со стороной $6$, высота пирамиды равна $\\sqrt3$. Найдите угол между боковой гранью и плоскостью основания. Ответ дайте в градусах.",
+   "a": 30,
+   "hint": "Угол между плоскостями линейный угол при ребре основания: $\\operatorname{tg}\\varphi=\\dfrac{h}{a/2}$.",
+   "sol": [
+    "Расстояние от центра основания до стороны равно $3$.",
+    "$\\operatorname{tg}\\varphi=\\dfrac{\\sqrt3}{3}$, $\\varphi=30^\\circ$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 116.3\" width=\"270\" height=\"116.3\" role=\"img\" aria-label=\"Правильная пирамида SABCD, M середина AB, SH высота; угол SMH линейный угол между боковой гранью и основанием\"><line class=\"fl\" x1=\"26\" y1=\"90.3\" x2=\"179.5\" y2=\"90.3\"/><line class=\"fl\" x1=\"179.5\" y1=\"90.3\" x2=\"244\" y2=\"50.4\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"90.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"179.5\" y2=\"90.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"50.4\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"102.8\" y2=\"90.3\"/><line class=\"fl fd\" x1=\"26\" y1=\"90.3\" x2=\"90.5\" y2=\"50.4\"/><line class=\"fl fd\" x1=\"244\" y1=\"50.4\" x2=\"90.5\" y2=\"50.4\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"90.5\" y2=\"50.4\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"70.3\"/><line class=\"fl fd\" x1=\"135\" y1=\"70.3\" x2=\"102.8\" y2=\"90.3\"/><text class=\"ft fn\" x=\"147\" y=\"48.2\" text-anchor=\"middle\" dominant-baseline=\"central\">√3</text><circle class=\"fp\" cx=\"26\" cy=\"90.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.3\" y=\"93.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"179.5\" cy=\"90.3\" r=\"2.6\"/><text class=\"ft\" x=\"191.3\" y=\"95.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"50.4\" r=\"2.6\"/><text class=\"ft\" x=\"256.9\" y=\"48.5\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"90.5\" cy=\"50.4\" r=\"2.6\"/><text class=\"ft\" x=\"78.5\" y=\"45.4\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"136.5\" y=\"13.1\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"135\" cy=\"70.3\" r=\"2.6\"/><text class=\"ft\" x=\"145.4\" y=\"78.2\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text><circle class=\"fp\" cx=\"102.8\" cy=\"90.3\" r=\"2.6\"/><text class=\"ft\" x=\"92.8\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>"
+  },
+  {
+   "id": "b11-l3-h3",
+   "q": "В правильной четырёхугольной пирамиде сторона основания равна $6$, высота равна $3\\sqrt3$. Найдите угол между боковой гранью и основанием. Ответ дайте в градусах.",
+   "a": 60,
+   "hint": "$\\operatorname{tg}\\varphi=\\dfrac{h}{a/2}$.",
+   "sol": [
+    "$\\operatorname{tg}\\varphi=\\dfrac{3\\sqrt3}{3}=\\sqrt3$.",
+    "$\\varphi=60^\\circ$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 204.9\" width=\"270\" height=\"204.9\" role=\"img\" aria-label=\"Правильная пирамида SABCD с высотой SH и апофемой SM\"><line class=\"fl\" x1=\"26\" y1=\"178.9\" x2=\"179.5\" y2=\"178.9\"/><line class=\"fl\" x1=\"179.5\" y1=\"178.9\" x2=\"244\" y2=\"139\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"178.9\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"179.5\" y2=\"178.9\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"139\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"102.8\" y2=\"178.9\"/><line class=\"fl fd\" x1=\"26\" y1=\"178.9\" x2=\"90.5\" y2=\"139\"/><line class=\"fl fd\" x1=\"244\" y1=\"139\" x2=\"90.5\" y2=\"139\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"90.5\" y2=\"139\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"159\"/><line class=\"fl fd\" x1=\"135\" y1=\"159\" x2=\"102.8\" y2=\"178.9\"/><text class=\"ft fn\" x=\"147\" y=\"92.5\" text-anchor=\"middle\" dominant-baseline=\"central\">3√3</text><circle class=\"fp\" cx=\"26\" cy=\"178.9\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"183.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"179.5\" cy=\"178.9\" r=\"2.6\"/><text class=\"ft\" x=\"190\" y=\"186.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"139\" r=\"2.6\"/><text class=\"ft\" x=\"257\" y=\"138.6\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"90.5\" cy=\"139\" r=\"2.6\"/><text class=\"ft\" x=\"77.5\" y=\"137.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135.5\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"135\" cy=\"159\" r=\"2.6\"/><text class=\"ft\" x=\"138.6\" y=\"171.5\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text><circle class=\"fp\" cx=\"102.8\" cy=\"178.9\" r=\"2.6\"/><text class=\"ft\" x=\"94.9\" y=\"189.2\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>"
+  },
+  {
+   "id": "b11-l3-h4",
+   "q": "Найдите расстояние от точки $M(3;\\,1;\\,2)$ до плоскости $2x+3y+6z=7$.",
+   "a": 2,
+   "hint": "Знаменатель $\\sqrt{4+9+36}=7$.",
+   "sol": [
+    "Числитель $|6+3+12-7|=14$.",
+    "$d=\\dfrac{14}7=2$."
+   ]
+  },
+  {
+   "id": "b11-l3-h5",
+   "q": "Точка $M(1;\\,3;\\,-2)$ середина отрезка $AB$, $A(3;\\,1;\\,4)$. Найдите сумму координат точки $B$.",
+   "a": -4,
+   "hint": "$x_B=2x_M-x_A$ и так далее.",
+   "sol": [
+    "$B(2\\cdot1-3;\\ 2\\cdot3-1;\\ 2\\cdot(-2)-4)=(-1;\\,5;\\,-8)$.",
+    "Сумма $-1+5-8=-4$."
+   ]
+  },
+  {
+   "id": "b11-l3-h6",
+   "q": "Прямые имеют направляющие векторы $(0;\\,0;\\,3)$ и $(2;\\,0;\\,2)$. Найдите угол между прямыми в градусах.",
+   "a": 45,
+   "hint": "$\\cos\\varphi=\\dfrac{|\\vec a\\cdot\\vec b|}{|\\vec a|\\,|\\vec b|}$.",
+   "sol": [
+    "$\\vec a\\cdot\\vec b=6$, $|\\vec a|=3$, $|\\vec b|=2\\sqrt2$.",
+    "$\\cos\\varphi=\\dfrac{6}{6\\sqrt2}=\\dfrac{\\sqrt2}2$, $\\varphi=45^\\circ$."
+   ]
+  },
+  {
+   "id": "b11-l3-h7",
+   "q": "В кубе $ABCDA_1B_1C_1D_1$ найдите угол между плоскостями $ABC_1D_1$ и $ABCD$. Ответ дайте в градусах.",
+   "a": 45,
+   "hint": "Ребро $AB$ общее. Угол между плоскостями измеряется углом между перпендикулярами к $AB$ в каждой плоскости: $AD$ и $AD_1$.",
+   "sol": [
+    "$AD\\perp AB$ и $AD_1\\perp AB$, значит угол $DAD_1$ линейный.",
+    "Треугольник $DAD_1$ прямоугольный равнобедренный, угол $45^\\circ$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Куб ABCDA1B1C1D1, сечение ABC1D1 и отрезки AD, AD1\"><line class=\"fl\" x1=\"31.9\" y1=\"209\" x2=\"177.1\" y2=\"209\"/><line class=\"fl\" x1=\"177.1\" y1=\"209\" x2=\"238.1\" y2=\"171.2\"/><line class=\"fl\" x1=\"177.1\" y1=\"63.8\" x2=\"238.1\" y2=\"26\"/><line class=\"fl\" x1=\"31.9\" y1=\"63.8\" x2=\"177.1\" y2=\"63.8\"/><line class=\"fl\" x1=\"31.9\" y1=\"63.8\" x2=\"92.9\" y2=\"26\"/><line class=\"fl\" x1=\"92.9\" y1=\"26\" x2=\"238.1\" y2=\"26\"/><line class=\"fl\" x1=\"238.1\" y1=\"26\" x2=\"92.9\" y2=\"26\"/><line class=\"fl\" x1=\"31.9\" y1=\"209\" x2=\"31.9\" y2=\"63.8\"/><line class=\"fl\" x1=\"177.1\" y1=\"209\" x2=\"177.1\" y2=\"63.8\"/><line class=\"fl\" x1=\"238.1\" y1=\"171.2\" x2=\"238.1\" y2=\"26\"/><line class=\"fl\" x1=\"31.9\" y1=\"209\" x2=\"92.9\" y2=\"26\"/><line class=\"fl fd\" x1=\"31.9\" y1=\"209\" x2=\"92.9\" y2=\"171.2\"/><line class=\"fl fd\" x1=\"238.1\" y1=\"171.2\" x2=\"92.9\" y2=\"171.2\"/><line class=\"fl fd\" x1=\"92.9\" y1=\"171.2\" x2=\"92.9\" y2=\"26\"/><line class=\"fl fd\" x1=\"31.9\" y1=\"209\" x2=\"92.9\" y2=\"171.2\"/><circle class=\"fp\" cx=\"31.9\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"22.2\" y=\"217.6\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"177.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"182.6\" y=\"220.8\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"238.1\" cy=\"171.2\" r=\"2.6\"/><text class=\"ft\" x=\"249.6\" y=\"177.2\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"92.9\" cy=\"171.2\" r=\"2.6\"/><text class=\"ft\" x=\"84.9\" y=\"181.5\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"31.9\" cy=\"63.8\" r=\"2.6\"/><text class=\"ft\" x=\"20.4\" y=\"57.8\" text-anchor=\"middle\" dominant-baseline=\"central\">A₁</text><circle class=\"fp\" cx=\"177.1\" cy=\"63.8\" r=\"2.6\"/><text class=\"ft\" x=\"185.1\" y=\"53.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B₁</text><circle class=\"fp\" cx=\"238.1\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"247.8\" y=\"17.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C₁</text><circle class=\"fp\" cx=\"92.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"87.4\" y=\"14.2\" text-anchor=\"middle\" dominant-baseline=\"central\">D₁</text></svg></figure>"
+  },
+  {
+   "id": "b11-l3-h8",
+   "q": "Найдите расстояние от точки $M(0;\\,0;\\,0)$ до плоскости $x-2y+2z=-12$.",
+   "a": 4,
+   "hint": "Подставьте координаты $M$; знаменатель $\\sqrt{1+4+4}=3$.",
+   "sol": [
+    "$d=\\dfrac{|0-(-12)|}{3}=4$."
+   ]
+  },
+  {
+   "id": "b11-l3-h9",
+   "q": "Найдите площадь параллелограмма, построенного на векторах $\\vec a=(1;\\,2;\\,2)$ и $\\vec b=(2;\\,1;\\,-2)$.",
+   "a": 9,
+   "hint": "Площадь равна длине векторного произведения.",
+   "sol": [
+    "$\\vec a\\times\\vec b=(2\\cdot(-2)-2\\cdot1;\\ 2\\cdot2-1\\cdot(-2);\\ 1\\cdot1-2\\cdot2)=(-6;\\,6;\\,-3)$.",
+    "$|\\vec a\\times\\vec b|=\\sqrt{36+36+9}=9$."
+   ]
+  },
+  {
+   "id": "b11-l3-h10",
+   "q": "Точки $O(0;0;0)$, $A(3;0;0)$, $B(0;4;0)$, $C(0;0;5)$ вершины пирамиды. Найдите её объём.",
+   "a": 10,
+   "hint": "Рёбра $OA$, $OB$, $OC$ попарно перпендикулярны. Основание $OAB$, высота $OC$.",
+   "sol": [
+    "$S_{OAB}=\\dfrac12\\cdot3\\cdot4=6$.",
+    "$V=\\dfrac13\\cdot6\\cdot5=10$."
+   ]
+  }
+ ]
+}

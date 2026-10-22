@@ -1,0 +1,223 @@
+{
+ "id": "l02",
+ "title": "Цилиндр, конус, шар",
+ "minutes": 90,
+ "intro": "Тела вращения: объёмы, площади поверхностей, осевые сечения. Результат записываем в долях $\\pi$ (делим на $\\pi$), чтобы ответ был точным числом.",
+ "theory": [
+  {
+   "h": "Цилиндр",
+   "html": "<p>Прямой круговой цилиндр с радиусом основания $R$ и высотой $h$ (образующая равна высоте):</p><ul><li>$V=\\pi R^2h$;</li><li>$S_{\\text{бок}}=2\\pi Rh$ (развёртка — прямоугольник $2\\pi R\\times h$);</li><li>$S_{\\text{полн}}=2\\pi Rh+2\\pi R^2$.</li></ul><figure class=\"fig\"><svg viewBox=\"0 0 270 233.7\" width=\"270\" height=\"233.7\" role=\"img\" aria-label=\"Осевое сечение цилиндра: прямоугольник со сторонами 2R и h\"><line class=\"fl\" x1=\"26\" y1=\"207.7\" x2=\"244\" y2=\"207.7\"/><line class=\"fl\" x1=\"244\" y1=\"207.7\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"207.7\"/><line class=\"fl fd\" x1=\"135\" y1=\"207.7\" x2=\"135\" y2=\"26\"/><text class=\"ft fn\" x=\"135\" y=\"219.7\" text-anchor=\"middle\" dominant-baseline=\"central\">2R</text><text class=\"ft fn\" x=\"256\" y=\"116.8\" text-anchor=\"middle\" dominant-baseline=\"central\">h</text><circle class=\"fp\" cx=\"26\" cy=\"207.7\" r=\"2.6\"/><text class=\"ft\" x=\"16\" y=\"216\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"207.7\" r=\"2.6\"/><text class=\"ft\" x=\"254\" y=\"216\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254\" y=\"17.7\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"16\" y=\"17.7\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure><p>Осевое сечение (плоскость через ось) прямоугольник со сторонами $2R$ и $h$. Если оно квадрат, то $h=2R$.</p>"
+  },
+  {
+   "h": "Конус",
+   "html": "<p>Радиус основания $R$, высота $h$, образующая $l=\\sqrt{R^2+h^2}$.</p><ul><li>$V=\\dfrac13\\pi R^2h$;</li><li>$S_{\\text{бок}}=\\pi Rl$;</li><li>$S_{\\text{полн}}=\\pi Rl+\\pi R^2=\\pi R(l+R)$.</li></ul><figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Осевое сечение конуса: равнобедренный треугольник, высота h, половина основания R, образующая l\"><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"171.3\"/><path class=\"fa\" d=\"M145 171.3 L145 161.3 L135 161.3\"/><text class=\"ft fn\" x=\"123\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">h</text><text class=\"ft fn\" x=\"189.5\" y=\"183.3\" text-anchor=\"middle\" dominant-baseline=\"central\">R</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"256.3\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"135\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"184.3\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure><p>Осевое сечение равнобедренный треугольник с основанием $2R$ и боковыми сторонами $l$. Объём конуса втрое меньше объёма цилиндра с тем же основанием и высотой.</p>"
+  },
+  {
+   "h": "Шар и сфера",
+   "html": "<ul><li>$V=\\dfrac43\\pi R^3$;</li><li>$S=4\\pi R^2$ (площадь сферы).</li></ul><p><b>Сечение шара плоскостью</b> круг. Если расстояние от центра шара до плоскости $d$, то радиус сечения $r$ связан с радиусом шара $R$ соотношением $R^2=d^2+r^2$.</p><p>При увеличении всех линейных размеров в $k$ раз площади растут в $k^2$ раз, а объёмы в $k^3$ раз.</p>"
+  },
+  {
+   "h": "Ответ «делённый на $\\pi$»",
+   "html": "<p>В задачах с телами вращения ответ часто просят в виде числа без $\\pi$: «найдите объём, делённый на $\\pi$». Считайте так: подставьте $\\pi$ в формулу и сократите. Например, для $V=\\dfrac13\\pi R^2h$ при $R=5$, $h=12$ получаем $V=100\\pi$, ответ $100$.</p><p class=\"warn-box\">Не подставляйте $\\pi\\approx3{,}14$: ответ должен получиться точным. Если по условию дана площадь или объём в виде $k\\pi$, сначала разделите на $\\pi$.</p>"
+  }
+ ],
+ "examples": [
+  {
+   "q": "Радиус основания цилиндра равен $3$, высота равна $5$. Найдите объём цилиндра, делённый на $\\pi$.",
+   "steps": [
+    "$V=\\pi R^2h=\\pi\\cdot9\\cdot5=45\\pi$.",
+    "$V:\\pi=45$."
+   ],
+   "a": 45,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 233.7\" width=\"270\" height=\"233.7\" role=\"img\" aria-label=\"Осевое сечение цилиндра: прямоугольник со сторонами 6 (диаметр) и 5 (высота)\"><line class=\"fl\" x1=\"26\" y1=\"207.7\" x2=\"244\" y2=\"207.7\"/><line class=\"fl\" x1=\"244\" y1=\"207.7\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"207.7\"/><line class=\"fl fd\" x1=\"135\" y1=\"207.7\" x2=\"135\" y2=\"26\"/><text class=\"ft fn\" x=\"135\" y=\"219.7\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><text class=\"ft fn\" x=\"256\" y=\"116.8\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><circle class=\"fp\" cx=\"26\" cy=\"207.7\" r=\"2.6\"/><text class=\"ft\" x=\"16\" y=\"216\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"207.7\" r=\"2.6\"/><text class=\"ft\" x=\"254\" y=\"216\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254\" y=\"17.7\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"16\" y=\"17.7\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "q": "Радиус основания конуса равен $6$, высота равна $8$. Найдите площадь боковой поверхности конуса, делённую на $\\pi$.",
+   "steps": [
+    "Образующая: $l=\\sqrt{R^2+h^2}=\\sqrt{36+64}=10$.",
+    "$S_{\\text{бок}}=\\pi Rl=\\pi\\cdot6\\cdot10=60\\pi$.",
+    "$S_{\\text{бок}}:\\pi=60$."
+   ],
+   "a": 60,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Осевое сечение конуса: равнобедренный треугольник с высотой 8 и половиной основания 6\"><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"171.3\"/><path class=\"fa\" d=\"M145 171.3 L145 161.3 L135 161.3\"/><text class=\"ft fn\" x=\"123\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">8</text><text class=\"ft fn\" x=\"189.5\" y=\"183.3\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"256.3\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"135\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"184.3\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
+  },
+  {
+   "q": "Радиус шара равен $3$. Найдите объём шара, делённый на $\\pi$.",
+   "steps": [
+    "$V=\\dfrac43\\pi R^3=\\dfrac43\\pi\\cdot27=36\\pi$.",
+    "$V:\\pi=36$."
+   ],
+   "a": 36,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Круг — осевое сечение шара радиуса 3\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"135\" y1=\"117.5\" x2=\"226.5\" y2=\"117.5\"/><text class=\"ft fn\" x=\"180.8\" y=\"129.5\" text-anchor=\"middle\" dominant-baseline=\"central\">3</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"122\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"226.5\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"239.5\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text></svg></figure>"
+  }
+ ],
+ "tasks": [
+  {
+   "id": "b11-l2-1",
+   "q": "Радиус основания цилиндра равен $4$, высота равна $7$. Найдите площадь боковой поверхности цилиндра, делённую на $\\pi$.",
+   "a": 56,
+   "hint": "$S_{\\text{бок}}=2\\pi Rh$.",
+   "sol": [
+    "$S_{\\text{бок}}=2\\pi\\cdot4\\cdot7=56\\pi$.",
+    "Ответ $56$."
+   ]
+  },
+  {
+   "id": "b11-l2-2",
+   "q": "Осевое сечение цилиндра — квадрат со стороной $6$. Найдите объём цилиндра, делённый на $\\pi$.",
+   "a": 54,
+   "hint": "Сторона квадрата равна диаметру основания и высоте цилиндра.",
+   "sol": [
+    "$2R=6$, $R=3$, $h=6$.",
+    "$V=\\pi R^2h=54\\pi$. Ответ $54$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Осевое сечение цилиндра — квадрат со стороной 6\"><line class=\"fl\" x1=\"43.5\" y1=\"209\" x2=\"226.5\" y2=\"209\"/><line class=\"fl\" x1=\"226.5\" y1=\"209\" x2=\"226.5\" y2=\"26\"/><line class=\"fl\" x1=\"226.5\" y1=\"26\" x2=\"43.5\" y2=\"26\"/><line class=\"fl\" x1=\"43.5\" y1=\"26\" x2=\"43.5\" y2=\"209\"/><line class=\"fl fd\" x1=\"135\" y1=\"209\" x2=\"135\" y2=\"26\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><text class=\"ft fn\" x=\"238.5\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><circle class=\"fp\" cx=\"43.5\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"34.3\" y=\"218.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"226.5\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"235.7\" y=\"218.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"226.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"235.7\" y=\"16.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"43.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"34.3\" y=\"16.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "id": "b11-l2-3",
+   "q": "Образующая конуса равна $13$, высота равна $12$. Найдите объём конуса, делённый на $\\pi$.",
+   "a": 100,
+   "hint": "Найдите радиус основания из прямоугольного треугольника с гипотенузой $13$.",
+   "sol": [
+    "$R=\\sqrt{13^2-12^2}=5$.",
+    "$V=\\dfrac13\\pi R^2h=\\dfrac13\\pi\\cdot25\\cdot12=100\\pi$. Ответ $100$."
+   ]
+  },
+  {
+   "id": "b11-l2-4",
+   "q": "Радиус основания конуса равен $9$, высота равна $12$. Найдите площадь боковой поверхности конуса, делённую на $\\pi$.",
+   "a": 135,
+   "hint": "Сначала найдите образующую.",
+   "sol": [
+    "$l=\\sqrt{81+144}=15$.",
+    "$S_{\\text{бок}}=\\pi Rl=135\\pi$. Ответ $135$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Осевое сечение конуса: высота 12, радиус основания 9\"><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"171.3\"/><path class=\"fa\" d=\"M145 171.3 L145 161.3 L135 161.3\"/><text class=\"ft fn\" x=\"123\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">12</text><text class=\"ft fn\" x=\"189.5\" y=\"183.3\" text-anchor=\"middle\" dominant-baseline=\"central\">9</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"256.3\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"135\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"184.3\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
+  },
+  {
+   "id": "b11-l2-5",
+   "q": "Объём шара равен $288\\pi$. Найдите площадь поверхности шара, делённую на $\\pi$.",
+   "a": 144,
+   "hint": "Из $V=\\dfrac43\\pi R^3$ найдите $R$.",
+   "sol": [
+    "$\\dfrac43R^3=288$, $R^3=216$, $R=6$.",
+    "$S=4\\pi R^2=144\\pi$. Ответ $144$."
+   ]
+  },
+  {
+   "id": "b11-l2-6",
+   "q": "Радиус шара равен $6$. Найдите объём шара, делённый на $\\pi$.",
+   "a": 288,
+   "hint": "$V=\\dfrac43\\pi R^3$.",
+   "sol": [
+    "$V=\\dfrac43\\pi\\cdot216=288\\pi$. Ответ $288$."
+   ]
+  }
+ ],
+ "hard": [
+  {
+   "id": "b11-l2-h1",
+   "q": "Площадь осевого сечения цилиндра равна $48$, высота цилиндра равна $6$. Найдите объём цилиндра, делённый на $\\pi$.",
+   "a": 96,
+   "hint": "Осевое сечение прямоугольник $2R\\times h$.",
+   "sol": [
+    "$2R\\cdot6=48$, $2R=8$, $R=4$.",
+    "$V=\\pi\\cdot16\\cdot6=96\\pi$. Ответ $96$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 215.5\" width=\"270\" height=\"215.5\" role=\"img\" aria-label=\"Осевое сечение цилиндра: прямоугольник со сторонами 2R и 6, площадь 48\"><line class=\"fl\" x1=\"26\" y1=\"189.5\" x2=\"244\" y2=\"189.5\"/><line class=\"fl\" x1=\"244\" y1=\"189.5\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"189.5\"/><line class=\"fl fd\" x1=\"135\" y1=\"189.5\" x2=\"135\" y2=\"26\"/><text class=\"ft fn\" x=\"135\" y=\"201.5\" text-anchor=\"middle\" dominant-baseline=\"central\">2R</text><text class=\"ft fn\" x=\"256\" y=\"107.8\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><circle class=\"fp\" cx=\"26\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"15.6\" y=\"197.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"254.4\" y=\"197.3\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254.4\" y=\"18.2\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.6\" y=\"18.2\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "id": "b11-l2-h2",
+   "q": "Осевое сечение конуса — прямоугольный треугольник с гипотенузой $12$. Найдите объём конуса, делённый на $\\pi$.",
+   "a": 72,
+   "hint": "В прямоугольном равнобедренном треугольнике высота к гипотенузе равна половине гипотенузы.",
+   "sol": [
+    "Угол при вершине $90^\\circ$, значит $R=h=\\dfrac{12}2=6$.",
+    "$V=\\dfrac13\\pi\\cdot36\\cdot6=72\\pi$. Ответ $72$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 161\" width=\"270\" height=\"161\" role=\"img\" aria-label=\"Осевое сечение конуса — прямоугольный равнобедренный треугольник с гипотенузой 12\"><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"135\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"135\"/><line class=\"fl\" x1=\"26\" y1=\"135\" x2=\"244\" y2=\"135\"/><text class=\"ft fn\" x=\"135\" y=\"147\" text-anchor=\"middle\" dominant-baseline=\"central\">12</text><circle class=\"fp\" cx=\"26\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"139.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"256.3\" y=\"139.1\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text></svg></figure>"
+  },
+  {
+   "id": "b11-l2-h3",
+   "q": "Во сколько раз увеличится объём цилиндра, если радиус основания увеличить в $3$ раза, а высоту не менять?",
+   "a": 9,
+   "hint": "Объём пропорционален $R^2$.",
+   "sol": [
+    "$V=\\pi R^2h$, при замене $R$ на $3R$ получаем $9\\pi R^2h$.",
+    "Объём вырастет в $9$ раз."
+   ]
+  },
+  {
+   "id": "b11-l2-h4",
+   "q": "Во сколько раз увеличится площадь поверхности шара, если радиус шара увеличить в $2$ раза?",
+   "a": 4,
+   "hint": "$S=4\\pi R^2$.",
+   "sol": [
+    "При замене $R$ на $2R$: $4\\pi(2R)^2=4\\cdot4\\pi R^2$.",
+    "Площадь вырастет в $4$ раза."
+   ]
+  },
+  {
+   "id": "b11-l2-h5",
+   "q": "Объём конуса равен $36\\pi$, радиус основания равен $3$. Найдите высоту конуса.",
+   "a": 12,
+   "hint": "$V=\\dfrac13\\pi R^2h$.",
+   "sol": [
+    "$36\\pi=\\dfrac13\\pi\\cdot9h=3\\pi h$.",
+    "$h=12$."
+   ]
+  },
+  {
+   "id": "b11-l2-h6",
+   "q": "Развёртка боковой поверхности цилиндра — прямоугольник со сторонами $4\\pi$ и $5$ (длина окружности основания равна $4\\pi$). Найдите объём цилиндра, делённый на $\\pi$.",
+   "a": 20,
+   "hint": "Длина окружности основания $2\\pi R=4\\pi$.",
+   "sol": [
+    "$R=2$, высота $5$.",
+    "$V=\\pi\\cdot4\\cdot5=20\\pi$. Ответ $20$."
+   ]
+  },
+  {
+   "id": "b11-l2-h7",
+   "q": "Образующая конуса равна $5$, высота равна $4$. Найдите площадь полной поверхности конуса, делённую на $\\pi$.",
+   "a": 24,
+   "hint": "$S_{\\text{полн}}=\\pi R(l+R)$.",
+   "sol": [
+    "$R=\\sqrt{25-16}=3$.",
+    "$S=\\pi\\cdot3\\cdot(5+3)=24\\pi$. Ответ $24$."
+   ]
+  },
+  {
+   "id": "b11-l2-h8",
+   "q": "Плоскость пересекает шар. Расстояние от центра шара до плоскости равно $4$, радиус сечения равен $3$. Найдите площадь поверхности шара, делённую на $\\pi$.",
+   "a": 100,
+   "hint": "Радиус шара, расстояние до плоскости и радиус сечения образуют прямоугольный треугольник.",
+   "sol": [
+    "$R=\\sqrt{4^2+3^2}=5$.",
+    "$S=4\\pi R^2=100\\pi$. Ответ $100$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Осевое сечение шара: радиус OA, расстояние OH до плоскости сечения 4 и радиус сечения HA равный 3\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"135\" y1=\"117.5\" x2=\"135\" y2=\"44.3\"/><line class=\"fl\" x1=\"135\" y1=\"44.3\" x2=\"189.9\" y2=\"44.3\"/><line class=\"fl\" x1=\"135\" y1=\"117.5\" x2=\"189.9\" y2=\"44.3\"/><path class=\"fa\" d=\"M135 54.3 L145 54.3 L145 44.3\"/><text class=\"ft fn\" x=\"123\" y=\"80.9\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><text class=\"ft fn\" x=\"162.4\" y=\"32.3\" text-anchor=\"middle\" dominant-baseline=\"central\">3</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"130.4\" y=\"129.7\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"135\" cy=\"44.3\" r=\"2.6\"/><text class=\"ft\" x=\"127.2\" y=\"33.9\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text><circle class=\"fp\" cx=\"189.9\" cy=\"44.3\" r=\"2.6\"/><text class=\"ft\" x=\"200.7\" y=\"37.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text></svg></figure>"
+  },
+  {
+   "id": "b11-l2-h9",
+   "q": "Цилиндр и конус имеют общее основание и равные высоты. Объём цилиндра равен $36$. Найдите объём конуса.",
+   "a": 12,
+   "hint": "Объём конуса втрое меньше объёма цилиндра с тем же основанием и высотой.",
+   "sol": [
+    "$V_{\\text{цил}}=\\pi R^2h$, $V_{\\text{кон}}=\\dfrac13\\pi R^2h$.",
+    "$V_{\\text{кон}}=\\dfrac{36}3=12$."
+   ]
+  },
+  {
+   "id": "b11-l2-h10",
+   "q": "Прямоугольный треугольник с катетами $3$ и $4$ вращают вокруг катета, равного $4$. Найдите объём полученного тела, делённый на $\\pi$.",
+   "a": 12,
+   "hint": "При вращении вокруг катета получается конус. Какой катет его высота, а какой радиус?",
+   "sol": [
+    "Ось вращения катет $4$ (высота), другой катет $3$ радиус основания.",
+    "$V=\\dfrac13\\pi\\cdot9\\cdot4=12\\pi$. Ответ $12$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный треугольник с катетами 3 и 4, ось вращения — катет 4\"><line class=\"fl\" x1=\"66.4\" y1=\"209\" x2=\"203.6\" y2=\"209\"/><line class=\"fl\" x1=\"203.6\" y1=\"209\" x2=\"66.4\" y2=\"26\"/><line class=\"fl\" x1=\"66.4\" y1=\"26\" x2=\"66.4\" y2=\"209\"/><path class=\"fa\" d=\"M76.4 209 L76.4 199 L66.4 199\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">3</text><text class=\"ft fn\" x=\"54.4\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><circle class=\"fp\" cx=\"66.4\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"58.6\" y=\"219.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"203.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"214.4\" y=\"216.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"66.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"61.8\" y=\"13.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>"
+  }
+ ]
+}
