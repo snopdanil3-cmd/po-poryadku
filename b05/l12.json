@@ -1,0 +1,188 @@
+{
+ "intro": "Медиана, биссектриса, высота и теоремы об отношениях: как доказывать равенство отношений и считать площади. Сайт проверяет только число в пункте «б», доказательство оцени по списку в конце.",
+ "theory": [
+  {
+   "h": "Замечательные отрезки и их отношения",
+   "html": "<ul><li><b>Медианы</b> пересекаются в одной точке и делятся ею как $2:1$ от вершины. Медиана делит треугольник на две равновеликие части. Медиана прямоугольного треугольника к гипотенузе равна её половине.</li><li><b>Биссектриса</b> делит противоположную сторону пропорционально прилежащим сторонам: $\\dfrac{BD}{DC}=\\dfrac{AB}{AC}$.</li><li><b>Высоты</b> обратно пропорциональны сторонам: $a\\,h_a=b\\,h_b=c\\,h_c=2S$.</li></ul>"
+  },
+  {
+   "h": "Теоремы Менелая и Чевы",
+   "html": "<p><b>Менелай.</b> Прямая пересекает стороны $AB$, $BC$ и продолжение $CA$ в точках $C_1$, $A_1$, $B_1$. Тогда $\\dfrac{AC_1}{C_1B}\\cdot\\dfrac{BA_1}{A_1C}\\cdot\\dfrac{CB_1}{B_1A}=1$.</p><p><b>Чева.</b> Если отрезки $AA_1$, $BB_1$, $CC_1$ пересекаются в одной точке, то $\\dfrac{AC_1}{C_1B}\\cdot\\dfrac{BA_1}{A_1C}\\cdot\\dfrac{CB_1}{B_1A}=1$. Верно и обратное.</p><p class=\"warn-box\">Левая часть записывается по обходу вершин «вокруг» треугольника: числитель одной дроби и знаменатель следующей не должны быть записаны наоборот. Проверьте себя на примере с серединами сторон: все отношения равны $1$.</p>"
+  },
+  {
+   "h": "Метод площадей",
+   "html": "<p>Если у двух треугольников общая высота, то их площади относятся как основания. Если общее основание, то как высоты. Так отношение отрезков превращается в отношение площадей и обратно.</p><p>Часто удобно обозначить неизвестные площади буквами, записать несколько отношений и решить систему.</p>"
+  },
+  {
+   "h": "Углы между замечательными отрезками",
+   "html": "<p>Угол между высотой и биссектрисой, проведёнными из одной вершины, равен половине разности двух других углов: $\\angle HAL=\\dfrac{|\\angle B-\\angle C|}2$. В прямоугольном треугольнике медиана к гипотенузе образует с катетами равнобедренный треугольник.</p><p class=\"warn-box\">Теорему Менелая нельзя применять, не назвав треугольник и прямую. Укажите их в записи доказательства.</p>"
+  }
+ ],
+ "examples": [
+  {
+   "q": "В треугольнике $ABC$ угол $A$ прямой, $AM$ медиана. а) Докажите, что $AM=\\dfrac12BC$. б) Найдите $AM$, если катеты равны $6$ и $8$.",
+   "steps": [
+    "а) Прямой вписанный угол опирается на диаметр, поэтому середина $M$ гипотенузы $BC$ центр описанной окружности, и $MA=MB=MC=\\dfrac12BC$.",
+    "б) $BC=\\sqrt{36+64}=10$, $AM=5$."
+   ],
+   "a": 5,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный треугольник с медианой к гипотенузе\"><line class=\"fl\" x1=\"66.4\" y1=\"209\" x2=\"203.6\" y2=\"209\"/><line class=\"fl\" x1=\"203.6\" y1=\"209\" x2=\"66.4\" y2=\"26\"/><line class=\"fl\" x1=\"66.4\" y1=\"26\" x2=\"66.4\" y2=\"209\"/><line class=\"fl\" x1=\"66.4\" y1=\"209\" x2=\"135\" y2=\"117.5\"/><path class=\"fa\" d=\"M76.4 209 L76.4 199 L66.4 199\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><text class=\"ft fn\" x=\"78.4\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">8</text><circle class=\"fp\" cx=\"66.4\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"58.6\" y=\"219.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"203.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"213.8\" y=\"217.1\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"66.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"61\" y=\"14.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"142.8\" y=\"107.1\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>"
+  },
+  {
+   "q": "На стороне $BC$ треугольника $ABC$ отмечена точка $D$ так, что $BD:DC=1:2$. $E$ середина $AD$, прямая $BE$ пересекает $AC$ в точке $F$. а) Докажите, что $AF:FC=1:3$. б) Найдите $AC$, если $AF=3{,}5$.",
+   "steps": [
+    "а) Применим теорему Менелая к треугольнику $ADC$ и прямой $BEF$: $\\dfrac{AE}{ED}\\cdot\\dfrac{DB}{BC}\\cdot\\dfrac{CF}{FA}=1$.",
+    "$AE:ED=1:1$, $DB:BC=1:3$, поэтому $\\dfrac{CF}{FA}=3$, то есть $AF:FC=1:3$.",
+    "б) $AC=AF+FC=4\\,AF=14$."
+   ],
+   "a": 14,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник ABC, точка D на BC, середина E отрезка AD, прямая BE пересекает AC в точке F\"><line class=\"fl\" x1=\"54.9\" y1=\"26\" x2=\"32.1\" y2=\"209\"/><line class=\"fl\" x1=\"32.1\" y1=\"209\" x2=\"237.9\" y2=\"209\"/><line class=\"fl\" x1=\"237.9\" y1=\"209\" x2=\"54.9\" y2=\"26\"/><line class=\"fl\" x1=\"54.9\" y1=\"26\" x2=\"100.7\" y2=\"209\"/><line class=\"fl\" x1=\"32.1\" y1=\"209\" x2=\"100.7\" y2=\"71.8\"/><circle class=\"fp\" cx=\"54.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"50.1\" y=\"13.9\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"32.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"22.9\" y=\"218.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"237.9\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"249.6\" y=\"214.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"100.7\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"100.7\" y=\"222\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"77.8\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"87.8\" y=\"125.5\" text-anchor=\"middle\" dominant-baseline=\"central\">E</text><circle class=\"fp\" cx=\"100.7\" cy=\"71.8\" r=\"2.6\"/><text class=\"ft\" x=\"100.7\" y=\"58.8\" text-anchor=\"middle\" dominant-baseline=\"central\">F</text></svg></figure>"
+  },
+  {
+   "q": "В треугольнике $ABC$ углы $B$ и $C$ равны $70^\\circ$ и $30^\\circ$. $AH$ высота, $AL$ биссектриса. а) Докажите, что $\\angle HAL=\\dfrac{\\angle B-\\angle C}2$. б) Найдите $\\angle HAL$ в градусах.",
+   "steps": [
+    "а) Из прямоугольного треугольника $ABH$: $\\angle BAH=90^\\circ-\\angle B$. Биссектриса: $\\angle BAL=\\dfrac{180^\\circ-\\angle B-\\angle C}2=90^\\circ-\\dfrac{\\angle B+\\angle C}2$.",
+    "$\\angle BAH-\\angle BAL=\\left(90^\\circ-\\angle B\\right)-\\left(90^\\circ-\\dfrac{\\angle B+\\angle C}2\\right)=\\dfrac{\\angle C-\\angle B}2$. Угол $HAL$ равен модулю этой разности: $\\dfrac{\\angle B-\\angle C}2$ при $\\angle B>\\angle C$.",
+    "б) $\\dfrac{70^\\circ-30^\\circ}2=20^\\circ$."
+   ],
+   "a": 20,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 156\" width=\"270\" height=\"156\" role=\"img\" aria-label=\"Треугольник ABC, высота AH и биссектриса AL\"><line class=\"fl\" x1=\"63.9\" y1=\"26\" x2=\"26\" y2=\"130\"/><line class=\"fl\" x1=\"26\" y1=\"130\" x2=\"244\" y2=\"130\"/><line class=\"fl\" x1=\"244\" y1=\"130\" x2=\"63.9\" y2=\"26\"/><line class=\"fl\" x1=\"63.9\" y1=\"26\" x2=\"63.9\" y2=\"130\"/><line class=\"fl\" x1=\"63.9\" y1=\"26\" x2=\"101.7\" y2=\"130\"/><path class=\"fa\" d=\"M63.9 120 L53.9 120 L53.9 130\"/><circle class=\"fp\" cx=\"63.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"58.7\" y=\"14.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"26\" cy=\"130\" r=\"2.6\"/><text class=\"ft\" x=\"13.5\" y=\"133.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"130\" r=\"2.6\"/><text class=\"ft\" x=\"256.9\" y=\"131.9\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"63.9\" cy=\"130\" r=\"2.6\"/><text class=\"ft\" x=\"52.6\" y=\"136.5\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text><circle class=\"fp\" cx=\"101.7\" cy=\"130\" r=\"2.6\"/><text class=\"ft\" x=\"102.8\" y=\"143\" text-anchor=\"middle\" dominant-baseline=\"central\">L</text></svg></figure>"
+  }
+ ],
+ "tasks": [
+  {
+   "id": "b05-p7-1",
+   "q": "В прямоугольном треугольнике $ABC$ с прямым углом $A$ проведена медиана $AM$. а) Докажите, что $AM=\\dfrac12BC$. б) Найдите $AM$, если катеты равны $5$ и $12$.",
+   "a": 6.5,
+   "hint": "Центр описанной окружности прямоугольного треугольника лежит в середине гипотенузы.",
+   "sol": [
+    "а) Угол $A$ прямой и вписанный, значит он опирается на диаметр $BC$. Середина $M$ гипотенузы центр описанной окружности, поэтому $AM=MB=MC=\\dfrac12BC$.",
+    "б) $BC=\\sqrt{25+144}=13$, $AM=6{,}5$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный треугольник с медианой к гипотенузе\"><line class=\"fl\" x1=\"96.9\" y1=\"209\" x2=\"173.1\" y2=\"209\"/><line class=\"fl\" x1=\"173.1\" y1=\"209\" x2=\"96.9\" y2=\"26\"/><line class=\"fl\" x1=\"96.9\" y1=\"26\" x2=\"96.9\" y2=\"209\"/><line class=\"fl\" x1=\"96.9\" y1=\"209\" x2=\"135\" y2=\"117.5\"/><path class=\"fa\" d=\"M106.9 209 L106.9 199 L96.9 199\"/><circle class=\"fp\" cx=\"96.9\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"91.9\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"173.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"180.5\" y=\"219.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"96.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"93.7\" y=\"13.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"140\" y=\"105.5\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>"
+  },
+  {
+   "id": "b05-p7-2",
+   "q": "Медианы треугольника $ABC$ пересекаются в точке $G$. а) Докажите, что площадь треугольника $AGB$ равна трети площади $ABC$. б) Найдите площадь $AGB$, если площадь $ABC$ равна $36$.",
+   "a": 12,
+   "hint": "Медиана $CM$ делится точкой $G$ как $2:1$. Сравните высоты треугольников $AGB$ и $ACB$ к стороне $AB$.",
+   "sol": [
+    "а) $G$ делит медиану $CM$ в отношении $CG:GM=2:1$, поэтому расстояние от $G$ до $AB$ втрое меньше расстояния от $C$ до $AB$. Основание $AB$ общее, значит $S_{AGB}=\\dfrac13S_{ABC}$.",
+    "б) $\\dfrac{36}3=12$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 161\" width=\"270\" height=\"161\" role=\"img\" aria-label=\"Треугольник и три медианы\"><line class=\"fl\" x1=\"26\" y1=\"135\" x2=\"244\" y2=\"135\"/><line class=\"fl\" x1=\"244\" y1=\"135\" x2=\"80.5\" y2=\"26\"/><line class=\"fl\" x1=\"80.5\" y1=\"26\" x2=\"26\" y2=\"135\"/><line class=\"fl\" x1=\"80.5\" y1=\"26\" x2=\"135\" y2=\"135\"/><line class=\"fl\" x1=\"26\" y1=\"135\" x2=\"162.2\" y2=\"80.5\"/><line class=\"fl\" x1=\"244\" y1=\"135\" x2=\"53.2\" y2=\"80.5\"/><circle class=\"fp\" cx=\"26\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"13.9\" y=\"139.8\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"256.5\" y=\"138.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"80.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"74.7\" y=\"14.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"116.8\" cy=\"98.7\" r=\"2.6\"/><text class=\"ft\" x=\"126.8\" y=\"106.7\" text-anchor=\"middle\" dominant-baseline=\"central\">G</text><circle class=\"fp\" cx=\"135\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"140.8\" y=\"146.6\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"162.2\" cy=\"80.5\" r=\"2.6\"/><text class=\"ft\" x=\"174.3\" y=\"75.7\" text-anchor=\"middle\" dominant-baseline=\"central\">K</text><circle class=\"fp\" cx=\"53.2\" cy=\"80.5\" r=\"2.6\"/><text class=\"ft\" x=\"40.8\" y=\"76.9\" text-anchor=\"middle\" dominant-baseline=\"central\">L</text></svg></figure>"
+  },
+  {
+   "id": "b05-p7-3",
+   "q": "На стороне $BC$ треугольника $ABC$ взята точка $D$, $BD:DC=2:1$, на $AD$ точка $E$, $AE:ED=3:1$. Прямая $BE$ пересекает $AC$ в точке $F$. а) Докажите, что $AF:FC=2:1$. б) Найдите $AF$, если $AC=18$.",
+   "a": 12,
+   "hint": "Теорема Менелая для треугольника $ADC$ и прямой $BF$.",
+   "sol": [
+    "а) $\\dfrac{AE}{ED}\\cdot\\dfrac{DB}{BC}\\cdot\\dfrac{CF}{FA}=1$: $3\\cdot\\dfrac23\\cdot\\dfrac{CF}{FA}=1$, откуда $\\dfrac{CF}{FA}=\\dfrac12$, то есть $AF:FC=2:1$.",
+    "б) $AF=\\dfrac23\\cdot18=12$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 161\" width=\"270\" height=\"161\" role=\"img\" aria-label=\"Треугольник ABC с точками D, E, F\"><line class=\"fl\" x1=\"26\" y1=\"135\" x2=\"86.6\" y2=\"26\"/><line class=\"fl\" x1=\"86.6\" y1=\"26\" x2=\"244\" y2=\"135\"/><line class=\"fl\" x1=\"244\" y1=\"135\" x2=\"26\" y2=\"135\"/><line class=\"fl\" x1=\"26\" y1=\"135\" x2=\"191.5\" y2=\"98.7\"/><line class=\"fl\" x1=\"86.6\" y1=\"26\" x2=\"171.3\" y2=\"135\"/><circle class=\"fp\" cx=\"26\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"13.4\" y=\"138.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"86.6\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"78.9\" y=\"15.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"256.5\" y=\"138.6\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"191.5\" cy=\"98.7\" r=\"2.6\"/><text class=\"ft\" x=\"204.4\" y=\"96.6\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"150.1\" cy=\"107.8\" r=\"2.6\"/><text class=\"ft\" x=\"160.1\" y=\"115.8\" text-anchor=\"middle\" dominant-baseline=\"central\">E</text><circle class=\"fp\" cx=\"171.3\" cy=\"135\" r=\"2.6\"/><text class=\"ft\" x=\"180.1\" y=\"144.6\" text-anchor=\"middle\" dominant-baseline=\"central\">F</text></svg></figure>"
+  },
+  {
+   "id": "b05-p7-4",
+   "q": "В треугольнике $ABC$ проведены высота $AH$ и биссектриса $AL$. Известно, что $\\angle B=84^\\circ$, $\\angle C=36^\\circ$. а) Докажите, что $\\angle HAL=\\dfrac{\\angle B-\\angle C}2$. б) Найдите $\\angle HAL$ в градусах.",
+   "a": 24,
+   "hint": "Выразите $\\angle BAH$ и $\\angle BAL$ через $\\angle B$ и $\\angle C$.",
+   "sol": [
+    "а) $\\angle BAH=90^\\circ-\\angle B$, $\\angle BAL=90^\\circ-\\dfrac{\\angle B+\\angle C}2$. Разность по модулю равна $\\dfrac{\\angle B-\\angle C}2$.",
+    "б) $\\dfrac{84^\\circ-36^\\circ}2=24^\\circ$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 199.1\" width=\"270\" height=\"199.1\" role=\"img\" aria-label=\"Треугольник с высотой и биссектрисой из одной вершины\"><line class=\"fl\" x1=\"41.5\" y1=\"26\" x2=\"26\" y2=\"173.1\"/><line class=\"fl\" x1=\"26\" y1=\"173.1\" x2=\"244\" y2=\"173.1\"/><line class=\"fl\" x1=\"244\" y1=\"173.1\" x2=\"41.5\" y2=\"26\"/><line class=\"fl\" x1=\"41.5\" y1=\"26\" x2=\"41.5\" y2=\"173.1\"/><line class=\"fl\" x1=\"41.5\" y1=\"26\" x2=\"107\" y2=\"173.1\"/><path class=\"fa\" d=\"M41.5 163.1 L31.5 163.1 L31.5 173.1\"/><circle class=\"fp\" cx=\"41.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"36.3\" y=\"14.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"26\" cy=\"173.1\" r=\"2.6\"/><text class=\"ft\" x=\"14.1\" y=\"178.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"173.1\" r=\"2.6\"/><text class=\"ft\" x=\"256.8\" y=\"175.6\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"41.5\" cy=\"173.1\" r=\"2.6\"/><text class=\"ft\" x=\"30.2\" y=\"179.7\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text><circle class=\"fp\" cx=\"107\" cy=\"173.1\" r=\"2.6\"/><text class=\"ft\" x=\"112.9\" y=\"184.7\" text-anchor=\"middle\" dominant-baseline=\"central\">L</text></svg></figure>"
+  },
+  {
+   "id": "b05-p7-5",
+   "q": "В треугольнике $ABC$ стороны $AB=13$, $BC=14$, $AC=15$. Высота к стороне $BC$ равна $12$. а) Докажите, что высоты треугольника обратно пропорциональны сторонам, к которым проведены. б) Найдите высоту, проведённую к стороне $AC$.",
+   "a": 11.2,
+   "hint": "$ah_a=bh_b=2S$.",
+   "sol": [
+    "а) Площадь $S=\\dfrac12ah_a=\\dfrac12bh_b=\\dfrac12ch_c$, поэтому $a\\,h_a=b\\,h_b=c\\,h_c$ и $h_a:h_b=b:a$.",
+    "б) $h_b=\\dfrac{12\\cdot14}{15}=11{,}2$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник со сторонами 13, 14, 15 и двумя высотами\"><line class=\"fl\" x1=\"43\" y1=\"209\" x2=\"227\" y2=\"209\"/><line class=\"fl\" x1=\"227\" y1=\"209\" x2=\"150.8\" y2=\"26\"/><line class=\"fl\" x1=\"150.8\" y1=\"26\" x2=\"43\" y2=\"209\"/><line class=\"fl\" x1=\"43\" y1=\"209\" x2=\"199.8\" y2=\"143.6\"/><line class=\"fl\" x1=\"227\" y1=\"209\" x2=\"90.4\" y2=\"128.5\"/><path class=\"fa\" d=\"M190.6 147.5 L194.4 156.7 L203.7 152.9\"/><path class=\"fa\" d=\"M99 133.6 L93.9 142.2 L85.3 137.1\"/><circle class=\"fp\" cx=\"43\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"32.1\" y=\"216.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"227\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"237.3\" y=\"217\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"150.8\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"151.7\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"199.8\" cy=\"143.6\" r=\"2.6\"/><text class=\"ft\" x=\"212.8\" y=\"143.7\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text><circle class=\"fp\" cx=\"90.4\" cy=\"128.5\" r=\"2.6\"/><text class=\"ft\" x=\"77.9\" y=\"124.9\" text-anchor=\"middle\" dominant-baseline=\"central\">K</text></svg></figure>"
+  }
+ ],
+ "hard": [
+  {
+   "id": "b05-p7-h1",
+   "q": "Биссектрисы треугольника $ABC$ пересекаются в точке $I$, $AD$ биссектриса. а) Докажите, что $AI:ID=(AB+AC):BC$. б) Найдите $AI:ID$, если $AB=13$, $BC=14$, $AC=15$.",
+   "a": 2,
+   "hint": "$BI$ биссектриса угла $B$ в треугольнике $ABD$. Чему равно $BD$?",
+   "sol": [
+    "а) Биссектриса $AD$ делит $BC$ так: $BD=\\dfrac{BC\\cdot AB}{AB+AC}$. В треугольнике $ABD$ отрезок $BI$ биссектриса, поэтому $\\dfrac{AI}{ID}=\\dfrac{AB}{BD}=\\dfrac{AB+AC}{BC}$.",
+    "б) $\\dfrac{13+15}{14}=2$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник, биссектриса AD и центр I вписанной окружности\"><line class=\"fl\" x1=\"43\" y1=\"209\" x2=\"227\" y2=\"209\"/><line class=\"fl\" x1=\"227\" y1=\"209\" x2=\"150.8\" y2=\"26\"/><line class=\"fl\" x1=\"150.8\" y1=\"26\" x2=\"43\" y2=\"209\"/><line class=\"fl\" x1=\"43\" y1=\"209\" x2=\"191.6\" y2=\"124\"/><line class=\"fl\" x1=\"227\" y1=\"209\" x2=\"142.1\" y2=\"152.4\"/><circle class=\"fp\" cx=\"43\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"31.8\" y=\"215.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"227\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"236.9\" y=\"217.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"150.8\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"150.8\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"142.1\" cy=\"152.4\" r=\"2.6\"/><text class=\"ft\" x=\"132.6\" y=\"161.3\" text-anchor=\"middle\" dominant-baseline=\"central\">I</text><circle class=\"fp\" cx=\"191.6\" cy=\"124\" r=\"2.6\"/><text class=\"ft\" x=\"203.3\" y=\"118.3\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
+  },
+  {
+   "id": "b05-p7-h2",
+   "q": "В треугольнике $ABC$ проведена медиана $BM$, на ней взята точка $K$ так, что $BK:KM=3:1$. а) Докажите, что площадь треугольника $AKC$ равна четверти площади $ABC$. б) Найдите площадь $AKC$, если площадь $ABC$ равна $48$.",
+   "a": 12,
+   "hint": "У треугольников $AKC$ и $ABC$ общее основание $AC$. Сравните высоты.",
+   "sol": [
+    "а) Расстояния от $K$ и от $B$ до прямой $AC$ относятся как $KM:BM=1:4$ (подобные прямоугольные треугольники с вершиной $M$). Основание $AC$ общее, поэтому $S_{AKC}=\\dfrac14S_{ABC}$.",
+    "б) $\\dfrac{48}4=12$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Треугольник ABC, медиана BM, точка K на ней\"><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"62.3\" y2=\"26\"/><line class=\"fl\" x1=\"62.3\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"44.2\" y2=\"98.7\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"94.1\" y2=\"116.8\"/><line class=\"fl\" x1=\"94.1\" y1=\"116.8\" x2=\"62.3\" y2=\"26\"/><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"15.8\" y=\"179.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"256.2\" y=\"175.8\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"62.3\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"58\" y=\"13.7\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"44.2\" cy=\"98.7\" r=\"2.6\"/><text class=\"ft\" x=\"31.9\" y=\"94.2\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"94.1\" cy=\"116.8\" r=\"2.6\"/><text class=\"ft\" x=\"103.3\" y=\"107.6\" text-anchor=\"middle\" dominant-baseline=\"central\">K</text></svg></figure>"
+  },
+  {
+   "id": "b05-p7-h3",
+   "q": "На сторонах $BC$ и $CA$ треугольника $ABC$ взяты точки $D$ и $E$, $BD:DC=1:3$, $CE:EA=3:2$. Отрезки $AD$ и $BE$ пересекаются в точке $P$, прямая $CP$ пересекает $AB$ в точке $F$. а) Докажите, что $AF:FB=2:1$. б) Найдите $AF$, если $AB=12$.",
+   "a": 8,
+   "hint": "Теорема Чевы: $\\dfrac{AF}{FB}\\cdot\\dfrac{BD}{DC}\\cdot\\dfrac{CE}{EA}=1$.",
+   "sol": [
+    "а) Три прямые $AD$, $BE$, $CF$ пересекаются в одной точке $P$, поэтому по теореме Чевы $\\dfrac{AF}{FB}\\cdot\\dfrac{BD}{DC}\\cdot\\dfrac{CE}{EA}=1$.",
+    "$\\dfrac{AF}{FB}\\cdot\\dfrac13\\cdot\\dfrac32=1$, значит $\\dfrac{AF}{FB}=2$.",
+    "б) $AF=\\dfrac23\\cdot12=8$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 215.5\" width=\"270\" height=\"215.5\" role=\"img\" aria-label=\"Треугольник ABC и три чевианы, пересекающиеся в точке P\"><line class=\"fl\" x1=\"26\" y1=\"189.5\" x2=\"244\" y2=\"189.5\"/><line class=\"fl\" x1=\"244\" y1=\"189.5\" x2=\"80.5\" y2=\"26\"/><line class=\"fl\" x1=\"80.5\" y1=\"26\" x2=\"26\" y2=\"189.5\"/><line class=\"fl\" x1=\"26\" y1=\"189.5\" x2=\"203.1\" y2=\"148.6\"/><line class=\"fl\" x1=\"244\" y1=\"189.5\" x2=\"47.8\" y2=\"124.1\"/><line class=\"fl\" x1=\"80.5\" y1=\"26\" x2=\"171.3\" y2=\"189.5\"/><circle class=\"fp\" cx=\"26\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"13.9\" y=\"194.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"256.1\" y=\"194.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"80.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"75.4\" y=\"14.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"203.1\" cy=\"148.6\" r=\"2.6\"/><text class=\"ft\" x=\"216.1\" y=\"149\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"47.8\" cy=\"124.1\" r=\"2.6\"/><text class=\"ft\" x=\"35.2\" y=\"120.7\" text-anchor=\"middle\" dominant-baseline=\"central\">E</text><circle class=\"fp\" cx=\"171.3\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"180.1\" y=\"199.1\" text-anchor=\"middle\" dominant-baseline=\"central\">F</text><circle class=\"fp\" cx=\"154.8\" cy=\"159.8\" r=\"2.6\"/><text class=\"ft\" x=\"164.8\" y=\"155.8\" text-anchor=\"middle\" dominant-baseline=\"central\">P</text></svg></figure>"
+  },
+  {
+   "id": "b05-p7-h4",
+   "q": "Медианы $AM$ и $BK$ треугольника $ABC$ перпендикулярны. а) Докажите, что $BC^2+AC^2=5AB^2$. б) Найдите $AB$, если $BC=22$, $AC=19$.",
+   "a": 13,
+   "hint": "Пусть $G$ точка пересечения медиан. Запишите теорему Пифагора в треугольниках $AGB$, $BGM$, $AGK$.",
+   "sol": [
+    "а) $G$ делит медианы в отношении $2:1$: $AG=2GM$, $BG=2GK$. Из прямоугольных треугольников: $AB^2=AG^2+BG^2=4(GM^2+GK^2)$.",
+    "$BM^2=BG^2+GM^2=4GK^2+GM^2$, $AK^2=AG^2+GK^2=4GM^2+GK^2$. Складываем: $BM^2+AK^2=5(GM^2+GK^2)=\\dfrac54AB^2$.",
+    "Но $BM=\\dfrac{BC}2$, $AK=\\dfrac{AC}2$, значит $\\dfrac{BC^2+AC^2}4=\\dfrac54AB^2$, то есть $BC^2+AC^2=5AB^2$.",
+    "б) $AB^2=\\dfrac{484+361}5=169$, $AB=13$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник с двумя перпендикулярными медианами\"><line class=\"fl\" x1=\"72.1\" y1=\"209\" x2=\"197.9\" y2=\"209\"/><line class=\"fl\" x1=\"197.9\" y1=\"209\" x2=\"89.2\" y2=\"26\"/><line class=\"fl\" x1=\"89.2\" y1=\"26\" x2=\"72.1\" y2=\"209\"/><line class=\"fl\" x1=\"72.1\" y1=\"209\" x2=\"143.6\" y2=\"117.5\"/><line class=\"fl\" x1=\"197.9\" y1=\"209\" x2=\"80.7\" y2=\"117.5\"/><circle class=\"fp\" cx=\"72.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"65.2\" y=\"220\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"197.9\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"207.6\" y=\"217.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"89.2\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"86.1\" y=\"13.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"143.6\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"153.9\" y=\"109.6\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"80.7\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"69.3\" y=\"111.2\" text-anchor=\"middle\" dominant-baseline=\"central\">K</text><circle class=\"fp\" cx=\"119.7\" cy=\"148\" r=\"2.6\"/><text class=\"ft\" x=\"129.7\" y=\"140\" text-anchor=\"middle\" dominant-baseline=\"central\">G</text></svg></figure>",
+   "top": true
+  },
+  {
+   "id": "b05-p7-h5",
+   "q": "Точки $M$ и $N$ лежат на сторонах $AB$ и $AC$ треугольника $ABC$, отрезки $BN$ и $CM$ пересекаются в точке $O$. Площади треугольников $BOM$, $BOC$ и $CON$ равны $3$, $6$ и $8$. а) Докажите, что $MO:OC=1:2$ и $NO:OB=4:3$. б) Найдите площадь четырёхугольника $AMON$.",
+   "a": 46,
+   "hint": "Обозначьте площади $AMO=p$ и $ANO=q$ и запишите отношения площадей через отношения отрезков.",
+   "sol": [
+    "а) У треугольников $BOM$ и $BOC$ общая высота из $B$ к прямой $CM$, поэтому $MO:OC=3:6=1:2$. У треугольников $CON$ и $COB$ общая высота из $C$: $NO:OB=8:6=4:3$.",
+    "б) Пусть $S_{AMO}=p$, $S_{ANO}=q$. Треугольники $AMO$ и $AOC$ имеют общую высоту из $A$: $\\dfrac p{q+8}=\\dfrac12$. Треугольники $ANO$ и $ABO$: $\\dfrac q{p+3}=\\dfrac43$.",
+    "Из первого $p=\\dfrac{q+8}2$, подставим: $q=\\dfrac43\\left(\\dfrac{q+8}2+3\\right)=\\dfrac{2q+28}3$, откуда $q=28$, $p=18$.",
+    "Площадь $AMON$ равна $p+q=46$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 192.1\" width=\"270\" height=\"192.1\" role=\"img\" aria-label=\"Треугольник ABC, чевианы BN и CM пересекаются в точке O\"><line class=\"fl\" x1=\"26\" y1=\"166.1\" x2=\"244\" y2=\"166.1\"/><line class=\"fl\" x1=\"244\" y1=\"166.1\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"166.1\"/><line class=\"fl\" x1=\"244\" y1=\"166.1\" x2=\"26\" y2=\"57.1\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"212.9\" y2=\"166.1\"/><circle class=\"fp\" cx=\"26\" cy=\"166.1\" r=\"2.6\"/><text class=\"ft\" x=\"14.7\" y=\"172.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"166.1\" r=\"2.6\"/><text class=\"ft\" x=\"256.2\" y=\"170.8\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"16.9\" y=\"16.7\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"212.9\" cy=\"166.1\" r=\"2.6\"/><text class=\"ft\" x=\"224.5\" y=\"172\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"26\" cy=\"57.1\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"49.9\" text-anchor=\"middle\" dominant-baseline=\"central\">N</text><circle class=\"fp\" cx=\"150.6\" cy=\"119.4\" r=\"2.6\"/><text class=\"ft\" x=\"160.6\" y=\"111.4\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>",
+   "top": true
+  }
+ ],
+ "rubric": {
+  "h": "Оцени своё решение по критериям ЕГЭ",
+  "lead": "На экзамене задание части 2 проверяет эксперт, а не компьютер. Сайт проверил только число в пункте «б». Остальное сверь со своей записью и поставь отметки.",
+  "items": [
+   "В пункте «а» каждый шаг доказательства назван и обоснован: указано, какая теорема или свойство применяется",
+   "В доказательстве нет «видно из чертежа»: равенства и параллельность выведены, а не прочитаны с рисунка",
+   "В пункте «б» использовано то, что доказано в пункте «а»",
+   "Вычисления доведены до числа, ответ записан в нужной форме",
+   "Ответ совпал с ответом сайта. Если нет, найди строку, где решение разошлось с разбором"
+  ]
+ },
+ "id": "l12",
+ "title": "Медиана, биссектриса, высота: теоремы и отношения",
+ "plus": true,
+ "minutes": 90
+}
