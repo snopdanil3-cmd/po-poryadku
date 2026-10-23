@@ -36,6 +36,7 @@
   color-scheme:dark;
 }
 
+[hidden]{display:none!important}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font:15px/1.45 var(--font-body);padding-bottom:88px}
 button,input{font:inherit;color:inherit}
