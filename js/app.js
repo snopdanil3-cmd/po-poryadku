@@ -336,6 +336,23 @@
     var l = S.mocks.filter(function (m) { return m.key === id; });
     return l.length ? l[l.length - 1] : null;
   }
+  /* баллы пробника: задания 1–13 по 1 баллу, №14–20 по таблице egePoints; всего 13 + 20 = 33 */
+  function taskPts(t) { return ((C.idx && C.idx.egePoints) || {})[t.ege] || 1; }
+  function mockCalc(T, ans) {
+    var r = { pts: 0, max: 0, n: 0, nmax: T.tasks.length, p1: 0, p1max: 0, p2: 0, p2max: 0 };
+    T.tasks.forEach(function (t) {
+      var w = taskPts(t), v = ans && ans[t.id] !== undefined ? ans[t.id] : '', ok = judge(t, v).ok === true, two = t.ege > 13;
+      r.max += w; if (two) r.p2max += w; else r.p1max += w;
+      if (ok) { r.pts += w; r.n++; if (two) r.p2 += w; else r.p1 += w; }
+    });
+    return r;
+  }
+  function mockRes(m) {
+    var T = C.mocks[m.key] || ensureMock(m.key);
+    if (T && m.ans) return mockCalc(T, m.ans);
+    return { pts: m.s, max: m.max, n: m.s, nmax: m.max, p1: m.s, p1max: m.max, p2: 0, p2max: 0 };
+  }
+  function ptsLabel(r) { return r.pts + ' из ' + plural(r.max, ['балла', 'баллов', 'баллов']); }
 
 
 
@@ -595,7 +612,7 @@
     var chk = '';
     var m0 = lastMock('m00');
     h += '<li class="stop" data-s="' + (m0 ? 'done' : 'now') + '"><div class="node">' + (m0 ? ic('check') : ic('flag')) + '</div><div class="sbody"><a class="shead" href="#mock/m00" style="text-decoration:none;color:inherit"><span><span class="stitle">Входной пробник</span><span class="ssub"><span class="stag">' +
-      (m0 ? 'Результат ' + m0.s + ' из ' + m0.max : 'Сначала пробник') + '</span><span>13 задач части 1, около 2 часов. Результат запишется сам и покажет, с каких блоков начать</span></span></span><span class="chev">' + ic('chev') + '</span></a></div></li>';
+      (m0 ? 'Результат ' + ptsLabel(mockRes(m0)) : 'Сначала пробник') + '</span><span>13 задач части 1, около 2 часов. Результат запишется сам и покажет, с каких блоков начать</span></span></span><span class="chev">' + ic('chev') + '</span></a></div></li>';
     C.blocks.forEach(function (b) {
       var s = blockState(b);
       if (s === 'later' && first && b.status !== 'ready' && C.blocks.filter(function (x) { return x.status === 'ready' && blockState(x) !== 'done'; }).length === 0) { s = 'next'; }
@@ -851,7 +868,7 @@
 
   /* ---- Прогресс ---- */
   function mockChart() {
-    var ms = S.mocks.slice().sort(function (a, b) { return a.at < b.at ? -1 : a.at > b.at ? 1 : a.id - b.id; }).slice(-8);
+    var ms = S.mocks.slice().sort(function (a, b) { return a.at < b.at ? -1 : a.at > b.at ? 1 : a.id - b.id; }).slice(-8).map(function (m) { var r = mockRes(m); return { name: m.name, s: r.pts, max: r.max }; });
     if (!ms.length) return '<p class="empty-note">Пока нет результатов. Реши входной пробник по части 1 и запиши результат ниже.</p>';
     var W = 420, H = 210, L = 40, R = 20, T = 26, B = 46, iw = W - L - R, ih = H - T - B;
     var y = function (p) { return T + ih - ih * p / 100; };
@@ -876,11 +893,11 @@
     h += '<section class="card" style="margin-bottom:16px"><h3>Освоение заданий ЕГЭ</h3><div class="egegrid mini">' + [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (k) { return egeCell(k, false, true); }).join('') + '</div><p class="note" style="margin-top:10px">Решено задач из банка по каждому номеру. Нажми на номер, чтобы потренироваться.</p></section>';
     h += '<div class="two"><section class="card"><h3>Пробники</h3>' + mockChart() +
       (S.mocks.length ? '<ul class="mocks" style="margin-top:8px">' + S.mocks.slice().sort(function (a, b) { return a.at < b.at ? 1 : a.at > b.at ? -1 : b.id - a.id; }).map(function (m) {
-        return '<li><span>' + esc(m.name) + ' · ' + human(m.at) + '</span><span><b class="num">' + m.s + ' из ' + m.max + '</b> <button class="del" data-del-mock="' + m.id + '">удалить</button></span></li>';
+        return '<li><span>' + esc(m.name) + ' · ' + human(m.at) + '</span><span><b class="num">' + ptsLabel(mockRes(m)) + '</b> <button class="del" data-del-mock="' + m.id + '">удалить</button></span></li>';
       }).join('') + '</ul>' : '') +
       '<h4 style="margin:18px 0 8px;font-size:15px">Пройти пробник</h4><ul class="mocks">' + (C.idx.mocks || []).map(function (m) {
         var l = lastMock(m.id);
-        return '<li><span>' + esc(m.name) + (l ? ' · последний результат ' + l.s + ' из ' + l.max : ' · ещё не проходил') + '</span><a class="btn primary sm" href="#mock/' + m.id + '">' + (l ? 'Результат' : 'Начать') + '</a></li>';
+        return '<li><span>' + esc(m.name) + (l ? ' · последний результат ' + ptsLabel(mockRes(l)) : ' · ещё не проходил') + '</span><a class="btn primary sm" href="#mock/' + m.id + '">' + (l ? 'Результат' : 'Начать') + '</a></li>';
       }).join('') + '</ul>' +
       '<p class="note" style="margin-top:10px">Результат записывается автоматически сразу после завершения. По плану пробник раз в четыре недели, новые варианты появятся в этом списке.</p></section>';
     h += '<section class="card"><h3>Освоение блоков</h3><ul class="mast">' + C.blocks.map(function (b) {
@@ -1032,7 +1049,7 @@
       var tk = C.tasks[pool[(K - 1) % pool.length]];
       tasks.push(Object.assign({}, tk, { ege: n }));
     }
-    var T = { id: id, key: 'mock/' + id, kind: 'mock', title: (full ? 'Полный вариант ' : 'Часть 1, вариант ') + K, minutes: full ? 235 : 120, max: tasks.length, part2: full,
+    var T = { id: id, key: 'mock/' + id, kind: 'mock', title: (full ? 'Полный вариант ' : 'Часть 1, вариант ') + K, minutes: full ? 235 : 120, max: tasks.reduce(function (a, t) { return a + taskPts(t); }, 0), part2: full,
       intro: full ? 'Задания №1–20 по формату ЕГЭ. Задания №14–20 нужно решать письменно на бумаге, сайт проверит только итоговый ответ. Баллы за ход решения поставил бы эксперт, поэтому наш результат показывает число верных ответов, а не первичные баллы.' : 'Задания №1–13, краткий ответ, как в первой части ЕГЭ. Время на экзамене на всю работу 3 часа 55 минут, на часть 1 стоит заложить около двух часов.' };
     T.tasks = tasks; C.mocks[id] = T;
     return T;
@@ -1041,7 +1058,7 @@
     var v = mockVariants(), plus = S.mode === 'plus';
     var row = function (id, name, sub) {
       var l = lastMock(id);
-      return '<li class="mrow"><div><b>' + esc(name) + '</b><span class="note">' + sub + (l ? ' · последний результат ' + l.s + ' из ' + l.max : '') + '</span></div><a class="btn ' + (l ? 'ghost' : 'primary') + ' sm" href="#mock/' + id + '">' + (l ? 'Результат' : 'Начать') + '</a></li>';
+      return '<li class="mrow"><div><b>' + esc(name) + '</b><span class="note">' + sub + (l ? ' · последний результат ' + ptsLabel(mockRes(l)) : '') + '</span></div><a class="btn ' + (l ? 'ghost' : 'primary') + ' sm" href="#mock/' + id + '">' + (l ? 'Результат' : 'Начать') + '</a></li>';
     };
     var h = '<p class="lead">Целый вариант без подсказок и с таймером в голове: решаешь всё подряд, потом получаешь разбор. Каждый вариант собран из разных задач банка.</p>';
     h += '<section class="card"><h3>Часть 1 · задания 1–13</h3><ul class="mlist">' + (C.mocks.m00 ? row('m00', 'Входной пробник', '13 заданий, около 2 часов') : '');
@@ -1307,9 +1324,9 @@
         '<div class="stack">' + T.tasks.map(function (t, i) { return taskCard(C.tasks[t.id], { ctx: 'test', n: i + 1, value: (RUN.vals || {})[t.id] }); }).join('') + '</div>' +
         '<div class="cta-row"><button class="btn primary" data-finish-mock="' + id + '">Завершить</button></div></div>';
     }
-    var res = lastMock(id);
+    var res = lastMock(id), rr = res ? mockRes(res) : null;
     if (!res) {
-      return '<div class="reading">' + cr + '<div class="page-h"><h2>' + esc(T.title) + '</h2><div class="meta-row"><span class="chip">около ' + T.minutes + ' минут</span><span>' + plural(T.tasks.length, ['задача', 'задачи', 'задач']) + ', максимум ' + T.max + ' баллов</span></div></div>' +
+      return '<div class="reading">' + cr + '<div class="page-h"><h2>' + esc(T.title) + '</h2><div class="meta-row"><span class="chip">около ' + T.minutes + ' минут</span><span>' + plural(T.tasks.length, ['задача', 'задачи', 'задач']) + ', максимум ' + plural(T.max, ['балл', 'балла', 'баллов']) + '</span></div></div>' +
         '<section class="card"><p class="prose">' + M(esc(T.intro)) + '</p><div class="cta-row"><button class="btn primary" data-start-mock="' + id + '">Начать пробник</button></div></section></div>';
     }
     var weak = {}, good = {};
@@ -1320,28 +1337,27 @@
     Object.keys(weak).forEach(function (k) { delete good[k]; });
     var blk = function (id2) { var b = blockById(id2); return '<a href="#route/' + b.id + '">Блок ' + b.n + '. ' + esc(b.title) + '</a>'; };
     var h = '<div class="reading">' + cr + '<div class="page-h"><h2>' + esc(T.title) + '</h2><div class="meta-row"><span>' + human(res.at) + (res.sec ? ' · ' + Math.max(1, Math.round(res.sec / 60)) + ' мин' : '') + '</span></div></div>';
-    h += '<section class="card"><div class="verdict"><div><div class="score num">' + res.s + '<small> из ' + res.max + '</small></div><p class="note">' + pct(res.s, res.max) + '%. Результат записан в «Прогресс».</p></div></div>';
+    h += '<section class="card"><div class="verdict"><div><div class="score num">' + rr.pts + '<small> из ' + plural(rr.max, ['балла', 'баллов', 'баллов']) + '</small></div><p class="note">Верно решено заданий: ' + rr.n + ' из ' + rr.nmax + ' · ' + pct(rr.pts, rr.max) + '% баллов.' + (rr.p2max ? ' Часть 1: ' + rr.p1 + ' из ' + rr.p1max + ', часть 2: ' + rr.p2 + ' из ' + rr.p2max + '.' : '') + ' Результат записан в «Прогресс».</p>' + (rr.p2max ? '<p class="note">Часть 2 проверена только по итоговому ответу, поэтому баллы за неё показаны по максимуму за верный ответ. За ход решения на экзамене можно получить меньше, оцени себя по критериям в уроках. Перевод в 100-балльную шкалу появится, когда утвердят шкалу ЕГЭ-2027.</p>' : '<p class="note">Перевод в 100-балльную шкалу появится, когда утвердят шкалу ЕГЭ-2027.</p>') + '</div></div>';
     h += Object.keys(weak).length ? '<p><b>С чего начать.</b> Ошибки в этих блоках:</p><div class="link-list">' + Object.keys(weak).map(blk).join('') + '</div>' : '<p><b>Все задачи верны.</b> Можно идти сразу к контрольным блоков.</p>';
     if (Object.keys(good).length) h += '<p class="note" style="margin-top:12px">Решено верно: ' + Object.keys(good).map(function (k) { return 'блок ' + blockById(k).n; }).join(', ') + '. Эти блоки можно начать со стартовой проверки.</p>';
     h += '<div class="cta-row"><button class="btn ghost" data-start-mock="' + id + '">Пройти ещё раз</button><a class="btn ghost" href="#progress">К прогрессу</a></div></section>';
     h += '<div class="prog-line"><h3>Разбор</h3></div><section class="card"><ul class="res">' + T.tasks.map(function (t) {
       var v = res.ans && res.ans[t.id] !== undefined ? res.ans[t.id] : '', ok = judge(t, v).ok === true;
       return '<li><div class="row"><div class="prose">' + t.ege + '. ' + M(t.q) + '</div>' + pill(ok ? 'checked' : 'late', ok ? 'Верно' : 'Ошибка') + '</div>' +
-        '<div class="yours">Задание ЕГЭ № ' + t.ege + ' · блок ' + blockById(t.block).n + ' · твой ответ: ' + (v === '' ? 'нет ответа' : esc(v)) + (ok ? '' : ' · верный: ' + fmtNum(t.a)) + '</div>' +
+        '<div class="yours">Задание ЕГЭ № ' + t.ege + ' · ' + plural(taskPts(t), ['балл', 'балла', 'баллов']) + ' · блок ' + blockById(t.block).n + ' · твой ответ: ' + (v === '' ? 'нет ответа' : esc(v)) + (ok ? '' : ' · верный: ' + fmtNum(t.a)) + '</div>' +
         (ok ? '' : '<details><summary>Решение</summary><div class="prose">' + solutionHtml(C.tasks[t.id]) + '</div></details>') + '</li>';
     }).join('') + '</ul></section></div>';
     return h;
   };
   function finishMock(id) {
-    var T = C.mocks[id], score = 0, ans = {};
+    var T = C.mocks[id], ans = {};
     T.tasks.forEach(function (t) {
       var inp = document.getElementById('in-' + t.id), v = inp ? inp.value : '';
       ans[t.id] = v;
-      var ok = judge(t, v).ok === true;
-      if (ok) score++;
-      attemptPractice(C.tasks[t.id], ok);
+      attemptPractice(C.tasks[t.id], judge(t, v).ok === true);
     });
-    S.mocks.push({ id: Date.now(), key: id, name: T.title, s: score, max: T.max, at: today(), sec: RUN && RUN.t0 ? Math.round((Date.now() - RUN.t0) / 1000) : 0, ans: ans });
+    var mc = mockCalc(T, ans);
+    S.mocks.push({ id: Date.now(), key: id, name: T.title, s: mc.pts, max: mc.max, at: today(), sec: RUN && RUN.t0 ? Math.round((Date.now() - RUN.t0) / 1000) : 0, ans: ans });
     save(); RUN = null; DRAFT = {}; render(); window.scrollTo(0, 0);
   }
 
