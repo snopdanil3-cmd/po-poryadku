@@ -332,6 +332,28 @@
     return { kind: 'wait' };
   }
 
+  /* таймер прохождения: сколько прошло и сколько осталось по рекомендуемому времени */
+  var RTI = null;
+  function fmtClock(sec) { sec = Math.max(0, Math.floor(sec)); var h = Math.floor(sec / 3600), m = Math.floor(sec / 60) % 60, x = sec % 60, z = function (n) { return (n < 10 ? '0' : '') + n; }; return (h ? h + ':' : '') + z(m) + ':' + z(x); }
+  function runTimerHtml(minutes) {
+    return '<div class="runtimer" id="runtimer" data-rec="' + (minutes * 60) + '" role="timer" aria-label="Время прохождения"><span class="rt-a"><small>Прошло</small><b id="rt-el" class="num">00:00</b></span><span class="rt-b"><small id="rt-lbl">Рекомендуемое время</small><b id="rt-left" class="num">' + fmtClock(minutes * 60) + '</b></span></div>';
+  }
+  function armRunTimer() {
+    clearInterval(RTI); RTI = null;
+    var box = document.getElementById('runtimer'); if (!box || !RUN || !RUN.t0) return;
+    var rec = +box.dataset.rec;
+    var hd = document.querySelector('.top'); if (hd) document.documentElement.style.setProperty('--top-h', hd.offsetHeight + 'px');
+    var tick = function () {
+      var el = document.getElementById('rt-el'), lf = document.getElementById('rt-left');
+      if (!el || !lf || !RUN) { clearInterval(RTI); RTI = null; return; }
+      var used = (Date.now() - RUN.t0) / 1000, left = rec - used;
+      el.textContent = fmtClock(used);
+      lf.textContent = (left < 0 ? '+' : '') + fmtClock(Math.abs(left));
+      box.classList.toggle('over', left < 0);
+      document.getElementById('rt-lbl').textContent = left < 0 ? 'Сверх рекомендуемого' : 'Рекомендуемое время';
+    };
+    tick(); RTI = setInterval(tick, 1000);
+  }
   function lastMock(id) {
     var l = S.mocks.filter(function (m) { return m.key === id; });
     return l.length ? l[l.length - 1] : null;
@@ -775,7 +797,7 @@
     var res = S.tests[key];
     var cr = crumbs([{ t: 'Маршрут', href: '#route' }, { t: 'Блок ' + b.n + '. ' + esc(b.title), href: '#route/' + b.id }, { t: T.kind === 'check' ? 'Стартовая проверка' : T.kind === 'cum' ? 'Накопительная работа' : 'Контрольная' }]);
     if (RUN && RUN.key === key) {
-      return '<div class="reading">' + cr + '<div class="page-h"><h2>' + esc(T.title) + '</h2><div class="meta-row"><span class="chip">около ' + T.minutes + ' минут</span><span>без подсказок</span></div></div>' +
+      return '<div class="reading">' + cr + '<div class="page-h"><h2>' + esc(T.title) + '</h2><div class="meta-row"><span class="chip">около ' + T.minutes + ' минут</span><span>без подсказок</span></div></div>' + runTimerHtml(T.minutes) +
         '<p class="note" style="margin:0 0 12px">Ответ — целое число или десятичная дробь. Пустые ответы засчитываются как ошибки. Уходить с экрана до конца нельзя: ответы пропадут.</p>' +
         '<div class="stack">' + T.tasks.map(function (t, i) { return taskCard(C.tasks[t.id], { ctx: 'test', n: i + 1, value: (RUN.vals || {})[t.id] }); }).join('') + '</div>' +
         '<div class="cta-row"><button class="btn primary" data-finish="' + key + '">Завершить</button></div></div>';
@@ -1325,7 +1347,7 @@
     if (!T) return notFound();
     var cr = crumbs([{ t: 'Прогресс', href: '#progress' }, { t: T.title }]);
     if (RUN && RUN.key === T.key) {
-      return '<div class="reading">' + cr + '<div class="page-h"><h2>' + esc(T.title) + '</h2><div class="meta-row"><span class="chip">около ' + T.minutes + ' минут</span><span>без подсказок</span></div></div>' +
+      return '<div class="reading">' + cr + '<div class="page-h"><h2>' + esc(T.title) + '</h2><div class="meta-row"><span class="chip">около ' + T.minutes + ' минут</span><span>без подсказок</span></div></div>' + runTimerHtml(T.minutes) +
         '<p class="note" style="margin:0 0 12px">Ответ — целое число или десятичная дробь. Пустые ответы засчитываются как ошибки. Не закрывай страницу до конца: ответы сохранятся только после кнопки «Завершить».</p>' +
         '<div class="stack">' + T.tasks.map(function (t, i) { return taskCard(C.tasks[t.id], { ctx: 'test', n: i + 1, value: (RUN.vals || {})[t.id] }); }).join('') + '</div>' +
         '<div class="cta-row"><button class="btn primary" data-finish-mock="' + id + '">Завершить</button></div></div>';
@@ -1342,7 +1364,7 @@
     });
     Object.keys(weak).forEach(function (k) { delete good[k]; });
     var blk = function (id2) { var b = blockById(id2); return '<a href="#route/' + b.id + '">Блок ' + b.n + '. ' + esc(b.title) + '</a>'; };
-    var h = '<div class="reading">' + cr + '<div class="page-h"><h2>' + esc(T.title) + '</h2><div class="meta-row"><span>' + human(res.at) + (res.sec ? ' · ' + Math.max(1, Math.round(res.sec / 60)) + ' мин' : '') + '</span></div></div>';
+    var h = '<div class="reading">' + cr + '<div class="page-h"><h2>' + esc(T.title) + '</h2><div class="meta-row"><span>' + human(res.at) + (res.sec ? ' · ' + Math.max(1, Math.round(res.sec / 60)) + ' мин из ' + T.minutes + ' рекомендуемых' : '') + '</span></div></div>';
     h += '<section class="card"><div class="verdict"><div><div class="score num">' + rr.pts + '<small> из ' + plural(rr.max, ['балла', 'баллов', 'баллов']) + '</small></div><div class="note" style="margin-top:6px"><b>≈ ' + testScore(rr) + ' из 100</b> вторичных баллов, ориентировочно</div><p class="note">Верно решено заданий: ' + rr.n + ' из ' + rr.nmax + ' · ' + pct(rr.pts, rr.max) + '% баллов.' + (rr.p2max ? ' Часть 1: ' + rr.p1 + ' из ' + rr.p1max + ', часть 2: ' + rr.p2 + ' из ' + rr.p2max + '.' : '') + ' Результат записан в «Прогресс».</p>' + (rr.p2max ? '<p class="note">Часть 2 проверена только по итоговому ответу, поэтому баллы за неё показаны по максимуму за верный ответ. За ход решения на экзамене можно получить меньше, оцени себя по критериям в уроках. ' + ((C.idx && C.idx.egeScaleNote) || '') + '</p>' : '<p class="note">' + ((C.idx && C.idx.egeScaleNote) || '') + ' Здесь только часть 1, поэтому итог за весь экзамен будет выше.</p>') + '</div></div>';
     h += Object.keys(weak).length ? '<p><b>С чего начать.</b> Ошибки в этих блоках:</p><div class="link-list">' + Object.keys(weak).map(blk).join('') + '</div>' : '<p><b>Все задачи верны.</b> Можно идти сразу к контрольным блоков.</p>';
     if (Object.keys(good).length) h += '<p class="note" style="margin-top:12px">Решено верно: ' + Object.keys(good).map(function (k) { return 'блок ' + blockById(k).n; }).join(', ') + '. Эти блоки можно начать со стартовой проверки.</p>';
@@ -1379,7 +1401,7 @@
   function render() {
     var el = $('#view');
     el.innerHTML = VIEWS[CUR.name](CUR.args) + '<p class="foot-links"><a href="#about">О проекте</a> · <button type="button" class="linkbtn" data-theme-toggle>Оформление: ' + THEME_NAMES[S.theme === 'light' || S.theme === 'dark' ? S.theme : 'auto'] + '</button></p>';
-    fitMath(el); armTimer();
+    fitMath(el); armTimer(); armRunTimer();
     var stb = $('.subtabs'), sac = stb && $('[aria-current="page"]', stb);
     if (stb && sac) stb.scrollLeft = Math.max(0, sac.offsetLeft - (stb.clientWidth - sac.offsetWidth) / 2);
     var nk = NAVKEY[CUR.name] || CUR.name;
@@ -1460,7 +1482,7 @@
     if (st) {
       var sk = st.dataset.startTest, mm = /^(b\d+)\/cum$/.exec(sk);
       if (mm) { var bb = blockById(mm[1]); if (bb) { cumState().sel[bb.id] = cumPick(bb); save(); } }
-      DRAFT = {}; RUN = { key: sk, vals: {} }; render(); window.scrollTo(0, 0); return;
+      DRAFT = {}; RUN = { key: sk, vals: {}, t0: Date.now() }; render(); window.scrollTo(0, 0); return;
     }
     var sm = t.closest('[data-start-mock]');
     if (sm) { DRAFT = {}; RUN = { key: 'mock/' + sm.dataset.startMock, vals: {}, t0: Date.now() }; render(); window.scrollTo(0, 0); return; }

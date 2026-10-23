@@ -492,3 +492,14 @@ details.hard>.note{margin:4px 0 14px}
 .ovl{border-top:1.4px solid currentColor;padding-top:.08em;margin-top:.1em}
 .fig figcaption{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.4}
 #hw{scroll-margin-top:76px}
+
+/* таймер прохождения: прошло и рекомендуемое время */
+.runtimer{position:sticky;top:calc(var(--top-h,56px) + env(safe-area-inset-top,0px));z-index:15;display:flex;gap:10px;margin:0 0 6px;padding:4px 0 8px;background:var(--bg)}
+.runtimer>span{flex:1;display:flex;flex-direction:column;gap:2px;padding:8px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+.runtimer small{font-size:12px;color:var(--muted)}
+.runtimer b{font:600 clamp(18px,5vw,22px)/1.1 var(--font-display)}
+.runtimer .rt-b{background:var(--amber-soft);border-color:transparent;color:var(--amber-ink)}
+.runtimer .rt-b small{color:inherit;opacity:.8}
+.runtimer.over .rt-b{background:var(--bad-soft);color:var(--bad)}
+:root[data-theme="dark"] .runtimer .rt-b{color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .runtimer .rt-b{color:var(--ink)}}
