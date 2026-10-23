@@ -352,7 +352,13 @@
     if (T && m.ans) return mockCalc(T, m.ans);
     return { pts: m.s, max: m.max, n: m.s, nmax: m.max, p1: m.s, p1max: m.max, p2: 0, p2max: 0 };
   }
-  function ptsLabel(r) { return r.pts + ' из ' + plural(r.max, ['балла', 'баллов', 'баллов']); }
+  /* ориентировочный перевод во вторичные (тестовые) баллы: шкала прошлого года, 32 первичных, пересчёт пропорционально 33 */
+  function testScore(r) {
+    var sc = C.idx && C.idx.egeScale; if (!sc || !r.max) return null;
+    var tot = 13, k; for (k in ((C.idx && C.idx.egePoints) || {})) tot += C.idx.egePoints[k];
+    return sc[Math.min(sc.length - 1, Math.round(r.pts * (sc.length - 1) / tot))];
+  }
+  function ptsLabel(r) { var t = testScore(r); return r.pts + ' из ' + plural(r.max, ['балла', 'баллов', 'баллов']) + (t === null ? '' : ' (≈ ' + t + ' из 100)'); }
 
 
 
@@ -1337,7 +1343,7 @@
     Object.keys(weak).forEach(function (k) { delete good[k]; });
     var blk = function (id2) { var b = blockById(id2); return '<a href="#route/' + b.id + '">Блок ' + b.n + '. ' + esc(b.title) + '</a>'; };
     var h = '<div class="reading">' + cr + '<div class="page-h"><h2>' + esc(T.title) + '</h2><div class="meta-row"><span>' + human(res.at) + (res.sec ? ' · ' + Math.max(1, Math.round(res.sec / 60)) + ' мин' : '') + '</span></div></div>';
-    h += '<section class="card"><div class="verdict"><div><div class="score num">' + rr.pts + '<small> из ' + plural(rr.max, ['балла', 'баллов', 'баллов']) + '</small></div><p class="note">Верно решено заданий: ' + rr.n + ' из ' + rr.nmax + ' · ' + pct(rr.pts, rr.max) + '% баллов.' + (rr.p2max ? ' Часть 1: ' + rr.p1 + ' из ' + rr.p1max + ', часть 2: ' + rr.p2 + ' из ' + rr.p2max + '.' : '') + ' Результат записан в «Прогресс».</p>' + (rr.p2max ? '<p class="note">Часть 2 проверена только по итоговому ответу, поэтому баллы за неё показаны по максимуму за верный ответ. За ход решения на экзамене можно получить меньше, оцени себя по критериям в уроках. Перевод в 100-балльную шкалу появится, когда утвердят шкалу ЕГЭ-2027.</p>' : '<p class="note">Перевод в 100-балльную шкалу появится, когда утвердят шкалу ЕГЭ-2027.</p>') + '</div></div>';
+    h += '<section class="card"><div class="verdict"><div><div class="score num">' + rr.pts + '<small> из ' + plural(rr.max, ['балла', 'баллов', 'баллов']) + '</small></div><div class="note" style="margin-top:6px"><b>≈ ' + testScore(rr) + ' из 100</b> вторичных баллов, ориентировочно</div><p class="note">Верно решено заданий: ' + rr.n + ' из ' + rr.nmax + ' · ' + pct(rr.pts, rr.max) + '% баллов.' + (rr.p2max ? ' Часть 1: ' + rr.p1 + ' из ' + rr.p1max + ', часть 2: ' + rr.p2 + ' из ' + rr.p2max + '.' : '') + ' Результат записан в «Прогресс».</p>' + (rr.p2max ? '<p class="note">Часть 2 проверена только по итоговому ответу, поэтому баллы за неё показаны по максимуму за верный ответ. За ход решения на экзамене можно получить меньше, оцени себя по критериям в уроках. ' + ((C.idx && C.idx.egeScaleNote) || '') + '</p>' : '<p class="note">' + ((C.idx && C.idx.egeScaleNote) || '') + ' Здесь только часть 1, поэтому итог за весь экзамен будет выше.</p>') + '</div></div>';
     h += Object.keys(weak).length ? '<p><b>С чего начать.</b> Ошибки в этих блоках:</p><div class="link-list">' + Object.keys(weak).map(blk).join('') + '</div>' : '<p><b>Все задачи верны.</b> Можно идти сразу к контрольным блоков.</p>';
     if (Object.keys(good).length) h += '<p class="note" style="margin-top:12px">Решено верно: ' + Object.keys(good).map(function (k) { return 'блок ' + blockById(k).n; }).join(', ') + '. Эти блоки можно начать со стартовой проверки.</p>';
     h += '<div class="cta-row"><button class="btn ghost" data-start-mock="' + id + '">Пройти ещё раз</button><a class="btn ghost" href="#progress">К прогрессу</a></div></section>';
