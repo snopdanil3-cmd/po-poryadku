@@ -209,7 +209,7 @@ ul,ol{padding:0;list-style:none}
 .hrow .meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
 .hhead{display:none}
 @media (min-width:760px){
-  .hhead,.hrow{grid-template-columns:minmax(0,1fr) 84px 150px 140px 150px;gap:12px}
+  .hhead,.hrow{grid-template-columns:minmax(0,1fr) 150px 130px;gap:12px}
   .hhead{display:grid;padding:10px 16px;font-size:13px;color:var(--muted);border-bottom:1px solid var(--line)}
   .hrow .meta{display:contents}
 }
