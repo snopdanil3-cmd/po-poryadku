@@ -489,7 +489,7 @@
     if (ctx !== 'test') {
       var acts = '';
       if (t.hint && !revDone && !UI.hint[t.id]) acts += '<button type="button" class="btn ghost sm" data-hint>Подсказка</button>';
-      if (!revDone && !UI.sol[t.id]) acts += '<button type="button" class="btn ghost sm" data-sol>' + (ctx === 'review' ? 'Не помню, показать решение' : 'Решение') + '</button>';
+      if (!revDone) acts += '<button type="button" class="btn ghost sm" data-sol aria-expanded="' + (UI.sol[t.id] ? 'true' : 'false') + '">' + (UI.sol[t.id] ? 'Скрыть решение' : ctx === 'review' ? 'Не помню, показать решение' : 'Решение') + '</button>';
       if (acts) h += '<div class="task-act">' + acts + '</div>';
       if (UI.hint[t.id] && t.hint) h += '<div class="hint"><b>Подсказка.</b> ' + M(t.hint) + '</div>';
       if (UI.sol[t.id] || revDone) h += solutionHtml(t);
@@ -1452,6 +1452,7 @@
     if (card && t.closest('[data-hint]')) { UI.hint[card.dataset.tid] = true; refreshCard(card.dataset.tid); return; }
     if (card && t.closest('[data-sol]')) {
       var tid = card.dataset.tid, ctx = card.dataset.ctx;
+      if (UI.sol[tid]) { delete UI.sol[tid]; if (CUR.name === 'lesson') rerender(); else refreshCard(tid); return; }
       UI.sol[tid] = true;
       if (ctx === 'practice') { var r = rec(tid); if (!r.ok && !r.seen) { r.seen = true; if (r.first === null) r.first = false; if (!C.tasks[tid].hard) scheduleReview(r); save(); } }
       if (ctx === 'drill' && DR && DR.res[tid] === undefined) { DR.res[tid] = 'bad'; markWrong(tid); rerender(); return; }
