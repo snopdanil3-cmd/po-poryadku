@@ -1074,7 +1074,7 @@
     var m = /^(p1|f)-(\d+)$/.exec(id); if (!m) return null;
     var K = +m[2], full = m[1] === 'f', last = full ? 20 : 13, tasks = [], mv = mockVariants(), maxK = Math.max(2, full ? mv.f : mv.p1), tgt = 1.5 + 2.5 * Math.min(1, (K - 1) / (maxK - 1));
     for (var n = 1; n <= last; n++) {
-      var pool = bankAll(n).filter(function (x) { return full || !C.tasks[x].plus; }).sort(function (a, b) { return Math.abs(taskLv(C.tasks[a]) - tgt) - Math.abs(taskLv(C.tasks[b]) - tgt) || hs(a + n + K) - hs(b + n + K); });
+      var pool = bankAll(n).filter(function (x) { return full || !C.tasks[x].plus || C.tasks[x].lv; }).sort(function (a, b) { return Math.abs(taskLv(C.tasks[a]) - tgt) - Math.abs(taskLv(C.tasks[b]) - tgt) || hs(a + n + K) - hs(b + n + K); });
       if (!pool.length) return null;
       var tk = C.tasks[pool[0]];
       tasks.push(Object.assign({}, tk, { ege: n }));
