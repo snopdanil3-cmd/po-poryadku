@@ -1067,14 +1067,16 @@
     return { p1: Math.max(1, Math.min(10, m1)), f: Math.min(10, mf) };
   }
   function hs(str) { var h = 2166136261; for (var i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+  /* Уровень сложности задачи 1–4: у новых задач поле lv, у остальных оценка по виду (основная 2, сложная 3, самая трудная 4) */
+  function taskLv(t) { return t.lv || (t.top ? 4 : (t.hard || t.kind === 'hard' || t.plus) ? 3 : 2); }
   function ensureMock(id) {
     if (C.mocks[id]) return C.mocks[id];
     var m = /^(p1|f)-(\d+)$/.exec(id); if (!m) return null;
-    var K = +m[2], full = m[1] === 'f', last = full ? 20 : 13, tasks = [];
+    var K = +m[2], full = m[1] === 'f', last = full ? 20 : 13, tasks = [], mv = mockVariants(), maxK = Math.max(2, full ? mv.f : mv.p1), tgt = 1.5 + 2.5 * Math.min(1, (K - 1) / (maxK - 1));
     for (var n = 1; n <= last; n++) {
-      var pool = bankAll(n).filter(function (x) { return full || !C.tasks[x].plus; }).sort(function (a, b) { return hs(a + n) - hs(b + n); });
+      var pool = bankAll(n).filter(function (x) { return full || !C.tasks[x].plus; }).sort(function (a, b) { return Math.abs(taskLv(C.tasks[a]) - tgt) - Math.abs(taskLv(C.tasks[b]) - tgt) || hs(a + n + K) - hs(b + n + K); });
       if (!pool.length) return null;
-      var tk = C.tasks[pool[(K - 1) % pool.length]];
+      var tk = C.tasks[pool[0]];
       tasks.push(Object.assign({}, tk, { ege: n }));
     }
     var T = { id: id, key: 'mock/' + id, kind: 'mock', title: (full ? 'Полный вариант ' : 'Часть 1, вариант ') + K, minutes: full ? 235 : 120, max: tasks.reduce(function (a, t) { return a + taskPts(t); }, 0), part2: full,
