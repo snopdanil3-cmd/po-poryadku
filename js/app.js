@@ -980,6 +980,7 @@
   var BANK = null;
   function egeOf(t) {
     if (t.kind === 'mock') return t.ege || null;
+    if (t.ege) return t.ege;
     if (t.hard && !t.plus) return null;
     var m = C.idx.egeMap && C.idx.egeMap[t.block];
     if (!m) return null;
