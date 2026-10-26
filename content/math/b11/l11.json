@@ -1,0 +1,191 @@
+{
+ "intro": "Задания №3 по формату ЕГЭ-2027: объёмы и площади по рисунку.",
+ "theory": [
+  {
+   "h": "Параллелепипед и куб",
+   "html": "<p>$V=abc$, $S=2(ab+bc+ca)$, диагональ $d=\\sqrt{a^2+b^2+c^2}$. У куба $V=e^3$, диагональ грани $e\\sqrt2$, диагональ куба $e\\sqrt3$.</p>"
+  },
+  {
+   "h": "Пирамида и призма",
+   "html": "<p>$V=\\dfrac13S_{осн}h$ для пирамиды и $V=S_{осн}h$ для призмы. Правильный треугольник: $S=\\dfrac{a^2\\sqrt3}{4}$.</p>"
+  },
+  {
+   "h": "Тела вращения",
+   "html": "<p>Цилиндр: $V=\\pi r^2h$, $S_{бок}=2\\pi rh$. Конус: $V=\\dfrac13\\pi r^2h$, $l^2=r^2+h^2$. Шар: $V=\\dfrac43\\pi r^3$. При изменении размеров в $k$ раз объём меняется в $k^3$ раз.</p>"
+  }
+ ],
+ "examples": [
+  {
+   "q": "Рёбра прямоугольного параллелепипеда, выходящие из одной вершины, равны $2$, $3$ и $6$. Найдите диагональ параллелепипеда.",
+   "steps": [
+    "Квадрат диагонали равен сумме квадратов трёх измерений: $d^2=2^2+3^2+6^2=49$.",
+    "$d=7$."
+   ],
+   "a": 7,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный параллелепипед 2×3×6\"><line class=\"fl\" x1=\"90.6\" y1=\"209\" x2=\"143.6\" y2=\"209\"/><line class=\"fl\" x1=\"143.6\" y1=\"209\" x2=\"143.6\" y2=\"49.9\"/><line class=\"fl\" x1=\"143.6\" y1=\"49.9\" x2=\"90.6\" y2=\"49.9\"/><line class=\"fl\" x1=\"90.6\" y1=\"49.9\" x2=\"90.6\" y2=\"209\"/><line class=\"fl\" x1=\"179.4\" y1=\"185.1\" x2=\"179.4\" y2=\"26\"/><line class=\"fl\" x1=\"179.4\" y1=\"26\" x2=\"126.4\" y2=\"26\"/><line class=\"fl\" x1=\"143.6\" y1=\"209\" x2=\"179.4\" y2=\"185.1\"/><line class=\"fl\" x1=\"143.6\" y1=\"49.9\" x2=\"179.4\" y2=\"26\"/><line class=\"fl\" x1=\"90.6\" y1=\"49.9\" x2=\"126.4\" y2=\"26\"/><line class=\"fl fd\" x1=\"90.6\" y1=\"209\" x2=\"126.4\" y2=\"185.1\"/><line class=\"fl fd\" x1=\"126.4\" y1=\"185.1\" x2=\"179.4\" y2=\"185.1\"/><line class=\"fl fd\" x1=\"126.4\" y1=\"185.1\" x2=\"126.4\" y2=\"26\"/><line class=\"fl fd\" x1=\"90.6\" y1=\"209\" x2=\"179.4\" y2=\"26\"/><text class=\"ft fn\" x=\"117.1\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">2</text><text class=\"ft fn\" x=\"155.6\" y=\"129.4\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><text class=\"ft fn\" x=\"168.2\" y=\"207\" text-anchor=\"middle\" dominant-baseline=\"central\">3</text><circle class=\"fp\" cx=\"90.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"84.9\" y=\"220.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"143.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"144.8\" y=\"221.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"143.6\" cy=\"49.9\" r=\"2.6\"/><text class=\"ft\" x=\"145.3\" y=\"37\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"90.6\" cy=\"49.9\" r=\"2.6\"/><text class=\"ft\" x=\"83.4\" y=\"39\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"126.4\" cy=\"185.1\" r=\"2.6\"/><text class=\"ft\" x=\"124.7\" y=\"198\" text-anchor=\"middle\" dominant-baseline=\"central\">E</text><circle class=\"fp\" cx=\"179.4\" cy=\"185.1\" r=\"2.6\"/><text class=\"ft\" x=\"186.6\" y=\"196\" text-anchor=\"middle\" dominant-baseline=\"central\">F</text><circle class=\"fp\" cx=\"179.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"185.1\" y=\"14.3\" text-anchor=\"middle\" dominant-baseline=\"central\">G</text><circle class=\"fp\" cx=\"126.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"125.2\" y=\"13.1\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>"
+  },
+  {
+   "q": "В правильной четырёхугольной пирамиде сторона основания равна $6$, высота равна $4$. Найдите объём пирамиды.",
+   "steps": [
+    "Основание — квадрат, $S_{осн}=6^2=36$.",
+    "$V=\\dfrac13S_{осн}h=\\dfrac13\\cdot36\\cdot4=48$."
+   ],
+   "a": 48,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 174.8\" width=\"270\" height=\"174.8\" role=\"img\" aria-label=\"Правильная четырёхугольная пирамида, сторона основания 6, высота 4\"><line class=\"fl\" x1=\"26\" y1=\"148.8\" x2=\"176.3\" y2=\"148.8\"/><line class=\"fl\" x1=\"176.3\" y1=\"148.8\" x2=\"244\" y2=\"103.7\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"148.8\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"176.3\" y2=\"148.8\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"103.7\"/><line class=\"fl fd\" x1=\"26\" y1=\"148.8\" x2=\"93.7\" y2=\"103.7\"/><line class=\"fl fd\" x1=\"93.7\" y1=\"103.7\" x2=\"244\" y2=\"103.7\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"93.7\" y2=\"103.7\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"126.2\"/><text class=\"ft fn\" x=\"101.2\" y=\"160.8\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><text class=\"ft fn\" x=\"123\" y=\"76.1\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><circle class=\"fp\" cx=\"26\" cy=\"148.8\" r=\"2.6\"/><text class=\"ft\" x=\"13.8\" y=\"153.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"176.3\" cy=\"148.8\" r=\"2.6\"/><text class=\"ft\" x=\"185.8\" y=\"157.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"103.7\" r=\"2.6\"/><text class=\"ft\" x=\"257\" y=\"103\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"93.7\" cy=\"103.7\" r=\"2.6\"/><text class=\"ft\" x=\"80.8\" y=\"101.9\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"126.2\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"139.2\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text></svg></figure>"
+  },
+  {
+   "q": "Образующая конуса равна $5$, высота равна $4$. Найдите объём конуса, делённый на $\\pi$.",
+   "steps": [
+    "Радиус основания из прямоугольного треугольника: $r=\\sqrt{5^2-4^2}=3$.",
+    "$V=\\dfrac13\\pi r^2h$, поэтому $\\dfrac V\\pi=\\dfrac13\\cdot9\\cdot4=12$."
+   ],
+   "a": 12,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Осевое сечение конуса: образующая 5, высота 4\"><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"171.3\"/><path class=\"fa\" d=\"M135 161.3 L145 161.3 L145 171.3\"/><text class=\"ft fn\" x=\"70.9\" y=\"91.5\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><text class=\"ft fn\" x=\"123\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"256.3\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"184.3\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
+  }
+ ],
+ "tasks": [
+  {
+   "id": "b11-p7-1",
+   "q": "Рёбра прямоугольного параллелепипеда, выходящие из одной вершины, равны $4$, $4$ и $7$. Найдите диагональ параллелепипеда.",
+   "a": 9,
+   "hint": "$d^2=a^2+b^2+c^2$.",
+   "sol": [
+    "Квадрат диагонали равен сумме квадратов трёх измерений: $d^2=4^2+4^2+7^2=81$.",
+    "$d=9$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный параллелепипед 4×4×7\"><line class=\"fl\" x1=\"70.3\" y1=\"209\" x2=\"159.5\" y2=\"209\"/><line class=\"fl\" x1=\"159.5\" y1=\"209\" x2=\"159.5\" y2=\"52.8\"/><line class=\"fl\" x1=\"159.5\" y1=\"52.8\" x2=\"70.3\" y2=\"52.8\"/><line class=\"fl\" x1=\"70.3\" y1=\"52.8\" x2=\"70.3\" y2=\"209\"/><line class=\"fl\" x1=\"199.7\" y1=\"182.2\" x2=\"199.7\" y2=\"26\"/><line class=\"fl\" x1=\"199.7\" y1=\"26\" x2=\"110.5\" y2=\"26\"/><line class=\"fl\" x1=\"159.5\" y1=\"209\" x2=\"199.7\" y2=\"182.2\"/><line class=\"fl\" x1=\"159.5\" y1=\"52.8\" x2=\"199.7\" y2=\"26\"/><line class=\"fl\" x1=\"70.3\" y1=\"52.8\" x2=\"110.5\" y2=\"26\"/><line class=\"fl fd\" x1=\"70.3\" y1=\"209\" x2=\"110.5\" y2=\"182.2\"/><line class=\"fl fd\" x1=\"110.5\" y1=\"182.2\" x2=\"199.7\" y2=\"182.2\"/><line class=\"fl fd\" x1=\"110.5\" y1=\"182.2\" x2=\"110.5\" y2=\"26\"/><line class=\"fl fd\" x1=\"70.3\" y1=\"209\" x2=\"199.7\" y2=\"26\"/><text class=\"ft fn\" x=\"114.9\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><text class=\"ft fn\" x=\"171.5\" y=\"130.9\" text-anchor=\"middle\" dominant-baseline=\"central\">7</text><text class=\"ft fn\" x=\"186.3\" y=\"205.6\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><circle class=\"fp\" cx=\"70.3\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"62.8\" y=\"219.6\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"159.5\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"162.9\" y=\"221.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"159.5\" cy=\"52.8\" r=\"2.6\"/><text class=\"ft\" x=\"164.2\" y=\"40.6\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"70.3\" cy=\"52.8\" r=\"2.6\"/><text class=\"ft\" x=\"61.1\" y=\"43.6\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"110.5\" cy=\"182.2\" r=\"2.6\"/><text class=\"ft\" x=\"105.8\" y=\"194.4\" text-anchor=\"middle\" dominant-baseline=\"central\">E</text><circle class=\"fp\" cx=\"199.7\" cy=\"182.2\" r=\"2.6\"/><text class=\"ft\" x=\"208.9\" y=\"191.4\" text-anchor=\"middle\" dominant-baseline=\"central\">F</text><circle class=\"fp\" cx=\"199.7\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"207.2\" y=\"15.4\" text-anchor=\"middle\" dominant-baseline=\"central\">G</text><circle class=\"fp\" cx=\"110.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"107.1\" y=\"13.4\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>",
+   "ege": 3,
+   "lv": 2
+  },
+  {
+   "id": "b11-p7-2",
+   "q": "Найдите площадь поверхности прямоугольного параллелепипеда с рёбрами $3$, $4$ и $5$, выходящими из одной вершины.",
+   "a": 94,
+   "hint": "Три пары равных граней.",
+   "sol": [
+    "Грани попарно равны: $S=2(ab+bc+ca)$.",
+    "$S=2(3\\cdot4+4\\cdot5+3\\cdot5)=94$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный параллелепипед 3×4×5\"><line class=\"fl\" x1=\"64.2\" y1=\"209\" x2=\"152.7\" y2=\"209\"/><line class=\"fl\" x1=\"152.7\" y1=\"209\" x2=\"152.7\" y2=\"61.4\"/><line class=\"fl\" x1=\"152.7\" y1=\"61.4\" x2=\"64.2\" y2=\"61.4\"/><line class=\"fl\" x1=\"64.2\" y1=\"61.4\" x2=\"64.2\" y2=\"209\"/><line class=\"fl\" x1=\"205.8\" y1=\"173.6\" x2=\"205.8\" y2=\"26\"/><line class=\"fl\" x1=\"205.8\" y1=\"26\" x2=\"117.3\" y2=\"26\"/><line class=\"fl\" x1=\"152.7\" y1=\"209\" x2=\"205.8\" y2=\"173.6\"/><line class=\"fl\" x1=\"152.7\" y1=\"61.4\" x2=\"205.8\" y2=\"26\"/><line class=\"fl\" x1=\"64.2\" y1=\"61.4\" x2=\"117.3\" y2=\"26\"/><line class=\"fl fd\" x1=\"64.2\" y1=\"209\" x2=\"117.3\" y2=\"173.6\"/><line class=\"fl fd\" x1=\"117.3\" y1=\"173.6\" x2=\"205.8\" y2=\"173.6\"/><line class=\"fl fd\" x1=\"117.3\" y1=\"173.6\" x2=\"117.3\" y2=\"26\"/><text class=\"ft fn\" x=\"108.4\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">3</text><text class=\"ft fn\" x=\"164.7\" y=\"135.2\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><text class=\"ft fn\" x=\"185.9\" y=\"201.3\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><circle class=\"fp\" cx=\"64.2\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"56.2\" y=\"219.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"152.7\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"155.2\" y=\"221.8\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"152.7\" cy=\"61.4\" r=\"2.6\"/><text class=\"ft\" x=\"156.6\" y=\"49\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"64.2\" cy=\"61.4\" r=\"2.6\"/><text class=\"ft\" x=\"54\" y=\"53.4\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"117.3\" cy=\"173.6\" r=\"2.6\"/><text class=\"ft\" x=\"113.4\" y=\"186\" text-anchor=\"middle\" dominant-baseline=\"central\">E</text><circle class=\"fp\" cx=\"205.8\" cy=\"173.6\" r=\"2.6\"/><text class=\"ft\" x=\"216\" y=\"181.6\" text-anchor=\"middle\" dominant-baseline=\"central\">F</text><circle class=\"fp\" cx=\"205.8\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"213.8\" y=\"15.7\" text-anchor=\"middle\" dominant-baseline=\"central\">G</text><circle class=\"fp\" cx=\"117.3\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"114.8\" y=\"13.2\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>",
+   "ege": 3,
+   "lv": 2
+  },
+  {
+   "id": "b11-p7-3",
+   "q": "В правильной четырёхугольной пирамиде сторона основания равна $9$, высота равна $5$. Найдите объём пирамиды.",
+   "a": 135,
+   "hint": "$V=\\dfrac13Sh$.",
+   "sol": [
+    "Основание — квадрат, $S_{осн}=9^2=81$.",
+    "$V=\\dfrac13S_{осн}h=\\dfrac13\\cdot81\\cdot5=135$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 158.1\" width=\"270\" height=\"158.1\" role=\"img\" aria-label=\"Правильная четырёхугольная пирамида, сторона основания 9, высота 5\"><line class=\"fl\" x1=\"26\" y1=\"132.1\" x2=\"176.3\" y2=\"132.1\"/><line class=\"fl\" x1=\"176.3\" y1=\"132.1\" x2=\"244\" y2=\"87\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"132.1\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"176.3\" y2=\"132.1\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"87\"/><line class=\"fl fd\" x1=\"26\" y1=\"132.1\" x2=\"93.7\" y2=\"87\"/><line class=\"fl fd\" x1=\"93.7\" y1=\"87\" x2=\"244\" y2=\"87\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"93.7\" y2=\"87\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"109.5\"/><text class=\"ft fn\" x=\"101.2\" y=\"144.1\" text-anchor=\"middle\" dominant-baseline=\"central\">9</text><text class=\"ft fn\" x=\"123\" y=\"67.8\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><circle class=\"fp\" cx=\"26\" cy=\"132.1\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"136.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"176.3\" cy=\"132.1\" r=\"2.6\"/><text class=\"ft\" x=\"186.1\" y=\"140.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"87\" r=\"2.6\"/><text class=\"ft\" x=\"257\" y=\"85.9\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"93.7\" cy=\"87\" r=\"2.6\"/><text class=\"ft\" x=\"80.9\" y=\"84.3\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"109.5\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"122.5\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text></svg></figure>",
+   "ege": 3,
+   "lv": 2
+  },
+  {
+   "id": "b11-p7-4",
+   "q": "Образующая конуса равна $13$, высота равна $12$. Найдите объём конуса, делённый на $\\pi$.",
+   "a": 100,
+   "hint": "Найдите радиус по теореме Пифагора.",
+   "sol": [
+    "Радиус основания из прямоугольного треугольника: $r=\\sqrt{13^2-12^2}=5$.",
+    "$V=\\dfrac13\\pi r^2h$, поэтому $\\dfrac V\\pi=\\dfrac13\\cdot25\\cdot12=100$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Осевое сечение конуса: образующая 13, высота 12\"><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"58.8\" y2=\"209\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"211.2\" y2=\"209\"/><line class=\"fl\" x1=\"58.8\" y1=\"209\" x2=\"211.2\" y2=\"209\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"209\"/><path class=\"fa\" d=\"M135 199 L145 199 L145 209\"/><text class=\"ft fn\" x=\"85.8\" y=\"112.9\" text-anchor=\"middle\" dominant-baseline=\"central\">13</text><text class=\"ft fn\" x=\"123\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">12</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"58.8\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"47.6\" y=\"215.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"211.2\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"222.4\" y=\"215.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"222\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>",
+   "ege": 3,
+   "lv": 2
+  },
+  {
+   "id": "b11-p7-5",
+   "q": "Осевое сечение цилиндра — квадрат со стороной $8$. Найдите площадь боковой поверхности цилиндра, делённую на $\\pi$.",
+   "a": 64,
+   "hint": "Осевое сечение даёт радиус и высоту.",
+   "sol": [
+    "Радиус $r=4$, высота $h=8$.",
+    "$S_{бок}=2\\pi rh$, поэтому $\\dfrac{S}{\\pi}=2\\cdot4\\cdot8=64$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Осевое сечение цилиндра — квадрат со стороной 8\"><line class=\"fl\" x1=\"43.5\" y1=\"209\" x2=\"226.5\" y2=\"209\"/><line class=\"fl\" x1=\"226.5\" y1=\"209\" x2=\"226.5\" y2=\"26\"/><line class=\"fl\" x1=\"226.5\" y1=\"26\" x2=\"43.5\" y2=\"26\"/><line class=\"fl\" x1=\"43.5\" y1=\"26\" x2=\"43.5\" y2=\"209\"/><line class=\"fa\" x1=\"135\" y1=\"204\" x2=\"135\" y2=\"214\"/><line class=\"fa\" x1=\"221.5\" y1=\"117.5\" x2=\"231.5\" y2=\"117.5\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">8</text><circle class=\"fp\" cx=\"43.5\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"34.3\" y=\"218.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"226.5\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"235.7\" y=\"218.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"226.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"235.7\" y=\"16.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"43.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"34.3\" y=\"16.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>",
+   "ege": 3,
+   "lv": 2
+  }
+ ],
+ "hard": [
+  {
+   "id": "b11-p7-h1",
+   "q": "Основание правильной треугольной призмы — треугольник со стороной $8$, высота призмы равна $5$. Найдите объём призмы, делённый на $\\sqrt3$.",
+   "a": 80,
+   "hint": "Площадь правильного треугольника $\\dfrac{a^2\\sqrt3}{4}$.",
+   "sol": [
+    "$S_{осн}=\\dfrac{a^2\\sqrt3}{4}=\\dfrac{64\\sqrt3}{4}$.",
+    "$V=S_{осн}h$, поэтому $\\dfrac V{\\sqrt3}=\\dfrac{64\\cdot5}{4}=80$."
+   ],
+   "ege": 3,
+   "lv": 3
+  },
+  {
+   "id": "b11-p7-h2",
+   "q": "В куб с ребром $6$ вписан шар. Найдите объём шара, делённый на $\\pi$.",
+   "a": 36,
+   "hint": "Диаметр вписанного шара равен ребру куба.",
+   "sol": [
+    "Диаметр шара равен ребру куба, радиус $r=3$.",
+    "$V=\\dfrac43\\pi r^3$, $\\dfrac V\\pi=\\dfrac43\\cdot27=36$."
+   ],
+   "ege": 3,
+   "lv": 3
+  },
+  {
+   "id": "b11-p7-h3",
+   "q": "Площади трёх граней прямоугольного параллелепипеда, имеющих общую вершину, равны $6$, $8$ и $12$. Найдите объём параллелепипеда.",
+   "a": 24,
+   "hint": "Перемножьте площади трёх граней.",
+   "sol": [
+    "Пусть рёбра $a,b,c$. Тогда $ab=6$, $bc=8$, $ac=12$.",
+    "Перемножим: $(abc)^2=6\\cdot8\\cdot12=576$, поэтому $V=abc=24$."
+   ],
+   "ege": 3,
+   "lv": 3
+  },
+  {
+   "id": "b11-p7-h4",
+   "q": "Радиус основания цилиндра увеличили в $5$ раз, а высоту уменьшили в $10$ раз. Во сколько раз изменился объём цилиндра?",
+   "a": 2.5,
+   "hint": "Радиус входит в формулу объёма во второй степени.",
+   "sol": [
+    "$V=\\pi r^2h$: радиус входит во второй степени.",
+    "Новый объём равен $V\\cdot\\dfrac{5^2}{10}=2{,}5\\,V$. Объём изменился в $2{,}5$ раза."
+   ],
+   "ege": 3,
+   "lv": 3,
+   "top": true
+  },
+  {
+   "id": "b11-p7-h5",
+   "q": "Из куба с ребром $6$ вырезали куб с ребром $2$ (по углу). Найдите объём оставшейся части.",
+   "a": 208,
+   "hint": "Вычтите объём вырезанного куба.",
+   "sol": [
+    "Объём большого куба $6^3=216$, вырезанного $2^3=8$.",
+    "Остаток: $216-8=208$."
+   ],
+   "ege": 3,
+   "lv": 4,
+   "top": true
+  }
+ ],
+ "rubric": {
+  "h": "Проверь своё решение",
+  "lead": "Задание части 1 проверяется только по ответу. Сверь запись со списком.",
+  "items": [
+   "Чертёж или условие прочитаны правильно: понятно, что дано и что найти",
+   "Выбрана подходящая формула или теорема",
+   "Подстановка и вычисления выполнены без пропусков",
+   "Ответ совпал с ответом сайта. Если нет, найди строку, где решение разошлось с разбором"
+  ]
+ },
+ "id": "l11",
+ "title": "Задание 3: объёмы и площади по рисунку",
+ "plus": true,
+ "minutes": 90
+}
