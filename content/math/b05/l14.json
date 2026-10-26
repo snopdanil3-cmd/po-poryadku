@@ -1,197 +1,184 @@
 {
- "intro": "Задания №1 по формату ЕГЭ-2027: планиметрия по чертежу.",
+ "intro": "Две окружности, радиусы и расстояния, метод площадей. Сайт проверяет только число в пункте «б», доказательство оцени по списку в конце.",
  "theory": [
   {
-   "h": "Прямоугольный треугольник",
-   "html": "<p>$c^2=a^2+b^2$, $r=\\dfrac{a+b-c}{2}$, $R=\\dfrac c2$ (центр описанной окружности в середине гипотенузы), $h=\\dfrac{ab}{c}$.</p>"
+   "h": "Касательные к двум окружностям",
+   "html": "<p>Общая касательная к двум окружностям вместе с радиусами в точки касания и линией центров образует трапецию или прямоугольный треугольник после дополнительного построения.</p><ul><li><b>Внешняя:</b> $AB^2=d^2-(R-r)^2$.</li><li><b>Внутренняя:</b> $AB^2=d^2-(R+r)^2$.</li></ul><p>Здесь $d$ расстояние между центрами. Если окружности касаются внешне, то $d=R+r$ и $AB=2\\sqrt{Rr}$ для внешней касательной.</p><p class=\"warn-box\">Не путайте знаки: у внешней касательной в формуле разность радиусов, у внутренней сумма.</p>"
   },
   {
-   "h": "Окружность",
-   "html": "<p>Вписанный угол равен половине дуги, на которую опирается, то есть половине центрального угла. Касательная перпендикулярна радиусу в точке касания. Теорема синусов: $\\dfrac a{\\sin\\alpha}=2R$.</p>"
+   "h": "Общая хорда и линия центров",
+   "html": "<p>Линия центров двух пересекающихся окружностей перпендикулярна общей хорде и делит её пополам. Чтобы найти хорду, введите расстояния от центров до хорды и составьте два уравнения по теореме Пифагора.</p><p>Прямая, содержащая общую хорду, делит общую касательную пополам: степень любой её точки относительно обеих окружностей одинакова.</p>"
   },
   {
-   "h": "Четырёхугольники",
-   "html": "<p>В описанном четырёхугольнике суммы противоположных сторон равны. Площадь параллелограмма $S=ab\\sin\\alpha$, ромба $S=\\dfrac{d_1d_2}{2}$. Средняя линия треугольника отсекает подобный с коэффициентом $\\dfrac12$.</p>"
+   "h": "Радиусы и площади: формулы",
+   "html": "<ul><li>$R=\\dfrac{abc}{4S}=\\dfrac a{2\\sin A}$.</li><li>$r=\\dfrac Sp$, вневписанная $r_a=\\dfrac S{p-a}$.</li><li>Прямоугольный треугольник: $R=\\dfrac c2$, $r=\\dfrac{a+b-c}2$.</li><li>Формула Эйлера: $OI^2=R^2-2Rr$.</li></ul>"
+  },
+  {
+   "h": "Метод площадей",
+   "html": "<p>Когда в задаче несколько высот или расстояний до сторон, запишите площадь двумя способами и приравняйте. Если точка делит фигуру на части, сложите площади частей.</p><p class=\"warn-box\">Перед использованием формулы проверьте, для какой именно окружности она записана: вписанной, описанной или вневписанной.</p>"
   }
  ],
  "examples": [
   {
-   "q": "Катеты прямоугольного треугольника равны $5$ и $12$. Найдите радиус вписанной окружности.",
+   "q": "Окружности радиусов $9$ и $4$ касаются друг друга внешне. Общая внешняя касательная касается их в точках $A$ и $B$. а) Докажите, что $AB=2\\sqrt{Rr}$. б) Найдите $AB$.",
    "steps": [
-    "Гипотенуза $c=\\sqrt{5^2+12^2}=13$.",
-    "Радиус вписанной окружности $r=\\dfrac{a+b-c}{2}=\\dfrac{5+12-13}{2}=2$."
+    "а) Опустим из центра меньшей окружности перпендикуляр на радиус большей: получится прямоугольный треугольник с гипотенузой $O_1O_2=R+r$ и катетом $R-r$. Другой катет равен $AB$ (радиусы к точкам касания перпендикулярны $AB$, получен прямоугольник).",
+    "$AB^2=(R+r)^2-(R-r)^2=4Rr$, $AB=2\\sqrt{Rr}$.",
+    "б) $AB=2\\sqrt{36}=12$."
    ],
-   "a": 2,
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный треугольник с катетами 5 и 12\"><line class=\"fl\" x1=\"96.9\" y1=\"209\" x2=\"96.9\" y2=\"26\"/><line class=\"fl\" x1=\"96.9\" y1=\"26\" x2=\"173.1\" y2=\"209\"/><line class=\"fl\" x1=\"173.1\" y1=\"209\" x2=\"96.9\" y2=\"209\"/><path class=\"fa\" d=\"M96.9 199 L106.9 199 L106.9 209\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><text class=\"ft fn\" x=\"84.9\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">12</text><circle class=\"fp\" cx=\"96.9\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"91.9\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"96.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"94.2\" y=\"13.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"173.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"181.4\" y=\"219\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text></svg></figure>"
+   "a": 12,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 209\" width=\"270\" height=\"209\" role=\"img\" aria-label=\"Две касающиеся окружности и общая внешняя касательная AB\"><circle class=\"fl\" cx=\"104.5\" cy=\"104.5\" r=\"78.5\"/><circle class=\"fl\" cx=\"209.1\" cy=\"148.1\" r=\"34.9\"/><line class=\"fl\" x1=\"104.5\" y1=\"183\" x2=\"209.1\" y2=\"183\"/><line class=\"fl fd\" x1=\"104.5\" y1=\"183\" x2=\"104.5\" y2=\"104.5\"/><line class=\"fl fd\" x1=\"209.1\" y1=\"183\" x2=\"209.1\" y2=\"148.1\"/><line class=\"fl fd\" x1=\"104.5\" y1=\"104.5\" x2=\"209.1\" y2=\"148.1\"/><circle class=\"fp\" cx=\"104.5\" cy=\"183\" r=\"2.6\"/><text class=\"ft\" x=\"91.5\" y=\"183\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"209.1\" cy=\"183\" r=\"2.6\"/><text class=\"ft\" x=\"222.1\" y=\"183\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text></svg></figure>"
   },
   {
-   "q": "В равнобедренном треугольнике $ABC$ с основанием $AB=10$ боковая сторона равна $13$. Найдите площадь треугольника.",
+   "q": "В треугольнике $ABC$ стороны $AB=13$, $BC=14$, $AC=15$. а) Докажите, что радиус описанной окружности $R=\\dfrac{abc}{4S}$. б) Найдите $R$.",
    "steps": [
-    "Высота к основанию $CH=\\sqrt{13^2-5^2}=12$.",
-    "$S=\\dfrac12\\cdot10\\cdot12=60$."
+    "а) По теореме синусов $a=2R\\sin A$. Площадь $S=\\dfrac12bc\\sin A=\\dfrac12bc\\cdot\\dfrac a{2R}=\\dfrac{abc}{4R}$, откуда $R=\\dfrac{abc}{4S}$.",
+    "б) По формуле Герона $p=21$, $S=\\sqrt{21\\cdot8\\cdot7\\cdot6}=84$. $R=\\dfrac{13\\cdot14\\cdot15}{4\\cdot84}=\\dfrac{2730}{336}=8{,}125$."
    ],
-   "a": 60,
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Равнобедренный треугольник с высотой CH\"><line class=\"fl\" x1=\"58.8\" y1=\"209\" x2=\"211.2\" y2=\"209\"/><line class=\"fl\" x1=\"211.2\" y1=\"209\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"58.8\" y2=\"209\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"209\"/><line class=\"fa\" x1=\"92.3\" y1=\"115.6\" x2=\"101.5\" y2=\"119.4\"/><line class=\"fa\" x1=\"168.5\" y1=\"119.4\" x2=\"177.7\" y2=\"115.6\"/><path class=\"fa\" d=\"M135 199 L145 199 L145 209\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">10</text><text class=\"ft fn\" x=\"85.8\" y=\"112.9\" text-anchor=\"middle\" dominant-baseline=\"central\">13</text><circle class=\"fp\" cx=\"58.8\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"47.6\" y=\"215.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"211.2\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"222.4\" y=\"215.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"135\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"222\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>"
+   "a": 8.125,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник и описанная окружность\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"61.8\" y1=\"172.4\" x2=\"208.2\" y2=\"172.4\"/><line class=\"fl\" x1=\"208.2\" y1=\"172.4\" x2=\"147.6\" y2=\"26.9\"/><line class=\"fl\" x1=\"147.6\" y1=\"26.9\" x2=\"61.8\" y2=\"172.4\"/><circle class=\"fp\" cx=\"61.8\" cy=\"172.4\" r=\"2.6\"/><text class=\"ft\" x=\"50.8\" y=\"179.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"208.2\" cy=\"172.4\" r=\"2.6\"/><text class=\"ft\" x=\"218.8\" y=\"179.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"147.6\" cy=\"26.9\" r=\"2.6\"/><text class=\"ft\" x=\"148.7\" y=\"13.9\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>"
   },
   {
-   "q": "Диагонали ромба равны $16$ и $30$. Найдите сторону ромба.",
+   "q": "Окружности радиусов $13$ и $15$ с центрами $O_1$, $O_2$ пересекаются в точках $X$ и $Y$, $O_1O_2=14$. а) Докажите, что $XY\\perp O_1O_2$. б) Найдите $XY$.",
    "steps": [
-    "Диагонали ромба перпендикулярны и делятся точкой пересечения пополам: катеты $8$ и $15$.",
-    "$AB=\\sqrt{8^2+15^2}=17$."
+    "а) $O_1X=O_1Y$ и $O_2X=O_2Y$ (радиусы), поэтому $O_1$ и $O_2$ лежат на серединном перпендикуляре к $XY$. Значит линия центров перпендикулярна общей хорде и делит её пополам.",
+    "б) Пусть $H$ середина $XY$, $O_1H=a$, $HX=h$. Тогда $a^2+h^2=169$ и $(14-a)^2+h^2=225$. Вычитая, $196-28a=56$, $a=5$.",
+    "$h=\\sqrt{169-25}=12$, $XY=24$."
    ],
-   "a": 17,
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Ромб с диагоналями 16 и 30\"><line class=\"fl\" x1=\"86.2\" y1=\"117.5\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"183.8\" y2=\"117.5\"/><line class=\"fl\" x1=\"183.8\" y1=\"117.5\" x2=\"135\" y2=\"209\"/><line class=\"fl\" x1=\"135\" y1=\"209\" x2=\"86.2\" y2=\"117.5\"/><line class=\"fl fd\" x1=\"86.2\" y1=\"117.5\" x2=\"183.8\" y2=\"117.5\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"209\"/><path class=\"fa\" d=\"M125 117.5 L125 107.5 L135 107.5\"/><text class=\"ft fn\" x=\"135\" y=\"129.5\" text-anchor=\"middle\" dominant-baseline=\"central\">16</text><text class=\"ft fn\" x=\"123\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">30</text><circle class=\"fp\" cx=\"86.2\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"73.2\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"183.8\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"196.8\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"135\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"222\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"144.2\" y=\"108.3\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
+   "a": 24,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 207.7\" width=\"270\" height=\"207.7\" role=\"img\" aria-label=\"Две пересекающиеся окружности и общая хорда XY\"><circle class=\"fl\" cx=\"93.5\" cy=\"103.9\" r=\"67.5\"/><circle class=\"fl\" cx=\"166.1\" cy=\"103.9\" r=\"77.9\"/><line class=\"fl\" x1=\"119.4\" y1=\"41.6\" x2=\"119.4\" y2=\"166.1\"/><line class=\"fl fd\" x1=\"93.5\" y1=\"103.9\" x2=\"166.1\" y2=\"103.9\"/><circle class=\"fp\" cx=\"93.5\" cy=\"103.9\" r=\"2.6\"/><text class=\"ft\" x=\"80.5\" y=\"103.9\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"166.1\" cy=\"103.9\" r=\"2.6\"/><text class=\"ft\" x=\"179.1\" y=\"103.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"119.4\" cy=\"41.6\" r=\"2.6\"/><text class=\"ft\" x=\"118.3\" y=\"28.6\" text-anchor=\"middle\" dominant-baseline=\"central\">X</text><circle class=\"fp\" cx=\"119.4\" cy=\"166.1\" r=\"2.6\"/><text class=\"ft\" x=\"118.3\" y=\"179.1\" text-anchor=\"middle\" dominant-baseline=\"central\">Y</text></svg></figure>"
   }
  ],
  "tasks": [
   {
-   "id": "b05-p9-1",
-   "q": "Катеты прямоугольного треугольника равны $9$ и $12$. Найдите радиус вписанной окружности.",
-   "a": 3,
-   "hint": "Для прямоугольного треугольника $r=\\dfrac{a+b-c}{2}$.",
+   "id": "b05-p8-1",
+   "q": "Окружности радиусов $7$ и $3$ не имеют общих точек, расстояние между центрами равно $26$. $AB$ общая внутренняя касательная ($A$ и $B$ точки касания). а) Докажите, что $AB^2=O_1O_2^2-(R+r)^2$. б) Найдите $AB$.",
+   "a": 24,
+   "hint": "Проведите через центр меньшей окружности прямую, параллельную $AB$.",
    "sol": [
-    "Гипотенуза $c=\\sqrt{9^2+12^2}=15$.",
-    "Радиус вписанной окружности $r=\\dfrac{a+b-c}{2}=\\dfrac{9+12-15}{2}=3$."
+    "а) Проведём $O_2K\\parallel AB$ до пересечения с продолжением $O_1A$ в точке $K$. Тогда $ABO_2K$ прямоугольник, $O_1K=R+r$, $KO_2=AB$. В прямоугольном треугольнике $O_1KO_2$: $AB^2=O_1O_2^2-(R+r)^2$.",
+    "б) $AB=\\sqrt{676-100}=24$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный треугольник с катетами 9 и 12\"><line class=\"fl\" x1=\"66.4\" y1=\"209\" x2=\"66.4\" y2=\"26\"/><line class=\"fl\" x1=\"66.4\" y1=\"26\" x2=\"203.6\" y2=\"209\"/><line class=\"fl\" x1=\"203.6\" y1=\"209\" x2=\"66.4\" y2=\"209\"/><path class=\"fa\" d=\"M66.4 199 L76.4 199 L76.4 209\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">9</text><text class=\"ft fn\" x=\"54.4\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">12</text><circle class=\"fp\" cx=\"66.4\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"58.6\" y=\"219.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"66.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"61.8\" y=\"13.8\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"203.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"214.4\" y=\"216.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text></svg></figure>",
-   "ege": 1,
-   "lv": 2
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 136.8\" width=\"270\" height=\"136.8\" role=\"img\" aria-label=\"Две окружности и общая внутренняя касательная AB\"><circle class=\"fl\" cx=\"68.4\" cy=\"68.4\" r=\"42.4\"/><circle class=\"fl\" cx=\"225.8\" cy=\"68.4\" r=\"18.2\"/><line class=\"fl\" x1=\"84.7\" y1=\"107.5\" x2=\"218.8\" y2=\"51.6\"/><line class=\"fl fd\" x1=\"68.4\" y1=\"68.4\" x2=\"84.7\" y2=\"107.5\"/><line class=\"fl fd\" x1=\"225.8\" y1=\"68.4\" x2=\"218.8\" y2=\"51.6\"/><line class=\"fl fd\" x1=\"68.4\" y1=\"68.4\" x2=\"225.8\" y2=\"68.4\"/><circle class=\"fp\" cx=\"84.7\" cy=\"107.5\" r=\"2.6\"/><text class=\"ft\" x=\"72.7\" y=\"112.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"218.8\" cy=\"51.6\" r=\"2.6\"/><text class=\"ft\" x=\"230.8\" y=\"46.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text></svg></figure>"
   },
   {
-   "id": "b05-p9-2",
-   "q": "В прямоугольном треугольнике $ABC$ с прямым углом $C$ катеты равны $20$ и $15$. Найдите высоту $CH$, проведённую к гипотенузе.",
-   "a": 12,
-   "hint": "Выразите площадь двумя способами.",
+   "id": "b05-p8-2",
+   "q": "В треугольнике $ABC$ $AB=AC=5$, $BC=6$. а) Докажите, что радиус описанной окружности равен $\\dfrac{abc}{4S}$. б) Найдите его.",
+   "a": 3.125,
+   "hint": "Площадь равнобедренного треугольника найдите через высоту к основанию.",
    "sol": [
-    "$AB=\\sqrt{15^2+20^2}=25$.",
-    "Площадь $S=\\dfrac{15\\cdot20}{2}=150$ и $S=\\dfrac12AB\\cdot CH$.",
-    "$CH=\\dfrac{15\\cdot20}{25}=12$."
+    "а) $a=2R\\sin A$ и $S=\\dfrac12bc\\sin A$, откуда $S=\\dfrac{abc}{4R}$ и $R=\\dfrac{abc}{4S}$.",
+    "б) Высота к основанию $\\sqrt{25-9}=4$, $S=\\dfrac12\\cdot6\\cdot4=12$. $R=\\dfrac{150}{48}=3{,}125$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный треугольник, высота CH к гипотенузе\"><line class=\"fl\" x1=\"66.4\" y1=\"209\" x2=\"66.4\" y2=\"26\"/><line class=\"fl\" x1=\"66.4\" y1=\"26\" x2=\"203.6\" y2=\"209\"/><line class=\"fl\" x1=\"203.6\" y1=\"209\" x2=\"66.4\" y2=\"209\"/><line class=\"fl fd\" x1=\"66.4\" y1=\"209\" x2=\"154.2\" y2=\"143.1\"/><path class=\"fa\" d=\"M66.4 199 L76.4 199 L76.4 209\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">15</text><text class=\"ft fn\" x=\"54.4\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">20</text><circle class=\"fp\" cx=\"66.4\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"57.7\" y=\"218.6\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"66.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"60.9\" y=\"14.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"203.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"213.9\" y=\"216.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"154.2\" cy=\"143.1\" r=\"2.6\"/><text class=\"ft\" x=\"167.1\" y=\"141.6\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>",
-   "ege": 1,
-   "lv": 2
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Равнобедренный треугольник 5, 5, 6 и его описанная окружность\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"61.8\" y1=\"172.4\" x2=\"208.2\" y2=\"172.4\"/><line class=\"fl\" x1=\"208.2\" y1=\"172.4\" x2=\"102.8\" y2=\"31.9\"/><line class=\"fl\" x1=\"102.8\" y1=\"31.9\" x2=\"61.8\" y2=\"172.4\"/><text class=\"ft fn\" x=\"135\" y=\"184.4\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><text class=\"ft fn\" x=\"165.1\" y=\"94.9\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><circle class=\"fp\" cx=\"61.8\" cy=\"172.4\" r=\"2.6\"/><text class=\"ft\" x=\"51.4\" y=\"180.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"208.2\" cy=\"172.4\" r=\"2.6\"/><text class=\"ft\" x=\"219.6\" y=\"178.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"102.8\" cy=\"31.9\" r=\"2.6\"/><text class=\"ft\" x=\"99.9\" y=\"19.2\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>"
   },
   {
-   "id": "b05-p9-3",
-   "q": "В прямоугольном треугольнике катеты равны $10$ и $24$. Найдите медиану $CM$, проведённую к гипотенузе.",
-   "a": 13,
-   "hint": "Медиана к гипотенузе равна половине гипотенузы.",
-   "sol": [
-    "$AB=\\sqrt{10^2+24^2}=26$.",
-    "Медиана к гипотенузе равна её половине: $CM=\\dfrac{26}{2}=13$."
-   ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный треугольник, медиана CM к гипотенузе\"><line class=\"fl\" x1=\"96.9\" y1=\"209\" x2=\"96.9\" y2=\"26\"/><line class=\"fl\" x1=\"96.9\" y1=\"26\" x2=\"173.1\" y2=\"209\"/><line class=\"fl\" x1=\"173.1\" y1=\"209\" x2=\"96.9\" y2=\"209\"/><line class=\"fl fd\" x1=\"96.9\" y1=\"209\" x2=\"135\" y2=\"117.5\"/><path class=\"fa\" d=\"M96.9 199 L106.9 199 L106.9 209\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">10</text><text class=\"ft fn\" x=\"84.9\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">24</text><circle class=\"fp\" cx=\"96.9\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"91.9\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"96.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"93.7\" y=\"13.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"173.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"180.5\" y=\"219.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"140\" y=\"105.5\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>",
-   "ege": 1,
-   "lv": 2
-  },
-  {
-   "id": "b05-p9-4",
-   "q": "В равнобедренном треугольнике $ABC$ с основанием $AB=16$ боковая сторона равна $17$. Найдите высоту, проведённую к основанию.",
+   "id": "b05-p8-3",
+   "q": "Окружности радиусов $10$ и $2$ с центрами $O_1$ и $O_2$ расположены так, что $O_1O_2=17$. Общая внешняя касательная касается их в точках $A$ и $B$. а) Докажите, что $AB^2=O_1O_2^2-(R-r)^2$. б) Найдите $AB$.",
    "a": 15,
-   "hint": "Высота к основанию делит его пополам.",
+   "hint": "Опустите перпендикуляр из $O_2$ на радиус $O_1A$.",
    "sol": [
-    "Высота к основанию является и медианой: $AH=8$.",
-    "$CH=\\sqrt{17^2-8^2}=15$."
+    "а) Пусть $H$ основание перпендикуляра из $O_2$ на $O_1A$. $ABO_2H$ прямоугольник, $AB=HO_2$, $O_1H=R-r$. В треугольнике $O_1HO_2$: $AB^2=O_1O_2^2-(R-r)^2$.",
+    "б) $AB=\\sqrt{289-64}=15$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Равнобедренный треугольник с высотой CH\"><line class=\"fl\" x1=\"37.4\" y1=\"209\" x2=\"232.6\" y2=\"209\"/><line class=\"fl\" x1=\"232.6\" y1=\"209\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"37.4\" y2=\"209\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"209\"/><line class=\"fa\" x1=\"81.8\" y1=\"115.1\" x2=\"90.6\" y2=\"119.9\"/><line class=\"fa\" x1=\"179.4\" y1=\"119.9\" x2=\"188.2\" y2=\"115.1\"/><path class=\"fa\" d=\"M135 199 L145 199 L145 209\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">16</text><text class=\"ft fn\" x=\"75.6\" y=\"111.9\" text-anchor=\"middle\" dominant-baseline=\"central\">17</text><circle class=\"fp\" cx=\"37.4\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"25.6\" y=\"214.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"232.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"244.4\" y=\"214.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"135\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"222\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>",
-   "ege": 1,
-   "lv": 2
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 213.5\" width=\"270\" height=\"213.5\" role=\"img\" aria-label=\"Две окружности и общая внешняя касательная\"><circle class=\"fl\" cx=\"106.7\" cy=\"106.7\" r=\"80.7\"/><circle class=\"fl\" cx=\"227.9\" cy=\"171.3\" r=\"16.1\"/><line class=\"fl\" x1=\"106.7\" y1=\"187.5\" x2=\"227.9\" y2=\"187.5\"/><line class=\"fl fd\" x1=\"106.7\" y1=\"106.7\" x2=\"106.7\" y2=\"187.5\"/><line class=\"fl fd\" x1=\"227.9\" y1=\"171.3\" x2=\"227.9\" y2=\"187.5\"/><line class=\"fl fd\" x1=\"106.7\" y1=\"106.7\" x2=\"227.9\" y2=\"171.3\"/><circle class=\"fp\" cx=\"106.7\" cy=\"187.5\" r=\"2.6\"/><text class=\"ft\" x=\"93.7\" y=\"187.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"227.9\" cy=\"187.5\" r=\"2.6\"/><text class=\"ft\" x=\"240.9\" y=\"187.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text></svg></figure>"
   },
   {
-   "id": "b05-p9-5",
-   "q": "Центральный угол $AOB$ равен $112^\\circ$. Найдите вписанный угол $ACB$, опирающийся на ту же дугу. Ответ дайте в градусах.",
-   "a": 56,
-   "hint": "Вписанный угол равен половине центрального.",
+   "id": "b05-p8-4",
+   "q": "Точка $P$ лежит на основании $BC$ равнобедренного треугольника $ABC$, $AB=AC=5$, $BC=6$. а) Докажите, что сумма расстояний от $P$ до боковых сторон не зависит от положения $P$ и равна высоте, проведённой к боковой стороне. б) Найдите эту сумму.",
+   "a": 4.8,
+   "hint": "Разделите треугольник $ABC$ на два треугольника отрезком $AP$ и сложите площади.",
    "sol": [
-    "Вписанный угол равен половине центрального, опирающегося на ту же дугу.",
-    "$\\angle ACB=112^\\circ:2=56^\\circ$."
+    "а) $S_{ABC}=S_{ABP}+S_{APC}=\\dfrac12AB\\cdot PK+\\dfrac12AC\\cdot PL=\\dfrac12AB\\,(PK+PL)$ ($AB=AC$). С другой стороны $S_{ABC}=\\dfrac12AB\\cdot h$, где $h$ высота к боковой стороне. Значит $PK+PL=h$.",
+    "б) $S=\\dfrac12\\cdot6\\cdot4=12$, $h=\\dfrac{2S}{AB}=\\dfrac{24}5=4{,}8$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Окружность с центром O, центральный угол AOB равен 112 градусов, вписанный угол ACB\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"135\" y1=\"117.5\" x2=\"49\" y2=\"148.8\"/><line class=\"fl\" x1=\"135\" y1=\"117.5\" x2=\"138.2\" y2=\"26.1\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"49\" y2=\"148.8\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"138.2\" y2=\"26.1\"/><path class=\"fa\" d=\"M114.3 125 A22 22 0 0 1 135.8 95.5\"/><text class=\"ft fn\" x=\"107.5\" y=\"97.5\" text-anchor=\"middle\" dominant-baseline=\"central\">112°</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"141.2\" y=\"128.9\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"49\" cy=\"148.8\" r=\"2.6\"/><text class=\"ft\" x=\"40.1\" y=\"158.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"138.2\" cy=\"26.1\" r=\"2.6\"/><text class=\"ft\" x=\"143.5\" y=\"14.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"139.7\" y=\"13.9\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>",
-   "ege": 1,
-   "lv": 2
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Равнобедренный треугольник, точка P на основании и перпендикуляры к боковым сторонам\"><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"171.3\" y1=\"171.3\" x2=\"78.3\" y2=\"101.6\"/><line class=\"fl\" x1=\"171.3\" y1=\"171.3\" x2=\"217.8\" y2=\"136.5\"/><path class=\"fa\" d=\"M86.3 107.6 L92.3 99.6 L84.3 93.6\"/><path class=\"fa\" d=\"M209.8 142.5 L203.8 134.5 L211.8 128.5\"/><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"133.7\" y=\"13.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"175.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"256\" y=\"176.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"171.3\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"178.2\" y=\"182.4\" text-anchor=\"middle\" dominant-baseline=\"central\">P</text><circle class=\"fp\" cx=\"78.3\" cy=\"101.6\" r=\"2.6\"/><text class=\"ft\" x=\"66.3\" y=\"96.6\" text-anchor=\"middle\" dominant-baseline=\"central\">K</text><circle class=\"fp\" cx=\"217.8\" cy=\"136.5\" r=\"2.6\"/><text class=\"ft\" x=\"230.8\" y=\"137.7\" text-anchor=\"middle\" dominant-baseline=\"central\">L</text></svg></figure>"
+  },
+  {
+   "id": "b05-p8-5",
+   "q": "В треугольнике $ABC$ сторона $BC=6$, угол $A$ равен $30^\\circ$. а) Докажите, что радиус описанной окружности равен $\\dfrac{BC}{2\\sin A}$. б) Найдите радиус.",
+   "a": 6,
+   "hint": "Проведите диаметр $BD$ и рассмотрите треугольник $BCD$.",
+   "sol": [
+    "а) Проведём диаметр $BD$. Тогда $\\angle BCD=90^\\circ$ и $\\angle BDC=\\angle BAC$ (или $180^\\circ-\\angle BAC$, синус тот же). В прямоугольном треугольнике $BCD$: $BC=BD\\sin A=2R\\sin A$.",
+    "б) $R=\\dfrac{6}{2\\cdot0{,}5}=6$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник ABC с углом A = 30 градусов, вписанный в окружность\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"135\" y1=\"209\" x2=\"180.8\" y2=\"38.3\"/><line class=\"fl\" x1=\"180.8\" y1=\"38.3\" x2=\"89.3\" y2=\"38.3\"/><line class=\"fl\" x1=\"89.3\" y1=\"38.3\" x2=\"135\" y2=\"209\"/><path class=\"fa\" d=\"M139.7 191.6 A18 18 0 0 0 130.3 191.6\"/><text class=\"ft fn\" x=\"135\" y=\"179\" text-anchor=\"middle\" dominant-baseline=\"central\">30°</text><text class=\"ft fn\" x=\"135\" y=\"26.3\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><circle class=\"fp\" cx=\"135\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"222\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"180.8\" cy=\"38.3\" r=\"2.6\"/><text class=\"ft\" x=\"188.9\" y=\"28.1\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"89.3\" cy=\"38.3\" r=\"2.6\"/><text class=\"ft\" x=\"81.1\" y=\"28.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>"
   }
  ],
  "hard": [
   {
-   "id": "b05-p9-h1",
-   "q": "В трапецию, основания которой равны $8$ и $16$, а боковые стороны равны $10$ и $14$, вписана окружность. Найдите среднюю линию трапеции.",
+   "id": "b05-p8-h1",
+   "q": "Окружности радиусов $4$ и $1$ касаются внешне в точке $T$. Общая внешняя касательная касается их в точках $A$ и $B$. а) Докажите, что $\\angle ATB=90^\\circ$. б) Найдите расстояние от $T$ до прямой $AB$.",
+   "a": 1.6,
+   "hint": "Проведите общую касательную в точке $T$ до пересечения с $AB$ в точке $M$.",
+   "sol": [
+    "а) Общая касательная в $T$ пересекает $AB$ в точке $M$. Отрезки касательных из $M$ равны: $MA=MT=MB$. Значит $T$ лежит на окружности с диаметром $AB$, и $\\angle ATB=90^\\circ$.",
+    "б) $T$ лежит на $O_1O_2$ и делит его в отношении $O_1T:TO_2=4:1$. Расстояния от $O_1$ и $O_2$ до $AB$ равны $4$ и $1$ (радиусы), поэтому расстояние от $T$ равно $\\dfrac{1\\cdot4+4\\cdot1}{4+1}=1{,}6$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Две касающиеся окружности, касательная AB и точка касания T\"><circle class=\"fl\" cx=\"123.6\" cy=\"117.5\" r=\"91.5\"/><circle class=\"fl\" cx=\"215.1\" cy=\"186.1\" r=\"22.9\"/><line class=\"fl\" x1=\"123.6\" y1=\"209\" x2=\"215.1\" y2=\"209\"/><line class=\"fl\" x1=\"123.6\" y1=\"209\" x2=\"196.8\" y2=\"172.4\"/><line class=\"fl\" x1=\"196.8\" y1=\"172.4\" x2=\"215.1\" y2=\"209\"/><line class=\"fl fd\" x1=\"123.6\" y1=\"117.5\" x2=\"215.1\" y2=\"186.1\"/><line class=\"fl fd\" x1=\"123.6\" y1=\"117.5\" x2=\"123.6\" y2=\"209\"/><line class=\"fl fd\" x1=\"215.1\" y1=\"186.1\" x2=\"215.1\" y2=\"209\"/><circle class=\"fp\" cx=\"123.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"110.9\" y=\"211.8\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"215.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"227.4\" y=\"213.1\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"196.8\" cy=\"172.4\" r=\"2.6\"/><text class=\"ft\" x=\"204.6\" y=\"162\" text-anchor=\"middle\" dominant-baseline=\"central\">T</text></svg></figure>"
+  },
+  {
+   "id": "b05-p8-h2",
+   "q": "В треугольнике $ABC$ $AB=13$, $BC=14$, $AC=15$, $O$ центр описанной окружности. а) Докажите, что расстояние от $O$ до $BC$ равно $\\sqrt{R^2-\\dfrac{BC^2}4}$. б) Найдите это расстояние.",
+   "a": 4.125,
+   "hint": "Найдите $R$ по формуле $\\dfrac{abc}{4S}$, затем рассмотрите прямоугольный треугольник с вершиной $O$ и половиной хорды $BC$.",
+   "sol": [
+    "а) Перпендикуляр из $O$ на хорду $BC$ попадает в её середину $M$. Из прямоугольного треугольника $OMB$: $OM=\\sqrt{OB^2-BM^2}=\\sqrt{R^2-\\dfrac{BC^2}4}$.",
+    "б) $R=\\dfrac{13\\cdot14\\cdot15}{4\\cdot84}=\\dfrac{65}8$. $OM^2=\\dfrac{4225}{64}-49=\\dfrac{1089}{64}$, $OM=\\dfrac{33}8=4{,}125$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник, описанная окружность и расстояние от центра до стороны\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"61.8\" y1=\"172.4\" x2=\"208.2\" y2=\"172.4\"/><line class=\"fl\" x1=\"208.2\" y1=\"172.4\" x2=\"147.6\" y2=\"26.9\"/><line class=\"fl\" x1=\"147.6\" y1=\"26.9\" x2=\"61.8\" y2=\"172.4\"/><line class=\"fl fd\" x1=\"135\" y1=\"117.5\" x2=\"177.9\" y2=\"99.6\"/><line class=\"fl fd\" x1=\"135\" y1=\"117.5\" x2=\"208.2\" y2=\"172.4\"/><path class=\"fa\" d=\"M168.6 103.5 L172.5 112.7 L181.7 108.9\"/><circle class=\"fp\" cx=\"61.8\" cy=\"172.4\" r=\"2.6\"/><text class=\"ft\" x=\"50.9\" y=\"179.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"208.2\" cy=\"172.4\" r=\"2.6\"/><text class=\"ft\" x=\"218\" y=\"181\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"147.6\" cy=\"26.9\" r=\"2.6\"/><text class=\"ft\" x=\"147.8\" y=\"13.9\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"122\" y=\"117.2\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"177.9\" cy=\"99.6\" r=\"2.6\"/><text class=\"ft\" x=\"189.2\" y=\"93.2\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>"
+  },
+  {
+   "id": "b05-p8-h3",
+   "q": "Окружности пересекаются в точках $A$ и $B$. Прямая $AB$ пересекает общую внешнюю касательную в точке $M$ ($M$ ближе к $A$), $C$ и $D$ точки касания на этой касательной. а) Докажите, что $M$ середина $CD$. б) Найдите $CD$, если $MA=4$, $AB=5$.",
    "a": 12,
-   "hint": "У описанного четырёхугольника суммы противоположных сторон равны.",
+   "hint": "Запишите для точки $M$ квадраты касательных через произведение отрезков секущей.",
    "sol": [
-    "Если в четырёхугольник вписана окружность, суммы противоположных сторон равны: $8+16=10+14=24$.",
-    "Средняя линия равна полусумме оснований: $\\dfrac{8+16}{2}=12$."
+    "а) $MC^2=MA\\cdot MB$ (касательная и секущая первой окружности) и $MD^2=MA\\cdot MB$ (второй окружности). Поэтому $MC=MD$.",
+    "б) $MB=MA+AB=9$, $MC=\\sqrt{4\\cdot9}=6$, $CD=12$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 170.7\" width=\"270\" height=\"170.7\" role=\"img\" aria-label=\"Трапеция с основаниями 8 и 16 и боковыми сторонами 10 и 14\"><line class=\"fl\" x1=\"50.2\" y1=\"144.7\" x2=\"244\" y2=\"144.7\"/><line class=\"fl\" x1=\"244\" y1=\"144.7\" x2=\"122.9\" y2=\"26\"/><line class=\"fl\" x1=\"122.9\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"50.2\" y2=\"144.7\"/><text class=\"ft fn\" x=\"147.1\" y=\"156.7\" text-anchor=\"middle\" dominant-baseline=\"central\">16</text><text class=\"ft fn\" x=\"74.4\" y=\"14\" text-anchor=\"middle\" dominant-baseline=\"central\">8</text><text class=\"ft fn\" x=\"26.4\" y=\"87.7\" text-anchor=\"middle\" dominant-baseline=\"central\">10</text><text class=\"ft fn\" x=\"191.8\" y=\"76.8\" text-anchor=\"middle\" dominant-baseline=\"central\">14</text><circle class=\"fp\" cx=\"50.2\" cy=\"144.7\" r=\"2.6\"/><text class=\"ft\" x=\"40.9\" y=\"153.8\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"144.7\" r=\"2.6\"/><text class=\"ft\" x=\"255.9\" y=\"150\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"122.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"125.5\" y=\"13.3\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.3\" y=\"18.5\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>",
-   "ege": 1,
-   "lv": 3
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 165.4\" width=\"270\" height=\"165.4\" role=\"img\" aria-label=\"Две пересекающиеся окружности, общая касательная CD и прямая AB\"><circle class=\"fl\" cx=\"187.3\" cy=\"82.7\" r=\"56.7\"/><circle class=\"fl\" cx=\"82.7\" cy=\"82.7\" r=\"56.7\"/><line class=\"fl\" x1=\"187.3\" y1=\"139.4\" x2=\"82.7\" y2=\"139.4\"/><line class=\"fl\" x1=\"135\" y1=\"139.4\" x2=\"135\" y2=\"60.9\"/><circle class=\"fp\" cx=\"135\" cy=\"139.4\" r=\"2.6\"/><text class=\"ft\" x=\"143\" y=\"149.4\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"135\" cy=\"104.5\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"91.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"135\" cy=\"60.9\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"47.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"187.3\" cy=\"139.4\" r=\"2.6\"/><text class=\"ft\" x=\"199.2\" y=\"144.5\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"82.7\" cy=\"139.4\" r=\"2.6\"/><text class=\"ft\" x=\"70.8\" y=\"144.5\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
-   "id": "b05-p9-h2",
-   "q": "Из точки $P$ к окружности с центром $O$ и радиусом $7$ проведена касательная $PA$ ($A$ — точка касания). Найдите $PA$, если $OP=25$.",
-   "a": 24,
-   "hint": "Радиус в точку касания перпендикулярен касательной.",
+   "id": "b05-p8-h4",
+   "q": "Вневписанная окружность треугольника $ABC$ касается стороны $BC$ и продолжений сторон $AB$ и $AC$. а) Докажите, что её радиус $r_a=\\dfrac{S}{p-a}$ ($a=BC$, $p$ полупериметр). б) Найдите $r_a$, если $AB=13$, $BC=14$, $AC=15$.",
+   "a": 12,
+   "hint": "Площадь $ABC$ равна сумме площадей $ABI_a$ и $ACI_a$ без площади $BCI_a$.",
    "sol": [
-    "Радиус, проведённый в точку касания, перпендикулярен касательной: $\\angle OAP=90^\\circ$.",
-    "$PA=\\sqrt{OP^2-OA^2}=\\sqrt{25^2-7^2}=24$."
+    "а) Пусть $I_a$ центр вневписанной окружности, $r_a$ расстояния от неё до всех трёх прямых. $S_{ABC}=S_{ABI_a}+S_{ACI_a}-S_{BCI_a}=\\dfrac12r_a(c+b-a)=r_a(p-a)$.",
+    "б) $p=21$, $S=84$ (формула Герона), $r_a=\\dfrac{84}{21-14}=12$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 147.4\" width=\"270\" height=\"147.4\" role=\"img\" aria-label=\"Окружность с центром O, из точки P проведена касательная PA\"><circle class=\"fl\" cx=\"73.7\" cy=\"73.7\" r=\"47.7\"/><line class=\"fl\" x1=\"73.7\" y1=\"73.7\" x2=\"87\" y2=\"27.9\"/><line class=\"fl\" x1=\"87\" y1=\"27.9\" x2=\"244\" y2=\"73.7\"/><line class=\"fl\" x1=\"73.7\" y1=\"73.7\" x2=\"244\" y2=\"73.7\"/><path class=\"fa\" d=\"M84.2 37.5 L93.8 40.3 L96.6 30.7\"/><text class=\"ft fn\" x=\"68.8\" y=\"47.4\" text-anchor=\"middle\" dominant-baseline=\"central\">7</text><text class=\"ft fn\" x=\"158.8\" y=\"85.7\" text-anchor=\"middle\" dominant-baseline=\"central\">25</text><circle class=\"fp\" cx=\"73.7\" cy=\"73.7\" r=\"2.6\"/><text class=\"ft\" x=\"61.1\" y=\"76.8\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"244\" cy=\"73.7\" r=\"2.6\"/><text class=\"ft\" x=\"256.9\" y=\"75.5\" text-anchor=\"middle\" dominant-baseline=\"central\">P</text><circle class=\"fp\" cx=\"87\" cy=\"27.9\" r=\"2.6\"/><text class=\"ft\" x=\"76.1\" y=\"20.9\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text></svg></figure>",
-   "ege": 1,
-   "lv": 3
-  },
-  {
-   "id": "b05-p9-h3",
-   "q": "В треугольнике $ABC$ сторона $AB=9$, а угол $C$ равен $30^\\circ$. Найдите радиус описанной окружности.",
-   "a": 9,
-   "hint": "Теорема синусов с радиусом описанной окружности.",
-   "sol": [
-    "Теорема синусов: $\\dfrac{AB}{\\sin C}=2R$.",
-    "$2R=\\dfrac{9}{\\sin30^\\circ}=18$, откуда $R=9$."
-   ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник ABC вписан в окружность, угол C равен 30 градусов\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"89.2\" y1=\"196.7\" x2=\"180.8\" y2=\"196.7\"/><line class=\"fl\" x1=\"180.8\" y1=\"196.7\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"89.2\" y2=\"196.7\"/><path class=\"fa\" d=\"M129.8 45.3 A20 20 0 0 0 140.2 45.3\"/><text class=\"ft fn\" x=\"135\" y=\"58\" text-anchor=\"middle\" dominant-baseline=\"central\">30°</text><text class=\"ft fn\" x=\"135\" y=\"208.7\" text-anchor=\"middle\" dominant-baseline=\"central\">9</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"104.5\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"89.2\" cy=\"196.7\" r=\"2.6\"/><text class=\"ft\" x=\"81.6\" y=\"207.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"180.8\" cy=\"196.7\" r=\"2.6\"/><text class=\"ft\" x=\"188.4\" y=\"207.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>",
-   "ege": 1,
-   "lv": 3
-  },
-  {
-   "id": "b05-p9-h4",
-   "q": "Стороны параллелограмма равны $14$ и $9$, а угол между ними равен $30^\\circ$. Найдите площадь параллелограмма.",
-   "a": 63,
-   "hint": "Площадь через синус угла между сторонами.",
-   "sol": [
-    "$S=ab\\sin\\alpha=14\\cdot9\\cdot\\sin30^\\circ$.",
-    "$\\sin30^\\circ=\\dfrac12$, поэтому $S=63$."
-   ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 97\" width=\"270\" height=\"97\" role=\"img\" aria-label=\"Параллелограмм со сторонами 14 и 9 и углом 30 градусов\"><line class=\"fl\" x1=\"26\" y1=\"71\" x2=\"166\" y2=\"71\"/><line class=\"fl\" x1=\"166\" y1=\"71\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"104\" y2=\"26\"/><line class=\"fl\" x1=\"104\" y1=\"26\" x2=\"26\" y2=\"71\"/><path class=\"fa\" d=\"M46 71 A20 20 0 0 0 43.3 61\"/><text class=\"ft fn\" x=\"56.9\" y=\"62.7\" text-anchor=\"middle\" dominant-baseline=\"central\">30°</text><text class=\"ft fn\" x=\"96\" y=\"83\" text-anchor=\"middle\" dominant-baseline=\"central\">14</text><text class=\"ft fn\" x=\"59\" y=\"38.1\" text-anchor=\"middle\" dominant-baseline=\"central\">9</text><circle class=\"fp\" cx=\"26\" cy=\"71\" r=\"2.6\"/><text class=\"ft\" x=\"13.3\" y=\"73.6\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"166\" cy=\"71\" r=\"2.6\"/><text class=\"ft\" x=\"176.6\" y=\"78.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"256.7\" y=\"23.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"104\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"93.4\" y=\"18.4\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>",
-   "ege": 1,
-   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 210.5\" width=\"270\" height=\"210.5\" role=\"img\" aria-label=\"Треугольник и вневписанная окружность, касающаяся стороны BC\"><circle class=\"fl\" cx=\"164.7\" cy=\"105.3\" r=\"79.3\"/><line class=\"fl\" x1=\"26\" y1=\"184.5\" x2=\"111.9\" y2=\"184.5\"/><line class=\"fl\" x1=\"111.9\" y1=\"184.5\" x2=\"76.3\" y2=\"99.2\"/><line class=\"fl\" x1=\"76.3\" y1=\"99.2\" x2=\"26\" y2=\"184.5\"/><line class=\"fl fd\" x1=\"111.9\" y1=\"184.5\" x2=\"164.7\" y2=\"184.5\"/><line class=\"fl fd\" x1=\"76.3\" y1=\"99.2\" x2=\"96.4\" y2=\"65\"/><circle class=\"fp\" cx=\"26\" cy=\"184.5\" r=\"2.6\"/><text class=\"ft\" x=\"14.9\" y=\"191.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"111.9\" cy=\"184.5\" r=\"2.6\"/><text class=\"ft\" x=\"113.9\" y=\"197.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"76.3\" cy=\"99.2\" r=\"2.6\"/><text class=\"ft\" x=\"68.5\" y=\"88.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"164.7\" cy=\"105.3\" r=\"2.6\"/><text class=\"ft\" x=\"176.2\" y=\"99.2\" text-anchor=\"middle\" dominant-baseline=\"central\">I</text><circle class=\"fp\" cx=\"164.7\" cy=\"184.5\" r=\"2.6\"/><text class=\"ft\" x=\"174.9\" y=\"192.6\" text-anchor=\"middle\" dominant-baseline=\"central\">K</text><circle class=\"fp\" cx=\"96.4\" cy=\"65\" r=\"2.6\"/><text class=\"ft\" x=\"95\" y=\"52.1\" text-anchor=\"middle\" dominant-baseline=\"central\">L</text><circle class=\"fp\" cx=\"91.6\" cy=\"135.8\" r=\"2.6\"/><text class=\"ft\" x=\"78.6\" y=\"134.5\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>",
    "top": true
   },
   {
-   "id": "b05-p9-h5",
-   "q": "Площадь треугольника $ABC$ равна $84$. Точки $M$ и $N$ являются серединами сторон $AB$ и $AC$. Найдите площадь треугольника $AMN$.",
-   "a": 21,
-   "hint": "Подобие с коэффициентом $\\dfrac12$.",
+   "id": "b05-p8-h5",
+   "q": "В треугольнике $ABC$ $O$ и $I$ центры описанной и вписанной окружностей, $R$ и $r$ радиусы. а) Докажите формулу Эйлера $OI^2=R^2-2Rr$. б) Найдите $OI$ для треугольника со сторонами $5$, $5$, $6$.",
+   "a": 0.625,
+   "hint": "Продолжите $AI$ до пересечения с описанной окружностью в точке $W$. Докажите, что $WI=WB$, и примените степень точки $I$.",
    "sol": [
-    "$MN$ — средняя линия, поэтому $\\triangle AMN\\sim\\triangle ABC$ с коэффициентом $\\dfrac12$.",
-    "Площади относятся как квадрат коэффициента: $S_{AMN}=\\dfrac{84}{4}=21$."
+    "а) Пусть биссектриса $AI$ пересекает описанную окружность в $W$. Тогда $\\angle WBI=\\angle WBC+\\angle CBI=\\dfrac{\\angle A}2+\\dfrac{\\angle B}2$, и внешний угол $\\angle BIW$ треугольника $ABI$ равен $\\dfrac{\\angle A}2+\\dfrac{\\angle B}2$. Значит $WB=WI$.",
+    "Хорда $WB=2R\\sin\\dfrac A2$ (теорема синусов). Расстояние $AI=\\dfrac r{\\sin(A/2)}$. Степень точки $I$ относительно описанной окружности: $R^2-OI^2=AI\\cdot IW=\\dfrac r{\\sin(A/2)}\\cdot2R\\sin\\dfrac A2=2Rr$. Отсюда $OI^2=R^2-2Rr$.",
+    "б) $S=12$, $R=\\dfrac{150}{48}=3{,}125$, $r=\\dfrac{12}8=1{,}5$. $OI^2=3{,}125\\cdot(3{,}125-3)=0{,}390625$, $OI=0{,}625$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 215.5\" width=\"270\" height=\"215.5\" role=\"img\" aria-label=\"Треугольник ABC, M и N — середины сторон AB и AC\"><polygon class=\"ff\" points=\"107.8,26 66.9,107.8 175.9,107.8\"/><line class=\"fl\" x1=\"107.8\" y1=\"26\" x2=\"26\" y2=\"189.5\"/><line class=\"fl\" x1=\"26\" y1=\"189.5\" x2=\"244\" y2=\"189.5\"/><line class=\"fl\" x1=\"244\" y1=\"189.5\" x2=\"107.8\" y2=\"26\"/><line class=\"fl\" x1=\"66.9\" y1=\"107.8\" x2=\"175.9\" y2=\"107.8\"/><circle class=\"fp\" cx=\"26\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"196.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"255.4\" y=\"195.7\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"107.8\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"105.6\" y=\"13.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"66.9\" cy=\"107.8\" r=\"2.6\"/><text class=\"ft\" x=\"54.4\" y=\"104.2\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"175.9\" cy=\"107.8\" r=\"2.6\"/><text class=\"ft\" x=\"188.3\" y=\"103.8\" text-anchor=\"middle\" dominant-baseline=\"central\">N</text></svg></figure>",
-   "ege": 1,
-   "lv": 4,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник, описанная и вписанная окружности, центры O и I\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><circle class=\"fl\" cx=\"135\" cy=\"99.2\" r=\"43.9\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"47.2\" y2=\"143.1\"/><line class=\"fl\" x1=\"47.2\" y1=\"143.1\" x2=\"222.8\" y2=\"143.1\"/><line class=\"fl\" x1=\"222.8\" y1=\"143.1\" x2=\"135\" y2=\"26\"/><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"47.2\" cy=\"143.1\" r=\"2.6\"/><text class=\"ft\" x=\"35.2\" y=\"148.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"222.8\" cy=\"143.1\" r=\"2.6\"/><text class=\"ft\" x=\"234.8\" y=\"148.2\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"130.5\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"135\" cy=\"99.2\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"86.2\" text-anchor=\"middle\" dominant-baseline=\"central\">I</text></svg></figure>",
    "top": true
   }
  ],
  "rubric": {
-  "h": "Проверь своё решение",
-  "lead": "Задание части 1 проверяется только по ответу. Сверь запись со списком.",
+  "h": "Оцени своё решение по критериям ЕГЭ",
+  "lead": "На экзамене задание части 2 проверяет эксперт, а не компьютер. Сайт проверил только число в пункте «б». Остальное сверь со своей записью и поставь отметки.",
   "items": [
-   "Чертёж или условие прочитаны правильно: понятно, что дано и что найти",
-   "Выбрана подходящая формула или теорема",
-   "Подстановка и вычисления выполнены без пропусков",
+   "В пункте «а» каждый шаг доказательства назван и обоснован: указано, какая теорема или свойство применяется",
+   "В доказательстве нет «видно из чертежа»: равенства и параллельность выведены, а не прочитаны с рисунка",
+   "В пункте «б» использовано то, что доказано в пункте «а»",
+   "Вычисления доведены до числа, ответ записан в нужной форме",
    "Ответ совпал с ответом сайта. Если нет, найди строку, где решение разошлось с разбором"
   ]
  },
  "id": "l14",
- "title": "Задание 1: планиметрия по чертежу",
+ "title": "Две окружности и комбинации: метод площадей",
  "plus": true,
  "minutes": 90
 }

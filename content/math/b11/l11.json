@@ -1,191 +1,181 @@
 {
- "intro": "Задания №3 по формату ЕГЭ-2027: объёмы и площади по рисунку.",
+ "intro": "Шар, цилиндр и конус вместе с многогранниками: где находится центр, как перейти к осевому сечению и как не потерять доказательство. Сайт проверяет число из пункта «б».",
  "theory": [
   {
-   "h": "Параллелепипед и куб",
-   "html": "<p>$V=abc$, $S=2(ab+bc+ca)$, диагональ $d=\\sqrt{a^2+b^2+c^2}$. У куба $V=e^3$, диагональ грани $e\\sqrt2$, диагональ куба $e\\sqrt3$.</p>"
+   "h": "Шар, описанный около многогранника",
+   "html": "<p>Центр описанного шара равноудалён от всех вершин. Поэтому он лежит на перпендикуляре к плоскости каждой грани, проведённом через центр окружности, описанной около этой грани.</p><ul><li>Прямоугольный параллелепипед: центр в точке пересечения диагоналей, $R=\\dfrac d2$.</li><li>Прямая призма: центр на середине отрезка между центрами описанных окружностей оснований, $R^2=r_{\\text{осн}}^2+\\left(\\dfrac h2\\right)^2$.</li><li>Пирамида с равными боковыми рёбрами: центр на высоте. Если $r$ радиус описанной окружности основания, $h$ высота, то $R=\\dfrac{h^2+r^2}{2h}$.</li></ul><p class=\"warn-box\">Формула $R=\\dfrac{h^2+r^2}{2h}$ верна и тогда, когда центр шара лежит ниже плоскости основания. Но на экзамене не ссылайтесь на неё как на известный факт: запишите уравнение $QS=QA$ и решите его.</p>"
   },
   {
-   "h": "Пирамида и призма",
-   "html": "<p>$V=\\dfrac13S_{осн}h$ для пирамиды и $V=S_{осн}h$ для призмы. Правильный треугольник: $S=\\dfrac{a^2\\sqrt3}{4}$.</p>"
+   "h": "Шар, вписанный в многогранник и конус",
+   "html": "<p>Центр вписанного шара равноудалён от всех граней. Для пирамиды, в которую можно вписать шар, $V=\\dfrac13S_{\\text{полн}}\\,r$, откуда $r=\\dfrac{3V}{S_{\\text{полн}}}$.</p><p>Шар, вписанный в конус: центр на оси, а радиус равен радиусу окружности, вписанной в осевое сечение, $r=\\dfrac Sp$ (площадь и полупериметр треугольника сечения).</p>"
   },
   {
-   "h": "Тела вращения",
-   "html": "<p>Цилиндр: $V=\\pi r^2h$, $S_{бок}=2\\pi rh$. Конус: $V=\\dfrac13\\pi r^2h$, $l^2=r^2+h^2$. Шар: $V=\\dfrac43\\pi r^3$. При изменении размеров в $k$ раз объём меняется в $k^3$ раз.</p>"
+   "h": "Цилиндр и конус вместе с многогранниками",
+   "html": "<ul><li>Призма вписана в цилиндр: основания призмы вписаны в основания цилиндра, радиус цилиндра равен радиусу описанной окружности основания призмы.</li><li>Конус вписан в пирамиду: основание конуса вписано в основание пирамиды, вершины общие. Образующая конуса равна апофеме боковой грани, если основание пирамиды правильное.</li><li>Цилиндр в конусе: рассмотрите осевое сечение и подобные треугольники.</li></ul><p>Ответы удобно записывать в виде $V/\\pi$ или $S/\\pi$.</p>"
+  },
+  {
+   "h": "Как сделать доказательство в таких задачах",
+   "html": "<p>Почти везде нужно показать, что центр или ось находится на определённой прямой. Схема: назвать точку, показать равенство расстояний (по теореме Пифагора или по симметрии) и сделать вывод. Затем расчёт идёт в одной плоскости, как правило в осевом сечении или плоскости, где лежат центр и вершины.</p><p class=\"warn-box\">Не пишите «шар касается» без указания, что именно касается. Формулируйте: «расстояния от центра до плоскостей граней равны радиусу».</p>"
   }
  ],
  "examples": [
   {
-   "q": "Рёбра прямоугольного параллелепипеда, выходящие из одной вершины, равны $2$, $3$ и $6$. Найдите диагональ параллелепипеда.",
+   "q": "Шар описан около прямоугольного параллелепипеда с рёбрами $4$, $4$ и $2$. а) Докажите, что центр шара является точкой пересечения диагоналей параллелепипеда. б) Найдите радиус шара.",
    "steps": [
-    "Квадрат диагонали равен сумме квадратов трёх измерений: $d^2=2^2+3^2+6^2=49$.",
-    "$d=7$."
+    "а) Диагонали прямоугольного параллелепипеда равны и точкой пересечения делятся пополам. Значит эта точка равноудалена от всех восьми вершин, то есть она центр описанного шара.",
+    "б) Радиус равен половине диагонали: $d=\\sqrt{16+16+4}=6$, $R=3$."
    ],
-   "a": 7,
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный параллелепипед 2×3×6\"><line class=\"fl\" x1=\"90.6\" y1=\"209\" x2=\"143.6\" y2=\"209\"/><line class=\"fl\" x1=\"143.6\" y1=\"209\" x2=\"143.6\" y2=\"49.9\"/><line class=\"fl\" x1=\"143.6\" y1=\"49.9\" x2=\"90.6\" y2=\"49.9\"/><line class=\"fl\" x1=\"90.6\" y1=\"49.9\" x2=\"90.6\" y2=\"209\"/><line class=\"fl\" x1=\"179.4\" y1=\"185.1\" x2=\"179.4\" y2=\"26\"/><line class=\"fl\" x1=\"179.4\" y1=\"26\" x2=\"126.4\" y2=\"26\"/><line class=\"fl\" x1=\"143.6\" y1=\"209\" x2=\"179.4\" y2=\"185.1\"/><line class=\"fl\" x1=\"143.6\" y1=\"49.9\" x2=\"179.4\" y2=\"26\"/><line class=\"fl\" x1=\"90.6\" y1=\"49.9\" x2=\"126.4\" y2=\"26\"/><line class=\"fl fd\" x1=\"90.6\" y1=\"209\" x2=\"126.4\" y2=\"185.1\"/><line class=\"fl fd\" x1=\"126.4\" y1=\"185.1\" x2=\"179.4\" y2=\"185.1\"/><line class=\"fl fd\" x1=\"126.4\" y1=\"185.1\" x2=\"126.4\" y2=\"26\"/><line class=\"fl fd\" x1=\"90.6\" y1=\"209\" x2=\"179.4\" y2=\"26\"/><text class=\"ft fn\" x=\"117.1\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">2</text><text class=\"ft fn\" x=\"155.6\" y=\"129.4\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><text class=\"ft fn\" x=\"168.2\" y=\"207\" text-anchor=\"middle\" dominant-baseline=\"central\">3</text><circle class=\"fp\" cx=\"90.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"84.9\" y=\"220.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"143.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"144.8\" y=\"221.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"143.6\" cy=\"49.9\" r=\"2.6\"/><text class=\"ft\" x=\"145.3\" y=\"37\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"90.6\" cy=\"49.9\" r=\"2.6\"/><text class=\"ft\" x=\"83.4\" y=\"39\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"126.4\" cy=\"185.1\" r=\"2.6\"/><text class=\"ft\" x=\"124.7\" y=\"198\" text-anchor=\"middle\" dominant-baseline=\"central\">E</text><circle class=\"fp\" cx=\"179.4\" cy=\"185.1\" r=\"2.6\"/><text class=\"ft\" x=\"186.6\" y=\"196\" text-anchor=\"middle\" dominant-baseline=\"central\">F</text><circle class=\"fp\" cx=\"179.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"185.1\" y=\"14.3\" text-anchor=\"middle\" dominant-baseline=\"central\">G</text><circle class=\"fp\" cx=\"126.4\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"125.2\" y=\"13.1\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>"
+   "a": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 168.7\" width=\"270\" height=\"168.7\" role=\"img\" aria-label=\"Прямоугольный параллелепипед и его диагональ\"><line class=\"fl\" x1=\"26\" y1=\"142.7\" x2=\"179.5\" y2=\"142.7\"/><line class=\"fl\" x1=\"179.5\" y1=\"142.7\" x2=\"244\" y2=\"102.8\"/><line class=\"fl\" x1=\"179.5\" y1=\"65.9\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"65.9\" x2=\"179.5\" y2=\"65.9\"/><line class=\"fl\" x1=\"26\" y1=\"65.9\" x2=\"90.5\" y2=\"26\"/><line class=\"fl\" x1=\"90.5\" y1=\"26\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"90.5\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"142.7\" x2=\"26\" y2=\"65.9\"/><line class=\"fl\" x1=\"179.5\" y1=\"142.7\" x2=\"179.5\" y2=\"65.9\"/><line class=\"fl\" x1=\"244\" y1=\"102.8\" x2=\"244\" y2=\"26\"/><line class=\"fl fd\" x1=\"26\" y1=\"142.7\" x2=\"90.5\" y2=\"102.8\"/><line class=\"fl fd\" x1=\"244\" y1=\"102.8\" x2=\"90.5\" y2=\"102.8\"/><line class=\"fl fd\" x1=\"90.5\" y1=\"102.8\" x2=\"90.5\" y2=\"26\"/><line class=\"fl fd\" x1=\"26\" y1=\"142.7\" x2=\"244\" y2=\"26\"/><circle class=\"fp\" cx=\"26\" cy=\"142.7\" r=\"2.6\"/><text class=\"ft\" x=\"14.5\" y=\"148.8\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"179.5\" cy=\"142.7\" r=\"2.6\"/><text class=\"ft\" x=\"187.4\" y=\"153\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"102.8\" r=\"2.6\"/><text class=\"ft\" x=\"256.8\" y=\"104.9\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"90.5\" cy=\"102.8\" r=\"2.6\"/><text class=\"ft\" x=\"78.5\" y=\"107.7\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"26\" cy=\"65.9\" r=\"2.6\"/><text class=\"ft\" x=\"13.2\" y=\"63.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A₁</text><circle class=\"fp\" cx=\"179.5\" cy=\"65.9\" r=\"2.6\"/><text class=\"ft\" x=\"191.5\" y=\"60.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B₁</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"255.5\" y=\"19.9\" text-anchor=\"middle\" dominant-baseline=\"central\">C₁</text><circle class=\"fp\" cx=\"90.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"82.6\" y=\"15.7\" text-anchor=\"middle\" dominant-baseline=\"central\">D₁</text><circle class=\"fp\" cx=\"135\" cy=\"84.3\" r=\"2.6\"/><text class=\"ft\" x=\"144.2\" y=\"75.1\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
   },
   {
-   "q": "В правильной четырёхугольной пирамиде сторона основания равна $6$, высота равна $4$. Найдите объём пирамиды.",
+   "q": "Радиус основания конуса равен $6$, высота равна $8$. а) Докажите, что центр вписанного в конус шара лежит на оси конуса. б) Найдите радиус вписанного шара.",
    "steps": [
-    "Основание — квадрат, $S_{осн}=6^2=36$.",
-    "$V=\\dfrac13S_{осн}h=\\dfrac13\\cdot36\\cdot4=48$."
+    "а) Конус и вписанный шар симметричны относительно оси: любая плоскость, проходящая через ось, является плоскостью симметрии конуса, а шар вписанный в конус единственный. Центр шара принадлежит всем таким плоскостям, то есть оси.",
+    "б) Осевое сечение равнобедренный треугольник со сторонами $10$, $10$, $12$, шар даёт вписанную окружность. $S=\\dfrac12\\cdot12\\cdot8=48$, $p=16$, $r=\\dfrac Sp=3$."
    ],
-   "a": 48,
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 174.8\" width=\"270\" height=\"174.8\" role=\"img\" aria-label=\"Правильная четырёхугольная пирамида, сторона основания 6, высота 4\"><line class=\"fl\" x1=\"26\" y1=\"148.8\" x2=\"176.3\" y2=\"148.8\"/><line class=\"fl\" x1=\"176.3\" y1=\"148.8\" x2=\"244\" y2=\"103.7\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"148.8\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"176.3\" y2=\"148.8\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"103.7\"/><line class=\"fl fd\" x1=\"26\" y1=\"148.8\" x2=\"93.7\" y2=\"103.7\"/><line class=\"fl fd\" x1=\"93.7\" y1=\"103.7\" x2=\"244\" y2=\"103.7\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"93.7\" y2=\"103.7\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"126.2\"/><text class=\"ft fn\" x=\"101.2\" y=\"160.8\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><text class=\"ft fn\" x=\"123\" y=\"76.1\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><circle class=\"fp\" cx=\"26\" cy=\"148.8\" r=\"2.6\"/><text class=\"ft\" x=\"13.8\" y=\"153.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"176.3\" cy=\"148.8\" r=\"2.6\"/><text class=\"ft\" x=\"185.8\" y=\"157.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"103.7\" r=\"2.6\"/><text class=\"ft\" x=\"257\" y=\"103\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"93.7\" cy=\"103.7\" r=\"2.6\"/><text class=\"ft\" x=\"80.8\" y=\"101.9\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"126.2\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"139.2\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text></svg></figure>"
+   "a": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Осевое сечение конуса и вписанная окружность\"><circle class=\"fl\" cx=\"135\" cy=\"116.8\" r=\"54.5\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"171.3\"/><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"256.3\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"135\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"184.3\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
   },
   {
-   "q": "Образующая конуса равна $5$, высота равна $4$. Найдите объём конуса, делённый на $\\pi$.",
+   "q": "В правильной четырёхугольной пирамиде $SABCD$ сторона основания равна $6$, высота равна $4$. а) Докажите, что центр описанного шара лежит на высоте $SO$. б) Найдите радиус описанного шара.",
    "steps": [
-    "Радиус основания из прямоугольного треугольника: $r=\\sqrt{5^2-4^2}=3$.",
-    "$V=\\dfrac13\\pi r^2h$, поэтому $\\dfrac V\\pi=\\dfrac13\\cdot9\\cdot4=12$."
+    "а) Точка, равноудалённая от $A$, $B$, $C$, $D$, лежит на перпендикуляре к плоскости основания в центре описанной окружности квадрата, то есть на $SO$.",
+    "б) Пусть центр $Q$ на $SO$, $QS=QA=R$. $OA=3\\sqrt2$, $OQ=4-R$ (центр выше основания). $R^2=(4-R)^2+18$, $8R=34$, $R=4{,}25$."
    ],
-   "a": 12,
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Осевое сечение конуса: образующая 5, высота 4\"><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"171.3\"/><path class=\"fa\" d=\"M135 161.3 L145 161.3 L145 171.3\"/><text class=\"ft fn\" x=\"70.9\" y=\"91.5\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><text class=\"ft fn\" x=\"123\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"256.3\" y=\"175.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"184.3\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
+   "a": 4.25,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 174.3\" width=\"270\" height=\"174.3\" role=\"img\" aria-label=\"Правильная четырёхугольная пирамида и высота SO\"><line class=\"fl\" x1=\"26\" y1=\"148.3\" x2=\"179.5\" y2=\"148.3\"/><line class=\"fl\" x1=\"179.5\" y1=\"148.3\" x2=\"244\" y2=\"108.4\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"148.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"179.5\" y2=\"148.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"108.4\"/><line class=\"fl fd\" x1=\"26\" y1=\"148.3\" x2=\"90.5\" y2=\"108.4\"/><line class=\"fl fd\" x1=\"244\" y1=\"108.4\" x2=\"90.5\" y2=\"108.4\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"90.5\" y2=\"108.4\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"128.3\"/><circle class=\"fp\" cx=\"26\" cy=\"148.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"152.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"179.5\" cy=\"148.3\" r=\"2.6\"/><text class=\"ft\" x=\"189.5\" y=\"156.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"108.4\" r=\"2.6\"/><text class=\"ft\" x=\"257\" y=\"108\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"90.5\" cy=\"108.4\" r=\"2.6\"/><text class=\"ft\" x=\"77.5\" y=\"107.5\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"135\" cy=\"128.3\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"141.3\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
   }
  ],
  "tasks": [
   {
-   "id": "b11-p7-1",
-   "q": "Рёбра прямоугольного параллелепипеда, выходящие из одной вершины, равны $4$, $4$ и $7$. Найдите диагональ параллелепипеда.",
-   "a": 9,
-   "hint": "$d^2=a^2+b^2+c^2$.",
+   "id": "b11-p6-1",
+   "q": "Шар описан около прямоугольного параллелепипеда с рёбрами $2$, $3$ и $6$. а) Докажите, что диагонали параллелепипеда равны. б) Найдите радиус шара.",
+   "a": 3.5,
+   "hint": "Радиус равен половине диагонали. Диагональ найдите по трём измерениям.",
    "sol": [
-    "Квадрат диагонали равен сумме квадратов трёх измерений: $d^2=4^2+4^2+7^2=81$.",
-    "$d=9$."
+    "а) $AC_1^2=AB^2+AD^2+AA_1^2$ для каждой из диагоналей, поэтому все четыре диагонали равны и делятся точкой пересечения пополам. Она центр шара.",
+    "б) $d=\\sqrt{4+9+36}=7$, $R=3{,}5$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный параллелепипед 4×4×7\"><line class=\"fl\" x1=\"70.3\" y1=\"209\" x2=\"159.5\" y2=\"209\"/><line class=\"fl\" x1=\"159.5\" y1=\"209\" x2=\"159.5\" y2=\"52.8\"/><line class=\"fl\" x1=\"159.5\" y1=\"52.8\" x2=\"70.3\" y2=\"52.8\"/><line class=\"fl\" x1=\"70.3\" y1=\"52.8\" x2=\"70.3\" y2=\"209\"/><line class=\"fl\" x1=\"199.7\" y1=\"182.2\" x2=\"199.7\" y2=\"26\"/><line class=\"fl\" x1=\"199.7\" y1=\"26\" x2=\"110.5\" y2=\"26\"/><line class=\"fl\" x1=\"159.5\" y1=\"209\" x2=\"199.7\" y2=\"182.2\"/><line class=\"fl\" x1=\"159.5\" y1=\"52.8\" x2=\"199.7\" y2=\"26\"/><line class=\"fl\" x1=\"70.3\" y1=\"52.8\" x2=\"110.5\" y2=\"26\"/><line class=\"fl fd\" x1=\"70.3\" y1=\"209\" x2=\"110.5\" y2=\"182.2\"/><line class=\"fl fd\" x1=\"110.5\" y1=\"182.2\" x2=\"199.7\" y2=\"182.2\"/><line class=\"fl fd\" x1=\"110.5\" y1=\"182.2\" x2=\"110.5\" y2=\"26\"/><line class=\"fl fd\" x1=\"70.3\" y1=\"209\" x2=\"199.7\" y2=\"26\"/><text class=\"ft fn\" x=\"114.9\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><text class=\"ft fn\" x=\"171.5\" y=\"130.9\" text-anchor=\"middle\" dominant-baseline=\"central\">7</text><text class=\"ft fn\" x=\"186.3\" y=\"205.6\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><circle class=\"fp\" cx=\"70.3\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"62.8\" y=\"219.6\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"159.5\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"162.9\" y=\"221.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"159.5\" cy=\"52.8\" r=\"2.6\"/><text class=\"ft\" x=\"164.2\" y=\"40.6\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"70.3\" cy=\"52.8\" r=\"2.6\"/><text class=\"ft\" x=\"61.1\" y=\"43.6\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"110.5\" cy=\"182.2\" r=\"2.6\"/><text class=\"ft\" x=\"105.8\" y=\"194.4\" text-anchor=\"middle\" dominant-baseline=\"central\">E</text><circle class=\"fp\" cx=\"199.7\" cy=\"182.2\" r=\"2.6\"/><text class=\"ft\" x=\"208.9\" y=\"191.4\" text-anchor=\"middle\" dominant-baseline=\"central\">F</text><circle class=\"fp\" cx=\"199.7\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"207.2\" y=\"15.4\" text-anchor=\"middle\" dominant-baseline=\"central\">G</text><circle class=\"fp\" cx=\"110.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"107.1\" y=\"13.4\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>",
-   "ege": 3,
-   "lv": 2
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный параллелепипед 2 на 3 на 6 с диагональю\"><line class=\"fl\" x1=\"91\" y1=\"209\" x2=\"145\" y2=\"209\"/><line class=\"fl\" x1=\"145\" y1=\"209\" x2=\"179\" y2=\"187.9\"/><line class=\"fl\" x1=\"145\" y1=\"47.1\" x2=\"179\" y2=\"26\"/><line class=\"fl\" x1=\"91\" y1=\"47.1\" x2=\"145\" y2=\"47.1\"/><line class=\"fl\" x1=\"91\" y1=\"47.1\" x2=\"125\" y2=\"26\"/><line class=\"fl\" x1=\"125\" y1=\"26\" x2=\"179\" y2=\"26\"/><line class=\"fl\" x1=\"179\" y1=\"26\" x2=\"125\" y2=\"26\"/><line class=\"fl\" x1=\"91\" y1=\"209\" x2=\"91\" y2=\"47.1\"/><line class=\"fl\" x1=\"145\" y1=\"209\" x2=\"145\" y2=\"47.1\"/><line class=\"fl\" x1=\"179\" y1=\"187.9\" x2=\"179\" y2=\"26\"/><line class=\"fl fd\" x1=\"91\" y1=\"209\" x2=\"125\" y2=\"187.9\"/><line class=\"fl fd\" x1=\"179\" y1=\"187.9\" x2=\"125\" y2=\"187.9\"/><line class=\"fl fd\" x1=\"125\" y1=\"187.9\" x2=\"125\" y2=\"26\"/><line class=\"fl fd\" x1=\"91\" y1=\"209\" x2=\"179\" y2=\"26\"/><circle class=\"fp\" cx=\"91\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"85.4\" y=\"220.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"145\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"146.4\" y=\"221.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"179\" cy=\"187.9\" r=\"2.6\"/><text class=\"ft\" x=\"185.9\" y=\"199\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"125\" cy=\"187.9\" r=\"2.6\"/><text class=\"ft\" x=\"123.2\" y=\"200.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"91\" cy=\"47.1\" r=\"2.6\"/><text class=\"ft\" x=\"84.1\" y=\"36\" text-anchor=\"middle\" dominant-baseline=\"central\">A₁</text><circle class=\"fp\" cx=\"145\" cy=\"47.1\" r=\"2.6\"/><text class=\"ft\" x=\"146.8\" y=\"34.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B₁</text><circle class=\"fp\" cx=\"179\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"184.6\" y=\"14.3\" text-anchor=\"middle\" dominant-baseline=\"central\">C₁</text><circle class=\"fp\" cx=\"125\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"123.6\" y=\"13.1\" text-anchor=\"middle\" dominant-baseline=\"central\">D₁</text></svg></figure>"
   },
   {
-   "id": "b11-p7-2",
-   "q": "Найдите площадь поверхности прямоугольного параллелепипеда с рёбрами $3$, $4$ и $5$, выходящими из одной вершины.",
-   "a": 94,
-   "hint": "Три пары равных граней.",
+   "id": "b11-p6-2",
+   "q": "В правильной четырёхугольной пирамиде $SABCD$ сторона основания равна $6$, а высота равна $4$. а) Докажите, что центр описанного шара лежит на прямой $SO$, где $O$ центр основания. б) Найдите радиус описанного шара.",
+   "a": 4.25,
+   "hint": "Центр $Q$ лежит на $SO$ и $QS=QA$.",
    "sol": [
-    "Грани попарно равны: $S=2(ab+bc+ca)$.",
-    "$S=2(3\\cdot4+4\\cdot5+3\\cdot5)=94$."
+    "а) Центры описанных шаров лежат на перпендикуляре к плоскости основания, проведённом через центр описанной окружности основания, а он проходит через $O$ и совпадает с прямой $SO$.",
+    "б) $OA=3\\sqrt2$. Если $QS=QA=R$, то $R^2=(4-R)^2+18$, откуда $R=4{,}25$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный параллелепипед 3×4×5\"><line class=\"fl\" x1=\"64.2\" y1=\"209\" x2=\"152.7\" y2=\"209\"/><line class=\"fl\" x1=\"152.7\" y1=\"209\" x2=\"152.7\" y2=\"61.4\"/><line class=\"fl\" x1=\"152.7\" y1=\"61.4\" x2=\"64.2\" y2=\"61.4\"/><line class=\"fl\" x1=\"64.2\" y1=\"61.4\" x2=\"64.2\" y2=\"209\"/><line class=\"fl\" x1=\"205.8\" y1=\"173.6\" x2=\"205.8\" y2=\"26\"/><line class=\"fl\" x1=\"205.8\" y1=\"26\" x2=\"117.3\" y2=\"26\"/><line class=\"fl\" x1=\"152.7\" y1=\"209\" x2=\"205.8\" y2=\"173.6\"/><line class=\"fl\" x1=\"152.7\" y1=\"61.4\" x2=\"205.8\" y2=\"26\"/><line class=\"fl\" x1=\"64.2\" y1=\"61.4\" x2=\"117.3\" y2=\"26\"/><line class=\"fl fd\" x1=\"64.2\" y1=\"209\" x2=\"117.3\" y2=\"173.6\"/><line class=\"fl fd\" x1=\"117.3\" y1=\"173.6\" x2=\"205.8\" y2=\"173.6\"/><line class=\"fl fd\" x1=\"117.3\" y1=\"173.6\" x2=\"117.3\" y2=\"26\"/><text class=\"ft fn\" x=\"108.4\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">3</text><text class=\"ft fn\" x=\"164.7\" y=\"135.2\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><text class=\"ft fn\" x=\"185.9\" y=\"201.3\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><circle class=\"fp\" cx=\"64.2\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"56.2\" y=\"219.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"152.7\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"155.2\" y=\"221.8\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"152.7\" cy=\"61.4\" r=\"2.6\"/><text class=\"ft\" x=\"156.6\" y=\"49\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"64.2\" cy=\"61.4\" r=\"2.6\"/><text class=\"ft\" x=\"54\" y=\"53.4\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"117.3\" cy=\"173.6\" r=\"2.6\"/><text class=\"ft\" x=\"113.4\" y=\"186\" text-anchor=\"middle\" dominant-baseline=\"central\">E</text><circle class=\"fp\" cx=\"205.8\" cy=\"173.6\" r=\"2.6\"/><text class=\"ft\" x=\"216\" y=\"181.6\" text-anchor=\"middle\" dominant-baseline=\"central\">F</text><circle class=\"fp\" cx=\"205.8\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"213.8\" y=\"15.7\" text-anchor=\"middle\" dominant-baseline=\"central\">G</text><circle class=\"fp\" cx=\"117.3\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"114.8\" y=\"13.2\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>",
-   "ege": 3,
-   "lv": 2
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 174.3\" width=\"270\" height=\"174.3\" role=\"img\" aria-label=\"Правильная пирамида\"><line class=\"fl\" x1=\"26\" y1=\"148.3\" x2=\"179.5\" y2=\"148.3\"/><line class=\"fl\" x1=\"179.5\" y1=\"148.3\" x2=\"244\" y2=\"108.4\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"148.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"179.5\" y2=\"148.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"108.4\"/><line class=\"fl fd\" x1=\"26\" y1=\"148.3\" x2=\"90.5\" y2=\"108.4\"/><line class=\"fl fd\" x1=\"244\" y1=\"108.4\" x2=\"90.5\" y2=\"108.4\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"90.5\" y2=\"108.4\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"128.3\"/><circle class=\"fp\" cx=\"26\" cy=\"148.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"152.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"179.5\" cy=\"148.3\" r=\"2.6\"/><text class=\"ft\" x=\"189.5\" y=\"156.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"108.4\" r=\"2.6\"/><text class=\"ft\" x=\"257\" y=\"108\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"90.5\" cy=\"108.4\" r=\"2.6\"/><text class=\"ft\" x=\"77.5\" y=\"107.5\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"135\" cy=\"128.3\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"141.3\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
   },
   {
-   "id": "b11-p7-3",
-   "q": "В правильной четырёхугольной пирамиде сторона основания равна $9$, высота равна $5$. Найдите объём пирамиды.",
-   "a": 135,
-   "hint": "$V=\\dfrac13Sh$.",
+   "id": "b11-p6-3",
+   "q": "Правильная четырёхугольная призма со стороной основания $6$ и высотой $8$ вписана в цилиндр (основания призмы вписаны в основания цилиндра). а) Докажите, что ось цилиндра проходит через центры оснований призмы. б) Найдите $\\dfrac V\\pi$, где $V$ объём цилиндра.",
+   "a": 144,
+   "hint": "Радиус основания цилиндра равен радиусу окружности, описанной около квадрата.",
    "sol": [
-    "Основание — квадрат, $S_{осн}=9^2=81$.",
-    "$V=\\dfrac13S_{осн}h=\\dfrac13\\cdot81\\cdot5=135$."
+    "а) Основание призмы квадрат вписан в основание цилиндра, значит центр окружности основания цилиндра равноудалён от вершин квадрата и совпадает с его центром. Ось цилиндра проходит через эти центры.",
+    "б) $r=\\dfrac{6\\sqrt2}{2}$, $r^2=18$, $V=\\pi r^2h=144\\pi$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 158.1\" width=\"270\" height=\"158.1\" role=\"img\" aria-label=\"Правильная четырёхугольная пирамида, сторона основания 9, высота 5\"><line class=\"fl\" x1=\"26\" y1=\"132.1\" x2=\"176.3\" y2=\"132.1\"/><line class=\"fl\" x1=\"176.3\" y1=\"132.1\" x2=\"244\" y2=\"87\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"132.1\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"176.3\" y2=\"132.1\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"87\"/><line class=\"fl fd\" x1=\"26\" y1=\"132.1\" x2=\"93.7\" y2=\"87\"/><line class=\"fl fd\" x1=\"93.7\" y1=\"87\" x2=\"244\" y2=\"87\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"93.7\" y2=\"87\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"109.5\"/><text class=\"ft fn\" x=\"101.2\" y=\"144.1\" text-anchor=\"middle\" dominant-baseline=\"central\">9</text><text class=\"ft fn\" x=\"123\" y=\"67.8\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><circle class=\"fp\" cx=\"26\" cy=\"132.1\" r=\"2.6\"/><text class=\"ft\" x=\"13.7\" y=\"136.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"176.3\" cy=\"132.1\" r=\"2.6\"/><text class=\"ft\" x=\"186.1\" y=\"140.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"87\" r=\"2.6\"/><text class=\"ft\" x=\"257\" y=\"85.9\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"93.7\" cy=\"87\" r=\"2.6\"/><text class=\"ft\" x=\"80.9\" y=\"84.3\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"109.5\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"122.5\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text></svg></figure>",
-   "ege": 3,
-   "lv": 2
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Правильная четырёхугольная призма, вписанная в цилиндр\"><line class=\"fl\" x1=\"53.5\" y1=\"209\" x2=\"168.3\" y2=\"209\"/><line class=\"fl\" x1=\"168.3\" y1=\"209\" x2=\"216.5\" y2=\"179.1\"/><line class=\"fl\" x1=\"168.3\" y1=\"55.9\" x2=\"216.5\" y2=\"26\"/><line class=\"fl\" x1=\"53.5\" y1=\"55.9\" x2=\"168.3\" y2=\"55.9\"/><line class=\"fl\" x1=\"53.5\" y1=\"55.9\" x2=\"101.7\" y2=\"26\"/><line class=\"fl\" x1=\"101.7\" y1=\"26\" x2=\"216.5\" y2=\"26\"/><line class=\"fl\" x1=\"216.5\" y1=\"26\" x2=\"101.7\" y2=\"26\"/><line class=\"fl\" x1=\"53.5\" y1=\"209\" x2=\"53.5\" y2=\"55.9\"/><line class=\"fl\" x1=\"168.3\" y1=\"209\" x2=\"168.3\" y2=\"55.9\"/><line class=\"fl\" x1=\"216.5\" y1=\"179.1\" x2=\"216.5\" y2=\"26\"/><line class=\"fl fd\" x1=\"53.5\" y1=\"209\" x2=\"101.7\" y2=\"179.1\"/><line class=\"fl fd\" x1=\"216.5\" y1=\"179.1\" x2=\"101.7\" y2=\"179.1\"/><line class=\"fl fd\" x1=\"101.7\" y1=\"179.1\" x2=\"101.7\" y2=\"26\"/><circle class=\"fp\" cx=\"53.5\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"44.8\" y=\"218.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"168.3\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"172.8\" y=\"221.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"216.5\" cy=\"179.1\" r=\"2.6\"/><text class=\"ft\" x=\"226.9\" y=\"187\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"101.7\" cy=\"179.1\" r=\"2.6\"/><text class=\"ft\" x=\"95.5\" y=\"190.6\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"53.5\" cy=\"55.9\" r=\"2.6\"/><text class=\"ft\" x=\"43.1\" y=\"48\" text-anchor=\"middle\" dominant-baseline=\"central\">A₁</text><circle class=\"fp\" cx=\"168.3\" cy=\"55.9\" r=\"2.6\"/><text class=\"ft\" x=\"174.5\" y=\"44.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B₁</text><circle class=\"fp\" cx=\"216.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"225.2\" y=\"16.3\" text-anchor=\"middle\" dominant-baseline=\"central\">C₁</text><circle class=\"fp\" cx=\"101.7\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"97.2\" y=\"13.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D₁</text></svg></figure>"
   },
   {
-   "id": "b11-p7-4",
-   "q": "Образующая конуса равна $13$, высота равна $12$. Найдите объём конуса, делённый на $\\pi$.",
-   "a": 100,
-   "hint": "Найдите радиус по теореме Пифагора.",
+   "id": "b11-p6-4",
+   "q": "Конус вписан в правильную четырёхугольную пирамиду $SABCD$ (основание конуса вписано в основание пирамиды, вершина общая). Сторона основания пирамиды $6$, высота $4$. а) Докажите, что образующая конуса равна апофеме пирамиды. б) Найдите $\\dfrac{S}{\\pi}$, где $S$ площадь боковой поверхности конуса.",
+   "a": 15,
+   "hint": "Окружность, вписанная в квадрат, касается сторон в их серединах.",
    "sol": [
-    "Радиус основания из прямоугольного треугольника: $r=\\sqrt{13^2-12^2}=5$.",
-    "$V=\\dfrac13\\pi r^2h$, поэтому $\\dfrac V\\pi=\\dfrac13\\cdot25\\cdot12=100$."
+    "а) Окружность основания конуса вписана в квадрат и касается $AB$ в середине $M$. Образующая $SM$ и есть апофема боковой грани $SAB$ ($SM\\perp AB$ по теореме о трёх перпендикулярах).",
+    "б) $r=3$, $SM=\\sqrt{4^2+3^2}=5$. $S=\\pi rl=15\\pi$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Осевое сечение конуса: образующая 13, высота 12\"><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"58.8\" y2=\"209\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"211.2\" y2=\"209\"/><line class=\"fl\" x1=\"58.8\" y1=\"209\" x2=\"211.2\" y2=\"209\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"209\"/><path class=\"fa\" d=\"M135 199 L145 199 L145 209\"/><text class=\"ft fn\" x=\"85.8\" y=\"112.9\" text-anchor=\"middle\" dominant-baseline=\"central\">13</text><text class=\"ft fn\" x=\"123\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">12</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"58.8\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"47.6\" y=\"215.7\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"211.2\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"222.4\" y=\"215.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"222\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>",
-   "ege": 3,
-   "lv": 2
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 174.3\" width=\"270\" height=\"174.3\" role=\"img\" aria-label=\"Правильная пирамида и вписанный конус\"><line class=\"fl\" x1=\"26\" y1=\"148.3\" x2=\"179.5\" y2=\"148.3\"/><line class=\"fl\" x1=\"179.5\" y1=\"148.3\" x2=\"244\" y2=\"108.4\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"148.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"179.5\" y2=\"148.3\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"108.4\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"102.8\" y2=\"148.3\"/><line class=\"fl fd\" x1=\"26\" y1=\"148.3\" x2=\"90.5\" y2=\"108.4\"/><line class=\"fl fd\" x1=\"244\" y1=\"108.4\" x2=\"90.5\" y2=\"108.4\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"90.5\" y2=\"108.4\"/><line class=\"fl fd\" x1=\"135\" y1=\"26\" x2=\"135\" y2=\"128.3\"/><line class=\"fl fd\" x1=\"135\" y1=\"128.3\" x2=\"102.8\" y2=\"148.3\"/><circle class=\"fp\" cx=\"26\" cy=\"148.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.6\" y=\"152.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"179.5\" cy=\"148.3\" r=\"2.6\"/><text class=\"ft\" x=\"190.4\" y=\"155.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"108.4\" r=\"2.6\"/><text class=\"ft\" x=\"257\" y=\"107.5\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"90.5\" cy=\"108.4\" r=\"2.6\"/><text class=\"ft\" x=\"77.7\" y=\"105.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135.7\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"102.8\" cy=\"148.3\" r=\"2.6\"/><text class=\"ft\" x=\"94.2\" y=\"158.1\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"135\" cy=\"128.3\" r=\"2.6\"/><text class=\"ft\" x=\"139.7\" y=\"140.5\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>"
   },
   {
-   "id": "b11-p7-5",
-   "q": "Осевое сечение цилиндра — квадрат со стороной $8$. Найдите площадь боковой поверхности цилиндра, делённую на $\\pi$.",
-   "a": 64,
-   "hint": "Осевое сечение даёт радиус и высоту.",
+   "id": "b11-p6-5",
+   "q": "В правильную четырёхугольную пирамиду со стороной основания $6$ и высотой $4$ вписан шар. а) Докажите, что центр шара лежит на высоте пирамиды. б) Найдите радиус шара.",
+   "a": 1.5,
+   "hint": "Объём пирамиды равен $\\dfrac13Sr$, где $S$ полная поверхность, а $r$ радиус вписанного шара.",
    "sol": [
-    "Радиус $r=4$, высота $h=8$.",
-    "$S_{бок}=2\\pi rh$, поэтому $\\dfrac{S}{\\pi}=2\\cdot4\\cdot8=64$."
+    "а) Центр равноудалён от всех граней, а точки, равноудалённые от четырёх боковых граней, лежат на оси симметрии пирамиды $SO$.",
+    "б) $V=\\dfrac13\\cdot36\\cdot4=48$, апофема $5$, полная поверхность $36+4\\cdot15=96$, $r=\\dfrac{3V}{S}=\\dfrac{144}{96}=1{,}5$."
    ],
-   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Осевое сечение цилиндра — квадрат со стороной 8\"><line class=\"fl\" x1=\"43.5\" y1=\"209\" x2=\"226.5\" y2=\"209\"/><line class=\"fl\" x1=\"226.5\" y1=\"209\" x2=\"226.5\" y2=\"26\"/><line class=\"fl\" x1=\"226.5\" y1=\"26\" x2=\"43.5\" y2=\"26\"/><line class=\"fl\" x1=\"43.5\" y1=\"26\" x2=\"43.5\" y2=\"209\"/><line class=\"fa\" x1=\"135\" y1=\"204\" x2=\"135\" y2=\"214\"/><line class=\"fa\" x1=\"221.5\" y1=\"117.5\" x2=\"231.5\" y2=\"117.5\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">8</text><circle class=\"fp\" cx=\"43.5\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"34.3\" y=\"218.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"226.5\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"235.7\" y=\"218.2\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"226.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"235.7\" y=\"16.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"43.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"34.3\" y=\"16.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>",
-   "ege": 3,
-   "lv": 2
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Осевое сечение пирамиды по апофемам и вписанный шар\"><circle class=\"fl\" cx=\"135\" cy=\"116.8\" r=\"54.5\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"14.1\" y=\"176.6\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"255.9\" y=\"176.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text></svg></figure>"
   }
  ],
  "hard": [
   {
-   "id": "b11-p7-h1",
-   "q": "Основание правильной треугольной призмы — треугольник со стороной $8$, высота призмы равна $5$. Найдите объём призмы, делённый на $\\sqrt3$.",
-   "a": 80,
-   "hint": "Площадь правильного треугольника $\\dfrac{a^2\\sqrt3}{4}$.",
+   "id": "b11-p6-h1",
+   "q": "Основание прямой призмы $ABCA_1B_1C_1$ прямоугольный треугольник с катетами $AB=3$ и $AC=4$, высота призмы равна $12$. а) Докажите, что центр описанного шара лежит в середине отрезка, соединяющего середины гипотенуз оснований. б) Найдите радиус описанного шара.",
+   "a": 6.5,
+   "hint": "Центр лежит на оси, проходящей через середины гипотенуз оснований, на середине высоты.",
    "sol": [
-    "$S_{осн}=\\dfrac{a^2\\sqrt3}{4}=\\dfrac{64\\sqrt3}{4}$.",
-    "$V=S_{осн}h$, поэтому $\\dfrac V{\\sqrt3}=\\dfrac{64\\cdot5}{4}=80$."
+    "а) Центр описанной окружности прямоугольного треугольника середина гипотенузы, поэтому ось призмы проходит через середины гипотенуз $M$ и $M_1$. Центр шара равноудалён от вершин обоих оснований, значит лежит на этой оси, и равноудалён от плоскостей оснований, значит в середине $MM_1$.",
+    "б) $BC=5$, радиус описанной окружности основания $2{,}5$, половина высоты $6$. $R=\\sqrt{2{,}5^2+6^2}=6{,}5$."
    ],
-   "ege": 3,
-   "lv": 3
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямая призма с прямоугольным основанием 3 на 4\"><line class=\"fl\" x1=\"113.9\" y1=\"209\" x2=\"156.1\" y2=\"209\"/><line class=\"fl\" x1=\"113.9\" y1=\"209\" x2=\"137.5\" y2=\"194.4\"/><line class=\"fl\" x1=\"113.9\" y1=\"40.6\" x2=\"156.1\" y2=\"40.6\"/><line class=\"fl\" x1=\"113.9\" y1=\"40.6\" x2=\"137.5\" y2=\"26\"/><line class=\"fl\" x1=\"156.1\" y1=\"40.6\" x2=\"137.5\" y2=\"26\"/><line class=\"fl\" x1=\"113.9\" y1=\"209\" x2=\"113.9\" y2=\"40.6\"/><line class=\"fl\" x1=\"156.1\" y1=\"209\" x2=\"156.1\" y2=\"40.6\"/><line class=\"fl\" x1=\"137.5\" y1=\"194.4\" x2=\"137.5\" y2=\"26\"/><line class=\"fl\" x1=\"156.1\" y1=\"209\" x2=\"137.5\" y2=\"194.4\"/><circle class=\"fp\" cx=\"113.9\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"110.8\" y=\"221.6\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"156.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"158.9\" y=\"221.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"137.5\" cy=\"194.4\" r=\"2.6\"/><text class=\"ft\" x=\"137.8\" y=\"207.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"113.9\" cy=\"40.6\" r=\"2.6\"/><text class=\"ft\" x=\"110.5\" y=\"28.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A₁</text><circle class=\"fp\" cx=\"156.1\" cy=\"40.6\" r=\"2.6\"/><text class=\"ft\" x=\"159.3\" y=\"28\" text-anchor=\"middle\" dominant-baseline=\"central\">B₁</text><circle class=\"fp\" cx=\"137.5\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"137.8\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">C₁</text></svg></figure>"
   },
   {
-   "id": "b11-p7-h2",
-   "q": "В куб с ребром $6$ вписан шар. Найдите объём шара, делённый на $\\pi$.",
+   "id": "b11-p6-h2",
+   "q": "В конус с высотой $12$ и радиусом основания $9$ вписан цилиндр высотой $4$ (нижнее основание цилиндра лежит в основании конуса, окружность верхнего основания лежит на боковой поверхности конуса). а) Докажите, что осевое сечение цилиндра и конуса даёт подобные треугольники. б) Найдите радиус цилиндра.",
+   "a": 6,
+   "hint": "Рассмотрите осевое сечение: маленький треугольник над цилиндром подобен всему.",
+   "sol": [
+    "а) Верхнее основание цилиндра параллельно основанию конуса, поэтому отсекает конус, подобный данному, а осевое сечение отсечённого конуса подобно осевому сечению данного.",
+    "б) Высота малого конуса $12-4=8$, коэффициент подобия $\\dfrac8{12}=\\dfrac23$, радиус цилиндра равен радиусу малого конуса: $9\\cdot\\dfrac23=6$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Осевое сечение конуса с вписанным цилиндром\"><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl\" x1=\"62.3\" y1=\"171.3\" x2=\"62.3\" y2=\"122.9\"/><line class=\"fl\" x1=\"62.3\" y1=\"122.9\" x2=\"207.7\" y2=\"122.9\"/><line class=\"fl\" x1=\"207.7\" y1=\"122.9\" x2=\"207.7\" y2=\"171.3\"/><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"13.6\" y=\"175.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"256.4\" y=\"175.3\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"62.3\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"50.6\" y=\"176.9\" text-anchor=\"middle\" dominant-baseline=\"central\">P</text><circle class=\"fp\" cx=\"207.7\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"219.4\" y=\"176.9\" text-anchor=\"middle\" dominant-baseline=\"central\">Q</text><circle class=\"fp\" cx=\"62.3\" cy=\"122.9\" r=\"2.6\"/><text class=\"ft\" x=\"49.6\" y=\"120.5\" text-anchor=\"middle\" dominant-baseline=\"central\">U</text><circle class=\"fp\" cx=\"207.7\" cy=\"122.9\" r=\"2.6\"/><text class=\"ft\" x=\"220.4\" y=\"120.5\" text-anchor=\"middle\" dominant-baseline=\"central\">W</text></svg></figure>"
+  },
+  {
+   "id": "b11-p6-h3",
+   "q": "Радиус шара равен $13$. Площадь сечения шара плоскостью равна $144\\pi$. а) Докажите, что сечение шара плоскостью круг, центр которого основание перпендикуляра из центра шара на плоскость. б) Найдите расстояние от центра шара до плоскости.",
+   "a": 5,
+   "hint": "Радиус круга сечения равен $12$. Рассмотрите прямоугольный треугольник из центра шара, центра сечения и точки на границе.",
+   "sol": [
+    "а) Пусть $H$ основание перпендикуляра $OH$ из центра $O$. Для точки $X$ сечения $OX=13$, $OH\\perp HX$, значит $HX^2=13^2-OH^2$ одинаково для всех $X$ сечения, это окружность с центром $H$.",
+    "б) $r^2=144$, $r=12$, $OH=\\sqrt{169-144}=5$."
+   ],
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Шар и сечение плоскостью, расстояние до центра 5\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"135\" y1=\"117.5\" x2=\"135\" y2=\"152.7\"/><line class=\"fl\" x1=\"135\" y1=\"152.7\" x2=\"219.5\" y2=\"152.7\"/><line class=\"fl\" x1=\"135\" y1=\"152.7\" x2=\"50.5\" y2=\"152.7\"/><line class=\"fl\" x1=\"135\" y1=\"117.5\" x2=\"219.5\" y2=\"152.7\"/><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"104.5\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"135\" cy=\"152.7\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"165.7\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text><circle class=\"fp\" cx=\"219.5\" cy=\"152.7\" r=\"2.6\"/><text class=\"ft\" x=\"232.4\" y=\"154\" text-anchor=\"middle\" dominant-baseline=\"central\">X</text><circle class=\"fp\" cx=\"50.5\" cy=\"152.7\" r=\"2.6\"/><text class=\"ft\" x=\"37.6\" y=\"154\" text-anchor=\"middle\" dominant-baseline=\"central\">Y</text></svg></figure>"
+  },
+  {
+   "id": "b11-p6-h4",
+   "q": "Образующая конуса равна $10$, а радиус основания $6$. В конус вписан шар. а) Докажите, что радиус шара равен радиусу окружности, вписанной в осевое сечение конуса. б) Найдите $\\dfrac V\\pi$, где $V$ объём шара.",
    "a": 36,
-   "hint": "Диаметр вписанного шара равен ребру куба.",
+   "hint": "Найдите радиус окружности, вписанной в осевое сечение, по формуле $r=\\dfrac Sp$.",
    "sol": [
-    "Диаметр шара равен ребру куба, радиус $r=3$.",
-    "$V=\\dfrac43\\pi r^3$, $\\dfrac V\\pi=\\dfrac43\\cdot27=36$."
+    "а) Плоскость осевого сечения проходит через центр шара (он на оси). Большой круг шара в этой плоскости касается образующих и диаметра основания, то есть вписан в треугольник осевого сечения.",
+    "б) $h=\\sqrt{100-36}=8$, $S=\\dfrac12\\cdot12\\cdot8=48$, $p=16$, $\\rho=3$. $V=\\dfrac43\\pi\\rho^3=36\\pi$."
    ],
-   "ege": 3,
-   "lv": 3
-  },
-  {
-   "id": "b11-p7-h3",
-   "q": "Площади трёх граней прямоугольного параллелепипеда, имеющих общую вершину, равны $6$, $8$ и $12$. Найдите объём параллелепипеда.",
-   "a": 24,
-   "hint": "Перемножьте площади трёх граней.",
-   "sol": [
-    "Пусть рёбра $a,b,c$. Тогда $ab=6$, $bc=8$, $ac=12$.",
-    "Перемножим: $(abc)^2=6\\cdot8\\cdot12=576$, поэтому $V=abc=24$."
-   ],
-   "ege": 3,
-   "lv": 3
-  },
-  {
-   "id": "b11-p7-h4",
-   "q": "Радиус основания цилиндра увеличили в $5$ раз, а высоту уменьшили в $10$ раз. Во сколько раз изменился объём цилиндра?",
-   "a": 2.5,
-   "hint": "Радиус входит в формулу объёма во второй степени.",
-   "sol": [
-    "$V=\\pi r^2h$: радиус входит во второй степени.",
-    "Новый объём равен $V\\cdot\\dfrac{5^2}{10}=2{,}5\\,V$. Объём изменился в $2{,}5$ раза."
-   ],
-   "ege": 3,
-   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Конус с вписанным шаром, осевое сечение\"><circle class=\"fl\" cx=\"135\" cy=\"116.8\" r=\"54.5\"/><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"14.1\" y=\"176.6\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"255.9\" y=\"176.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text></svg></figure>",
    "top": true
   },
   {
-   "id": "b11-p7-h5",
-   "q": "Из куба с ребром $6$ вырезали куб с ребром $2$ (по углу). Найдите объём оставшейся части.",
-   "a": 208,
-   "hint": "Вычтите объём вырезанного куба.",
+   "id": "b11-p6-h5",
+   "q": "В треугольной пирамиде $SABC$ основание $ABC$ прямоугольный треугольник с катетами $AB=6$, $AC=8$ и прямым углом $A$, а все боковые рёбра равны. Высота пирамиды равна $8$. а) Докажите, что основание высоты лежит в середине гипотенузы $BC$. б) Найдите радиус описанного шара.",
+   "a": 5.5625,
+   "hint": "Центр шара лежит на высоте. Составьте уравнение $QS=QA$.",
    "sol": [
-    "Объём большого куба $6^3=216$, вырезанного $2^3=8$.",
-    "Остаток: $216-8=208$."
+    "а) Пусть $SO$ высота. $SA=SB=SC$, значит прямоугольные треугольники $SOA$, $SOB$, $SOC$ равны по катету и гипотенузе, $OA=OB=OC$. $O$ центр описанной окружности прямоугольного треугольника, то есть середина гипотенузы.",
+    "б) $BC=10$, $OA=5$. Центр $Q$ на $SO$: $QS=QA=R$, $QO=8-R$. $R^2=(8-R)^2+25$, $16R=89$, $R=\\dfrac{89}{16}=5{,}5625$."
    ],
-   "ege": 3,
-   "lv": 4,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольная пирамида с прямоугольным основанием и высотой SO\"><line class=\"fl\" x1=\"74.3\" y1=\"209\" x2=\"195.7\" y2=\"209\"/><line class=\"fl\" x1=\"195.7\" y1=\"209\" x2=\"142.3\" y2=\"166.9\"/><line class=\"fl\" x1=\"74.3\" y1=\"209\" x2=\"142.3\" y2=\"166.9\"/><line class=\"fl\" x1=\"169\" y1=\"26\" x2=\"74.3\" y2=\"209\"/><line class=\"fl\" x1=\"169\" y1=\"26\" x2=\"195.7\" y2=\"209\"/><line class=\"fl\" x1=\"169\" y1=\"26\" x2=\"142.3\" y2=\"166.9\"/><line class=\"fl fd\" x1=\"169\" y1=\"26\" x2=\"169\" y2=\"187.9\"/><circle class=\"fp\" cx=\"74.3\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"63.4\" y=\"216.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"195.7\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"204.6\" y=\"218.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"142.3\" cy=\"166.9\" r=\"2.6\"/><text class=\"ft\" x=\"132.7\" y=\"175.7\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"169\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"170.8\" y=\"13.1\" text-anchor=\"middle\" dominant-baseline=\"central\">S</text><circle class=\"fp\" cx=\"169\" cy=\"187.9\" r=\"2.6\"/><text class=\"ft\" x=\"176.3\" y=\"198.7\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text></svg></figure>",
    "top": true
   }
  ],
  "rubric": {
-  "h": "Проверь своё решение",
-  "lead": "Задание части 1 проверяется только по ответу. Сверь запись со списком.",
+  "h": "Оцени своё решение по критериям ЕГЭ",
+  "lead": "Сайт проверил только число в пункте «б». Доказательство в пункте «а» оцени сам по списку.",
   "items": [
-   "Чертёж или условие прочитаны правильно: понятно, что дано и что найти",
-   "Выбрана подходящая формула или теорема",
-   "Подстановка и вычисления выполнены без пропусков",
+   "Названа теорема или признак на каждом шаге (признак параллельности, перпендикулярности, теорема о трёх перпендикулярах)",
+   "Для перпендикулярности прямой и плоскости показаны две пересекающиеся прямые плоскости, к которым она перпендикулярна",
+   "Построенное сечение, угол или расстояние объяснено: почему именно этот отрезок или угол искомый",
+   "Вычисления опираются на пункт «а», в ответе нет арифметических ошибок",
    "Ответ совпал с ответом сайта. Если нет, найди строку, где решение разошлось с разбором"
   ]
  },
  "id": "l11",
- "title": "Задание 3: объёмы и площади по рисунку",
+ "title": "Комбинации тел: шар, цилиндр, конус",
  "plus": true,
  "minutes": 90
 }

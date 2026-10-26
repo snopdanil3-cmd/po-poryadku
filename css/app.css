@@ -503,3 +503,5 @@ details.hard>.note{margin:4px 0 14px}
 .runtimer.over .rt-b{background:var(--bad-soft);color:var(--bad)}
 :root[data-theme="dark"] .runtimer .rt-b{color:var(--ink)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .runtimer .rt-b{color:var(--ink)}}
+
+.ege-card .ege-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.ege-card h3{margin:0}.part-h{margin:22px 0 8px;font-size:16px;color:var(--muted)}.ege-card .cta-row{margin-top:10px}.lessons .ege-h{padding:10px 0 2px}.ege-card[data-s="later"]{opacity:.8}

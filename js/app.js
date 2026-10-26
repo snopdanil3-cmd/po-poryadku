@@ -37,12 +37,12 @@
   var KEY = 'marshrut.v1';
   var storageOk = true;
   function fresh() {
-    return { v: 1, start: today(), mode: 'base', days: [1, 5], heavy: {}, tasks: {}, lessons: {}, tests: {}, mocks: [], act: {}, trainer: {}, cum: { used: {}, sel: {}, round: {} }, theme: 'auto', ege: { n: 1, cnt: 10, src: 'new' }, hw: {} };
+    return { v: 1, start: today(), mode: 'base', days: [1, 5], heavy: {}, tasks: {}, lessons: {}, tests: {}, mocks: [], act: {}, trainer: {}, cum: { used: {}, sel: {}, round: {} }, theme: 'auto', mv: 1, ege: { n: 1, cnt: 10, src: 'new' }, hw: {} };
   }
   function load() {
     try {
       var raw = window.localStorage.getItem(KEY);
-      if (raw) { var o = JSON.parse(raw); if (o && o.v === 1) { var f0 = Object.assign(fresh(), o); if (!f0.ege || typeof f0.ege !== 'object') f0.ege = fresh().ege; return f0; } }
+      if (raw) { var o = JSON.parse(raw); if (o && o.v === 1) { var f0 = Object.assign(fresh(), o); f0.mv = o.mv || 0; if (!f0.ege || typeof f0.ege !== 'object') f0.ege = fresh().ege; return f0; } }
     } catch (e) { storageOk = false; }
     return fresh();
   }
@@ -123,7 +123,30 @@
         }));
       });
       jobs.push(fetchJSON(base + 'reference.json').then(function (r) { C.reference = r; }));
-      return Promise.all(jobs);
+      return Promise.all(jobs).then(function () { migrateState(idx); lessonEges(); });
+    });
+  }
+  /* Уроки меняли порядок: переносим отметки «пройдено» и домашние задания на новые адреса (один раз). */
+  function migrateState(idx) {
+    var v = idx.movedVer || 0, mp = idx.moved || {};
+    if ((S.mv || 0) >= v) return;
+    ['lessons', 'hw'].forEach(function (f) {
+      var o = S[f] || {}, n = {};
+      Object.keys(o).forEach(function (k) { n[mp[k] || k] = o[k]; });
+      S[f] = n;
+    });
+    S.mv = v; save();
+  }
+  /* Номер задания ЕГЭ для каждого урока: по задачам урока, иначе по сопоставлению блока. */
+  function lessonEges() {
+    var map = C.idx.egeMap || {};
+    C.blocks.concat(C.extra).forEach(function (b) {
+      b.lessonList.forEach(function (l) {
+        var d = C.lessons[b.id + '/' + l.id], n = null;
+        if (d && l.plus) (d.tasks || []).concat(d.hard || []).forEach(function (t) { if (!n && t.ege) n = t.ege; });
+        var m = map[b.id] || {};
+        l.ege = n || (l.plus ? m['+'] : (m[l.id] || m['*'])) || null;
+      });
     });
   }
   function taskHref(t) {
@@ -630,6 +653,36 @@
   };
 
   /* ---- Маршрут ---- */
+  function egeTitle(n) { return (C.idx.egeTopics && C.idx.egeTopics[n]) || ('Задание ' + n); }
+  function routeTabs(cur) {
+    return '<nav class="subtabs" aria-label="Вид маршрута"><a href="#route"' + (cur === 'route' ? ' aria-current="page"' : '') + '>По блокам</a><a href="#numbers"' + (cur === 'numbers' ? ' aria-current="page"' : '') + '>По номерам ЕГЭ</a></nav>';
+  }
+  VIEWS.numbers = function () {
+    var all = C.blocks.concat(C.extra).filter(function (b) { return b.status === 'ready' || C.extra.indexOf(b) >= 0; });
+    var plus = S.mode === 'plus', tot = 0, dn = 0, h = '';
+    function sect(title, from, to) {
+      var s = '<h3 class="part-h">' + title + '</h3>';
+      for (var n = from; n <= to; n++) {
+        var ls = [];
+        all.forEach(function (b) {
+          b.lessonList.forEach(function (l) { if (l.ege === n && (!l.plus || plus)) ls.push({ b: b, l: l }); });
+        });
+        var d = ls.filter(function (x) { return S.lessons[x.b.id + '/' + x.l.id]; }).length;
+        tot += ls.length; dn += d;
+        var st = !ls.length ? 'later' : d === ls.length ? 'done' : d ? 'now' : 'next';
+        var body = ls.length ? '<ol class="lessons">' + ls.map(function (x, i) {
+          var done = S.lessons[x.b.id + '/' + x.l.id], num = x.b.lessonList.indexOf(x.l) + 1;
+          return '<li class="' + (done ? 'done' : '') + '"><a href="#lesson/' + x.b.id + '/' + x.l.id + '"><span class="dot">' + (done ? ic('check') : '') + '</span><span class="lt">' + esc(x.l.title) + '</span><span class="tail">' + (done ? 'пройден' : 'Блок ' + x.b.n + ', урок ' + num) + '</span></a></li>';
+        }).join('') + '</ol>' : '<p class="note">' + (plus || n < 14 ? 'Для этого номера отдельных уроков пока нет, задачи есть в тренажёре.' : 'Уроки по этому номеру открываются в режиме 70+.') + '</p>';
+        s += '<section class="card ege-card" data-s="' + st + '"><div class="ege-top"><h3><span class="chip">№ ' + n + '</span> ' + esc(egeTitle(n)) + '</h3><span class="note">' + (ls.length ? d + ' из ' + ls.length : '') + '</span></div>' + body +
+          '<div class="cta-row"><a class="btn ghost sm" href="#train/ege">Тренажёр по номерам</a></div></section>';
+      }
+      return s;
+    }
+    h = sect('Часть 1: задания 1–13', 1, 13) + sect('Часть 2: задания 14–20', 14, 20);
+    return routeTabs('numbers') + '<div class="card"><div class="sumbar"><div class="kpi num">' + dn + ' <small>из ' + tot + ' уроков по номерам</small></div></div><div class="bar"><i style="width:' + pct(dn, tot) + '%"></i></div>' +
+      '<p class="note" style="margin-top:12px">Те же уроки, что в маршруте, но собранные по номеру задания ЕГЭ. Удобно, когда нужно подтянуть конкретный номер.' + (plus ? '' : ' Включи режим 70+, чтобы увидеть уроки части 2 и усложнённые уроки.') + '</p></div>' + h;
+  };
   VIEWS.route = function (a) {
     var openId = a && a[0];
     var done = lessonsDone(), tl = lessonTotal(), bd = C.blocks.filter(function (b) { return blockState(b) === 'done'; }).length;
@@ -668,8 +721,10 @@
         }
         if (S.mode === 'plus' && pl(b).length) {
           det += '<li class="plus-h"><span class="lt"><b>★ Режим 70+: часть 2</b></span></li>';
+          var prevE = null;
           pl(b).forEach(function (l) {
             var dn = S.lessons[b.id + '/' + l.id], num = b.lessonList.indexOf(l) + 1;
+            if (l.ege && l.ege !== prevE) { det += '<li class="plus-h ege-h"><span class="lt"><span class="chip">№ ' + l.ege + '</span> ' + esc(egeTitle(l.ege)) + '</span></li>'; prevE = l.ege; }
             det += '<li class="' + (dn ? 'done' : '') + '"><a href="#lesson/' + b.id + '/' + l.id + '"><span class="dot">' + (dn ? ic('check') : '') + '</span><span class="lt">Урок ' + num + '. ' + esc(l.title) + '</span><span class="tail">' + (dn ? 'пройден' : l.minutes + ' мин') + '</span></a></li>';
           });
         }
@@ -699,7 +754,7 @@
       });
     }
     h += '<li class="stop" data-s="later"><div class="node">' + ic('loop') + '</div><div class="sbody"><span class="shead" style="cursor:default"><span><span class="stitle">Повторение и пробники</span><span class="ssub"><span class="stag">Финал</span><span>Около 6 недель перед экзаменом, полный пробник каждые 1–2 недели</span></span></span></span></div></li>';
-    return head + '<ol class="route">' + h + '</ol>';
+    return routeTabs('route') + head + '<ol class="route">' + h + '</ol>';
   };
 
   /* ---- Домашнее задание к уроку: задачи из банка по номеру ЕГЭ урока, без новых текстов ---- */
@@ -1397,8 +1452,8 @@
   }
 
   /* ================= роутер и отрисовка ================= */
-  var TITLES = { mock: 'Пробник', today: 'Сегодня', route: 'Маршрут', tasks: 'Задания', progress: 'Прогресс', train: 'Тренажёры', drill: 'Тренажёр', lesson: 'Урок', test: 'Проверка', review: 'Повторение', trainer: 'Тренажёр', about: 'О проекте' };
-  var NAVKEY = { mock: 'progress', lesson: 'route', test: 'route', review: 'train', trainer: 'train', drill: 'train' };
+  var TITLES = { mock: 'Пробник', today: 'Сегодня', route: 'Маршрут', numbers: 'Маршрут', tasks: 'Задания', progress: 'Прогресс', train: 'Тренажёры', drill: 'Тренажёр', lesson: 'Урок', test: 'Проверка', review: 'Повторение', trainer: 'Тренажёр', about: 'О проекте' };
+  var NAVKEY = { numbers: 'route', mock: 'progress', lesson: 'route', test: 'route', review: 'train', trainer: 'train', drill: 'train' };
   var CUR = { name: 'today', args: [] };
   function parseHash() { var h = (location.hash || '').replace(/^#/, ''), p = h.split('/'); return { name: VIEWS[p[0]] ? p[0] : 'today', args: p.slice(1) }; }
   function render() {
