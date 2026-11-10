@@ -47,12 +47,20 @@
   <div class="main">
     <header class="top">
       <h1><img class="mark-img lg-l" src="img/mark-l.png" alt=""><img class="mark-img lg-d" src="img/mark-d.png" alt=""><span id="screen-title">Сегодня</span></h1>
+      <div class="top-r">
+      <div class="exam-sw">
+        <div class="seg" role="group" aria-label="Экзамен">
+          <button type="button" data-exam="ege" aria-pressed="true" title="Профильная математика, ЕГЭ">ЕГЭ</button>
+          <button type="button" data-exam="oge" aria-pressed="false" title="Математика, ОГЭ (9 класс)">ОГЭ</button>
+        </div>
+      </div>
       <div class="mode">
         <span class="mode-l">Режим подготовки</span>
         <div class="seg" role="group" aria-label="Режим подготовки">
           <button type="button" data-mode="base" aria-pressed="true" title="2 урока в неделю, часть 1 целиком">Базовый</button>
           <button type="button" data-mode="plus" aria-pressed="false" title="3 урока в неделю и разбор части 2">70+</button>
         </div>
+      </div>
       </div>
     </header>
     <main id="view" tabindex="-1"><p class="loading">Загрузка…</p></main>

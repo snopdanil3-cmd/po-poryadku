@@ -1,0 +1,111 @@
+{
+ "id": "l01",
+ "title": "Задание 15: треугольник",
+ "minutes": 90,
+ "intro": "Задание №15 ОГЭ. Разберите три примера и решите пять задач.",
+ "theory": [
+  {
+   "h": "Треугольник",
+   "html": "<p>Сумма углов $180^\\circ$. Площадь $S=\\dfrac12ah$. Прямоугольный: $c^2=a^2+b^2$. Средняя линия равна половине основания.</p>"
+  },
+  {
+   "h": "Подобие",
+   "html": "<p>У подобных треугольников стороны пропорциональны: все стороны увеличиваются в $k$ раз.</p>"
+  }
+ ],
+ "examples": [
+  {
+   "q": "В прямоугольном треугольнике $ABC$ с прямым углом $C$ катеты равны $8$ и $6$. Найдите площадь треугольника.",
+   "steps": [
+    "Площадь прямоугольного треугольника равна половине произведения катетов.",
+    "$S=\\dfrac{8\\cdot6}{2}=24$."
+   ],
+   "a": 24,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 215.5\" width=\"270\" height=\"215.5\" role=\"img\" aria-label=\"Прямоугольный треугольник с катетами 8 и 6\"><line class=\"fl\" x1=\"26\" y1=\"189.5\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"244\" y2=\"189.5\"/><line class=\"fl\" x1=\"244\" y1=\"189.5\" x2=\"26\" y2=\"189.5\"/><path class=\"fa\" d=\"M26 179.5 L36 179.5 L36 189.5\"/><text class=\"ft fn\" x=\"135\" y=\"201.5\" text-anchor=\"middle\" dominant-baseline=\"central\">8</text><text class=\"ft fn\" x=\"14\" y=\"107.8\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><circle class=\"fp\" cx=\"26\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"15.6\" y=\"197.3\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"18.8\" y=\"15.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"189.5\" r=\"2.6\"/><text class=\"ft\" x=\"256.2\" y=\"194.1\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text></svg></figure>"
+  },
+  {
+   "q": "В равнобедренном треугольнике $ABC$ с основанием $AC$ угол $B$ равен $50^\\circ$. Найдите угол $A$. Ответ дайте в градусах.",
+   "steps": [
+    "Углы при основании равны.",
+    "$\\angle A=\\dfrac{180^\\circ-50^\\circ}{2}=65^\\circ$."
+   ],
+   "a": 65,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 175.5\" width=\"270\" height=\"175.5\" role=\"img\" aria-label=\"Равнобедренный треугольник ABC с углом при вершине B, равным 50\"><line class=\"fl\" x1=\"26\" y1=\"149.5\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"149.5\"/><line class=\"fl\" x1=\"244\" y1=\"149.5\" x2=\"26\" y2=\"149.5\"/><line class=\"fa\" x1=\"76.8\" y1=\"84.5\" x2=\"84.2\" y2=\"91.1\"/><line class=\"fa\" x1=\"193.2\" y1=\"84.5\" x2=\"185.8\" y2=\"91.1\"/><path class=\"fa\" d=\"M120.4 42.5 A22 22 0 0 0 149.6 42.5\"/><text class=\"ft fn\" x=\"135\" y=\"60\" text-anchor=\"middle\" dominant-baseline=\"central\">50°</text><circle class=\"fp\" cx=\"26\" cy=\"149.5\" r=\"2.6\"/><text class=\"ft\" x=\"13.8\" y=\"154.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"149.5\" r=\"2.6\"/><text class=\"ft\" x=\"256.2\" y=\"154.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text></svg></figure>"
+  },
+  {
+   "q": "Сторона треугольника равна $6$, а высота, проведённая к ней, равна $11$. Найдите площадь треугольника.",
+   "steps": [
+    "Площадь треугольника равна половине произведения стороны на высоту к ней.",
+    "$S=\\dfrac{6\\cdot11}{2}=33$."
+   ],
+   "a": 33,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник со стороной 6 и высотой 11\"><line class=\"fl\" x1=\"35.2\" y1=\"209\" x2=\"234.8\" y2=\"209\"/><line class=\"fl\" x1=\"234.8\" y1=\"209\" x2=\"105.1\" y2=\"26\"/><line class=\"fl\" x1=\"105.1\" y1=\"26\" x2=\"35.2\" y2=\"209\"/><line class=\"fl fd\" x1=\"105.1\" y1=\"26\" x2=\"105.1\" y2=\"209\"/><path class=\"fa\" d=\"M105.1 199 L115.1 199 L115.1 209\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">6</text><text class=\"ft fn\" x=\"93.1\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">11</text><circle class=\"fp\" cx=\"35.2\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"23.7\" y=\"215.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"234.8\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"246.9\" y=\"213.8\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"105.1\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"103.6\" y=\"13.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"105.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"101\" y=\"221.4\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>"
+  }
+ ],
+ "tasks": [
+  {
+   "id": "o06-l01-1",
+   "q": "В треугольнике $ABC$ точки $M$ и $N$ являются серединами сторон $AB$ и $BC$ соответственно, $AC=24$. Найдите $MN$.",
+   "a": 12,
+   "hint": "Используйте теорему Пифагора, сумму углов или формулу площади треугольника.",
+   "sol": [
+    "$MN$ — средняя линия, она параллельна $AC$ и равна её половине.",
+    "$MN=\\dfrac{24}{2}=12$."
+   ],
+   "ege": 15,
+   "lv": 1,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Треугольник ABC со средней линией MN, AC=24\"><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"98.7\" y2=\"26\"/><line class=\"fl\" x1=\"98.7\" y1=\"26\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"26\" y2=\"171.3\"/><line class=\"fl\" x1=\"62.3\" y1=\"98.7\" x2=\"171.3\" y2=\"98.7\"/><text class=\"ft fn\" x=\"135\" y=\"183.3\" text-anchor=\"middle\" dominant-baseline=\"central\">24</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"14.9\" y=\"178.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"255.8\" y=\"176.9\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"98.7\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"95.5\" y=\"13.4\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"62.3\" cy=\"98.7\" r=\"2.6\"/><text class=\"ft\" x=\"49.7\" y=\"95.5\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text><circle class=\"fp\" cx=\"171.3\" cy=\"98.7\" r=\"2.6\"/><text class=\"ft\" x=\"183.8\" y=\"95.1\" text-anchor=\"middle\" dominant-baseline=\"central\">N</text></svg></figure>"
+  },
+  {
+   "id": "o06-l01-2",
+   "q": "Треугольники $ABC$ и $A_1B_1C_1$ подобны. Стороны $ABC$ равны $6$, $8$ и $10$. Наименьшая сторона $A_1B_1C_1$ равна $18$. Найдите наибольшую сторону $A_1B_1C_1$.",
+   "a": 30,
+   "hint": "Используйте теорему Пифагора, сумму углов или формулу площади треугольника.",
+   "sol": [
+    "Коэффициент подобия $\\dfrac{18}{6}=3$.",
+    "Наибольшая сторона $10\\cdot3=30$."
+   ],
+   "ege": 15,
+   "lv": 2
+  },
+  {
+   "id": "o06-l01-3",
+   "q": "В прямоугольном треугольнике $ABC$ с прямым углом $C$ катеты равны $5$ и $12$. Найдите гипотенузу.",
+   "a": 13,
+   "hint": "Используйте теорему Пифагора, сумму углов или формулу площади треугольника.",
+   "sol": [
+    "$AB^2=5^2+12^2=169$.",
+    "$AB=13$."
+   ],
+   "ege": 15,
+   "lv": 2,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный треугольник с катетами 5 и 12\"><line class=\"fl\" x1=\"96.9\" y1=\"209\" x2=\"96.9\" y2=\"26\"/><line class=\"fl\" x1=\"96.9\" y1=\"26\" x2=\"173.1\" y2=\"209\"/><line class=\"fl\" x1=\"173.1\" y1=\"209\" x2=\"96.9\" y2=\"209\"/><path class=\"fa\" d=\"M96.9 199 L106.9 199 L106.9 209\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><text class=\"ft fn\" x=\"84.9\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">12</text><circle class=\"fp\" cx=\"96.9\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"91.9\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"96.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"94.2\" y=\"13.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"173.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"181.4\" y=\"219\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text></svg></figure>"
+  },
+  {
+   "id": "o06-l01-4",
+   "q": "В треугольнике $ABC$ угол $A$ равен $41^\\circ$, угол $B$ равен $60^\\circ$. Найдите угол $C$. Ответ дайте в градусах.",
+   "a": 79,
+   "hint": "Используйте теорему Пифагора, сумму углов или формулу площади треугольника.",
+   "sol": [
+    "Сумма углов треугольника равна $180^\\circ$.",
+    "$\\angle C=180^\\circ-41^\\circ-60^\\circ=79^\\circ$."
+   ],
+   "ege": 15,
+   "lv": 2,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 175.5\" width=\"270\" height=\"175.5\" role=\"img\" aria-label=\"Треугольник ABC, углы A=41 и B=60\"><line class=\"fl\" x1=\"26\" y1=\"149.5\" x2=\"244\" y2=\"149.5\"/><line class=\"fl\" x1=\"244\" y1=\"149.5\" x2=\"105.9\" y2=\"26\"/><line class=\"fl\" x1=\"105.9\" y1=\"26\" x2=\"26\" y2=\"149.5\"/><path class=\"fa\" d=\"M48 149.5 A22 22 0 0 0 38 131.1\"/><text class=\"ft fn\" x=\"55.9\" y=\"133.3\" text-anchor=\"middle\" dominant-baseline=\"central\">41°</text><path class=\"fa\" d=\"M222 149.5 A22 22 0 0 1 227.6 134.9\"/><text class=\"ft fn\" x=\"212.2\" y=\"137.4\" text-anchor=\"middle\" dominant-baseline=\"central\">60°</text><circle class=\"fp\" cx=\"26\" cy=\"149.5\" r=\"2.6\"/><text class=\"ft\" x=\"14\" y=\"154.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"149.5\" r=\"2.6\"/><text class=\"ft\" x=\"256.3\" y=\"153.8\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"105.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"103\" y=\"13.3\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>"
+  },
+  {
+   "id": "o06-l01-5",
+   "q": "Сторона треугольника равна $4$, а высота, проведённая к ней, равна $9$. Найдите площадь треугольника.",
+   "a": 18,
+   "hint": "Используйте теорему Пифагора, сумму углов или формулу площади треугольника.",
+   "sol": [
+    "Площадь треугольника равна половине произведения стороны на высоту к ней.",
+    "$S=\\dfrac{4\\cdot9}{2}=18$."
+   ],
+   "ege": 15,
+   "lv": 2,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Треугольник со стороной 4 и высотой 9\"><line class=\"fl\" x1=\"53.7\" y1=\"209\" x2=\"216.3\" y2=\"209\"/><line class=\"fl\" x1=\"216.3\" y1=\"209\" x2=\"110.6\" y2=\"26\"/><line class=\"fl\" x1=\"110.6\" y1=\"26\" x2=\"53.7\" y2=\"209\"/><line class=\"fl fd\" x1=\"110.6\" y1=\"26\" x2=\"110.6\" y2=\"209\"/><path class=\"fa\" d=\"M110.6 199 L120.6 199 L120.6 209\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><text class=\"ft fn\" x=\"98.6\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">9</text><circle class=\"fp\" cx=\"53.7\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"42.8\" y=\"216.2\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"216.3\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"228\" y=\"214.7\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"110.6\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"109.4\" y=\"13.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"110.6\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"107.3\" y=\"221.6\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>"
+  }
+ ]
+}

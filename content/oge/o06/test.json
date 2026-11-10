@@ -1,0 +1,93 @@
+{
+ "id": "test",
+ "title": "Контрольная блока 6",
+ "minutes": 40,
+ "passPct": 70,
+ "intro": "Задачи на весь блок, около 40 минут. Порог 70%: нужно решить не меньше 5 из 6. Подсказок и решений до конца нет.",
+ "tasks": [
+  {
+   "id": "o06-t-15-1",
+   "q": "В прямоугольном треугольнике $ABC$ с прямым углом $C$ катеты равны $21$ и $20$. Найдите площадь треугольника.",
+   "a": 210,
+   "hint": "Используйте теорему Пифагора, сумму углов или формулу площади треугольника.",
+   "sol": [
+    "Площадь прямоугольного треугольника равна половине произведения катетов.",
+    "$S=\\dfrac{21\\cdot20}{2}=210$."
+   ],
+   "ege": 15,
+   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Прямоугольный треугольник с катетами 21 и 20\"><line class=\"fl\" x1=\"38.9\" y1=\"209\" x2=\"38.9\" y2=\"26\"/><line class=\"fl\" x1=\"38.9\" y1=\"26\" x2=\"231.1\" y2=\"209\"/><line class=\"fl\" x1=\"231.1\" y1=\"209\" x2=\"38.9\" y2=\"209\"/><path class=\"fa\" d=\"M38.9 199 L48.9 199 L48.9 209\"/><text class=\"ft fn\" x=\"135\" y=\"221\" text-anchor=\"middle\" dominant-baseline=\"central\">21</text><text class=\"ft fn\" x=\"26.9\" y=\"117.5\" text-anchor=\"middle\" dominant-baseline=\"central\">20</text><circle class=\"fp\" cx=\"38.9\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"29.5\" y=\"218\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"38.9\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"32.9\" y=\"14.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"231.1\" cy=\"209\" r=\"2.6\"/><text class=\"ft\" x=\"242.8\" y=\"214.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text></svg></figure>",
+   "lesson": "l01"
+  },
+  {
+   "id": "o06-t-15-2",
+   "q": "В равнобедренном треугольнике $ABC$ с основанием $AC$ угол $B$ равен $40^\\circ$. Найдите угол $A$. Ответ дайте в градусах.",
+   "a": 70,
+   "hint": "Используйте теорему Пифагора, сумму углов или формулу площади треугольника.",
+   "sol": [
+    "Углы при основании равны.",
+    "$\\angle A=\\dfrac{180^\\circ-40^\\circ}{2}=70^\\circ$."
+   ],
+   "ege": 15,
+   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 175.5\" width=\"270\" height=\"175.5\" role=\"img\" aria-label=\"Равнобедренный треугольник ABC с углом при вершине B, равным 40\"><line class=\"fl\" x1=\"26\" y1=\"149.5\" x2=\"135\" y2=\"26\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"244\" y2=\"149.5\"/><line class=\"fl\" x1=\"244\" y1=\"149.5\" x2=\"26\" y2=\"149.5\"/><line class=\"fa\" x1=\"76.8\" y1=\"84.5\" x2=\"84.2\" y2=\"91.1\"/><line class=\"fa\" x1=\"193.2\" y1=\"84.5\" x2=\"185.8\" y2=\"91.1\"/><path class=\"fa\" d=\"M120.4 42.5 A22 22 0 0 0 149.6 42.5\"/><text class=\"ft fn\" x=\"135\" y=\"60\" text-anchor=\"middle\" dominant-baseline=\"central\">40°</text><circle class=\"fp\" cx=\"26\" cy=\"149.5\" r=\"2.6\"/><text class=\"ft\" x=\"13.8\" y=\"154.1\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"149.5\" r=\"2.6\"/><text class=\"ft\" x=\"256.2\" y=\"154.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text></svg></figure>",
+   "lesson": "l01"
+  },
+  {
+   "id": "o06-t-15-3",
+   "q": "Сторона треугольника равна $10$, а высота, проведённая к ней, равна $5$. Найдите площадь треугольника.",
+   "a": 25,
+   "hint": "Используйте теорему Пифагора, сумму углов или формулу площади треугольника.",
+   "sol": [
+    "Площадь треугольника равна половине произведения стороны на высоту к ней.",
+    "$S=\\dfrac{10\\cdot5}{2}=25$."
+   ],
+   "ege": 15,
+   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 106.5\" width=\"270\" height=\"106.5\" role=\"img\" aria-label=\"Треугольник со стороной 10 и высотой 5\"><line class=\"fl\" x1=\"26\" y1=\"80.5\" x2=\"244\" y2=\"80.5\"/><line class=\"fl\" x1=\"244\" y1=\"80.5\" x2=\"102.3\" y2=\"26\"/><line class=\"fl\" x1=\"102.3\" y1=\"26\" x2=\"26\" y2=\"80.5\"/><line class=\"fl fd\" x1=\"102.3\" y1=\"26\" x2=\"102.3\" y2=\"80.5\"/><path class=\"fa\" d=\"M102.3 70.5 L112.3 70.5 L112.3 80.5\"/><text class=\"ft fn\" x=\"135\" y=\"92.5\" text-anchor=\"middle\" dominant-baseline=\"central\">10</text><text class=\"ft fn\" x=\"90.3\" y=\"53.2\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><circle class=\"fp\" cx=\"26\" cy=\"80.5\" r=\"2.6\"/><text class=\"ft\" x=\"13.1\" y=\"82.4\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"80.5\" r=\"2.6\"/><text class=\"ft\" x=\"256.9\" y=\"81.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"102.3\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"97.5\" y=\"13.9\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"102.3\" cy=\"80.5\" r=\"2.6\"/><text class=\"ft\" x=\"92.3\" y=\"88.8\" text-anchor=\"middle\" dominant-baseline=\"central\">H</text></svg></figure>",
+   "lesson": "l01"
+  },
+  {
+   "id": "o06-t-16-1",
+   "q": "Центральный угол $AOB$ равен $100^\\circ$. Найдите вписанный угол $ACB$, опирающийся на ту же дугу. Ответ дайте в градусах.",
+   "a": 50,
+   "hint": "Вспомните связь центрального и вписанного углов, свойства хорд и касательной.",
+   "sol": [
+    "Вписанный угол равен половине центрального угла, опирающегося на ту же дугу.",
+    "$\\angle ACB=100^\\circ:2=50^\\circ$."
+   ],
+   "ege": 16,
+   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Окружность, центральный угол AOB=100, вписанный ACB\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"135\" y1=\"117.5\" x2=\"49\" y2=\"148.8\"/><line class=\"fl\" x1=\"135\" y1=\"117.5\" x2=\"119.1\" y2=\"27.4\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"49\" y2=\"148.8\"/><line class=\"fl\" x1=\"135\" y1=\"26\" x2=\"119.1\" y2=\"27.4\"/><path class=\"fa\" d=\"M114.3 125 A22 22 0 0 1 131.2 95.8\"/><text class=\"ft fn\" x=\"105.6\" y=\"100.5\" text-anchor=\"middle\" dominant-baseline=\"central\">100°</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"142.3\" y=\"128.3\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"49\" cy=\"148.8\" r=\"2.6\"/><text class=\"ft\" x=\"40.4\" y=\"158.6\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"119.1\" cy=\"27.4\" r=\"2.6\"/><text class=\"ft\" x=\"121.4\" y=\"14.6\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"135\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"140.6\" y=\"14.2\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text></svg></figure>",
+   "lesson": "l02"
+  },
+  {
+   "id": "o06-t-16-2",
+   "q": "Вписанный угол $ABC$ равен $50^\\circ$. Найдите дугу $AC$, на которую он опирается. Ответ дайте в градусах.",
+   "a": 100,
+   "hint": "Вспомните связь центрального и вписанного углов, свойства хорд и касательной.",
+   "sol": [
+    "Градусная мера дуги вдвое больше вписанного угла, который на неё опирается.",
+    "$50^\\circ\\cdot2=100^\\circ$."
+   ],
+   "ege": 16,
+   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Окружность, вписанный угол ABC=50\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"44.9\" y1=\"133.4\" x2=\"150.9\" y2=\"27.4\"/><line class=\"fl\" x1=\"150.9\" y1=\"27.4\" x2=\"166.3\" y2=\"203.5\"/><path class=\"fa\" d=\"M135.3 42.9 A22 22 0 0 0 152.8 49.3\"/><text class=\"ft fn\" x=\"139.3\" y=\"59.3\" text-anchor=\"middle\" dominant-baseline=\"central\">50°</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"147.5\" y=\"114.1\" text-anchor=\"middle\" dominant-baseline=\"central\">O</text><circle class=\"fp\" cx=\"44.9\" cy=\"133.4\" r=\"2.6\"/><text class=\"ft\" x=\"32.1\" y=\"135.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"166.3\" cy=\"203.5\" r=\"2.6\"/><text class=\"ft\" x=\"172.2\" y=\"215.1\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"150.9\" cy=\"27.4\" r=\"2.6\"/><text class=\"ft\" x=\"154.5\" y=\"14.9\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text></svg></figure>",
+   "lesson": "l02"
+  },
+  {
+   "id": "o06-t-16-3",
+   "q": "Хорды $AB$ и $CD$ окружности пересекаются в точке $M$. $AM=4$, $MB=9$, $CM=4$. Найдите $MD$.",
+   "a": 9,
+   "hint": "Вспомните связь центрального и вписанного углов, свойства хорд и касательной.",
+   "sol": [
+    "Произведения отрезков пересекающихся хорд равны: $AM\\cdot MB=CM\\cdot MD$.",
+    "$MD=\\dfrac{4\\cdot9}{4}=9$."
+   ],
+   "ege": 16,
+   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 235\" width=\"270\" height=\"235\" role=\"img\" aria-label=\"Две хорды AB и CD пересекаются в точке M\"><circle class=\"fl\" cx=\"135\" cy=\"117.5\" r=\"91.5\"/><line class=\"fl\" x1=\"56.6\" y1=\"107\" x2=\"213.4\" y2=\"122.7\"/><line class=\"fl\" x1=\"108.9\" y1=\"39.1\" x2=\"161.1\" y2=\"195.9\"/><circle class=\"fp\" cx=\"56.6\" cy=\"107\" r=\"2.6\"/><text class=\"ft\" x=\"43.7\" y=\"105.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"213.4\" cy=\"122.7\" r=\"2.6\"/><text class=\"ft\" x=\"226.4\" y=\"123.8\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"108.9\" cy=\"39.1\" r=\"2.6\"/><text class=\"ft\" x=\"104.7\" y=\"26.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"161.1\" cy=\"195.9\" r=\"2.6\"/><text class=\"ft\" x=\"165.2\" y=\"208.3\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text><circle class=\"fp\" cx=\"135\" cy=\"117.5\" r=\"2.6\"/><text class=\"ft\" x=\"135\" y=\"130.5\" text-anchor=\"middle\" dominant-baseline=\"central\">M</text></svg></figure>",
+   "lesson": "l02"
+  }
+ ]
+}

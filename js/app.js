@@ -34,7 +34,24 @@
   }
 
   /* ================= состояние и хранение ================= */
-  var KEY = 'marshrut.v1';
+  var EXAM = 'ege';
+  try { if (window.localStorage.getItem('marshrut.exam') === 'oge') EXAM = 'oge'; } catch (e) { /* ignore */ }
+  var KEY = EXAM === 'oge' ? 'marshrut.oge.v1' : 'marshrut.v1';
+  document.documentElement.setAttribute('data-exam', EXAM);
+  function X() { return (C.idx && C.idx.exam) || { id: 'ege', name: 'ЕГЭ', p1: 13, n: 20, p1text: '13 задач части 1, около двух часов', geo: [] }; }
+  function isOge() { return EXAM === 'oge'; }
+  function egeShort(n) { return (C.idx && C.idx.egeShort && C.idx.egeShort[n]) || EGE_SHORT[n] || ''; }
+  function egeRange(a, b) { var r = []; for (var k = a; k <= b; k++) r.push(k); return r; }
+  /* В режиме ОГЭ слово «ЕГЭ» в интерфейсе заменяется на «ОГЭ» (тексты общие для обоих экзаменов). */
+  function exText(root) {
+    if (!isOge() || !root) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), n, list = [];
+    while ((n = w.nextNode())) { if (n.nodeValue.indexOf('ЕГЭ') >= 0) list.push(n); }
+    list.forEach(function (t) { t.nodeValue = t.nodeValue.replace(/ЕГЭ/g, 'ОГЭ'); });
+    Array.prototype.forEach.call(root.querySelectorAll ? root.querySelectorAll('[title],[aria-label],[alt]') : [], function (el) {
+      ['title', 'aria-label', 'alt'].forEach(function (a) { var v = el.getAttribute(a); if (v && v.indexOf('ЕГЭ') >= 0) el.setAttribute(a, v.replace(/ЕГЭ/g, 'ОГЭ')); });
+    });
+  }
   var storageOk = true;
   function fresh() {
     return { v: 1, start: today(), mode: 'base', days: [1, 5], heavy: {}, tasks: {}, lessons: {}, tests: {}, mocks: [], act: {}, trainer: {}, cum: { used: {}, sel: {}, round: {} }, theme: 'auto', mv: 1, ege: { n: 1, cnt: 10, src: 'new' }, hw: {} };
@@ -42,7 +59,7 @@
   function load() {
     try {
       var raw = window.localStorage.getItem(KEY);
-      if (raw) { var o = JSON.parse(raw); if (o && o.v === 1) { var f0 = Object.assign(fresh(), o); f0.mv = o.mv || 0; if (!f0.ege || typeof f0.ege !== 'object') f0.ege = fresh().ege; return f0; } }
+      if (raw) { var o = JSON.parse(raw); if (o && o.v === 1) { var f0 = Object.assign(fresh(), o); f0.mv = o.mv || 0; if (EXAM === 'oge') f0.mode = 'base'; if (!f0.ege || typeof f0.ege !== 'object') f0.ege = fresh().ege; return f0; } }
     } catch (e) { storageOk = false; }
     return fresh();
   }
@@ -78,7 +95,7 @@
     });
   }
   function loadContent() {
-    return fetchJSON('content/index.json').then(function (idx) {
+    return fetchJSON(isOge() ? 'content/oge/index.json' : 'content/index.json').then(function (idx) {
       C.idx = idx; C.blocks = idx.blocks;
       var base = 'content/' + idx.subject + '/';
       var jobs = [];
@@ -143,6 +160,7 @@
     C.blocks.concat(C.extra).forEach(function (b) {
       b.lessonList.forEach(function (l) {
         var d = C.lessons[b.id + '/' + l.id], n = null;
+        if (l.ege instanceof Array) return;
         if (d && l.plus) (d.tasks || []).concat(d.hard || []).forEach(function (t) { if (!n && t.ege) n = t.ege; });
         var m = map[b.id] || {};
         l.ege = n || (l.plus ? m['+'] : (m[l.id] || m['*'])) || null;
@@ -384,26 +402,29 @@
   /* баллы пробника: задания 1–13 по 1 баллу, №14–20 по таблице egePoints; всего 13 + 20 = 33 */
   function taskPts(t) { return ((C.idx && C.idx.egePoints) || {})[t.ege] || 1; }
   function mockCalc(T, ans) {
-    var r = { pts: 0, max: 0, n: 0, nmax: T.tasks.length, p1: 0, p1max: 0, p2: 0, p2max: 0 };
+    var r = { pts: 0, max: 0, n: 0, nmax: T.tasks.length, p1: 0, p1max: 0, p2: 0, p2max: 0, geo: 0 };
     T.tasks.forEach(function (t) {
-      var w = taskPts(t), v = ans && ans[t.id] !== undefined ? ans[t.id] : '', ok = judge(t, v).ok === true, two = t.ege > 13;
+      var w = taskPts(t), v = ans && ans[t.id] !== undefined ? ans[t.id] : '', ok = judge(t, v).ok === true, two = t.ege > X().p1;
       r.max += w; if (two) r.p2max += w; else r.p1max += w;
-      if (ok) { r.pts += w; r.n++; if (two) r.p2 += w; else r.p1 += w; }
+      if (ok) { r.pts += w; r.n++; if (two) r.p2 += w; else r.p1 += w; if ((X().geo || []).indexOf(t.ege) >= 0) r.geo += w; }
     });
     return r;
   }
   function mockRes(m) {
     var T = C.mocks[m.key] || ensureMock(m.key);
     if (T && m.ans) return mockCalc(T, m.ans);
-    return { pts: m.s, max: m.max, n: m.s, nmax: m.max, p1: m.s, p1max: m.max, p2: 0, p2max: 0 };
+    return { pts: m.s, max: m.max, n: m.s, nmax: m.max, p1: m.s, p1max: m.max, p2: 0, p2max: 0, geo: m.geo || 0 };
   }
   /* ориентировочный перевод во вторичные (тестовые) баллы: шкала прошлого года, 32 первичных, пересчёт пропорционально 33 */
   function testScore(r) {
+    if (isOge()) return null;
     var sc = C.idx && C.idx.egeScale; if (!sc || !r.max) return null;
     var tot = 13, k; for (k in ((C.idx && C.idx.egePoints) || {})) tot += C.idx.egePoints[k];
     return sc[Math.min(sc.length - 1, Math.round(r.pts * (sc.length - 1) / tot))];
   }
-  function ptsLabel(r) { var t = testScore(r); return r.pts + ' из ' + plural(r.max, ['балла', 'баллов', 'баллов']) + (t === null ? '' : ' (≈ ' + t + ' из 100)'); }
+  /* Оценка ОГЭ по первичным баллам: 3 — от 8, 4 — от 15, 5 — от 22; нужно не менее 2 баллов по геометрии. */
+  function ogeGrade(r) { var g = r.pts >= 22 ? 5 : r.pts >= 15 ? 4 : r.pts >= 8 ? 3 : 2; if (g > 2 && r.geo < 2) g = 2; return g; }
+  function ptsLabel(r) { if (isOge()) { return r.pts + ' из ' + plural(r.max, ['балла', 'баллов', 'баллов']) + (r.p2max ? ' (оценка ≈ ' + ogeGrade(r) + ')' : (r.pts >= 8 && r.geo >= 2 ? ' (по части 1 уже «3»' + (r.pts >= 15 ? ' и выше' : '') + ')' : '')); } var t = testScore(r); return r.pts + ' из ' + plural(r.max, ['балла', 'баллов', 'баллов']) + (t === null ? '' : ' (≈ ' + t + ' из 100)'); }
 
 
 
@@ -472,7 +493,7 @@
   /* Проверка с ключом bNN/cum собирается на лету; выбор запоминается на время попытки и в результате. */
   function getTest(key) {
     if (C.tests[key]) return C.tests[key];
-    var m = /^(b\d+)\/cum$/.exec(key), b = m && blockById(m[1]);
+    var m = /^([a-z]\d+)\/cum$/.exec(key), b = m && blockById(m[1]);
     if (!b || b.status !== 'ready' || b.n < 2) return null;
     var cs = cumState(), res = S.tests[key];
     var ids = (RUN && RUN.key === key && cs.sel[b.id]) || (res && res.ids) || cumPick(b);
@@ -648,7 +669,7 @@
     var rev = '<section class="card help-card"><p><b>Повторение ошибок</b><br><span class="note">' + (due ? (due === 1 ? 'Ждёт ' : 'Ждут ') + plural(due, ['карточка', 'карточки', 'карточек']) + '. Это 5–10 минут.' : 'Сегодня всё повторено. Новые карточки появляются после ошибок в задачах.') + '</span></p>' +
       '<a class="btn primary" href="' + (due ? '#review/due' : '#train') + '">' + (due ? 'Повторить' : 'К тренажёрам') + '</a></section>';
 
-    var mockCard = lastMock('m00') ? '' : '<section class="card help-card"><p><b>Входной пробник</b><br><span class="note">13 задач части 1, около двух часов. Платформа сама проверит и покажет, с каких блоков начать.</span></p><a class="btn primary" href="#mock/m00">Пройти</a></section>';
+    var mockCard = lastMock('m00') ? '' : '<section class="card help-card"><p><b>Входной пробник</b><br><span class="note">' + X().p1text + '. Платформа сама проверит и покажет, с каких блоков начать.</span></p><a class="btn primary" href="#mock/m00">Пройти</a></section>';
     return note() + '<p class="greet">' + esc(greet) + '</p><div class="grid-2"><div class="col">' + hero + mockCard + plan + rev + '</div><div class="col">' + week + streakCard + days + '</div></div>';
   };
 
@@ -665,7 +686,7 @@
       for (var n = from; n <= to; n++) {
         var ls = [];
         all.forEach(function (b) {
-          b.lessonList.forEach(function (l) { if (l.ege === n && (!l.plus || plus)) ls.push({ b: b, l: l }); });
+          b.lessonList.forEach(function (l) { if ((l.ege instanceof Array ? l.ege.indexOf(n) >= 0 : l.ege === n) && (!l.plus || plus)) ls.push({ b: b, l: l }); });
         });
         var d = ls.filter(function (x) { return S.lessons[x.b.id + '/' + x.l.id]; }).length;
         tot += ls.length; dn += d;
@@ -673,13 +694,13 @@
         var body = ls.length ? '<ol class="lessons">' + ls.map(function (x, i) {
           var done = S.lessons[x.b.id + '/' + x.l.id], num = x.b.lessonList.indexOf(x.l) + 1;
           return '<li class="' + (done ? 'done' : '') + '"><a href="#lesson/' + x.b.id + '/' + x.l.id + '"><span class="dot">' + (done ? ic('check') : '') + '</span><span class="lt">' + esc(x.l.title) + '</span><span class="tail">' + (done ? 'пройден' : 'Блок ' + x.b.n + ', урок ' + num) + '</span></a></li>';
-        }).join('') + '</ol>' : '<p class="note">' + (plus || n < 14 ? 'Для этого номера отдельных уроков пока нет, задачи есть в тренажёре.' : 'Уроки по этому номеру открываются в режиме 70+.') + '</p>';
+        }).join('') + '</ol>' : '<p class="note">' + (plus || n <= X().p1 ? 'Для этого номера отдельных уроков пока нет, задачи есть в тренажёре.' : 'Уроки по этому номеру открываются в режиме 70+.') + '</p>';
         s += '<section class="card ege-card" data-s="' + st + '"><div class="ege-top"><h3><span class="chip">№ ' + n + '</span> ' + esc(egeTitle(n)) + '</h3><span class="note">' + (ls.length ? d + ' из ' + ls.length : '') + '</span></div>' + body +
           '<div class="cta-row"><a class="btn ghost sm" href="#train/ege">Тренажёр по номерам</a></div></section>';
       }
       return s;
     }
-    h = sect('Часть 1: задания 1–13', 1, 13) + sect('Часть 2: задания 14–20', 14, 20);
+    h = sect('Часть 1: задания 1–' + X().p1, 1, X().p1) + sect('Часть 2: задания ' + (X().p1 + 1) + '–' + X().n, X().p1 + 1, X().n);
     return routeTabs('numbers') + '<div class="card"><div class="sumbar"><div class="kpi num">' + dn + ' <small>из ' + tot + ' уроков по номерам</small></div></div><div class="bar"><i style="width:' + pct(dn, tot) + '%"></i></div>' +
       '<p class="note" style="margin-top:12px">Те же уроки, что в маршруте, но собранные по номеру задания ЕГЭ. Удобно, когда нужно подтянуть конкретный номер.' + (plus ? '' : ' Включи режим 70+, чтобы увидеть уроки части 2 и усложнённые уроки.') + '</p></div>' + h;
   };
@@ -693,7 +714,7 @@
     var chk = '';
     var m0 = lastMock('m00');
     h += '<li class="stop" data-s="' + (m0 ? 'done' : 'now') + '"><div class="node">' + (m0 ? ic('check') : ic('flag')) + '</div><div class="sbody"><a class="shead" href="#mock/m00" style="text-decoration:none;color:inherit"><span><span class="stitle">Входной пробник</span><span class="ssub"><span class="stag">' +
-      (m0 ? 'Результат ' + ptsLabel(mockRes(m0)) : 'Сначала пробник') + '</span><span>13 задач части 1, около 2 часов. Результат запишется сам и покажет, с каких блоков начать</span></span></span><span class="chev">' + ic('chev') + '</span></a></div></li>';
+      (m0 ? 'Результат ' + ptsLabel(mockRes(m0)) : 'Сначала пробник') + '</span><span>' + X().p1text + '. Результат запишется сам и покажет, с каких блоков начать</span></span></span><span class="chev">' + ic('chev') + '</span></a></div></li>';
     C.blocks.forEach(function (b) {
       var s = blockState(b);
       if (s === 'later' && first && b.status !== 'ready' && C.blocks.filter(function (x) { return x.status === 'ready' && blockState(x) !== 'done'; }).length === 0) { s = 'next'; }
@@ -973,7 +994,7 @@
     h += '<section class="card"><h3>Прохождение плана</h3><div class="ring"><svg viewBox="0 0 100 100" role="img" aria-label="Пройдено ' + p + ' процентов плана"><circle class="tr" cx="50" cy="50" r="42"/><circle class="fg" cx="50" cy="50" r="42" transform="rotate(-90 50 50)" stroke-dasharray="' + (p / 100 * Cc).toFixed(1) + ' ' + Cc.toFixed(1) + '"/><text x="50" y="57" text-anchor="middle">' + p + '%</text></svg><p class="note">' + done + ' из ' + tl + ' уроков</p></div></section>';
     h += '<section class="card"><h3>Верно с первой попытки</h3><div class="kpi num">' + (acc.p === null ? '—' : acc.p + '<small>%</small>') + '</div><p class="note" style="margin-top:8px">' + (acc.att ? 'По ' + plural(acc.att, ['задаче', 'задачам', 'задачам']) + '.' : 'Появится после первых задач.') + '</p></section>';
     h += '<section class="card"><h3>Повторение</h3><div class="kpi num">' + errIds().length + '</div><p class="note" style="margin-top:8px">карточек в очереди; сегодня ждут ' + dueIds().length + '. Освоено: ' + Object.keys(S.tasks).filter(function (id) { return S.tasks[id].mastered; }).length + '.</p></section></div>';
-    h += '<section class="card" style="margin-bottom:16px"><h3>Освоение заданий ЕГЭ</h3><div class="egegrid mini">' + [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (k) { return egeCell(k, false, true); }).join('') + '</div><p class="note" style="margin-top:10px">Решено задач из банка по каждому номеру. Нажми на номер, чтобы потренироваться.</p></section>';
+    h += '<section class="card" style="margin-bottom:16px"><h3>Освоение заданий ЕГЭ</h3><div class="egegrid mini">' + egeRange(1, X().n).map(function (k) { return egeCell(k, false, true); }).join('') + '</div><p class="note" style="margin-top:10px">Решено задач из банка по каждому номеру. Нажми на номер, чтобы потренироваться.</p></section>';
     h += '<div class="two"><section class="card"><h3>Пробники</h3>' + mockChart() +
       (S.mocks.length ? '<ul class="mocks" style="margin-top:8px">' + S.mocks.slice().sort(function (a, b) { return a.at < b.at ? 1 : a.at > b.at ? -1 : b.id - a.id; }).map(function (m) {
         return '<li><span>' + esc(m.name) + ' · ' + human(m.at) + '</span><span><b class="num">' + ptsLabel(mockRes(m)) + '</b> <button class="del" data-del-mock="' + m.id + '">удалить</button></span></li>';
@@ -1067,7 +1088,7 @@
   }
   function startDrill(n) {
     var ids;
-    if (n === 'mix') { ids = []; for (var k = 1; k <= 13; k++) { var p = pickFor(k, 1, 'new'); if (p.length) ids.push(p[0]); } }
+    if (n === 'mix') { ids = []; for (var k = 1; k <= X().p1; k++) { var p = pickFor(k, 1, 'new'); if (p.length) ids.push(p[0]); } }
     else ids = pickFor(n, S.ege.cnt, S.ege.src);
     if (!ids.length) return;
     DR = { n: n, ids: ids, i: 0, res: {}, t0: Date.now() };
@@ -1082,11 +1103,11 @@
   function egeCell(n, sel, link) {
     var all = bankAll(n).length, st = all ? egeStat(n) : null;
     var locked = all === 0, plusOnly = !locked && st.total === 0 && all > 0;
-    var cls = 'egecell' + (sel ? ' on' : '') + (locked ? ' lock' : '') + (plusOnly ? ' plusonly' : '') + (n >= 14 ? ' p2' : '');
+    var cls = 'egecell' + (sel ? ' on' : '') + (locked ? ' lock' : '') + (plusOnly ? ' plusonly' : '') + (n > X().p1 ? ' p2' : '');
     var sub = locked ? 'скоро' : plusOnly ? '70+' : st.ok + ' из ' + st.total;
     var pr = locked || plusOnly ? 0 : pct(st.ok, st.total);
     var tag = link ? 'a' : 'button', at = link ? ' href="#train/ege"' : ' type="button"';
-    return '<' + tag + at + ' class="' + cls + '"' + (locked ? '' : '') + ' data-ege-n="' + n + '" aria-pressed="' + (!!sel) + '"><b class="num">' + n + '</b><span class="nm">' + esc(EGE_SHORT[n]) + '</span><span class="sb">' + sub + '</span><i class="mb"><u style="width:' + pr + '%"></u></i></' + tag + '>';
+    return '<' + tag + at + ' class="' + cls + '"' + (locked ? '' : '') + ' data-ege-n="' + n + '" aria-pressed="' + (!!sel) + '"><b class="num">' + n + '</b><span class="nm">' + esc(egeShort(n)) + '</span><span class="sb">' + sub + '</span><i class="mb"><u style="width:' + pr + '%"></u></i></' + tag + '>';
   }
   function subtabs(cur) {
     var tabs = [['ege', 'Тренажёр ЕГЭ'], ['mock', 'Пробники'], ['rep', 'Повторение'], ['mental', 'Устный счёт'], ['ref', 'Справочник']];
@@ -1094,9 +1115,9 @@
   }
   function trainEge() {
     var n = S.ege.n, st = bankAll(n).length ? egeStat(n) : null, E = C.idx;
-    var h = '<p class="lead">Как в настоящем ЕГЭ: выбери номер задания и количество, и решай. Часть 1 — №1–13, часть 2 — №14–20.</p>';
-    h += '<h2 class="sec-h">Часть 1 · краткий ответ</h2><div class="egegrid">' + [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map(function (k) { return egeCell(k, k === n); }).join('') + '</div>';
-    h += '<h2 class="sec-h" style="margin-top:18px">Часть 2 · развёрнутый ответ</h2><div class="egegrid">' + [14, 15, 16, 17, 18, 19, 20].map(function (k) { return egeCell(k, k === n); }).join('') + '</div>';
+    var h = '<p class="lead">Как в настоящем ЕГЭ: выбери номер задания и количество, и решай. Часть 1 — №1–' + X().p1 + ', часть 2 — №' + (X().p1 + 1) + '–' + X().n + '.</p>';
+    h += '<h2 class="sec-h">Часть 1 · краткий ответ</h2><div class="egegrid">' + egeRange(1, X().p1).map(function (k) { return egeCell(k, k === n); }).join('') + '</div>';
+    h += '<h2 class="sec-h" style="margin-top:18px">Часть 2 · развёрнутый ответ</h2><div class="egegrid">' + egeRange(X().p1 + 1, X().n).map(function (k) { return egeCell(k, k === n); }).join('') + '</div>';
     h += '<section class="card ege-set"><h3>№ ' + n + '. ' + esc((E.egeTopics && E.egeTopics[n]) || EGE_SHORT[n]) + '</h3>';
     if (!st) {
       h += '<p class="note">Задач по этому номеру пока нет. Мы их готовим.</p></section>';
@@ -1107,19 +1128,19 @@
       if (cnts.indexOf(S.ege.cnt) < 0) S.ege.cnt = cnts[Math.min(1, cnts.length - 1)];
       var cap = S.ege.src === 'err' ? st.err : st.total, want = S.ege.cnt === 'all' ? cap : Math.min(S.ege.cnt, cap);
       var pts = E.egePoints && E.egePoints[n];
-      h += '<p class="note">В банке ' + plural(st.total, ['задача', 'задачи', 'задач']) + ', решено ' + st.ok + ', с ошибками ' + st.err + (pts ? '. На экзамене за это задание до ' + pts + ' ' + "баллов" + '.' : '.') + (n >= 14 ? ' Сайт проверяет только итоговый ответ, решение сверяй с разбором сам.' : '') + '</p>';
+      h += '<p class="note">В банке ' + plural(st.total, ['задача', 'задачи', 'задач']) + ', решено ' + st.ok + ', с ошибками ' + st.err + (pts ? '. На экзамене за это задание до ' + pts + ' ' + "баллов" + '.' : '.') + (n > X().p1 ? ' Сайт проверяет только итоговый ответ, решение сверяй с разбором сам.' : '') + '</p>';
       var sg = function (attr, key, val, label) { return '<button type="button" class="fbtn" data-ege-' + attr + '="' + val + '" aria-pressed="' + (String(S.ege[key]) === String(val)) + '">' + label + '</button>'; };
       h += '<div class="fgroup" role="group" aria-label="Количество"><span>Сколько</span>' + cnts.map(function (c) { return sg('cnt', 'cnt', c, c === 'all' ? 'Все ' + st.total : c); }).join('') + '</div>';
       h += '<div class="fgroup" role="group" aria-label="Какие задачи"><span>Какие</span>' + sg('src', 'src', 'new', 'Сначала новые') + sg('src', 'src', 'err', 'Мои ошибки ' + st.err) + sg('src', 'src', 'rand', 'Случайные') + '</div>';
       h += '<div class="cta-row"><button class="btn primary" data-ege-start' + (want ? '' : ' disabled') + '>' + (want ? 'Решать: ' + plural(want, ['задание', 'задания', 'заданий']) : 'Нет ошибок по этому номеру') + '</button>' +
-        '<button class="btn ghost" data-ege-mix title="По одному заданию с №1 по №13">Микс 1–13</button></div></section>';
+        '<button class="btn ghost" data-ege-mix title="По одному заданию с №1 по №' + X().p1 + '">Микс 1–' + X().p1 + '</button></div></section>';
     }
     return h;
   }
   function mockVariants() {
     var m1 = 99, mf = 99, k;
-    for (k = 1; k <= 13; k++) m1 = Math.min(m1, bankAll(k).filter(function (id) { return !C.tasks[id].plus; }).length || 0);
-    for (k = 1; k <= 20; k++) mf = Math.min(mf, bankAll(k).length);
+    for (k = 1; k <= X().p1; k++) m1 = Math.min(m1, bankAll(k).filter(function (id) { return !C.tasks[id].plus; }).length || 0);
+    for (k = 1; k <= X().n; k++) mf = Math.min(mf, bankAll(k).length);
     return { p1: Math.max(1, Math.min(10, m1)), f: Math.min(10, mf) };
   }
   function hs(str) { var h = 2166136261; for (var i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
@@ -1128,15 +1149,15 @@
   function ensureMock(id) {
     if (C.mocks[id]) return C.mocks[id];
     var m = /^(p1|f)-(\d+)$/.exec(id); if (!m) return null;
-    var K = +m[2], full = m[1] === 'f', last = full ? 20 : 13, tasks = [], mv = mockVariants(), maxK = Math.max(2, full ? mv.f : mv.p1), tgt = 1.5 + 2.5 * Math.min(1, (K - 1) / (maxK - 1));
+    var K = +m[2], full = m[1] === 'f', last = full ? X().n : X().p1, tasks = [], mv = mockVariants(), maxK = Math.max(2, full ? mv.f : mv.p1), tgt = 1.5 + 2.5 * Math.min(1, (K - 1) / (maxK - 1));
     for (var n = 1; n <= last; n++) {
       var pool = bankAll(n).filter(function (x) { return full || !C.tasks[x].plus || C.tasks[x].lv; }).sort(function (a, b) { return Math.abs(taskLv(C.tasks[a]) - tgt) - Math.abs(taskLv(C.tasks[b]) - tgt) || hs(a + n + K) - hs(b + n + K); });
       if (!pool.length) return null;
       var tk = C.tasks[pool[0]];
       tasks.push(Object.assign({}, tk, { ege: n }));
     }
-    var T = { id: id, key: 'mock/' + id, kind: 'mock', title: (full ? 'Полный вариант ' : 'Часть 1, вариант ') + K, minutes: full ? 235 : 120, max: tasks.reduce(function (a, t) { return a + taskPts(t); }, 0), part2: full,
-      intro: full ? 'Задания №1–20 по формату ЕГЭ. Задания №14–20 нужно решать письменно на бумаге, сайт проверит только итоговый ответ. Баллы за ход решения поставил бы эксперт, поэтому наш результат показывает число верных ответов, а не первичные баллы.' : 'Задания №1–13, краткий ответ, как в первой части ЕГЭ. Время на экзамене на всю работу 3 часа 55 минут, на часть 1 стоит заложить около двух часов.' };
+    var T = { id: id, key: 'mock/' + id, kind: 'mock', title: (full ? 'Полный вариант ' : 'Часть 1, вариант ') + K, minutes: full ? 235 : (X().p1min || 120), max: tasks.reduce(function (a, t) { return a + taskPts(t); }, 0), part2: full,
+      intro: full ? 'Задания №1–20 по формату ЕГЭ. Задания №14–20 нужно решать письменно на бумаге, сайт проверит только итоговый ответ. Баллы за ход решения поставил бы эксперт, поэтому наш результат показывает число верных ответов, а не первичные баллы.' : 'Задания №1–' + X().p1 + ', краткий ответ, как в первой части ЕГЭ. Время на экзамене на всю работу 3 часа 55 минут, на часть 1 стоит заложить около двух часов.' };
     T.tasks = tasks; C.mocks[id] = T;
     return T;
   }
@@ -1147,10 +1168,12 @@
       return '<li class="mrow"><div><b>' + esc(name) + '</b><span class="note">' + sub + (l ? ' · последний результат ' + ptsLabel(mockRes(l)) : '') + '</span></div><a class="btn ' + (l ? 'ghost' : 'primary') + ' sm" href="#mock/' + id + '">' + (l ? 'Результат' : 'Начать') + '</a></li>';
     };
     var h = '<p class="lead">Целый вариант без подсказок и с таймером в голове: решаешь всё подряд, потом получаешь разбор. Каждый вариант собран из разных задач банка.</p>';
-    h += '<section class="card"><h3>Часть 1 · задания 1–13</h3><ul class="mlist">' + (C.mocks.m00 ? row('m00', 'Входной пробник', '13 заданий, около 2 часов') : '');
-    for (var k = 1; k <= v.p1; k++) h += row('p1-' + k, 'Часть 1, вариант ' + k, '13 заданий, около 2 часов');
-    h += '</ul></section><section class="card"><h3>Полный вариант · задания 1–20</h3>';
-    if (plus) {
+    h += '<section class="card"><h3>Часть 1 · задания 1–' + X().p1 + '</h3><ul class="mlist">' + (C.mocks.m00 ? row('m00', 'Входной пробник', X().p1 + ' заданий, около 2 часов') : '');
+    for (var k = 1; k <= v.p1; k++) h += row('p1-' + k, 'Часть 1, вариант ' + k, X().p1 + ' заданий, около 2 часов');
+    h += '</ul></section><section class="card"><h3>Полный вариант · задания 1–' + X().n + '</h3>';
+    if (isOge()) {
+      h += '<p class="note">Часть 2 (задания 20–25, развёрнутый ответ) готовится. Пока тренируй часть 1: по баллам она даёт оценку «3», а при хорошем результате и «4».</p>';
+    } else if (plus) {
       h += '<ul class="mlist">';
       for (k = 1; k <= v.f; k++) h += row('f-' + k, 'Полный вариант ' + k, '20 заданий, 3 ч 55 мин');
       h += '</ul><p class="note" style="margin-top:8px">Часть 2 проверяется только по итоговому ответу.</p>';
@@ -1189,7 +1212,7 @@
 
   /* ---- Тренажёр ЕГЭ: решение ---- */
   VIEWS.drill = function () {
-    var cr = crumbs([{ t: 'Тренажёры', href: '#train/ege' }, { t: DR ? (DR.n === 'mix' ? 'Микс 1–13' : '№ ' + DR.n) : 'Тренажёр ЕГЭ' }]);
+    var cr = crumbs([{ t: 'Тренажёры', href: '#train/ege' }, { t: DR ? (DR.n === 'mix' ? 'Микс 1–' + X().p1 : '№ ' + DR.n) : 'Тренажёр ЕГЭ' }]);
     if (!DR) return '<div class="reading">' + cr + '<section class="card"><h3>Набор не выбран</h3><div class="cta-row"><a class="btn primary" href="#train/ege">Выбрать номер</a></div></section></div>';
     var N = DR.ids.length;
     if (DR.i >= N) {
@@ -1201,7 +1224,7 @@
         '<div class="cta-row"><button class="btn primary" data-drill-again>Ещё раз</button><a class="btn ghost" href="#train/ege">Другой номер</a><a class="btn ghost" href="#train/rep">Повторение</a></div></section></div>';
     }
     var id = DR.ids[DR.i], t = C.tasks[id], answered = DR.res[id] !== undefined, last = DR.i === N - 1, en = egeOf(t);
-    return '<div class="reading">' + cr + '<div class="prog-line"><h3>Задание ' + (DR.i + 1) + ' из ' + N + '</h3><span class="note">ЕГЭ № ' + en + ' · ' + esc(EGE_SHORT[en]) + '</span></div>' +
+    return '<div class="reading">' + cr + '<div class="prog-line"><h3>Задание ' + (DR.i + 1) + ' из ' + N + '</h3><span class="note">ЕГЭ № ' + en + ' · ' + esc(egeShort(en)) + '</span></div>' +
       '<div class="bar" style="margin-bottom:14px"><i style="width:' + pct(DR.i, N) + '%"></i></div>' + taskCard(t, { ctx: 'drill', n: DR.i + 1 }) +
       '<div class="cta-row">' + (answered ? '<button class="btn primary" data-drill-next>' + (last ? 'Завершить' : 'Дальше') + '</button>' : '<button class="btn ghost" data-drill-skip>Пропустить</button>') + '</div></div>';
   };
@@ -1459,13 +1482,14 @@
   function render() {
     var el = $('#view');
     el.innerHTML = VIEWS[CUR.name](CUR.args) + '<p class="foot-links"><a href="#about">О проекте</a> · <button type="button" class="linkbtn" data-theme-toggle>Оформление: ' + THEME_NAMES[S.theme === 'light' || S.theme === 'dark' ? S.theme : 'auto'] + '</button></p>';
-    fitMath(el); armTimer(); armRunTimer();
+    exText(el); fitMath(el); armTimer(); armRunTimer();
     var stb = $('.subtabs'), sac = stb && $('[aria-current="page"]', stb);
     if (stb && sac) stb.scrollLeft = Math.max(0, sac.offsetLeft - (stb.clientWidth - sac.offsetWidth) / 2);
     var nk = NAVKEY[CUR.name] || CUR.name;
     $$('[data-go]').forEach(function (b) { b.setAttribute('aria-current', b.dataset.go === nk ? 'page' : 'false'); });
     $('#screen-title').textContent = TITLES[CUR.name];
     $$('[data-mode]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.mode === S.mode)); });
+    $$('button[data-exam]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.exam === EXAM)); });
     var wn = weekNo(); $('#side-week').textContent = wn ? 'неделя ' + wn + ' из ' + totalWeeks() : 'старт ' + human(S.start);
   }
   function route() {
@@ -1491,6 +1515,11 @@
     var t = e.target;
     var g = t.closest('[data-go]');
     if (g) { var want = '#' + g.dataset.go; if (location.hash === want) route(); else location.hash = want; return; }
+    var ex = t.closest('[data-exam]');
+    if (ex && ex.dataset.exam && ex.tagName === 'BUTTON') {
+      try { window.localStorage.setItem('marshrut.exam', ex.dataset.exam); } catch (er) { /* ignore */ }
+      location.hash = '#today'; location.reload(); return;
+    }
     var m = t.closest('[data-mode]');
     if (m) { S.mode = m.dataset.mode; S.days = S.mode === 'plus' ? [1, 3, 5] : [1, 5]; save(); rerender(); return; }
     var blk = t.closest('[data-blk]');
@@ -1539,7 +1568,7 @@
     if (ul) { delete S.lessons[ul.dataset.undoLesson]; save(); rerender(); return; }
     var st = t.closest('[data-start-test]');
     if (st) {
-      var sk = st.dataset.startTest, mm = /^(b\d+)\/cum$/.exec(sk);
+      var sk = st.dataset.startTest, mm = /^([a-z]\d+)\/cum$/.exec(sk);
       if (mm) { var bb = blockById(mm[1]); if (bb) { cumState().sel[bb.id] = cumPick(bb); save(); } }
       DRAFT = {}; RUN = { key: sk, vals: {}, t0: Date.now() }; render(); window.scrollTo(0, 0); return;
     }
@@ -1660,6 +1689,7 @@
 
   /* ================= запуск ================= */
   loadContent().then(function () {
+    if (isOge()) document.title = 'Po poryadku: подготовка к ОГЭ по математике';
     if (!location.hash) { try { history.replaceState(null, '', '#today'); } catch (e) { /* ignore */ } }
     route();
   }).catch(function (err) {

@@ -505,3 +505,6 @@ details.hard>.note{margin:4px 0 14px}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .runtimer .rt-b{color:var(--ink)}}
 
 .ege-card .ege-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.ege-card h3{margin:0}.part-h{margin:22px 0 8px;font-size:16px;color:var(--muted)}.ege-card .cta-row{margin-top:10px}.lessons .ege-h{padding:10px 0 2px}.ege-card[data-s="later"]{opacity:.8}
+
+.exam-sw{display:flex;align-items:center;margin-right:12px}html[data-exam="oge"] .mode{display:none}@media(max-width:700px){.exam-sw{margin-right:8px}}
+.top-r{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
