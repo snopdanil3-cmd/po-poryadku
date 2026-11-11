@@ -19,14 +19,16 @@
    "steps": [
     "$40\\cdot15=600$ м$^2$."
    ],
-   "a": 600
+   "a": 600,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 133.8\" width=\"270\" height=\"133.8\" role=\"img\" aria-label=\"Участок 40x15 м, в углу площадка 8x5 м\"><line class=\"fl\" x1=\"26\" y1=\"107.8\" x2=\"244\" y2=\"107.8\"/><line class=\"fl\" x1=\"244\" y1=\"107.8\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"107.8\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"107.8\" x2=\"69.6\" y2=\"80.5\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"80.5\" x2=\"26\" y2=\"80.5\"/><text class=\"ft fn\" x=\"135\" y=\"119.8\" text-anchor=\"middle\" dominant-baseline=\"central\">40 м</text><text class=\"ft fn\" x=\"256\" y=\"66.9\" text-anchor=\"middle\" dominant-baseline=\"central\">15 м</text><text class=\"ft fn\" x=\"47.8\" y=\"94.1\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"107.8\" r=\"2.6\"/><text class=\"ft\" x=\"13.8\" y=\"112.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"107.8\" r=\"2.6\"/><text class=\"ft\" x=\"256.2\" y=\"112.3\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"256.2\" y=\"21.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"13.8\" y=\"21.4\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
    "q": "Дачный участок имеет форму прямоугольника со сторонами $40$ м и $15$ м. Рядом с домом планируется выложить площадку размером $8$ м на $5$ м тротуарной плиткой размером $40$ см на $40$ см. Плитка продаётся упаковками по $12$ штук, одна плитка стоит $45$ рублей. Участок решили обнести забором. Сколько метров забора нужно, чтобы обнести весь участок?",
    "steps": [
     "Периметр $2(40+15)=110$ м."
    ],
-   "a": 110
+   "a": 110,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 133.8\" width=\"270\" height=\"133.8\" role=\"img\" aria-label=\"Участок 40x15 м, в углу площадка 8x5 м\"><line class=\"fl\" x1=\"26\" y1=\"107.8\" x2=\"244\" y2=\"107.8\"/><line class=\"fl\" x1=\"244\" y1=\"107.8\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"107.8\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"107.8\" x2=\"69.6\" y2=\"80.5\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"80.5\" x2=\"26\" y2=\"80.5\"/><text class=\"ft fn\" x=\"135\" y=\"119.8\" text-anchor=\"middle\" dominant-baseline=\"central\">40 м</text><text class=\"ft fn\" x=\"256\" y=\"66.9\" text-anchor=\"middle\" dominant-baseline=\"central\">15 м</text><text class=\"ft fn\" x=\"47.8\" y=\"94.1\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"107.8\" r=\"2.6\"/><text class=\"ft\" x=\"13.8\" y=\"112.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"107.8\" r=\"2.6\"/><text class=\"ft\" x=\"256.2\" y=\"112.3\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"256.2\" y=\"21.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"13.8\" y=\"21.4\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
    "q": "Дачный участок имеет форму прямоугольника со сторонами $40$ м и $15$ м. Рядом с домом планируется выложить площадку размером $8$ м на $5$ м тротуарной плиткой размером $40$ см на $40$ см. Плитка продаётся упаковками по $12$ штук, одна плитка стоит $45$ рублей. Участок решили обнести забором. Сколько плиток понадобится для площадки? Площадка имеет размеры $8$ м на $5$ м.",
@@ -34,7 +36,8 @@
     "Площадь площадки $8\\cdot5=40$ м$^2=400000$ см$^2$.",
     "Площадь плитки $40^2=1600$ см$^2$. Плиток $400000:1600=250$."
    ],
-   "a": 250
+   "a": 250,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 133.8\" width=\"270\" height=\"133.8\" role=\"img\" aria-label=\"Участок 40x15 м, в углу площадка 8x5 м\"><line class=\"fl\" x1=\"26\" y1=\"107.8\" x2=\"244\" y2=\"107.8\"/><line class=\"fl\" x1=\"244\" y1=\"107.8\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"107.8\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"107.8\" x2=\"69.6\" y2=\"80.5\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"80.5\" x2=\"26\" y2=\"80.5\"/><text class=\"ft fn\" x=\"135\" y=\"119.8\" text-anchor=\"middle\" dominant-baseline=\"central\">40 м</text><text class=\"ft fn\" x=\"256\" y=\"66.9\" text-anchor=\"middle\" dominant-baseline=\"central\">15 м</text><text class=\"ft fn\" x=\"47.8\" y=\"94.1\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"107.8\" r=\"2.6\"/><text class=\"ft\" x=\"13.8\" y=\"112.3\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"107.8\" r=\"2.6\"/><text class=\"ft\" x=\"256.2\" y=\"112.3\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"256.2\" y=\"21.4\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"13.8\" y=\"21.4\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   }
  ],
  "tasks": [
@@ -47,7 +50,8 @@
     "$30\\cdot20=600$ м$^2$."
    ],
    "ege": 1,
-   "lv": 1
+   "lv": 1,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Участок 30x20 м, в углу площадка 6x4 м\"><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"171.3\" x2=\"69.6\" y2=\"142.3\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"142.3\" x2=\"26\" y2=\"142.3\"/><text class=\"ft fn\" x=\"135\" y=\"183.3\" text-anchor=\"middle\" dominant-baseline=\"central\">30 м</text><text class=\"ft fn\" x=\"256\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">20 м</text><text class=\"ft fn\" x=\"47.8\" y=\"156.8\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"178.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"254.8\" y=\"178.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254.8\" y=\"18.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"18.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
    "id": "o01-l030-2",
@@ -58,7 +62,8 @@
     "Периметр $2(30+20)=100$ м."
    ],
    "ege": 2,
-   "lv": 1
+   "lv": 1,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Участок 30x20 м, в углу площадка 6x4 м\"><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"171.3\" x2=\"69.6\" y2=\"142.3\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"142.3\" x2=\"26\" y2=\"142.3\"/><text class=\"ft fn\" x=\"135\" y=\"183.3\" text-anchor=\"middle\" dominant-baseline=\"central\">30 м</text><text class=\"ft fn\" x=\"256\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">20 м</text><text class=\"ft fn\" x=\"47.8\" y=\"156.8\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"178.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"254.8\" y=\"178.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254.8\" y=\"18.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"18.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
    "id": "o01-l030-3",
@@ -70,7 +75,8 @@
     "Площадь плитки $50^2=2500$ см$^2$. Плиток $240000:2500=96$."
    ],
    "ege": 3,
-   "lv": 2
+   "lv": 2,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Участок 30x20 м, в углу площадка 6x4 м\"><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"171.3\" x2=\"69.6\" y2=\"142.3\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"142.3\" x2=\"26\" y2=\"142.3\"/><text class=\"ft fn\" x=\"135\" y=\"183.3\" text-anchor=\"middle\" dominant-baseline=\"central\">30 м</text><text class=\"ft fn\" x=\"256\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">20 м</text><text class=\"ft fn\" x=\"47.8\" y=\"156.8\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"178.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"254.8\" y=\"178.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254.8\" y=\"18.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"18.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
    "id": "o01-l030-4",
@@ -81,7 +87,8 @@
     "Плиток $96$, цена $40$ рублей: $96\\cdot40=3840$."
    ],
    "ege": 4,
-   "lv": 3
+   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Участок 30x20 м, в углу площадка 6x4 м\"><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"171.3\" x2=\"69.6\" y2=\"142.3\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"142.3\" x2=\"26\" y2=\"142.3\"/><text class=\"ft fn\" x=\"135\" y=\"183.3\" text-anchor=\"middle\" dominant-baseline=\"central\">30 м</text><text class=\"ft fn\" x=\"256\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">20 м</text><text class=\"ft fn\" x=\"47.8\" y=\"156.8\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"178.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"254.8\" y=\"178.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254.8\" y=\"18.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"18.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
    "id": "o01-l030-5",
@@ -93,7 +100,8 @@
     "$96:10$ округляем вверх: $10$ упаковок."
    ],
    "ege": 5,
-   "lv": 3
+   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 197.3\" width=\"270\" height=\"197.3\" role=\"img\" aria-label=\"Участок 30x20 м, в углу площадка 6x4 м\"><line class=\"fl\" x1=\"26\" y1=\"171.3\" x2=\"244\" y2=\"171.3\"/><line class=\"fl\" x1=\"244\" y1=\"171.3\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"171.3\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"171.3\" x2=\"69.6\" y2=\"142.3\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"142.3\" x2=\"26\" y2=\"142.3\"/><text class=\"ft fn\" x=\"135\" y=\"183.3\" text-anchor=\"middle\" dominant-baseline=\"central\">30 м</text><text class=\"ft fn\" x=\"256\" y=\"98.7\" text-anchor=\"middle\" dominant-baseline=\"central\">20 м</text><text class=\"ft fn\" x=\"47.8\" y=\"156.8\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"178.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"171.3\" r=\"2.6\"/><text class=\"ft\" x=\"254.8\" y=\"178.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254.8\" y=\"18.8\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.2\" y=\"18.8\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
    "id": "o01-l031-1",
@@ -104,7 +112,8 @@
     "$25\\cdot16=400$ м$^2$."
    ],
    "ege": 1,
-   "lv": 1
+   "lv": 1,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 191.5\" width=\"270\" height=\"191.5\" role=\"img\" aria-label=\"Участок 25x16 м, в углу площадка 5x3 м\"><line class=\"fl\" x1=\"26\" y1=\"165.5\" x2=\"244\" y2=\"165.5\"/><line class=\"fl\" x1=\"244\" y1=\"165.5\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"165.5\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"165.5\" x2=\"69.6\" y2=\"139.4\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"139.4\" x2=\"26\" y2=\"139.4\"/><text class=\"ft fn\" x=\"135\" y=\"177.5\" text-anchor=\"middle\" dominant-baseline=\"central\">25 м</text><text class=\"ft fn\" x=\"256\" y=\"95.8\" text-anchor=\"middle\" dominant-baseline=\"central\">16 м</text><text class=\"ft fn\" x=\"47.8\" y=\"152.4\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"165.5\" r=\"2.6\"/><text class=\"ft\" x=\"15.1\" y=\"172.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"165.5\" r=\"2.6\"/><text class=\"ft\" x=\"254.9\" y=\"172.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254.9\" y=\"19\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.1\" y=\"19\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
    "id": "o01-l031-2",
@@ -115,7 +124,8 @@
     "Периметр $2(25+16)=82$ м."
    ],
    "ege": 2,
-   "lv": 1
+   "lv": 1,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 191.5\" width=\"270\" height=\"191.5\" role=\"img\" aria-label=\"Участок 25x16 м, в углу площадка 5x3 м\"><line class=\"fl\" x1=\"26\" y1=\"165.5\" x2=\"244\" y2=\"165.5\"/><line class=\"fl\" x1=\"244\" y1=\"165.5\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"165.5\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"165.5\" x2=\"69.6\" y2=\"139.4\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"139.4\" x2=\"26\" y2=\"139.4\"/><text class=\"ft fn\" x=\"135\" y=\"177.5\" text-anchor=\"middle\" dominant-baseline=\"central\">25 м</text><text class=\"ft fn\" x=\"256\" y=\"95.8\" text-anchor=\"middle\" dominant-baseline=\"central\">16 м</text><text class=\"ft fn\" x=\"47.8\" y=\"152.4\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"165.5\" r=\"2.6\"/><text class=\"ft\" x=\"15.1\" y=\"172.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"165.5\" r=\"2.6\"/><text class=\"ft\" x=\"254.9\" y=\"172.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254.9\" y=\"19\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.1\" y=\"19\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
    "id": "o01-l031-3",
@@ -127,7 +137,8 @@
     "Площадь плитки $25^2=625$ см$^2$. Плиток $150000:625=240$."
    ],
    "ege": 3,
-   "lv": 2
+   "lv": 2,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 191.5\" width=\"270\" height=\"191.5\" role=\"img\" aria-label=\"Участок 25x16 м, в углу площадка 5x3 м\"><line class=\"fl\" x1=\"26\" y1=\"165.5\" x2=\"244\" y2=\"165.5\"/><line class=\"fl\" x1=\"244\" y1=\"165.5\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"165.5\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"165.5\" x2=\"69.6\" y2=\"139.4\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"139.4\" x2=\"26\" y2=\"139.4\"/><text class=\"ft fn\" x=\"135\" y=\"177.5\" text-anchor=\"middle\" dominant-baseline=\"central\">25 м</text><text class=\"ft fn\" x=\"256\" y=\"95.8\" text-anchor=\"middle\" dominant-baseline=\"central\">16 м</text><text class=\"ft fn\" x=\"47.8\" y=\"152.4\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"165.5\" r=\"2.6\"/><text class=\"ft\" x=\"15.1\" y=\"172.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"165.5\" r=\"2.6\"/><text class=\"ft\" x=\"254.9\" y=\"172.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254.9\" y=\"19\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.1\" y=\"19\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
    "id": "o01-l031-4",
@@ -138,7 +149,8 @@
     "Плиток $240$, цена $35$ рублей: $240\\cdot35=8400$."
    ],
    "ege": 4,
-   "lv": 3
+   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 191.5\" width=\"270\" height=\"191.5\" role=\"img\" aria-label=\"Участок 25x16 м, в углу площадка 5x3 м\"><line class=\"fl\" x1=\"26\" y1=\"165.5\" x2=\"244\" y2=\"165.5\"/><line class=\"fl\" x1=\"244\" y1=\"165.5\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"165.5\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"165.5\" x2=\"69.6\" y2=\"139.4\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"139.4\" x2=\"26\" y2=\"139.4\"/><text class=\"ft fn\" x=\"135\" y=\"177.5\" text-anchor=\"middle\" dominant-baseline=\"central\">25 м</text><text class=\"ft fn\" x=\"256\" y=\"95.8\" text-anchor=\"middle\" dominant-baseline=\"central\">16 м</text><text class=\"ft fn\" x=\"47.8\" y=\"152.4\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"165.5\" r=\"2.6\"/><text class=\"ft\" x=\"15.1\" y=\"172.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"165.5\" r=\"2.6\"/><text class=\"ft\" x=\"254.9\" y=\"172.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254.9\" y=\"19\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.1\" y=\"19\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   },
   {
    "id": "o01-l031-5",
@@ -150,7 +162,8 @@
     "$240:8$ округляем вверх: $30$ упаковок."
    ],
    "ege": 5,
-   "lv": 3
+   "lv": 3,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 270 191.5\" width=\"270\" height=\"191.5\" role=\"img\" aria-label=\"Участок 25x16 м, в углу площадка 5x3 м\"><line class=\"fl\" x1=\"26\" y1=\"165.5\" x2=\"244\" y2=\"165.5\"/><line class=\"fl\" x1=\"244\" y1=\"165.5\" x2=\"244\" y2=\"26\"/><line class=\"fl\" x1=\"244\" y1=\"26\" x2=\"26\" y2=\"26\"/><line class=\"fl\" x1=\"26\" y1=\"26\" x2=\"26\" y2=\"165.5\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"165.5\" x2=\"69.6\" y2=\"139.4\"/><line class=\"fl fd\" x1=\"69.6\" y1=\"139.4\" x2=\"26\" y2=\"139.4\"/><text class=\"ft fn\" x=\"135\" y=\"177.5\" text-anchor=\"middle\" dominant-baseline=\"central\">25 м</text><text class=\"ft fn\" x=\"256\" y=\"95.8\" text-anchor=\"middle\" dominant-baseline=\"central\">16 м</text><text class=\"ft fn\" x=\"47.8\" y=\"152.4\" text-anchor=\"middle\" dominant-baseline=\"central\">площадка</text><circle class=\"fp\" cx=\"26\" cy=\"165.5\" r=\"2.6\"/><text class=\"ft\" x=\"15.1\" y=\"172.5\" text-anchor=\"middle\" dominant-baseline=\"central\">A</text><circle class=\"fp\" cx=\"244\" cy=\"165.5\" r=\"2.6\"/><text class=\"ft\" x=\"254.9\" y=\"172.5\" text-anchor=\"middle\" dominant-baseline=\"central\">B</text><circle class=\"fp\" cx=\"244\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"254.9\" y=\"19\" text-anchor=\"middle\" dominant-baseline=\"central\">C</text><circle class=\"fp\" cx=\"26\" cy=\"26\" r=\"2.6\"/><text class=\"ft\" x=\"15.1\" y=\"19\" text-anchor=\"middle\" dominant-baseline=\"central\">D</text></svg></figure>"
   }
  ]
 }

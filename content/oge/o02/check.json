@@ -47,15 +47,20 @@
   },
   {
    "id": "o02-c-7-2",
-   "q": "Какому из промежутков принадлежит число $\\sqrt{130}$? 1) $[8;9]$ 2) $[11;12]$ 3) $[2;3]$ 4) $[10;11]$ В ответе укажите номер правильного варианта.",
-   "a": 2,
+   "q": "На координатной прямой отмечены числа $a$ и $b$. Какое из утверждений верно? 1) $|a|>|b|$ 2) $a-b<0$ 3) $a-b>0$ 4) $a+b>0$ В ответе укажите номер правильного утверждения.",
+   "a": 3,
    "hint": "Сравнивайте числа, возводя в квадрат: чем больше подкоренное число, тем больше корень.",
    "sol": [
-    "$11^2=121$ и $12^2=144$, а $130$ лежит между ними, поэтому $11<\\sqrt{130}<12$.",
-    "Верный промежуток $[11;12]$, его номер $2$."
+    "По рисунку $a\\approx -1$, $b\\approx -2,5$. Проверим утверждения.",
+    "1) $|a|>|b|$ — неверно.",
+    "2) $a-b<0$ — неверно.",
+    "3) $a-b>0$ — верно.",
+    "4) $a+b>0$ — неверно.",
+    "Верное утверждение одно, его номер $3$."
    ],
    "ege": 7,
    "lv": 2,
+   "fig": "<figure class=\"fig\"><svg viewBox=\"0 0 300 66.2\" width=\"300\" height=\"66.2\" role=\"img\" aria-label=\"Числовая прямая, отмечены числа a=-1 и b=-2,5\"><line class=\"fl\" x1=\"26\" y1=\"28.8\" x2=\"274\" y2=\"28.8\"/><line class=\"fl\" x1=\"35.2\" y1=\"31.5\" x2=\"35.2\" y2=\"26\"/><line class=\"fl\" x1=\"58.1\" y1=\"31.5\" x2=\"58.1\" y2=\"26\"/><line class=\"fl\" x1=\"81.1\" y1=\"31.5\" x2=\"81.1\" y2=\"26\"/><line class=\"fl\" x1=\"104.1\" y1=\"31.5\" x2=\"104.1\" y2=\"26\"/><line class=\"fl\" x1=\"127\" y1=\"31.5\" x2=\"127\" y2=\"26\"/><line class=\"fl\" x1=\"150\" y1=\"31.5\" x2=\"150\" y2=\"26\"/><line class=\"fl\" x1=\"173\" y1=\"31.5\" x2=\"173\" y2=\"26\"/><line class=\"fl\" x1=\"195.9\" y1=\"31.5\" x2=\"195.9\" y2=\"26\"/><line class=\"fl\" x1=\"218.9\" y1=\"31.5\" x2=\"218.9\" y2=\"26\"/><line class=\"fl\" x1=\"241.9\" y1=\"31.5\" x2=\"241.9\" y2=\"26\"/><line class=\"fl\" x1=\"264.8\" y1=\"31.5\" x2=\"264.8\" y2=\"26\"/><text class=\"ft fn\" x=\"35.2\" y=\"40.2\" text-anchor=\"middle\" dominant-baseline=\"central\">−5</text><text class=\"ft fn\" x=\"58.1\" y=\"40.2\" text-anchor=\"middle\" dominant-baseline=\"central\">−4</text><text class=\"ft fn\" x=\"81.1\" y=\"40.2\" text-anchor=\"middle\" dominant-baseline=\"central\">−3</text><text class=\"ft fn\" x=\"104.1\" y=\"40.2\" text-anchor=\"middle\" dominant-baseline=\"central\">−2</text><text class=\"ft fn\" x=\"127\" y=\"40.2\" text-anchor=\"middle\" dominant-baseline=\"central\">−1</text><text class=\"ft fn\" x=\"150\" y=\"40.2\" text-anchor=\"middle\" dominant-baseline=\"central\">0</text><text class=\"ft fn\" x=\"173\" y=\"40.2\" text-anchor=\"middle\" dominant-baseline=\"central\">1</text><text class=\"ft fn\" x=\"195.9\" y=\"40.2\" text-anchor=\"middle\" dominant-baseline=\"central\">2</text><text class=\"ft fn\" x=\"218.9\" y=\"40.2\" text-anchor=\"middle\" dominant-baseline=\"central\">3</text><text class=\"ft fn\" x=\"241.9\" y=\"40.2\" text-anchor=\"middle\" dominant-baseline=\"central\">4</text><text class=\"ft fn\" x=\"264.8\" y=\"40.2\" text-anchor=\"middle\" dominant-baseline=\"central\">5</text><circle class=\"fp\" cx=\"127\" cy=\"28.8\" r=\"2.6\"/><text class=\"ft\" x=\"140\" y=\"28.8\" text-anchor=\"middle\" dominant-baseline=\"central\">a</text><circle class=\"fp\" cx=\"92.6\" cy=\"28.8\" r=\"2.6\"/><text class=\"ft\" x=\"79.6\" y=\"28.8\" text-anchor=\"middle\" dominant-baseline=\"central\">b</text></svg></figure>",
    "lesson": "l02"
   },
   {
